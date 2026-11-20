@@ -37,13 +37,30 @@ git clone https://github.com/mohd-Ali04/Multi-UAV-UGV-System-.git tins8_ws
 cd tins8_ws
 ```
 
-Install the dependencies. The apt step asks before using sudo. PX4 takes 15 to 30 minutes and about 3 GB. Everything except apt goes under `~/tins8_deps`.
+See what is already installed and what is missing. This is read-only and installs nothing:
+
+```bash
+scripts/setup_deps.sh check
+```
+
+It reports each dependency as OK (with its version), MISSING, NOT-BUILT or WRONG (the wrong pinned version). It covers Ubuntu 24.04, ROS 2 Jazzy, the apt packages, Gazebo, PX4, the DDS agent, px4_msgs, and the optional Terminator, gnome-terminal and tmux.
+If PX4 is already built somewhere else in your home folder, it prints a HINT with that location.
+
+Install only what is missing:
 
 ```bash
 scripts/setup_deps.sh all
 ```
 
-If PX4, the agent and px4_msgs already exist somewhere else, skip that step and point the scripts at them instead:
+`all` runs the check, then installs or builds only the missing items, then checks again.
+- **apt packages:** it lists only the missing ones and asks before using sudo.
+- **PX4, the agent and px4_msgs:** each is skipped if it is already built at the pinned version.
+- **Terminator:** optional; it asks first.
+- **ROS 2 Jazzy itself:** not installed by the script. If it is missing, the script stops and links the official install page.
+
+A full install from nothing takes 30 to 45 minutes, mostly PX4 (about 3 GB). Everything except the apt packages goes under `~/tins8_deps`. Single steps also exist: `apt`, `px4`, `agent`, `msgs` and `optional`. `FORCE=1` rebuilds a step that is already done.
+
+If PX4, the agent and px4_msgs already exist somewhere else, point the scripts at them instead of installing a second copy. Then `check` shows them as OK:
 
 ```bash
 cp scripts/local.env.example scripts/local.env   # then edit TINS8_DEPS in scripts/local.env
@@ -173,7 +190,7 @@ This stops only what this project started (PID files plus this workspace's Gazeb
 
 | symptom | cause and fix |
 |---|---|
-| `PX4 SITL is not built at ...` | Run `scripts/setup_deps.sh px4`, or set `TINS8_DEPS` in `scripts/local.env`. |
+| `PX4 SITL is not built at ...` | Run `scripts/setup_deps.sh check` to see what is missing, then `scripts/setup_deps.sh all`, or set `TINS8_DEPS` in `scripts/local.env`. |
 | `UAV01 no status` or `telemetry_age=-1` | PX4 or the agent is not running yet. Check that both PX4 panes say `Ready for takeoff!` and show `successfully created` lines. |
 | `REJECTED: dock latch is attached; release it with the carousel first` | Intended interlock. Use `tins8ctl carousel release uav01`, or run the mission. |
 | `REJECTED: uav02_dock is not accessible at station A_UPPER` | Intended interlock. Index the carousel to B_UPPER first. |
@@ -195,3 +212,44 @@ docs/                  build guide (PDF + HTML source), figures, recorded result
 
 Results from the recorded runs are in [docs/results](docs/results): the minimal-world flight, the mission with tracking and isolation, cancellation and landing, pursuit, and the world conversion check.
 Credits and licences: [THIRD_PARTY_CREDITS.md](THIRD_PARTY_CREDITS.md). Project code is Apache-2.0 ([LICENSE](LICENSE)).
+
+## Running on Windows with WSL2 (not tested)
+
+The project has only been tested on native Ubuntu 24.04. It should also run in **WSL2 with Ubuntu 24.04**, because every part is an ordinary Linux program and all traffic stays on localhost inside WSL. Treat this section as guidance, not a tested result.
+
+"ROS 2 Jazzy desktop" means the `ros-jazzy-desktop` apt packages; install them inside WSL Ubuntu 24.04 with the normal ROS 2 instructions. After that, follow the shortest path above unchanged.
+
+| area | what happens on WSL | what to do |
+|---|---|---|
+| WSL version | WSL1 does not work | Use WSL2 (`wsl -l -v` must show version 2) |
+| Windows for Gazebo, RViz and the GUI | Windows 11 (and recent Windows 10) includes WSLg, which shows Linux windows on the Windows desktop | Nothing extra with WSLg; without it, run headless (see below) |
+| Gazebo rendering (the biggest risk) | OpenGL goes through WSLg's translation to the Windows GPU driver. Gazebo's renderer and its camera sensors can show black images, crash, or be very slow on some setups | Update the Windows GPU driver. If the cameras are black or Gazebo crashes, run `export LIBGL_ALWAYS_SOFTWARE=1` before starting (slower but more reliable) |
+| No display at all | everything except the windows still works | `scripts/sim_all.sh gz_gui:=false rviz:=false gui:=false`, then use `tins8ctl` only |
+| Memory | WSL gets about half of the PC's RAM by default; the simulation needs about 8 to 10 GB | In `C:\Users\<you>\.wslconfig` set `[wsl2]`, `memory=12GB`, `processors=8`, then run `wsl --shutdown` from Windows |
+| Where to clone | under `/mnt/c/...` builds are very slow and file permissions break | Clone inside the Linux home folder, e.g. `~/tins8_ws` |
+| Line endings | cloning with Windows Git can add Windows line endings, which break the `.sh` scripts | Run `git clone` inside WSL, not from Windows |
+| Tab launcher | Terminator is usually not installed in WSL | `scripts/setup_deps.sh all` installs gnome-terminal, which opens through WSLg, and offers Terminator for the single-window layout; or open one Windows Terminal tab per component (`wsl`, then the `scripts/start_*.sh` commands) |
+| Speed | the real-time factor will likely be lower than on native Ubuntu (about 0.5 there with both aircraft flying) | Close heavy Windows programs and start with `rviz:=false` |
+
+A quick check on a new WSL machine:
+1. Build and run the unit tests (no graphics needed):
+
+   ```bash
+   scripts/build.sh
+   ```
+
+   ```bash
+   source scripts/env.sh && (cd src/tins8_mission && python3 -m pytest -q test)
+   ```
+
+2. Start headless and run the mission; if it ends with `COMPLETED`, the physics, PX4 and control side works:
+
+   ```bash
+   scripts/sim_all.sh gz_gui:=false rviz:=false gui:=false
+   ```
+
+   ```bash
+   tins8ctl mission start
+   ```
+
+3. Stop with `scripts/stop_all.sh`, then start again with the windows. In the GUI camera view you should see the street with green person boxes. If the image is black, use the `LIBGL_ALWAYS_SOFTWARE=1` fallback.

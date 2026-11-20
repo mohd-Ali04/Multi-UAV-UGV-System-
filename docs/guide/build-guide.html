@@ -125,18 +125,27 @@ That mode is implemented as <code>pursuit_node</code>, controllable from its own
 <h3>2.1 Dependencies and why they are needed</h3>
 <table>
 <tr><th>dependency</th><th>reason</th><th>pinned revision</th><th>install</th><th>needed at</th></tr>
-<tr><td>ros-jazzy-ros-gz, ros-gz-bridge, ros-gz-sim</td><td>Gazebo Harmonic and the ROS bridge</td><td>Jazzy apt</td><td><code>scripts/setup_deps.sh apt</code></td><td>runtime</td></tr>
+<tr><td>ros-jazzy-ros-gz-sim, ros-gz-bridge</td><td>Gazebo Harmonic and the ROS bridge</td><td>Jazzy apt</td><td><code>scripts/setup_deps.sh apt</code></td><td>runtime</td></tr>
 <tr><td>ros-jazzy-vision-msgs</td><td>Detection2DArray for YOLOX boxes</td><td>Jazzy apt</td><td>same</td><td>runtime</td></tr>
 <tr><td>ros-jazzy-robot-state-publisher, rviz2, tf2-ros</td><td>URDF on the measured joints, RViz view</td><td>Jazzy apt</td><td>same</td><td>runtime</td></tr>
 <tr><td>ros-jazzy-teleop-twist-keyboard</td><td>UGV teleoperation</td><td>Jazzy apt</td><td>same</td><td>runtime</td></tr>
 <tr><td>python3-opencv, numpy, scipy, yaml, pyqt5, matplotlib, pytest</td><td>YOLOX inference, GUI, analysis plots, unit tests</td><td>Ubuntu 24.04 apt</td><td>same</td><td>runtime (matplotlib and pytest: checks only)</td></tr>
-<tr><td>gnome-terminal (or tmux)</td><td>tabbed launcher</td><td>apt</td><td>same</td><td>runtime, optional</td></tr>
+<tr><td>gnome-terminal; Terminator or tmux</td><td>tab launcher (Terminator: single window)</td><td>apt</td><td>same; Terminator with <code>scripts/setup_deps.sh optional</code></td><td>runtime, optional</td></tr>
 <tr><td>PX4-Autopilot</td><td>SITL flight stack for the two aircraft</td><td>v1.17.0, d6f12ad1</td><td><code>scripts/setup_deps.sh px4</code></td><td>runtime (build needs PX4's own toolchain script)</td></tr>
 <tr><td>Micro XRCE-DDS Agent</td><td>PX4 uORB to ROS 2</td><td>v2.4.3, 73622810</td><td><code>scripts/setup_deps.sh agent</code></td><td>runtime</td></tr>
 <tr><td>px4_msgs</td><td>ROS message definitions matching PX4 1.17</td><td>release/1.17, 86d8239e</td><td><code>scripts/setup_deps.sh msgs</code></td><td>build and runtime</td></tr>
 <tr><td>google-chrome (headless)</td><td>rendering this guide to PDF</td><td>any recent</td><td>not installed by the scripts</td><td>documentation only</td></tr>
 </table>
 <p>No other toolbox or ROS package is required. Machine-specific paths go in <code>scripts/local.env</code>, which is not in Git, for example <code>export TINS8_DEPS=/path/to/deps</code>.</p>
+<h3>2.2 Checking and installing only what is missing</h3>
+<pre>scripts/setup_deps.sh check     # read-only: OK / MISSING / NOT-BUILT / WRONG version for every item
+scripts/setup_deps.sh all       # check, install or build only the missing items, check again</pre>
+<ul>
+  <li><b>What <code>check</code> covers:</b> Ubuntu 24.04 (and WSL, if detected), ROS 2 Jazzy, the 19 apt packages, the Gazebo version, PX4 at its pinned commit and built, the DDS agent, px4_msgs, and the optional launchers. Its exit code is the number of missing required items. If PX4 is already built elsewhere in the home folder, it prints a hint to set <code>TINS8_DEPS</code>.</li>
+  <li><b>What <code>all</code> does:</b> it lists only the missing apt packages and asks before using sudo. PX4, the agent and px4_msgs are each skipped when already built at the pinned version (<code>FORCE=1</code> rebuilds). It offers Terminator as an optional extra.</li>
+  <li><b>What it does not do:</b> install ROS 2 Jazzy, because that means adding the ROS apt repository to the system. When ROS is missing, <code>all</code> stops and gives the official install link.</li>
+  <li><b>Measured on the test laptop</b> (everything installed): <code>check</code> reported all items OK, and <code>all</code> skipped every step and finished in 2 s.</li>
+</ul>
 
 <!-- ===================================================================== -->
 <h2 id="s3">3. Stage 1: workspace, packages and interfaces</h2>
@@ -148,7 +157,8 @@ That mode is implemented as <code>pursuit_node</code>, controllable from its own
 </table>
 <pre>git clone https://github.com/mohd-Ali04/Multi-UAV-UGV-System-.git tins8_ws
 cd tins8_ws
-scripts/setup_deps.sh all      # apt (asks before sudo), PX4, agent, px4_msgs into ~/tins8_deps
+scripts/setup_deps.sh check    # what is installed and what is missing (read-only)
+scripts/setup_deps.sh all      # installs only the missing items (asks before sudo)
 scripts/build.sh               # colcon build of the 5 packages
 source scripts/env.sh          # in every new terminal
 cd src/tins8_mission &amp;&amp; python3 -m pytest -q test &amp;&amp; cd ../..</pre>
