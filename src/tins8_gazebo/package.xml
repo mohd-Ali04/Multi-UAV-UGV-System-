@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <package format="3">
   <name>tins8_gazebo</name>
-  <version>1.0.0</version>
+  <version>1.0.1</version>
   <description>Native Gazebo Harmonic Fieldlab world, TinS-12E UGV with two-tray guarded-exchange carousel, and QAV250 PX4 models for the 8-UAV course build. SIMULATION_GRADE_NOT_PHYSICALLY_QUALIFIED.</description>
   <maintainer email="student@example.com">COE 510 student</maintainer>
   <license>Apache-2.0 (code); see licenses/ for assets</license>

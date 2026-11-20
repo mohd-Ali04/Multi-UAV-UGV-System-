@@ -38,7 +38,7 @@
 
 <h1>TinS-12E with the 8-UAV carousel</h1>
 <p style="font-size:13pt;margin:0">ROS 2 Jazzy, Gazebo Sim 8.15.0 and PX4 SITL course build: build guide</p>
-<p class="meta">COE 510 course project. Version 1.0.0, 2026-11-20. Configuration label: 8-UAV, SIMULATION_GRADE (estimated dynamics, scripted pedestrians, no physical qualification).</p>
+<p class="meta">COE 510 course project. Version 1.0.1, 2026-11-20. Configuration label: 8-UAV, SIMULATION_GRADE (estimated dynamics, scripted pedestrians, no physical qualification).</p>
 
 <div class="box">
 <b>How to read this guide.</b> Section 1 explains the system and the original project it comes from. Sections 2 to 9 rebuild it in teaching order, starting from an empty workspace.
@@ -347,7 +347,7 @@ tins8ctl teleop                      # keyboard: i forward, j/l turn, k stop</pr
 <h2 id="s7">7. Stage 5: the two-aircraft mission, tracking and isolation</h2>
 <table class="stage">
 <tr><td>Purpose</td><td>Run the assessed mission. Select a pedestrian while two are visible, follow them in the inset, handle track loss, and show per-aircraft command isolation and cancellation.</td></tr>
-<tr><td>Working directory</td><td>repository root. Terminal: the Controls tab.</td></tr>
+<tr><td>Working directory</td><td>repository root. Terminal: the Controls pane (Operate tab).</td></tr>
 <tr><td>Files</td><td><code>mission_server.py</code>, <code>uav_agent.py</code>, <code>yolox_detector.py</code>, <code>tracking.py</code>, <code>target_tracker.py</code>, <code>evaluator.py</code>, <code>scripts/analyze_run.py</code></td></tr>
 </table>
 <pre>tins8ctl mission start --uav1 op1 --uav2 op2     # about 100 s; Ctrl+C cancels
@@ -471,17 +471,18 @@ tins8ctl pursuit uav01 stop          # or: ros2 service call /uav01/pursuit/comm
 <tr><td>Files</td><td><code>launch/sim_all.launch.py</code>, <code>gazebo.launch.py</code>, <code>nodes.launch.py</code>, <code>uav.launch.py</code>, <code>rviz.launch.py</code>; <code>scripts/start_*.sh</code>, <code>run_tabs.sh</code>, <code>sim_all.sh</code>, <code>stop_all.sh</code>; <code>gui.py</code>, <code>cli.py</code></td></tr>
 </table>
 <pre>scripts/sim_all.sh                      # everything in one terminal (gz_gui:=, rviz:=, gui:= true|false)
-scripts/run_tabs.sh                     # gnome-terminal tabs; scripts/run_tabs.sh tmux for tmux windows
+scripts/run_tabs.sh                     # one Terminator window (else gnome-terminal tabs, else tmux)
+scripts/run_tabs.sh terminator|gnome|tmux   # force one launcher; use run_tabs.sh OR sim_all.sh, not both
 scripts/stop_all.sh                     # clean shutdown of this project only</pre>
 <table>
-<tr><th>order</th><th>tab and command</th><th>ready when</th></tr>
-<tr><td>1</td><td>Gazebo: <code>scripts/start_gazebo.sh fieldlab</code></td><td>GUI shows the UGV; <code>gz_relay</code> logs <code>uav01 latch: attached</code> and <code>uav02 latch: attached</code></td></tr>
-<tr><td>2</td><td>DDS agent: <code>scripts/start_agent.sh</code></td><td>prints a session line per PX4 instance</td></tr>
-<tr><td>3, 4</td><td>PX4 uav01 / uav02: <code>scripts/start_px4.sh uav01</code> and <code>uav02</code></td><td><code>Ready for takeoff!</code> and <code>[tins8] re-applied 45 parameter overrides</code></td></tr>
-<tr><td>5</td><td>ROS nodes: <code>scripts/start_nodes.sh</code></td><td><code>tins8ctl status</code> shows 6 stowed, 2 active and fresh telemetry (age below 0.1 s)</td></tr>
-<tr><td>6</td><td>RViz: <code>scripts/start_rviz.sh</code></td><td>the URDF and fleet labels are visible</td></tr>
-<tr><td>7</td><td>GUI: <code>scripts/start_gui.sh</code></td><td>the camera image updates and the fleet table fills</td></tr>
-<tr><td>8, 9</td><td>Teleop UGV: <code>scripts/start_teleop.sh</code>; Controls: <code>scripts/controls.sh</code></td><td>prompt ready</td></tr>
+<tr><th>order</th><th>pane and command (Terminator tab)</th><th>ready when</th></tr>
+<tr><td>1</td><td>Gazebo (Simulation): <code>scripts/start_gazebo.sh fieldlab</code></td><td>GUI shows the UGV; <code>gz_relay</code> logs <code>uav01 latch: attached</code> and <code>uav02 latch: attached</code></td></tr>
+<tr><td>2</td><td>DDS agent (Simulation): <code>scripts/start_agent.sh</code></td><td>prints one banner line and is then quiet; the PX4 panes confirm the connection</td></tr>
+<tr><td>3, 4</td><td>PX4 uav01 / uav02 (Simulation): <code>scripts/start_px4.sh uav01</code> and <code>uav02</code></td><td><code>[uxrce_dds_client] successfully created ...</code> lines, <code>[tins8] re-applied 45 parameter overrides</code> and <code>Ready for takeoff!</code></td></tr>
+<tr><td>5</td><td>ROS nodes (ROS): <code>scripts/start_nodes.sh</code></td><td><code>tins8ctl status</code> shows 6 stowed, 2 active and fresh telemetry (age below 0.1 s)</td></tr>
+<tr><td>6</td><td>RViz (ROS): <code>scripts/start_rviz.sh</code></td><td>the URDF and fleet labels are visible</td></tr>
+<tr><td>7</td><td>GUI (ROS): <code>scripts/start_gui.sh</code></td><td>the camera image updates and the fleet table fills</td></tr>
+<tr><td>8, 9</td><td>Controls and Teleop UGV (Operate): <code>scripts/controls.sh</code>, <code>scripts/start_teleop.sh</code></td><td>prompt ready</td></tr>
 </table>
 <p>The GUI calls the same services and the same action as <code>tins8ctl</code>, and shows the shared command log with REQUESTED, ACCEPTED, REJECTED, COMPLETED, CANCELED and FAILED.
 It was exercised through its own buttons with <code>scripts/gui_click.py</code>, which runs the same Window class offscreen and presses a button: start mission, Select ID, Hold, and Land with target <i>ugv</i> (REJECTED).
@@ -500,13 +501,14 @@ The visible GUI and <code>tins8ctl watch</code> showed the same states.</p>
 <p><b>Troubleshooting.</b></p>
 <ul>
   <li>The GUI is larger than the screen: it opens inside a scroll area, sized to the available screen.</li>
-  <li>The tmux launcher was not tested here because tmux is not installed on the test machine; the gnome-terminal launcher was.</li>
+  <li>The Terminator and gnome-terminal launchers were tested. The tmux mode was not tested, because tmux is not installed on the test machine.</li>
+  <li>Starting both <code>run_tabs.sh</code> and <code>sim_all.sh</code> runs two copies that clash. Run <code>scripts/stop_all.sh</code> and start one of them.</li>
 </ul>
 
 <!-- ===================================================================== -->
 <h2 id="s10">10. Export: release archive and clean-clone test</h2>
-<pre>scripts/make_release.sh 1.0.0
-# release/tins8-course-1.0.0.tar.gz, plus .sha256; MANIFEST.sha256 inside the archive</pre>
+<pre>scripts/make_release.sh 1.0.1
+# release/tins8-course-1.0.1.tar.gz, plus .sha256; MANIFEST.sha256 inside the archive</pre>
 <ul>
   <li><b>Contents:</b> the archive holds every file tracked in Git, so it contains the source, interfaces, world, models, meshes, configs, launch files, scripts, GUI, RViz configuration, dependency setup script, README and this guide (HTML and PDF), plus the recorded results.</li>
   <li><b>External dependencies:</b> PX4, the agent and px4_msgs are installed by <code>scripts/setup_deps.sh</code> at pinned commits.</li>
@@ -529,7 +531,7 @@ The visible GUI and <code>tins8ctl watch</code> showed the same states.</p>
 <tr><td>Landing cases distinguished</td><td>ground pad done; UGV and re-stowage not implemented (rejected with the reason)</td><td>ops1</td></tr>
 <tr><td>High-speed IBVS pursuit (YOLOX boxes), at least 20 Hz, floor, standoff, loss failsafe</td><td>done in simulation</td><td>pursuit7, Section 8.2</td></tr>
 <tr><td>Terminal tool and GUI on the same interfaces with all states</td><td>done</td><td>Section 9, Figure 9</td></tr>
-<tr><td>One-command start, per-component commands, tabs, shutdown, relaunch</td><td>done (tmux mode untested)</td><td>Section 9</td></tr>
+<tr><td>One-command start, per-component commands, tabs, shutdown, relaunch</td><td>done (Terminator and gnome-terminal tested; tmux untested)</td><td>Section 9</td></tr>
 <tr><td>Release archive, manifest, credits, checksum; clean-clone test</td><td>see the handoff note</td><td>Section 10</td></tr>
 </table>
 

@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <package format="3">
   <name>tins8_bringup</name>
-  <version>1.0.0</version>
+  <version>1.0.1</version>
   <description>Launch files, Gazebo-ROS bridge map, PX4 parameter overrides and RViz configuration for the TinS-12E 8-UAV course build.</description>
   <maintainer email="student@example.com">COE 510 student</maintainer>
   <license>Apache-2.0</license>

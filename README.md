@@ -61,11 +61,18 @@ Start everything with one command (Gazebo with GUI, agent, two PX4 instances, al
 scripts/sim_all.sh
 ```
 
-Or start the same pieces in named terminal tabs: Gazebo, DDS agent, PX4 uav01, PX4 uav02, ROS nodes, RViz, GUI, Teleop UGV, Controls.
+Or start the same pieces in named terminals:
 
 ```bash
 scripts/run_tabs.sh
 ```
+
+With Terminator installed, this opens **one Terminator window** with three tabs split into named panes:
+- **Simulation:** Gazebo, DDS agent, PX4 uav01, PX4 uav02.
+- **ROS:** ROS nodes, RViz, GUI.
+- **Operate:** Controls (type `tins8ctl` commands here) and Teleop UGV.
+
+Without Terminator it falls back to gnome-terminal tabs, or tmux; force one with `scripts/run_tabs.sh terminator|gnome|tmux`. Use either `run_tabs.sh` or `sim_all.sh`, never both at once.
 
 In every new terminal you open yourself, run this first:
 
@@ -92,12 +99,12 @@ UAV02  DOCKED   owner=agent   armed=False nav=AUTO_LOITER telemetry_age=0.02s ..
 
 So: eight fleet positions, two active aircraft (independent PX4 models) and six stowed. Each active aircraft appears exactly once, and when it leaves its dock its stowed slot shows empty.
 
-- **PX4 tabs:** each prints `Ready for takeoff!` and `[tins8] re-applied 45 parameter overrides`.
-- **Agent tab:** it shows one session per PX4 instance.
+- **PX4 panes:** each prints `[uxrce_dds_client] successfully created ...` lines (the agent is connected), `[tins8] re-applied 45 parameter overrides` and `Ready for takeoff!`.
+- **Agent pane:** one banner line, then nothing; it is quiet while it runs.
 
 ## Example mission (terminal)
 
-All commands go in the Controls tab, or in any terminal after `source scripts/env.sh`.
+All commands go in the Controls pane (Operate tab), or in any terminal after `source ~/<workspace>/scripts/env.sh`.
 
 1. Run the full two-aircraft mission (about 100 s). It releases uav01 and flies it to op1, does the guarded carousel exchange to B_UPPER, then releases uav02 and flies it to op2. Ctrl+C or `tins8ctl mission cancel` cancels it: the aircraft hold and the carousel stops.
 
@@ -167,7 +174,7 @@ This stops only what this project started (PID files plus this workspace's Gazeb
 | symptom | cause and fix |
 |---|---|
 | `PX4 SITL is not built at ...` | Run `scripts/setup_deps.sh px4`, or set `TINS8_DEPS` in `scripts/local.env`. |
-| `UAV01 no status` or `telemetry_age=-1` | PX4 or the agent is not running yet. Check that the PX4 tab says `Ready for takeoff!` and the agent tab shows two sessions. |
+| `UAV01 no status` or `telemetry_age=-1` | PX4 or the agent is not running yet. Check that both PX4 panes say `Ready for takeoff!` and show `successfully created` lines. |
 | `REJECTED: dock latch is attached; release it with the carousel first` | Intended interlock. Use `tins8ctl carousel release uav01`, or run the mission. |
 | `REJECTED: uav02_dock is not accessible at station A_UPPER` | Intended interlock. Index the carousel to B_UPPER first. |
 | carousel `FAILED no measured progress (stall)` | Something blocks a tray. Clear it, then send the same index command again to resume. |
