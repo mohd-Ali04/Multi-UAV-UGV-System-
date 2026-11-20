@@ -1,0 +1,402 @@
+{
+  "label": "SIMULATION_GRADE_NOT_PHYSICALLY_QUALIFIED",
+  "actual_rotating_geometry": [
+    {
+      "name": "right_upper_carrier_wheel_link",
+      "component": "\u00c2\u00d6110",
+      "source_path": "TinS12E_Crawler_SimGrade_Copy:1+TinS12E_Crawler_Prepared:1+TinS12E_SourceAssembly:1+\u00c2\u00d6110:1",
+      "body_ids": [
+        "C0056_B00"
+      ],
+      "parent": "base_link",
+      "xyz_m": [
+        0.08449999999999963,
+        -0.32450000000000007,
+        0.326499999999999
+      ],
+      "axis": [
+        0,
+        1,
+        0
+      ],
+      "radius_m": 0.05500000000000001,
+      "width_m": 0.030000000000000006,
+      "policy": "Measured outer cylinder axis for rotating visual link. Source shaft/bearing topology remains incompletely documented; no suspension articulation or hardware qualification inferred."
+    }
+  ],
+  "visual_proxies": [
+    {
+      "name": "left_road_wheel_1",
+      "parent": "base_link",
+      "xyz_m": [
+        -0.553,
+        0.325,
+        0.095
+      ],
+      "axis": [
+        0,
+        1,
+        0
+      ],
+      "radius_m": 0.065,
+      "width_m": 0.1,
+      "dimension_basis": "Six lower stations per human input; equal spacing between measured bottom corner arc centres is assumed. Radius65mm fits measured inner track arcs; width100mm assumed. Not OEM wheel dimensions or manufactured placement.",
+      "label": "REFERENCE_VISUAL_ONLY",
+      "physical_geometry_mass_kg": 0,
+      "included_in_BOM": false,
+      "collision": false,
+      "physics_policy": "EXCLUDED_REFERENCE_VISUAL_ONLY; Ubuntu overlay handles visualization without physical zero-mass moving bodies.",
+      "actuation": "Visual phase from measured track speed; no independent powered axis or suspension motion."
+    },
+    {
+      "name": "left_road_wheel_2",
+      "parent": "base_link",
+      "xyz_m": [
+        -0.35823698000000004,
+        0.325,
+        0.095
+      ],
+      "axis": [
+        0,
+        1,
+        0
+      ],
+      "radius_m": 0.065,
+      "width_m": 0.1,
+      "dimension_basis": "Six lower stations per human input; equal spacing between measured bottom corner arc centres is assumed. Radius65mm fits measured inner track arcs; width100mm assumed. Not OEM wheel dimensions or manufactured placement.",
+      "label": "REFERENCE_VISUAL_ONLY",
+      "physical_geometry_mass_kg": 0,
+      "included_in_BOM": false,
+      "collision": false,
+      "physics_policy": "EXCLUDED_REFERENCE_VISUAL_ONLY; Ubuntu overlay handles visualization without physical zero-mass moving bodies.",
+      "actuation": "Visual phase from measured track speed; no independent powered axis or suspension motion."
+    },
+    {
+      "name": "left_road_wheel_3",
+      "parent": "base_link",
+      "xyz_m": [
+        -0.16347396000000003,
+        0.325,
+        0.095
+      ],
+      "axis": [
+        0,
+        1,
+        0
+      ],
+      "radius_m": 0.065,
+      "width_m": 0.1,
+      "dimension_basis": "Six lower stations per human input; equal spacing between measured bottom corner arc centres is assumed. Radius65mm fits measured inner track arcs; width100mm assumed. Not OEM wheel dimensions or manufactured placement.",
+      "label": "REFERENCE_VISUAL_ONLY",
+      "physical_geometry_mass_kg": 0,
+      "included_in_BOM": false,
+      "collision": false,
+      "physics_policy": "EXCLUDED_REFERENCE_VISUAL_ONLY; Ubuntu overlay handles visualization without physical zero-mass moving bodies.",
+      "actuation": "Visual phase from measured track speed; no independent powered axis or suspension motion."
+    },
+    {
+      "name": "left_road_wheel_4",
+      "parent": "base_link",
+      "xyz_m": [
+        0.03128905999999998,
+        0.325,
+        0.095
+      ],
+      "axis": [
+        0,
+        1,
+        0
+      ],
+      "radius_m": 0.065,
+      "width_m": 0.1,
+      "dimension_basis": "Six lower stations per human input; equal spacing between measured bottom corner arc centres is assumed. Radius65mm fits measured inner track arcs; width100mm assumed. Not OEM wheel dimensions or manufactured placement.",
+      "label": "REFERENCE_VISUAL_ONLY",
+      "physical_geometry_mass_kg": 0,
+      "included_in_BOM": false,
+      "collision": false,
+      "physics_policy": "EXCLUDED_REFERENCE_VISUAL_ONLY; Ubuntu overlay handles visualization without physical zero-mass moving bodies.",
+      "actuation": "Visual phase from measured track speed; no independent powered axis or suspension motion."
+    },
+    {
+      "name": "left_road_wheel_5",
+      "parent": "base_link",
+      "xyz_m": [
+        0.22605208,
+        0.325,
+        0.095
+      ],
+      "axis": [
+        0,
+        1,
+        0
+      ],
+      "radius_m": 0.065,
+      "width_m": 0.1,
+      "dimension_basis": "Six lower stations per human input; equal spacing between measured bottom corner arc centres is assumed. Radius65mm fits measured inner track arcs; width100mm assumed. Not OEM wheel dimensions or manufactured placement.",
+      "label": "REFERENCE_VISUAL_ONLY",
+      "physical_geometry_mass_kg": 0,
+      "included_in_BOM": false,
+      "collision": false,
+      "physics_policy": "EXCLUDED_REFERENCE_VISUAL_ONLY; Ubuntu overlay handles visualization without physical zero-mass moving bodies.",
+      "actuation": "Visual phase from measured track speed; no independent powered axis or suspension motion."
+    },
+    {
+      "name": "left_road_wheel_6",
+      "parent": "base_link",
+      "xyz_m": [
+        0.4208151,
+        0.325,
+        0.095
+      ],
+      "axis": [
+        0,
+        1,
+        0
+      ],
+      "radius_m": 0.065,
+      "width_m": 0.1,
+      "dimension_basis": "Six lower stations per human input; equal spacing between measured bottom corner arc centres is assumed. Radius65mm fits measured inner track arcs; width100mm assumed. Not OEM wheel dimensions or manufactured placement.",
+      "label": "REFERENCE_VISUAL_ONLY",
+      "physical_geometry_mass_kg": 0,
+      "included_in_BOM": false,
+      "collision": false,
+      "physics_policy": "EXCLUDED_REFERENCE_VISUAL_ONLY; Ubuntu overlay handles visualization without physical zero-mass moving bodies.",
+      "actuation": "Visual phase from measured track speed; no independent powered axis or suspension motion."
+    },
+    {
+      "name": "left_rear_idler_visual",
+      "parent": "base_link",
+      "xyz_m": [
+        -0.4591849,
+        0.325,
+        0.31
+      ],
+      "axis": [
+        0,
+        1,
+        0
+      ],
+      "radius_m": 0.065,
+      "width_m": 0.1,
+      "dimension_basis": "Centre/radius inferred as a visual fit to the measured rear-upper inner track arc; actual tensioner/axle mechanism unknown.",
+      "label": "REFERENCE_VISUAL_ONLY",
+      "physical_geometry_mass_kg": 0,
+      "included_in_BOM": false,
+      "collision": false,
+      "physics_policy": "EXCLUDED_REFERENCE_VISUAL_ONLY; Ubuntu overlay handles visualization without physical zero-mass moving bodies.",
+      "actuation": "Visual phase from measured track speed; no independent powered axis or suspension motion."
+    },
+    {
+      "name": "right_road_wheel_1",
+      "parent": "base_link",
+      "xyz_m": [
+        -0.553,
+        -0.325,
+        0.095
+      ],
+      "axis": [
+        0,
+        1,
+        0
+      ],
+      "radius_m": 0.065,
+      "width_m": 0.1,
+      "dimension_basis": "Six lower stations per human input; equal spacing between measured bottom corner arc centres is assumed. Radius65mm fits measured inner track arcs; width100mm assumed. Not OEM wheel dimensions or manufactured placement.",
+      "label": "REFERENCE_VISUAL_ONLY",
+      "physical_geometry_mass_kg": 0,
+      "included_in_BOM": false,
+      "collision": false,
+      "physics_policy": "EXCLUDED_REFERENCE_VISUAL_ONLY; Ubuntu overlay handles visualization without physical zero-mass moving bodies.",
+      "actuation": "Visual phase from measured track speed; no independent powered axis or suspension motion."
+    },
+    {
+      "name": "right_road_wheel_2",
+      "parent": "base_link",
+      "xyz_m": [
+        -0.35823698000000004,
+        -0.325,
+        0.095
+      ],
+      "axis": [
+        0,
+        1,
+        0
+      ],
+      "radius_m": 0.065,
+      "width_m": 0.1,
+      "dimension_basis": "Six lower stations per human input; equal spacing between measured bottom corner arc centres is assumed. Radius65mm fits measured inner track arcs; width100mm assumed. Not OEM wheel dimensions or manufactured placement.",
+      "label": "REFERENCE_VISUAL_ONLY",
+      "physical_geometry_mass_kg": 0,
+      "included_in_BOM": false,
+      "collision": false,
+      "physics_policy": "EXCLUDED_REFERENCE_VISUAL_ONLY; Ubuntu overlay handles visualization without physical zero-mass moving bodies.",
+      "actuation": "Visual phase from measured track speed; no independent powered axis or suspension motion."
+    },
+    {
+      "name": "right_road_wheel_3",
+      "parent": "base_link",
+      "xyz_m": [
+        -0.16347396000000003,
+        -0.325,
+        0.095
+      ],
+      "axis": [
+        0,
+        1,
+        0
+      ],
+      "radius_m": 0.065,
+      "width_m": 0.1,
+      "dimension_basis": "Six lower stations per human input; equal spacing between measured bottom corner arc centres is assumed. Radius65mm fits measured inner track arcs; width100mm assumed. Not OEM wheel dimensions or manufactured placement.",
+      "label": "REFERENCE_VISUAL_ONLY",
+      "physical_geometry_mass_kg": 0,
+      "included_in_BOM": false,
+      "collision": false,
+      "physics_policy": "EXCLUDED_REFERENCE_VISUAL_ONLY; Ubuntu overlay handles visualization without physical zero-mass moving bodies.",
+      "actuation": "Visual phase from measured track speed; no independent powered axis or suspension motion."
+    },
+    {
+      "name": "right_road_wheel_4",
+      "parent": "base_link",
+      "xyz_m": [
+        0.03128905999999998,
+        -0.325,
+        0.095
+      ],
+      "axis": [
+        0,
+        1,
+        0
+      ],
+      "radius_m": 0.065,
+      "width_m": 0.1,
+      "dimension_basis": "Six lower stations per human input; equal spacing between measured bottom corner arc centres is assumed. Radius65mm fits measured inner track arcs; width100mm assumed. Not OEM wheel dimensions or manufactured placement.",
+      "label": "REFERENCE_VISUAL_ONLY",
+      "physical_geometry_mass_kg": 0,
+      "included_in_BOM": false,
+      "collision": false,
+      "physics_policy": "EXCLUDED_REFERENCE_VISUAL_ONLY; Ubuntu overlay handles visualization without physical zero-mass moving bodies.",
+      "actuation": "Visual phase from measured track speed; no independent powered axis or suspension motion."
+    },
+    {
+      "name": "right_road_wheel_5",
+      "parent": "base_link",
+      "xyz_m": [
+        0.22605208,
+        -0.325,
+        0.095
+      ],
+      "axis": [
+        0,
+        1,
+        0
+      ],
+      "radius_m": 0.065,
+      "width_m": 0.1,
+      "dimension_basis": "Six lower stations per human input; equal spacing between measured bottom corner arc centres is assumed. Radius65mm fits measured inner track arcs; width100mm assumed. Not OEM wheel dimensions or manufactured placement.",
+      "label": "REFERENCE_VISUAL_ONLY",
+      "physical_geometry_mass_kg": 0,
+      "included_in_BOM": false,
+      "collision": false,
+      "physics_policy": "EXCLUDED_REFERENCE_VISUAL_ONLY; Ubuntu overlay handles visualization without physical zero-mass moving bodies.",
+      "actuation": "Visual phase from measured track speed; no independent powered axis or suspension motion."
+    },
+    {
+      "name": "right_road_wheel_6",
+      "parent": "base_link",
+      "xyz_m": [
+        0.4208151,
+        -0.325,
+        0.095
+      ],
+      "axis": [
+        0,
+        1,
+        0
+      ],
+      "radius_m": 0.065,
+      "width_m": 0.1,
+      "dimension_basis": "Six lower stations per human input; equal spacing between measured bottom corner arc centres is assumed. Radius65mm fits measured inner track arcs; width100mm assumed. Not OEM wheel dimensions or manufactured placement.",
+      "label": "REFERENCE_VISUAL_ONLY",
+      "physical_geometry_mass_kg": 0,
+      "included_in_BOM": false,
+      "collision": false,
+      "physics_policy": "EXCLUDED_REFERENCE_VISUAL_ONLY; Ubuntu overlay handles visualization without physical zero-mass moving bodies.",
+      "actuation": "Visual phase from measured track speed; no independent powered axis or suspension motion."
+    },
+    {
+      "name": "right_rear_idler_visual",
+      "parent": "base_link",
+      "xyz_m": [
+        -0.4591849,
+        -0.325,
+        0.31
+      ],
+      "axis": [
+        0,
+        1,
+        0
+      ],
+      "radius_m": 0.065,
+      "width_m": 0.1,
+      "dimension_basis": "Centre/radius inferred as a visual fit to the measured rear-upper inner track arc; actual tensioner/axle mechanism unknown.",
+      "label": "REFERENCE_VISUAL_ONLY",
+      "physical_geometry_mass_kg": 0,
+      "included_in_BOM": false,
+      "collision": false,
+      "physics_policy": "EXCLUDED_REFERENCE_VISUAL_ONLY; Ubuntu overlay handles visualization without physical zero-mass moving bodies.",
+      "actuation": "Visual phase from measured track speed; no independent powered axis or suspension motion."
+    },
+    {
+      "name": "left_upper_carrier_visual",
+      "parent": "base_link",
+      "xyz_m": [
+        0.08449999999999963,
+        0.32450000000000007,
+        0.326499999999999
+      ],
+      "axis": [
+        0,
+        1,
+        0
+      ],
+      "radius_m": 0.055,
+      "width_m": 0.03,
+      "dimension_basis": "Mirrored display envelope of the supplied right110mm carrier wheel; a matching left physical part is not supplied/verified.",
+      "label": "REFERENCE_VISUAL_ONLY",
+      "physical_geometry_mass_kg": 0,
+      "included_in_BOM": false,
+      "collision": false,
+      "physics_policy": "EXCLUDED_REFERENCE_VISUAL_ONLY; Ubuntu overlay handles visualization without physical zero-mass moving bodies.",
+      "actuation": "Visual phase from measured track speed; no independent powered axis or suspension motion."
+    }
+  ],
+  "hidden_contact_wheel_names": [
+    "left_contact_wheel_1",
+    "left_contact_wheel_2",
+    "left_contact_wheel_3",
+    "right_contact_wheel_1",
+    "right_contact_wheel_2",
+    "right_contact_wheel_3"
+  ],
+  "simplification": "Two faithful source sprockets and complete source tracks retained. One supplied110mm carrier axis measured. Twelve lower wheels, two rear idlers and the missing left carrier are explicitly generic display proxies, not finished crawler running gear. CA-22P fitting remains deferred.",
+  "total_proxy_physical_mass_kg": 0,
+  "tread_speed_policy": "Use measured hidden contact-wheel angular speed \u00d70.13m for belt speed. Visual wheel speed uses its recorded radius. Source drive-sprocket pitch radius remains unverified;0.13m is a display speed reference, not a measured pitch radius. Vehicle pose remains Gazebo-measured.",
+  "source_registers": [
+    {
+      "file": "Simulation/mechanical_design/tins12e/evidence/mechanism-surfaces.json",
+      "sha256": "48b1675178cc0b612a942c1e0a836d31ead9f5e798045c76a4ac503b6c00c83d",
+      "hash_policy": "sha256-text-crlf-to-lf-v1"
+    },
+    {
+      "file": "Simulation/mechanical_design/tins12e/integration/sim_grade/cad_extract_utf8/manifest.json",
+      "sha256": "10b3414b8c5ba953b33bba678713009ca9afc5c9e1752522c7b216f50a300037",
+      "hash_policy": "sha256-text-crlf-to-lf-v1"
+    },
+    {
+      "file": "src/tins_description/config/track_path.yaml",
+      "sha256": "d46d2a148a8f9d98231a6c75ffdec208b1606e3b53f07b13c969395e3587678d",
+      "hash_policy": "sha256-text-crlf-to-lf-v1"
+    }
+  ]
+}

@@ -1,0 +1,8 @@
+# command: TAKEOFF_HOLD | GOTO_OBSERVATION | GOTO_WAYPOINT | HOLD | LAND
+string uav_id
+string command
+string argument      # observation point or waypoint name
+---
+bool accepted
+string request_id
+string message

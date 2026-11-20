@@ -1,0 +1,35 @@
+t_sim,request_id,target,command,argument,state,detail
+13.880,mission-75482,mission,RUN,,ACCEPTED,uav01->op1 uav02->op2 track=-1
+13.916,mission-75482,mission,CHECK,,ACCEPTED,waiting for measured carousel state and PX4 telemetry
+13.916,mission-75482,mission,RELEASE_1,,ACCEPTED,releasing uav01
+13.916,car-75482-001,carousel,RELEASE,uav01,REQUESTED,
+13.916,car-75482-001,carousel,RELEASE,uav01,ACCEPTED,detach sent; waiting for measured latch state
+13.940,car-75482-001,carousel,RELEASE,uav01,COMPLETED,latch state measured detached
+14.036,mission-75482,mission,FLY_1,,ACCEPTED,uav01 to op1
+14.048,uav01-75482-001,uav01,GOTO_OBSERVATION,op1,REQUESTED,
+14.072,uav01-75482-001,uav01,GOTO_OBSERVATION,op1,ACCEPTED,"flying to op1 (-12.0, -19.0, 8.0)"
+31.544,uav01-75482-001,uav01,GOTO_OBSERVATION,op1,COMPLETED,"arrived at op1, error 0.18 m; holding"
+31.628,mission-75482,mission,INDEX_B,,ACCEPTED,guarded exchange to B_UPPER
+31.628,car-75500-002,carousel,INDEX_TO_B_UPPER,,REQUESTED,
+31.628,car-75500-002,carousel,INDEX_TO_B_UPPER,,ACCEPTED,guarded route through waypoints 1..12
+80.504,car-75500-002,carousel,INDEX,,COMPLETED,measured station B_UPPER
+80.516,mission-75482,mission,RELEASE_2,,ACCEPTED,releasing uav02
+80.528,car-75549-003,carousel,RELEASE,uav02,REQUESTED,
+80.528,car-75549-003,carousel,RELEASE,uav02,ACCEPTED,detach sent; waiting for measured latch state
+80.540,car-75549-003,carousel,RELEASE,uav02,COMPLETED,latch state measured detached
+80.648,mission-75482,mission,FLY_2,,ACCEPTED,uav02 to op2
+80.648,uav02-75549-001,uav02,GOTO_OBSERVATION,op2,REQUESTED,
+80.672,uav02-75549-001,uav02,GOTO_OBSERVATION,op2,ACCEPTED,"flying to op2 (16.0, -18.0, 10.0)"
+105.572,uav02-75549-001,uav02,GOTO_OBSERVATION,op2,COMPLETED,"arrived at op2, error 0.25 m; holding"
+105.668,mission-75482,mission,DONE,,ACCEPTED,both aircraft holding at their observation points
+105.668,mission-75482,mission,RUN,,COMPLETED,uav01 HOLD at op1 (err 0.03 m); uav02 HOLD at op2 (err 0.25 m)
+112.820,trk-75581-001,tracker,SELECT,8,REQUESTED,
+112.868,trk-75581-001,tracker,SELECT,8,ACCEPTED,selected; visible now
+113.108,trk-75581-001,tracker,SELECT,8,COMPLETED,inset centred 0.28 s after selection
+118.208,pur-75587-001,uav01/pursuit,ENGAGE,8,REQUESTED,
+118.280,pur-75587-001,uav01/pursuit,ENGAGE,8,ACCEPTED,pursuing track 8
+143.072,pur-75587-001,uav01/pursuit,ENGAGE,8,COMPLETED,standoff reached in 24.86 s (est. range 1.42 m); terminal hover
+195.932,pur-75665-002,uav01/pursuit,DISENGAGE,-1,REQUESTED,
+195.932,pur-75665-002,uav01/pursuit,DISENGAGE,-1,ACCEPTED,stopping pursuit; hover then position hold
+195.932,pur-75587-001,uav01/pursuit,ENGAGE,8,CANCELED,stopped by operator
+200.804,trk-75581-001,tracker,TRACK,8,FAILED,TRACK LOST: selected ID not detected

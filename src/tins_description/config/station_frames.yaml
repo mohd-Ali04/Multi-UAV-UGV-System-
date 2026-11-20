@@ -1,0 +1,547 @@
+schema_version: 1
+label: SIMULATION_GRADE_NOT_PHYSICALLY_QUALIFIED
+units: m/rad
+convention: X forward/Y left/Z up
+assignments:
+  tray_a:
+  - UAV01
+  - UAV03
+  - UAV05
+  - UAV07
+  tray_b:
+  - UAV02
+  - UAV04
+  - UAV06
+  - UAV08
+frame_policy: Every docking/pad/latch/tag frame belongs to its moving tray through the joint tree. No independent
+  world-fixed pad poses.
+tag_size_m: null
+tag_design_status: Eight pad-centred mount frames only; printed size/camera acquisition and nested carrier guidance
+  need Ubuntu vision validation.
+latch_status: Named reference frames only; no physical latch/retention hardware or engagement qualification.
+frames:
+- name: uav01_dock
+  role: station_and_docking_frame
+  parent: tray_a
+  xyz_m:
+  - 0.1675
+  - 0.1675
+  - 0.003
+  rpy_rad:
+  - 0
+  - 0
+  - 0
+  type: fixed
+  aircraft: UAV01
+  pose_basis: Existing measured geometric docking datum; unqualified aircraft interface.
+- name: uav01_pad
+  role: pad_surface_reference
+  parent: uav01_dock
+  xyz_m:
+  - 0
+  - 0
+  - 0
+  rpy_rad:
+  - 0
+  - 0
+  - 0
+  type: fixed
+  aircraft: UAV01
+  reference_only: true
+  physical_mass_kg: 0
+  pose_basis: Coincident with pad-centred docking datum; provisional reference frame only, no retention/tag hardware
+    dimensions committed.
+- name: uav01_latch
+  role: latch_interface_reference
+  parent: uav01_dock
+  xyz_m:
+  - 0
+  - 0
+  - 0
+  rpy_rad:
+  - 0
+  - 0
+  - 0
+  type: fixed
+  aircraft: UAV01
+  reference_only: true
+  physical_mass_kg: 0
+  pose_basis: Coincident with pad-centred docking datum; provisional reference frame only, no retention/tag hardware
+    dimensions committed.
+- name: uav01_tag_mount
+  role: landing_tag_mount_reference
+  parent: uav01_dock
+  xyz_m:
+  - 0
+  - 0
+  - 0
+  rpy_rad:
+  - 0
+  - 0
+  - 0
+  type: fixed
+  aircraft: UAV01
+  reference_only: true
+  physical_mass_kg: 0
+  pose_basis: Coincident with pad-centred docking datum; provisional reference frame only, no retention/tag hardware
+    dimensions committed.
+- name: uav02_dock
+  role: station_and_docking_frame
+  parent: tray_b
+  xyz_m:
+  - 0.1675
+  - 0.1675
+  - 0.003
+  rpy_rad:
+  - 0
+  - 0
+  - 0
+  type: fixed
+  aircraft: UAV02
+  pose_basis: Existing measured geometric docking datum; unqualified aircraft interface.
+- name: uav02_pad
+  role: pad_surface_reference
+  parent: uav02_dock
+  xyz_m:
+  - 0
+  - 0
+  - 0
+  rpy_rad:
+  - 0
+  - 0
+  - 0
+  type: fixed
+  aircraft: UAV02
+  reference_only: true
+  physical_mass_kg: 0
+  pose_basis: Coincident with pad-centred docking datum; provisional reference frame only, no retention/tag hardware
+    dimensions committed.
+- name: uav02_latch
+  role: latch_interface_reference
+  parent: uav02_dock
+  xyz_m:
+  - 0
+  - 0
+  - 0
+  rpy_rad:
+  - 0
+  - 0
+  - 0
+  type: fixed
+  aircraft: UAV02
+  reference_only: true
+  physical_mass_kg: 0
+  pose_basis: Coincident with pad-centred docking datum; provisional reference frame only, no retention/tag hardware
+    dimensions committed.
+- name: uav02_tag_mount
+  role: landing_tag_mount_reference
+  parent: uav02_dock
+  xyz_m:
+  - 0
+  - 0
+  - 0
+  rpy_rad:
+  - 0
+  - 0
+  - 0
+  type: fixed
+  aircraft: UAV02
+  reference_only: true
+  physical_mass_kg: 0
+  pose_basis: Coincident with pad-centred docking datum; provisional reference frame only, no retention/tag hardware
+    dimensions committed.
+- name: uav03_dock
+  role: station_and_docking_frame
+  parent: tray_a
+  xyz_m:
+  - 0.1675
+  - -0.1675
+  - 0.003
+  rpy_rad:
+  - 0
+  - 0
+  - 0
+  type: fixed
+  aircraft: UAV03
+  pose_basis: Existing measured geometric docking datum; unqualified aircraft interface.
+- name: uav03_pad
+  role: pad_surface_reference
+  parent: uav03_dock
+  xyz_m:
+  - 0
+  - 0
+  - 0
+  rpy_rad:
+  - 0
+  - 0
+  - 0
+  type: fixed
+  aircraft: UAV03
+  reference_only: true
+  physical_mass_kg: 0
+  pose_basis: Coincident with pad-centred docking datum; provisional reference frame only, no retention/tag hardware
+    dimensions committed.
+- name: uav03_latch
+  role: latch_interface_reference
+  parent: uav03_dock
+  xyz_m:
+  - 0
+  - 0
+  - 0
+  rpy_rad:
+  - 0
+  - 0
+  - 0
+  type: fixed
+  aircraft: UAV03
+  reference_only: true
+  physical_mass_kg: 0
+  pose_basis: Coincident with pad-centred docking datum; provisional reference frame only, no retention/tag hardware
+    dimensions committed.
+- name: uav03_tag_mount
+  role: landing_tag_mount_reference
+  parent: uav03_dock
+  xyz_m:
+  - 0
+  - 0
+  - 0
+  rpy_rad:
+  - 0
+  - 0
+  - 0
+  type: fixed
+  aircraft: UAV03
+  reference_only: true
+  physical_mass_kg: 0
+  pose_basis: Coincident with pad-centred docking datum; provisional reference frame only, no retention/tag hardware
+    dimensions committed.
+- name: uav04_dock
+  role: station_and_docking_frame
+  parent: tray_b
+  xyz_m:
+  - 0.1675
+  - -0.1675
+  - 0.003
+  rpy_rad:
+  - 0
+  - 0
+  - 0
+  type: fixed
+  aircraft: UAV04
+  pose_basis: Existing measured geometric docking datum; unqualified aircraft interface.
+- name: uav04_pad
+  role: pad_surface_reference
+  parent: uav04_dock
+  xyz_m:
+  - 0
+  - 0
+  - 0
+  rpy_rad:
+  - 0
+  - 0
+  - 0
+  type: fixed
+  aircraft: UAV04
+  reference_only: true
+  physical_mass_kg: 0
+  pose_basis: Coincident with pad-centred docking datum; provisional reference frame only, no retention/tag hardware
+    dimensions committed.
+- name: uav04_latch
+  role: latch_interface_reference
+  parent: uav04_dock
+  xyz_m:
+  - 0
+  - 0
+  - 0
+  rpy_rad:
+  - 0
+  - 0
+  - 0
+  type: fixed
+  aircraft: UAV04
+  reference_only: true
+  physical_mass_kg: 0
+  pose_basis: Coincident with pad-centred docking datum; provisional reference frame only, no retention/tag hardware
+    dimensions committed.
+- name: uav04_tag_mount
+  role: landing_tag_mount_reference
+  parent: uav04_dock
+  xyz_m:
+  - 0
+  - 0
+  - 0
+  rpy_rad:
+  - 0
+  - 0
+  - 0
+  type: fixed
+  aircraft: UAV04
+  reference_only: true
+  physical_mass_kg: 0
+  pose_basis: Coincident with pad-centred docking datum; provisional reference frame only, no retention/tag hardware
+    dimensions committed.
+- name: uav05_dock
+  role: station_and_docking_frame
+  parent: tray_a
+  xyz_m:
+  - -0.1675
+  - 0.1675
+  - 0.003
+  rpy_rad:
+  - 0
+  - 0
+  - 0
+  type: fixed
+  aircraft: UAV05
+  pose_basis: Existing measured geometric docking datum; unqualified aircraft interface.
+- name: uav05_pad
+  role: pad_surface_reference
+  parent: uav05_dock
+  xyz_m:
+  - 0
+  - 0
+  - 0
+  rpy_rad:
+  - 0
+  - 0
+  - 0
+  type: fixed
+  aircraft: UAV05
+  reference_only: true
+  physical_mass_kg: 0
+  pose_basis: Coincident with pad-centred docking datum; provisional reference frame only, no retention/tag hardware
+    dimensions committed.
+- name: uav05_latch
+  role: latch_interface_reference
+  parent: uav05_dock
+  xyz_m:
+  - 0
+  - 0
+  - 0
+  rpy_rad:
+  - 0
+  - 0
+  - 0
+  type: fixed
+  aircraft: UAV05
+  reference_only: true
+  physical_mass_kg: 0
+  pose_basis: Coincident with pad-centred docking datum; provisional reference frame only, no retention/tag hardware
+    dimensions committed.
+- name: uav05_tag_mount
+  role: landing_tag_mount_reference
+  parent: uav05_dock
+  xyz_m:
+  - 0
+  - 0
+  - 0
+  rpy_rad:
+  - 0
+  - 0
+  - 0
+  type: fixed
+  aircraft: UAV05
+  reference_only: true
+  physical_mass_kg: 0
+  pose_basis: Coincident with pad-centred docking datum; provisional reference frame only, no retention/tag hardware
+    dimensions committed.
+- name: uav06_dock
+  role: station_and_docking_frame
+  parent: tray_b
+  xyz_m:
+  - -0.1675
+  - 0.1675
+  - 0.003
+  rpy_rad:
+  - 0
+  - 0
+  - 0
+  type: fixed
+  aircraft: UAV06
+  pose_basis: Existing measured geometric docking datum; unqualified aircraft interface.
+- name: uav06_pad
+  role: pad_surface_reference
+  parent: uav06_dock
+  xyz_m:
+  - 0
+  - 0
+  - 0
+  rpy_rad:
+  - 0
+  - 0
+  - 0
+  type: fixed
+  aircraft: UAV06
+  reference_only: true
+  physical_mass_kg: 0
+  pose_basis: Coincident with pad-centred docking datum; provisional reference frame only, no retention/tag hardware
+    dimensions committed.
+- name: uav06_latch
+  role: latch_interface_reference
+  parent: uav06_dock
+  xyz_m:
+  - 0
+  - 0
+  - 0
+  rpy_rad:
+  - 0
+  - 0
+  - 0
+  type: fixed
+  aircraft: UAV06
+  reference_only: true
+  physical_mass_kg: 0
+  pose_basis: Coincident with pad-centred docking datum; provisional reference frame only, no retention/tag hardware
+    dimensions committed.
+- name: uav06_tag_mount
+  role: landing_tag_mount_reference
+  parent: uav06_dock
+  xyz_m:
+  - 0
+  - 0
+  - 0
+  rpy_rad:
+  - 0
+  - 0
+  - 0
+  type: fixed
+  aircraft: UAV06
+  reference_only: true
+  physical_mass_kg: 0
+  pose_basis: Coincident with pad-centred docking datum; provisional reference frame only, no retention/tag hardware
+    dimensions committed.
+- name: uav07_dock
+  role: station_and_docking_frame
+  parent: tray_a
+  xyz_m:
+  - -0.1675
+  - -0.1675
+  - 0.003
+  rpy_rad:
+  - 0
+  - 0
+  - 0
+  type: fixed
+  aircraft: UAV07
+  pose_basis: Existing measured geometric docking datum; unqualified aircraft interface.
+- name: uav07_pad
+  role: pad_surface_reference
+  parent: uav07_dock
+  xyz_m:
+  - 0
+  - 0
+  - 0
+  rpy_rad:
+  - 0
+  - 0
+  - 0
+  type: fixed
+  aircraft: UAV07
+  reference_only: true
+  physical_mass_kg: 0
+  pose_basis: Coincident with pad-centred docking datum; provisional reference frame only, no retention/tag hardware
+    dimensions committed.
+- name: uav07_latch
+  role: latch_interface_reference
+  parent: uav07_dock
+  xyz_m:
+  - 0
+  - 0
+  - 0
+  rpy_rad:
+  - 0
+  - 0
+  - 0
+  type: fixed
+  aircraft: UAV07
+  reference_only: true
+  physical_mass_kg: 0
+  pose_basis: Coincident with pad-centred docking datum; provisional reference frame only, no retention/tag hardware
+    dimensions committed.
+- name: uav07_tag_mount
+  role: landing_tag_mount_reference
+  parent: uav07_dock
+  xyz_m:
+  - 0
+  - 0
+  - 0
+  rpy_rad:
+  - 0
+  - 0
+  - 0
+  type: fixed
+  aircraft: UAV07
+  reference_only: true
+  physical_mass_kg: 0
+  pose_basis: Coincident with pad-centred docking datum; provisional reference frame only, no retention/tag hardware
+    dimensions committed.
+- name: uav08_dock
+  role: station_and_docking_frame
+  parent: tray_b
+  xyz_m:
+  - -0.1675
+  - -0.1675
+  - 0.003
+  rpy_rad:
+  - 0
+  - 0
+  - 0
+  type: fixed
+  aircraft: UAV08
+  pose_basis: Existing measured geometric docking datum; unqualified aircraft interface.
+- name: uav08_pad
+  role: pad_surface_reference
+  parent: uav08_dock
+  xyz_m:
+  - 0
+  - 0
+  - 0
+  rpy_rad:
+  - 0
+  - 0
+  - 0
+  type: fixed
+  aircraft: UAV08
+  reference_only: true
+  physical_mass_kg: 0
+  pose_basis: Coincident with pad-centred docking datum; provisional reference frame only, no retention/tag hardware
+    dimensions committed.
+- name: uav08_latch
+  role: latch_interface_reference
+  parent: uav08_dock
+  xyz_m:
+  - 0
+  - 0
+  - 0
+  rpy_rad:
+  - 0
+  - 0
+  - 0
+  type: fixed
+  aircraft: UAV08
+  reference_only: true
+  physical_mass_kg: 0
+  pose_basis: Coincident with pad-centred docking datum; provisional reference frame only, no retention/tag hardware
+    dimensions committed.
+- name: uav08_tag_mount
+  role: landing_tag_mount_reference
+  parent: uav08_dock
+  xyz_m:
+  - 0
+  - 0
+  - 0
+  rpy_rad:
+  - 0
+  - 0
+  - 0
+  type: fixed
+  aircraft: UAV08
+  reference_only: true
+  physical_mass_kg: 0
+  pose_basis: Coincident with pad-centred docking datum; provisional reference frame only, no retention/tag hardware
+    dimensions committed.
+source_hash_policy: sha256-text-crlf-to-lf-v1
+source_hashes:
+  Simulation/mechanical_design/tins12e/carousel/double_level_station_locks/link-joint-frame-register.json: 719638bf38518be47e8b1dba5c5d84cee3bb40de8367d2ee67925a1c6a6a2aec
+  Simulation/mechanical_design/tins12e/carousel/double_level_motion_control/evidence/current-native-clearance-model.json: 430718cef7669e8c15d3296ac487dd34431e486dc0f272455a51d286839510b1
+  src/tins_description/config/guarded_exchange_waypoints.yaml: 9b36602cddd1fcc87a4a84dd8474ba816857fb5a5ad8c58899b38ebf5c6fa508

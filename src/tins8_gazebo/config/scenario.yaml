@@ -1,0 +1,46 @@
+# Course scenario: positions are Gazebo world ENU metres (x east, y north, z up).
+# Layout origin and default stops come from the Fieldlab defaults (seed 42).
+label: SIMULATION_GRADE_NOT_PHYSICALLY_QUALIFIED
+world_name: fieldlab
+world_origin: {lat: 47.397742, lon: 8.545594, alt: 488.0}   # Fieldlab world.py spherical origin
+
+ugv: {x: -28.0, y: -22.0, z: 0.02, yaw: 0.0}                 # Fieldlab mission start, facing stop alpha
+
+# Fixed forward camera on each active QAV250 (no gimbal). Tilt is positive nose-down.
+camera:
+  x: 0.09
+  z: 0.0
+  tilt_down_deg: 20.0
+  hfov_rad: 1.74           # ~100 deg; fy ~ 270 px, so a 1.75 m person fills 65 % of 480 px at ~1.5 m
+  width: 640
+  height: 480
+  rate_hz: 15
+
+# Predefined observation points (hold positions).  yaw_deg is ENU (0 = east, -90 = south).
+observation_points:
+  op1: {x: -12.0, y: -19.0, z: 8.0, yaw_deg: -90.0}   # UAV01: north of the alpha pedestrian group, looking south
+  op2: {x: 16.0, y: -18.0, z: 10.0, yaw_deg: -90.0}   # UAV02: above stop bravo
+
+# Fixed inspection waypoints the operator can choose for the flight demonstration.
+inspection_waypoints:
+  wp_road_east: {x: 0.0, y: -22.0, z: 6.0, yaw_deg: 0.0}
+  wp_bus_stop: {x: 16.0, y: -32.0, z: 7.0, yaw_deg: -90.0}
+  wp_start_north: {x: -28.0, y: -8.0, z: 6.0, yaw_deg: 90.0}
+
+# Ground landing pads (open ground, clear of buildings in the seed-42 layout).  'land pad_west'
+# flies there at the current height, then hands over to PX4 AUTO_LAND.
+landing_pads:
+  pad_west: {x: -22.0, y: -14.0}
+  pad_east: {x: 6.0, y: -14.0}
+
+# Pedestrians that walk.  Every other Fieldlab person stays where the seed-42 layout put them.
+# Routes are world-frame waypoints that loop; 'exit' is used by the "leave view" command.
+walkers:
+  person_12:
+    speed: 1.0
+    route: [[-8.2, -30.8], [-2.0, -30.8], [-2.0, -34.0], [-8.2, -34.0]]
+    exit: [[-2.0, -30.8], [14.0, -30.8], [26.0, -30.8]]
+  person_9:
+    speed: 0.8
+    route: [[-14.4, -31.3], [-19.0, -31.3], [-19.0, -28.0], [-14.4, -28.0]]
+    exit: [[-19.0, -31.3], [-40.0, -31.3]]

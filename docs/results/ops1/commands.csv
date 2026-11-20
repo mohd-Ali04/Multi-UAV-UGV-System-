@@ -1,0 +1,37 @@
+t_sim,request_id,target,command,argument,state,detail
+17.344,mission-75814,mission,RUN,,ACCEPTED,uav01->op1 uav02->op2 track=-1
+17.368,mission-75814,mission,CHECK,,ACCEPTED,waiting for measured carousel state and PX4 telemetry
+17.368,mission-75814,mission,RELEASE_1,,ACCEPTED,releasing uav01
+17.368,car-75814-001,carousel,RELEASE,uav01,REQUESTED,
+17.368,car-75814-001,carousel,RELEASE,uav01,ACCEPTED,detach sent; waiting for measured latch state
+17.392,car-75814-001,carousel,RELEASE,uav01,COMPLETED,latch state measured detached
+17.488,mission-75814,mission,FLY_1,,ACCEPTED,uav01 to op1
+17.500,uav01-75814-001,uav01,GOTO_OBSERVATION,op1,REQUESTED,
+17.512,uav01-75814-001,uav01,GOTO_OBSERVATION,op1,ACCEPTED,"flying to op1 (-12.0, -19.0, 8.0)"
+32.908,uav01-75814-001,uav01,GOTO_OBSERVATION,op1,COMPLETED,"arrived at op1, error 0.20 m; holding"
+33.040,mission-75814,mission,INDEX_B,,ACCEPTED,guarded exchange to B_UPPER
+33.040,car-75830-002,carousel,INDEX_TO_B_UPPER,,REQUESTED,
+33.040,car-75830-002,carousel,INDEX_TO_B_UPPER,,ACCEPTED,guarded route through waypoints 1..12
+44.356,mission-75814,mission,RUN,,CANCELED,"operator cancel: airborne aircraft holding, carousel stopped"
+44.356,car-75841-003,carousel,STOP,,REQUESTED,
+44.356,car-75830-002,carousel,INDEX,,CANCELED,stopped by operator at measured position
+44.356,car-75841-003,carousel,STOP,,ACCEPTED,holding measured position
+62.872,car-75860-004,carousel,INDEX_TO_B_UPPER,,REQUESTED,
+62.872,car-75860-004,carousel,INDEX_TO_B_UPPER,,ACCEPTED,guarded route through waypoints 3..12
+100.504,car-75860-004,carousel,INDEX,,COMPLETED,measured station B_UPPER
+104.704,car-75902-005,carousel,RELEASE,uav02,REQUESTED,
+104.704,car-75902-005,carousel,RELEASE,uav02,ACCEPTED,detach sent; waiting for measured latch state
+104.740,car-75902-005,carousel,RELEASE,uav02,COMPLETED,latch state measured detached
+107.128,uav02-75905-001,uav02,GOTO_OBSERVATION,op2,REQUESTED,
+107.164,uav02-75905-001,uav02,GOTO_OBSERVATION,op2,ACCEPTED,"flying to op2 (16.0, -18.0, 10.0)"
+131.740,uav02-75905-001,uav02,GOTO_OBSERVATION,op2,COMPLETED,"arrived at op2, error 0.23 m; holding"
+133.888,uav01-75931-002,uav01,LAND,ugv,REQUESTED,
+133.888,uav01-75931-002,uav01,LAND,ugv,REJECTED,landing on the UGV is not implemented in this build: it needs precision landing on the deck and re-latching the dock; land on a ground pad instead
+136.732,uav01-75934-003,uav01,LAND,restow,REQUESTED,
+136.732,uav01-75934-003,uav01,LAND,restow,REJECTED,"re-stowage into the carousel is not implemented in this build: it needs dock alignment, re-latching and the reverse guarded exchange"
+137.680,uav01-75935-004,uav01,LAND,pad_west,REQUESTED,
+137.680,uav01-75935-004,uav01,LAND,pad_west,ACCEPTED,"flying to ground pad pad_west (-22.0, -14.0), then PX4 AUTO_LAND"
+158.944,uav01-75935-004,uav01,LAND,pad_west,COMPLETED,disarmed on the ground after AUTO_LAND
+160.132,uav02-75958-002,uav02,LAND,,REQUESTED,
+160.132,uav02-75958-002,uav02,LAND,,ACCEPTED,PX4 AUTO_LAND on the ground below (ground case; not the UGV)
+175.636,uav02-75958-002,uav02,LAND,,COMPLETED,disarmed on the ground after AUTO_LAND

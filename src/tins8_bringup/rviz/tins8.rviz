@@ -1,0 +1,74 @@
+Panels:
+  - Class: rviz_common/Displays
+    Name: Displays
+    Property Tree Widget:
+      Expanded: ~
+    Help Height: 0
+  - Class: rviz_common/Views
+    Name: Views
+Visualization Manager:
+  Class: ""
+  Displays:
+    - Class: rviz_default_plugins/Grid
+      Name: Grid
+      Enabled: true
+      Cell Size: 5
+      Plane Cell Count: 40
+      Reference Frame: world
+      Color: 160; 160; 164
+    - Class: rviz_default_plugins/RobotModel
+      Name: TinS-12E UGV (URDF, measured tray joints)
+      Enabled: true
+      Description Source: Topic
+      Description Topic:
+        Value: /robot_description
+        Durability Policy: Transient Local
+      TF Prefix: ""
+      Visual Enabled: true
+      Collision Enabled: false
+    - Class: rviz_default_plugins/MarkerArray
+      Name: Fleet, points, ground truth
+      Enabled: true
+      Topic:
+        Value: /fleet/markers
+    - Class: rviz_default_plugins/TF
+      Name: TF
+      Enabled: false
+    - Class: rviz_default_plugins/Image
+      Name: UAV01 camera (detections)
+      Enabled: true
+      Topic:
+        Value: /uav01/camera/annotated
+        Reliability Policy: Best Effort
+    - Class: rviz_default_plugins/Image
+      Name: UAV01 inset
+      Enabled: true
+      Topic:
+        Value: /uav01/camera/inset
+        Reliability Policy: Best Effort
+  Enabled: true
+  Global Options:
+    Background Color: 48; 48; 48
+    Fixed Frame: world
+    Frame Rate: 20
+  Name: root
+  Tools:
+    - Class: rviz_default_plugins/Interact
+    - Class: rviz_default_plugins/MoveCamera
+    - Class: rviz_default_plugins/Select
+  Value: true
+  Views:
+    Current:
+      Class: rviz_default_plugins/Orbit
+      Name: Current View
+      Distance: 28
+      Focal Point:
+        X: -20
+        Y: -22
+        Z: 2
+      Pitch: 0.55
+      Yaw: 3.9
+      Target Frame: world
+Window Geometry:
+  Height: 900
+  Width: 1400

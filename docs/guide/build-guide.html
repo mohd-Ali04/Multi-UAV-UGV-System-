@@ -1,0 +1,567 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>TinS-12E 8-UAV course build: build guide</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+  @page { size: A4; margin: 16mm 15mm 16mm 15mm; }
+  :root { --ink:#1d2320; --muted:#55605a; --rule:#c9d0c8; --code:#f3f5f1; --accent:#3f6b3a; }
+  body { font-family: "DejaVu Sans", "Liberation Sans", Arial, sans-serif; color: var(--ink); font-size: 10.2pt; line-height: 1.45; margin: 0 auto; max-width: 980px; padding: 0 18px; background: #fff; }
+  h1 { font-size: 22pt; margin: 0 0 4px; color: var(--accent); }
+  h2 { font-size: 15pt; margin: 26px 0 8px; border-bottom: 2px solid var(--rule); padding-bottom: 3px; color: var(--accent); break-before: page; }
+  h2.nobreak { break-before: auto; }
+  h3 { font-size: 12pt; margin: 18px 0 6px; break-after: avoid; }
+  h4 { font-size: 10.5pt; margin: 12px 0 4px; break-after: avoid; }
+  p, li { orphans: 3; widows: 3; }
+  code { font-family: "DejaVu Sans Mono", "Liberation Mono", monospace; font-size: 8.8pt; background: var(--code); padding: 0 2px; }
+  pre { font-family: "DejaVu Sans Mono", "Liberation Mono", monospace; font-size: 8.4pt; background: var(--code); border-left: 3px solid var(--accent); padding: 6px 8px; white-space: pre-wrap; word-break: break-word; overflow-wrap: anywhere; break-inside: avoid; margin: 6px 0 10px; }
+  table { border-collapse: collapse; width: 100%; margin: 6px 0 12px; font-size: 8.8pt; break-inside: auto; }
+  tr { break-inside: avoid; }
+  th, td { border: 1px solid var(--rule); padding: 3px 5px; vertical-align: top; text-align: left; }
+  th { background: #e9eee6; }
+  figure { margin: 10px 0 14px; break-inside: avoid; text-align: center; }
+  figure img { max-width: 100%; border: 1px solid var(--rule); }
+  figure.two { display: flex; gap: 8px; justify-content: center; align-items: flex-start; }
+  figure.two div { flex: 1; }
+  figure.two img { width: 100%; }
+  figcaption { font-size: 8.8pt; color: var(--muted); margin-top: 4px; text-align: left; }
+  .meta { color: var(--muted); font-size: 9.5pt; }
+  .box { border: 1px solid var(--rule); background: #f8faf6; padding: 6px 10px; margin: 8px 0; break-inside: avoid; }
+  .stage td:first-child { width: 22%; font-weight: bold; }
+  .toc a { color: var(--ink); text-decoration: none; }
+  .toc li { margin: 1px 0; }
+  .small { font-size: 8.6pt; }
+</style>
+</head>
+<body>
+
+<h1>TinS-12E with the 8-UAV carousel</h1>
+<p style="font-size:13pt;margin:0">ROS 2 Jazzy, Gazebo Sim 8.15.0 and PX4 SITL course build: build guide</p>
+<p class="meta">COE 510 course project. Version 1.0.0, 2026-11-20. Configuration label: 8-UAV, SIMULATION_GRADE (estimated dynamics, scripted pedestrians, no physical qualification).</p>
+
+<div class="box">
+<b>How to read this guide.</b> Section 1 explains the system and the original project it comes from. Sections 2 to 9 rebuild it in teaching order, starting from an empty workspace.
+Each stage gives its purpose, the working directory, the files to create or adapt, copyable commands, which terminal to use, the expected output, an observable check and troubleshooting.
+Section 10 covers the export, Section 11 the results table, and Section 12 the limits and unverified items.
+All numbers in the results come from runs recorded with this build; their logs are under <code>docs/results/</code>.
+"Measured" means read from the running simulation. "Recorded" means taken from a stored file of the original project.
+</div>
+
+<h3>Contents</h3>
+<ol class="toc">
+  <li><a href="#s1">The system and the original project</a></li>
+  <li><a href="#s2">Supported system and dependencies</a></li>
+  <li><a href="#s3">Stage 1: workspace, packages and interfaces</a></li>
+  <li><a href="#s4">Stage 2: one aircraft in a minimal world</a></li>
+  <li><a href="#s5">Stage 3: the Fieldlab world in Gazebo</a></li>
+  <li><a href="#s6">Stage 4: the UGV, the carousel and the eight fleet positions</a></li>
+  <li><a href="#s7">Stage 5: the two-aircraft mission, tracking and isolation</a></li>
+  <li><a href="#s8">Stage 6: the high-speed visual pursuit mode</a></li>
+  <li><a href="#s9">Stage 7: launch files, terminals, RViz, GUI and shutdown</a></li>
+  <li><a href="#s10">Export: release archive and clean-clone test</a></li>
+  <li><a href="#s11">Results table</a></li>
+  <li><a href="#s12">Limits, simplifications and unverified items</a></li>
+  <li><a href="#s13">Appendix: command reference</a></li>
+</ol>
+
+<!-- ===================================================================== -->
+<h2 id="s1">1. The system and the original project</h2>
+
+<h3>1.1 What is built</h3>
+<p>The TinS-12E is a tracked ground vehicle (UGV). It carries a two-level carousel: two trays, A and B, slide horizontally and vertically past each other along a guarded route.
+Each tray holds four QAV250 quadrotors, so the vehicle has eight fleet positions.
+Only an aircraft on the <i>upper, stationary</i> tray can be released. In this build:</p>
+<ul>
+  <li>all eight positions are present. uav01 (tray A) and uav02 (tray B) are independent PX4 aircraft held on their docks by latches; uav03 to uav08 are stowed visuals on the trays;</li>
+  <li>uav01 flies to observation point op1 and holds. Its forward camera feeds a YOLOX person detector and a tracker; the operator selects a pedestrian by ID, and a 3&times; magnified inset follows that person;</li>
+  <li>the carousel then performs the guarded exchange (tray B to the upper level), and uav02 is released and flies to op2;</li>
+  <li>separately, an operator can send an aircraft to a fixed inspection waypoint, or engage a high-speed visual pursuit of the selected person;</li>
+  <li>every operation is available from the terminal tool <code>tins8ctl</code> and from a GUI. Both use the same ROS services, action and topics.</li>
+</ul>
+
+<figure><img src="../figures/architecture.svg" alt="architecture diagram"><figcaption>Figure 1. Runtime architecture. Gazebo simulates the world, the UGV and the two aircraft. PX4 SITL flies uav01 and uav02 through the Micro XRCE-DDS Agent. The project nodes (package tins8_mission) supervise the carousel, command the aircraft, detect and track people, run the mission and log everything. The terminal tool and the GUI share one command log.</figcaption></figure>
+
+<h3>1.2 The original project, and what was reused</h3>
+<p>The source project has three parts: the AE 581 final submission (mechanical design, URDF, guarded-exchange register), the browser-based <i>Fieldlab Mission Studio</i>, and its Python backend.
+In the Mission Studio, the scene (buildings, roads, people, traffic) is generated in Python from a seed and drawn in the browser with three.js. A backend drives PX4 aircraft in a headless Gazebo.
+The course build re-creates that world natively in Gazebo, without the browser or the original workspace.</p>
+<table>
+<tr><th>reused component</th><th>where from (source project)</th><th>how it is used here</th></tr>
+<tr><td>TinS-12E URDF, Xacro, STL meshes, collision register, guarded-exchange register (26 states)</td><td>submission folder <i>3 Mechanical Design / A - 8-UAV design (simulation-grade) / 4 URDF / src / tins_description</i> (URDF SHA-256 67f4321b...bdbfd)</td><td>copied unchanged as package <code>tins_description</code>; the Gazebo model is generated from it (Section 6)</td></tr>
+<tr><td>Fieldlab seed-42 layout</td><td>original scene generator (<code>fieldlab_core.config.scene()</code>, seed 42)</td><td>exported once to <code>src/tins8_gazebo/data/fieldlab_scene_seed42.json</code>; the world generator reads only this file</td></tr>
+<tr><td>person, car, truck and bus meshes (CC0)</td><td>original Fieldlab asset set (MakeHuman hm08 derivatives, Kenney Car Kit 3.1, project bus)</td><td>Gazebo models <code>human_mesh_0..3</code>, <code>car_mesh_0</code>, <code>truck_mesh_0</code>, <code>bus_mesh_0</code></td></tr>
+<tr><td>QAV250 Gazebo model and PX4 dynamics values (estimated)</td><td>original <code>fieldlab_core/tins/qav250.py</code> generator; sensor blocks from PX4 <code>x500_base</code></td><td><code>models/qav250_reference</code>; PX4 overrides in <code>px4_qav250.params</code></td></tr>
+<tr><td>YOLOX-s person detector (Apache-2.0)</td><td>opencv_zoo release, the same family as the original's person detector</td><td><code>src/tins8_mission/models/yolox.onnx</code> (SHA-256 checked at load)</td></tr>
+</table>
+<p>Everything else was written new for this build: the ROS interfaces, all nodes, the world and UGV generators, the launch files, the scripts, the GUI and the tests.</p>
+
+<h3>1.3 The original "follow the selected target" mode</h3>
+<p>The original backend has a follow mode and a close-approach mode for a selected person (backend <code>follow.py</code>, class <code>Follow</code>; <code>service.py</code>, class <code>CloseApproach</code>; recorded, read from the source files).</p>
+<ul>
+  <li><b>Target choice:</b> the operator clicks a confirmed camera track, or the track registry selection is used.</li>
+  <li><b>Follow law:</b> the goal is the predicted target position. The goal step is rate-limited to the flight speed (default 2 m/s); the aircraft flies at a fixed tracking altitude (12 m) and distance (2 m).</li>
+  <li><b>Close approach:</b> an alignment-gated descent at 0.4 m/s using a synchronised depth image. It aborts on tilt above 18&deg;, on fast targets, or when the gap falls below the clearance (0.5 m).</li>
+  <li><b>Track loss:</b> a reacquire window, then loiter around the predicted position, then return.</li>
+  <li><b>Recorded evidence of the original:</b> <code>Simulation/artifacts/close-approach/validation-summary.json</code> (passed; 8.02 s hold; minimum gap 0.61 m). It was not re-run for this guide.</li>
+</ul>
+<p>The course brief asks for a faster mode driven by YOLOX boxes alone: image-based visual servoing (IBVS) up to several m/s, with a 1.2 m floor and a 65&nbsp;% frame-height standoff.
+That mode is implemented as <code>pursuit_node</code>, controllable from its own terminal tab. Its behaviour in the new Gazebo build is reported separately in Section 8.</p>
+
+<!-- ===================================================================== -->
+<h2 id="s2">2. Supported system and dependencies</h2>
+<table>
+<tr><th>item</th><th>version used for the recorded runs</th></tr>
+<tr><td>OS</td><td>Ubuntu 24.04.5 LTS, kernel 7.0, X11 desktop session</td></tr>
+<tr><td>ROS 2</td><td>Jazzy (ros_gz_bridge 1.0.24, rviz2 14.1.24, vision_msgs 4.1.1)</td></tr>
+<tr><td>Simulator</td><td>Gazebo Sim 8.15.0 (Harmonic), dartsim physics, ogre2 rendering</td></tr>
+<tr><td>Flight stack</td><td>PX4-Autopilot v1.17.0 (commit d6f12ad), <code>px4_sitl_default</code></td></tr>
+<tr><td>DDS bridge</td><td>Micro XRCE-DDS Agent v2.4.3 (73622810); px4_msgs release/1.17 (86d8239)</td></tr>
+<tr><td>Python</td><td>3.12, OpenCV 4.6.0, NumPy 1.26.4, PyQt5 (Qt 5.15.13), matplotlib, PyYAML</td></tr>
+<tr><td>Hardware</td><td>16 GB RAM, 12 CPU threads, RTX 4050 laptop GPU plus an Intel iGPU (camera sensors rendered on the iGPU, real-time factor about 0.9 idle and 0.5 with both aircraft flying)</td></tr>
+</table>
+<p>Graphics: Gazebo camera sensors need OpenGL 3.3 (ogre2). A desktop GPU, laptop iGPU or NVIDIA driver all work. With no display, start with <code>gz_gui:=false rviz:=false gui:=false</code>; the cameras still render offscreen.</p>
+
+<h3>2.1 Dependencies and why they are needed</h3>
+<table>
+<tr><th>dependency</th><th>reason</th><th>pinned revision</th><th>install</th><th>needed at</th></tr>
+<tr><td>ros-jazzy-ros-gz, ros-gz-bridge, ros-gz-sim</td><td>Gazebo Harmonic and the ROS bridge</td><td>Jazzy apt</td><td><code>scripts/setup_deps.sh apt</code></td><td>runtime</td></tr>
+<tr><td>ros-jazzy-vision-msgs</td><td>Detection2DArray for YOLOX boxes</td><td>Jazzy apt</td><td>same</td><td>runtime</td></tr>
+<tr><td>ros-jazzy-robot-state-publisher, rviz2, tf2-ros</td><td>URDF on the measured joints, RViz view</td><td>Jazzy apt</td><td>same</td><td>runtime</td></tr>
+<tr><td>ros-jazzy-teleop-twist-keyboard</td><td>UGV teleoperation</td><td>Jazzy apt</td><td>same</td><td>runtime</td></tr>
+<tr><td>python3-opencv, numpy, scipy, yaml, pyqt5, matplotlib, pytest</td><td>YOLOX inference, GUI, analysis plots, unit tests</td><td>Ubuntu 24.04 apt</td><td>same</td><td>runtime (matplotlib and pytest: checks only)</td></tr>
+<tr><td>gnome-terminal (or tmux)</td><td>tabbed launcher</td><td>apt</td><td>same</td><td>runtime, optional</td></tr>
+<tr><td>PX4-Autopilot</td><td>SITL flight stack for the two aircraft</td><td>v1.17.0, d6f12ad1</td><td><code>scripts/setup_deps.sh px4</code></td><td>runtime (build needs PX4's own toolchain script)</td></tr>
+<tr><td>Micro XRCE-DDS Agent</td><td>PX4 uORB to ROS 2</td><td>v2.4.3, 73622810</td><td><code>scripts/setup_deps.sh agent</code></td><td>runtime</td></tr>
+<tr><td>px4_msgs</td><td>ROS message definitions matching PX4 1.17</td><td>release/1.17, 86d8239e</td><td><code>scripts/setup_deps.sh msgs</code></td><td>build and runtime</td></tr>
+<tr><td>google-chrome (headless)</td><td>rendering this guide to PDF</td><td>any recent</td><td>not installed by the scripts</td><td>documentation only</td></tr>
+</table>
+<p>No other toolbox or ROS package is required. Machine-specific paths go in <code>scripts/local.env</code>, which is not in Git, for example <code>export TINS8_DEPS=/path/to/deps</code>.</p>
+
+<!-- ===================================================================== -->
+<h2 id="s3">3. Stage 1: workspace, packages and interfaces</h2>
+<table class="stage">
+<tr><td>Purpose</td><td>Create the colcon workspace, split responsibilities into packages, and define every interface before writing behaviour.</td></tr>
+<tr><td>Working directory</td><td>the repository root (called <code>tins8_ws</code> below)</td></tr>
+<tr><td>Terminal</td><td>any terminal</td></tr>
+<tr><td>Files</td><td><code>src/tins_description</code> (copied), <code>src/tins8_interfaces/{msg,srv,action}</code>, <code>src/tins8_gazebo</code>, <code>src/tins8_mission</code>, <code>src/tins8_bringup</code>, <code>scripts/env.sh</code>, <code>scripts/build.sh</code></td></tr>
+</table>
+<pre>git clone https://github.com/mohd-Ali04/Multi-UAV-UGV-System-.git tins8_ws
+cd tins8_ws
+scripts/setup_deps.sh all      # apt (asks before sudo), PX4, agent, px4_msgs into ~/tins8_deps
+scripts/build.sh               # colcon build of the 5 packages
+source scripts/env.sh          # in every new terminal
+cd src/tins8_mission &amp;&amp; python3 -m pytest -q test &amp;&amp; cd ../..</pre>
+<p><b>Expected output:</b> <code>Summary: 5 packages finished</code>, then <code>13 passed</code>.
+<b>Check:</b> <code>tins8ctl --help</code> lists the subcommands, and <code>tins8ctl points</code> prints op1, op2, three waypoints and two landing pads.</p>
+<p><b>Isolation.</b> <code>env.sh</code> sets <code>ROS_DOMAIN_ID=51</code>, <code>ROS_AUTOMATIC_DISCOVERY_RANGE=LOCALHOST</code>, <code>GZ_PARTITION=tins8</code> and <code>GZ_IP=127.0.0.1</code>. Another ROS or Gazebo simulation on the same machine therefore never mixes with this one.</p>
+
+<h3>3.1 Packages</h3>
+<table>
+<tr><th>package</th><th>type</th><th>contents</th></tr>
+<tr><td>tins_description</td><td>ament_cmake</td><td>submitted URDF, meshes and registers, unchanged</td></tr>
+<tr><td>tins8_interfaces</td><td>ament_cmake</td><td>6 messages, 5 services, 1 action</td></tr>
+<tr><td>tins8_gazebo</td><td>ament_cmake</td><td>world and UGV generators, generated SDF, models, assets and licences, <code>scenario.yaml</code>, GUI layout</td></tr>
+<tr><td>tins8_mission</td><td>ament_python</td><td>11 nodes, <code>tins8ctl</code>, <code>tins8_gui</code>, pure-logic modules (geo, ibvs, tracking, guarded_exchange, yolox), tests</td></tr>
+<tr><td>tins8_bringup</td><td>ament_cmake</td><td>launch files, bridge map, PX4 parameter overrides, RViz config</td></tr>
+</table>
+
+<h3>3.2 Interface design</h3>
+<p>Topics carry continuous state. Services carry quick requests that are accepted or rejected at once. The two-aircraft mission is an action, because it reports progress and can be cancelled.
+Every node also publishes each request's state on the shared <code>/tins8/command_log</code>, which is how the terminal tool and the GUI always agree.</p>
+<table>
+<tr><th>node</th><th>publishes</th><th>subscribes</th><th>serves</th></tr>
+<tr><td>carousel_supervisor</td><td>/carousel/state (CarouselState, latched); /ugv/carousel/&lt;joint&gt;/cmd_pos; /ugv/latch/&lt;uav&gt;/detach</td><td>/ugv/joint_states; /ugv/latch/&lt;uav&gt;/state; /&lt;uav&gt;/status</td><td>/carousel/command (CarouselCommand): INDEX_TO_B_UPPER, INDEX_TO_A_UPPER, STOP, RELEASE</td></tr>
+<tr><td>uav_agent (x2)</td><td>/&lt;uav&gt;/status (UavStatus); /&lt;uav&gt;/fmu/in/offboard_control_mode, trajectory_setpoint, vehicle_command</td><td>/&lt;uav&gt;/fmu/out/vehicle_local_position_v1, vehicle_status_v1; latch state; /&lt;uav&gt;/control_owner</td><td>/&lt;uav&gt;/command (UavCommand): TAKEOFF_HOLD, GOTO_OBSERVATION, GOTO_WAYPOINT, HOLD, LAND</td></tr>
+<tr><td>yolox_detector (uav01)</td><td>/uav01/detections (vision_msgs/Detection2DArray, id = track ID); /uav01/detector/latency_s</td><td>/uav01/camera/image, camera_info; /uav01/fmu/out/vehicle_attitude</td><td>-</td></tr>
+<tr><td>target_tracker (uav01)</td><td>/uav01/track/status (TrackStatus); /uav01/camera/annotated; /uav01/camera/inset</td><td>/uav01/detections; /uav01/camera/image</td><td>/uav01/tracker/select (SelectTarget)</td></tr>
+<tr><td>pursuit_node (uav01)</td><td>offboard velocity setpoints; /uav01/control_owner; /uav01/pursuit/state</td><td>detections, camera_info, attitude, local position, status</td><td>/uav01/pursuit/command (PursuitCommand)</td></tr>
+<tr><td>mission_server</td><td>action feedback</td><td>/carousel/state, /&lt;uav&gt;/status, /uav01/track/status</td><td>action /mission/run (RunMission); clients of the services above</td></tr>
+<tr><td>pedestrian_driver</td><td>/model/&lt;walker&gt;/cmd_vel</td><td>/gz/dynamic_poses</td><td>/scenario/actor (ActorCommand): WALK, STOP, LEAVE, RETURN</td></tr>
+<tr><td>fleet_manager</td><td>/fleet/state (FleetState); /joint_states; /fleet/markers; TF world, odom, base_link</td><td>carousel state, UAV status, /ugv/odom, /ugv/joint_states, /gz/dynamic_poses</td><td>-</td></tr>
+<tr><td>evaluator</td><td>CSV files per run</td><td>command log, status, track status, fleet, ground-truth poses</td><td>-</td></tr>
+<tr><td>gz_relay</td><td>/clock (10 ms resolution); /gz/dynamic_poses (named); /ugv/latch/&lt;uav&gt;/state (latched)</td><td>Gazebo: /clock, /world/&lt;w&gt;/dynamic_pose/info, latch state</td><td>-</td></tr>
+<tr><td>ros_gz_bridge</td><td colspan="3">/ugv/cmd_vel, /ugv/odom, /ugv/joint_states, tray cmd_pos, latch detach, /uavXX/camera/image and camera_info, walker cmd_vel (see <code>config/bridge.yaml</code>)</td></tr>
+</table>
+<p class="small">PX4 1.17 publishes versioned topics such as <code>vehicle_status_v1</code>. The helper <code>common.px4_topic()</code> adds the suffix from each message's <code>MESSAGE_VERSION</code>, so the code also works with other PX4 releases.</p>
+
+<!-- ===================================================================== -->
+<h2 id="s4">4. Stage 2: one aircraft in a minimal world</h2>
+<table class="stage">
+<tr><td>Purpose</td><td>Prove the Gazebo, PX4 and ROS chain with a single aircraft before the city and the carousel are added.</td></tr>
+<tr><td>Working directory</td><td>repository root; one terminal per component, each after <code>source scripts/env.sh</code></td></tr>
+<tr><td>Files</td><td><code>worlds/minimal_px4.sdf</code> (generated by <code>scripts/build_world.py</code>), <code>models/qav250_reference</code>, <code>scripts/start_px4.sh</code>, <code>config/px4_qav250.params</code>, <code>uav_agent.py</code></td></tr>
+</table>
+<pre># terminal 1 (Gazebo)
+scripts/start_gazebo.sh minimal
+# terminal 2 (DDS agent)
+scripts/start_agent.sh
+# terminal 3 (PX4)
+scripts/start_px4.sh uav01 minimal
+# terminal 4 (nodes)
+scripts/start_nodes.sh world:=minimal
+# terminal 5 (controls)
+tins8ctl --wait uav uav01 takeoff
+tins8ctl --wait uav uav01 goto wp_road_east
+tins8ctl --wait uav uav01 land</pre>
+<p><b>How PX4 attaches.</b> The aircraft already exists in the world. <code>start_px4.sh</code> sets <code>PX4_GZ_STANDALONE=1</code>, <code>PX4_GZ_MODEL_NAME=uav01</code>, <code>PX4_SYS_AUTOSTART=4001</code>, the DDS namespace <code>uav01</code> and instance 0 (uav02 uses instance 1).
+Parameters from <code>px4_qav250.params</code> are passed as <code>PX4_PARAM_*</code> and applied again through the PX4 client once it has booted.
+That second pass is needed because PX4 does not store a value equal to the firmware default, so the airframe's <code>param set-default NAV_DLL_ACT 2</code> would otherwise win and block arming with "No connection to the GCS".</p>
+<p><b>Expected output.</b> PX4 prints <code>PX4_GZ_MODEL_NAME set, PX4 will attach to existing model</code>, <code>[tins8] re-applied 45 parameter overrides</code> and <code>Ready for takeoff!</code>. Then:</p>
+<pre>ACCEPTED: take off and hold at z=3.1 m
+  uav01 TAKEOFF_HOLD -> COMPLETED  arrived at takeoff_hold, error 0.19 m; holding
+  uav01 GOTO_WAYPOINT -> COMPLETED  arrived at wp_road_east, error 0.10 m; holding
+  uav01 LAND -> COMPLETED  disarmed on the ground after AUTO_LAND</pre>
+<p><b>Check (measured, run <code>minimal_flight</code>):</b></p>
+<ul>
+  <li>The hold error at wp_road_east, 22 m away, is mean 0.05 m and max 0.10 m against Gazebo ground truth.</li>
+  <li>The PX4 estimate converted to world ENU differs from ground truth by 0.03 m on average, so the geodetic conversion (EKF ref_lat/lon/alt to the Fieldlab origin) is correct.</li>
+  <li>Peak horizontal speed was 4.25 m/s.</li>
+</ul>
+<p><b>Troubleshooting.</b></p>
+<ul>
+  <li><code>Preflight Fail: No connection to the GCS</code>: the parameter re-apply did not happen; look for the <code>[tins8]</code> line.</li>
+  <li><code>AMENT_TRACE_SETUP_FILES: unbound variable</code>: a script sourced ROS under <code>set -u</code>; source <code>env.sh</code> before enabling strict mode.</li>
+  <li>No <code>/uav01/fmu/out/...</code> topics: start the agent, and check that UDP port 8888 is free.</li>
+</ul>
+
+<!-- ===================================================================== -->
+<h2 id="s5">5. Stage 3: the Fieldlab world in Gazebo</h2>
+<table class="stage">
+<tr><td>Purpose</td><td>Rebuild the browser world natively, with the same layout, scale and orientation, and run it without the browser or the original workspace.</td></tr>
+<tr><td>Working directory</td><td>repository root</td></tr>
+<tr><td>Files</td><td><code>src/tins8_gazebo/scripts/build_world.py</code> (generator), <code>data/fieldlab_scene_seed42.json</code> (layout), <code>config/scenario.yaml</code> (points, walkers, pads), <code>models/*</code>, <code>worlds/fieldlab.sdf</code> (generated, committed)</td></tr>
+</table>
+<pre>python3 src/tins8_gazebo/scripts/build_world.py     # writes worlds/fieldlab.sdf and minimal_px4.sdf
+colcon build --packages-select tins8_gazebo
+scripts/start_gazebo.sh fieldlab                     # GUI opens behind the UGV
+python3 scripts/world_check.py                        # with the world running</pre>
+<p>The world uses the Fieldlab geodetic origin (lat 47.397742, lon 8.545594, alt 488 m), so PX4 GPS positions and world coordinates agree.
+All model paths are <code>model://</code> URIs, resolved through <code>GZ_SIM_RESOURCE_PATH</code>, which the package environment hook and <code>env.sh</code> set.</p>
+
+<h3>5.1 Component table</h3>
+<table>
+<tr><th>Fieldlab component</th><th>source</th><th>Gazebo equivalent</th><th>status</th></tr>
+<tr><td>ground plane (240 m, colour #abb093)</td><td>procedural (World.tsx)</td><td>250 m plane, same colour</td><td>rebuilt</td></tr>
+<tr><td>roads (8), lane dashes, shoulders</td><td>procedural, scene.roads</td><td>static boxes with the browser colours</td><td>rebuilt</td></tr>
+<tr><td>buildings (25): body, roof slab, roof unit, windows</td><td>procedural boxes, scene.objects</td><td>static box stacks with collision, same footprint and height</td><td>rebuilt</td></tr>
+<tr><td>people (18)</td><td>CC0 meshes from the asset set</td><td>16 static <code>human_mesh_*</code> models; person_12 and person_9 are walkers</td><td>imported (meshes), converted (walkers)</td></tr>
+<tr><td>walking people</td><td>backend actor poses, interpolated in the browser</td><td>VelocityControl models driven by <code>pedestrian_driver</code> on scripted loops</td><td>converted (scripted)</td></tr>
+<tr><td>cars (4), trucks (3), buses (3)</td><td>CC0 meshes</td><td>mesh models with size-correct collision boxes</td><td>imported</td></tr>
+<tr><td>moving traffic</td><td>backend city actors</td><td>vehicles are static</td><td>omitted (not needed for the assessed mission; it would add CPU load)</td></tr>
+<tr><td>route line and stop rings</td><td>procedural</td><td>visual-only strips and rings</td><td>rebuilt</td></tr>
+<tr><td>sidewalk networks, zebra crossings</td><td>procedural line sets</td><td>shoulders as boxes; crossings not drawn</td><td>partly rebuilt</td></tr>
+<tr><td>carrier UGV (generic four-wheel carrier)</td><td>procedural boxes</td><td>the submitted TinS-12E (Section 6)</td><td>replaced on purpose</td></tr>
+<tr><td>drones (procedural frames)</td><td>procedural</td><td>QAV250 models: 2 PX4 aircraft and 6 stowed visuals</td><td>replaced on purpose</td></tr>
+<tr><td>AprilTag-style tags on the drones</td><td>PNG textures</td><td>not drawn</td><td>omitted (no marker detection in scope)</td></tr>
+<tr><td>sky, fog, lights</td><td>three.js scene</td><td>Gazebo sun, ambient light, sky colour</td><td>rebuilt (approximate)</td></tr>
+<tr><td>vegetation</td><td>none in the seed-42 browser scene</td><td>none</td><td>not applicable</td></tr>
+<tr><td>observation points, waypoints, pads</td><td>new for the course</td><td>coloured discs and squares on the ground</td><td>new</td></tr>
+</table>
+
+<h3>5.2 Placement and distance checks (measured)</h3>
+<p><code>scripts/world_check.py</code> reads every pose from the running world and compares it with the layout file. The full table is <code>docs/results/world_check.md</code>.</p>
+<table>
+<tr><th>kind</th><th>objects</th><th>max position error</th><th>max yaw error</th></tr>
+<tr><td>building</td><td>25</td><td>0.000 m</td><td>0.00&deg;</td></tr>
+<tr><td>person (static)</td><td>16</td><td>0.001 m</td><td>0.00&deg;</td></tr>
+<tr><td>car / truck / bus</td><td>4 / 3 / 3</td><td>0.000 m</td><td>0.00&deg;</td></tr>
+</table>
+<table>
+<tr><th>distance</th><th>recorded</th><th>measured in Gazebo</th></tr>
+<tr><td>UGV start to op1 / op2 (horizontal)</td><td>16.28 / 44.18 m</td><td>16.28 / 44.18 m</td></tr>
+<tr><td>building_0 to building_1 / building_5 (centres)</td><td>48.00 / 50.00 m</td><td>48.00 / 50.00 m</td></tr>
+<tr><td>Fieldlab start to stops alpha / bravo / charlie</td><td>16.00 / 44.00 / 63.16 m</td><td>same</td></tr>
+</table>
+
+<h3>5.3 Comparable views</h3>
+<figure class="two">
+  <div><img src="../figures/world/fieldlab_browser_carrier.png" alt="Fieldlab browser carrier view"><figcaption>Figure 2a. Fieldlab Mission Studio, carrier camera preset (recorded screenshot from the source project). The browser camera uses a 42&deg; vertical field of view and the generic carrier.</figcaption></div>
+  <div><img src="../figures/world/gazebo_carrier_view.png" alt="Gazebo carrier view"><figcaption>Figure 2b. Gazebo, same preset offset from the vehicle (+9, -12, +7 m), with the TinS-12E at the start (measured render, project GUI layout).</figcaption></div>
+</figure>
+<figure class="two">
+  <div><img src="../figures/world/gazebo_orbit_view.png" alt="Gazebo orbit view"><figcaption>Figure 3a. Gazebo, the browser's orbit preset (+38, -52, +42 m).</figcaption></div>
+  <div><img src="../figures/world/03_gz_overview_holding.png" alt="Gazebo overview"><figcaption>Figure 3b. Gazebo overview during the mission. Blue discs mark op1 and op2, orange squares the inspection waypoints.</figcaption></div>
+</figure>
+<p><b>Troubleshooting.</b></p>
+<ul>
+  <li>Gray boxes instead of meshes: <code>GZ_SIM_RESOURCE_PATH</code> is missing <code>install/tins8_gazebo/share/tins8_gazebo/models</code>; rebuild and source <code>env.sh</code>.</li>
+  <li><code>gz sdf -k</code> cannot find <code>model://</code>: it reads <code>SDF_PATH</code>; export the same path for validation.</li>
+</ul>
+
+<!-- ===================================================================== -->
+<h2 id="s6">6. Stage 4: the UGV, the carousel and the eight fleet positions</h2>
+<table class="stage">
+<tr><td>Purpose</td><td>Turn the submitted URDF into a Gazebo model that drives, moves its trays on measured joint positions, holds two latched aircraft and shows all eight positions.</td></tr>
+<tr><td>Working directory</td><td>repository root</td></tr>
+<tr><td>Files</td><td><code>src/tins8_gazebo/scripts/build_ugv_model.py</code>, <code>models/tins_ugv/model.sdf</code> (generated), <code>carousel_supervisor.py</code>, <code>guarded_exchange.py</code>, <code>fleet_manager.py</code>, <code>config/bridge.yaml</code></td></tr>
+</table>
+<pre>python3 src/tins8_gazebo/scripts/build_ugv_model.py     # URDF -> SDF, prints the mass summary
+tins8ctl status
+tins8ctl carousel release uav02      # rejected at A_UPPER (interlock)
+tins8ctl --wait carousel index-b     # guarded route, waypoints 1..12
+tins8ctl carousel index-a            # then: tins8ctl carousel stop / index-a to resume
+tins8ctl teleop                      # keyboard: i forward, j/l turn, k stop</pre>
+
+<h3>6.1 URDF to SDF conversion</h3>
+<ul>
+  <li><b>Rigid groups:</b> the 100-link URDF becomes five rigid links: chassis, tray A carriage, tray A, tray B carriage and tray B. Fixed joints and the visual-only running gear are merged into their parents, with the inertia combined by the parallel-axis theorem. The total mass is unchanged at 385.119 kg.</li>
+  <li><b>Slide joints:</b> the four prismatic joints keep their axes, effort (1000 N) and velocity (0.02 m/s). Their limits get a 1 mm simulation-only margin. Every tray parks at q&nbsp;=&nbsp;0, which is also a limit, and DART can start a joint 10<sup>-13</sup> m outside its range. Its limit constraint then overrides the velocity servo, so tray B could not lift against gravity. The margin removes that, and the supervisor still commands only the register's waypoints.</li>
+  <li><b>Tracks:</b> six hidden contact wheels with DiffDrive, as the submitted collision register prescribes.</li>
+  <li><b>Controllers and topics:</b> JointPositionController in velocity mode (gain 4, limit 0.02 m/s) on <code>/ugv/carousel/&lt;joint&gt;/cmd_pos</code>, JointStatePublisher on <code>/ugv/joint_states</code>, and two DetachableJoint latches (tray A to uav01, tray B to uav02).</li>
+</ul>
+
+<h3>6.2 Stowage and release, and the "shown exactly once" rule</h3>
+<ul>
+  <li><b>Active aircraft:</b> uav01 and uav02 are separate Gazebo models, each flown by its own PX4. While stowed, each is fixed to its tray by a DetachableJoint. <code>RELEASE</code> publishes <code>detach</code>, and the release only completes when the latch state reads <i>detached</i>.</li>
+  <li><b>Stowed aircraft:</b> uav03 to uav08 are visuals on the tray links (massless; this is documented, not hidden).</li>
+  <li><b>Shown exactly once:</b> there is no visual copy of an active aircraft, so when uav01 leaves, its dock is visibly empty. <code>fleet_manager</code> reports each slot as STOWED, ACTIVE_DOCKED or AIRBORNE.</li>
+  <li><b>Latch state at start-up:</b> DetachableJoint reports its state only when it changes, at the first physics step. <code>gz_relay</code> therefore starts before the Gazebo server and re-offers the last state on a latched ROS topic.</li>
+</ul>
+
+<h3>6.3 Guarded exchange, gated on measurement</h3>
+<ul>
+  <li>The supervisor loads the 26-state register (<code>guarded_exchange_waypoints.yaml</code>). It commands one waypoint at a time and advances only when all four <i>measured</i> joints are within 1.5 mm of the waypoint and the measurement is fresher than 0.5 s. Time is never used as completion evidence.</li>
+  <li>A release is accepted only at a station where that dock is upper and accessible. The carousel will not move while a released aircraft is below 2 m or is not reporting.</li>
+  <li>STOP holds the measured position. The same index command resumes, and so does a stall (no measured progress for 15 s).</li>
+</ul>
+<p><b>Check (measured):</b></p>
+<ul>
+  <li>Both latches report attached at start.</li>
+  <li><code>index-b</code> passed all 12 measured waypoints in 57 s; at B_UPPER, tray A z = -155.0 mm and tray B z = +155.0 mm.</li>
+  <li>Releasing uav02 at A_UPPER and uav01 at B_UPPER were both rejected.</li>
+  <li>STOP at tray x = 271 mm followed by resume completed at A_UPPER.</li>
+  <li><b>Teleop:</b> 6 s at 0.6 m/s moved the UGV 3.7 m with roll and pitch below 10<sup>-6</sup> rad, and the docked aircraft moved with it. Skid steering slips: 2.4 rad commanded gave 1.58 rad.</li>
+</ul>
+<figure class="two">
+  <div><img src="../figures/world/02_gz_carousel_closeup.png" alt="carousel close-up"><figcaption>Figure 4a. The TinS-12E during <code>INDEX_TO_B_UPPER</code>. The trays have moved apart along the guarded route; uav01 is already airborne and uav02 is still latched.</figcaption></div>
+  <div><img src="../figures/rviz_fleet.png" alt="RViz"><figcaption>Figure 4b. RViz: the submitted URDF driven by the measured tray joints, fleet labels, observation points and the ground-truth pedestrian markers (evaluation only).</figcaption></div>
+</figure>
+<p><b>Troubleshooting.</b></p>
+<ul>
+  <li><code>latch state is unknown</code>: <code>gz_relay</code> started after the world; restart the Gazebo tab.</li>
+  <li>Index <code>FAILED no measured progress (stall)</code>: something blocks a tray; clear it, then send the same index command to resume.</li>
+</ul>
+
+<!-- ===================================================================== -->
+<h2 id="s7">7. Stage 5: the two-aircraft mission, tracking and isolation</h2>
+<table class="stage">
+<tr><td>Purpose</td><td>Run the assessed mission. Select a pedestrian while two are visible, follow them in the inset, handle track loss, and show per-aircraft command isolation and cancellation.</td></tr>
+<tr><td>Working directory</td><td>repository root. Terminal: the Controls tab.</td></tr>
+<tr><td>Files</td><td><code>mission_server.py</code>, <code>uav_agent.py</code>, <code>yolox_detector.py</code>, <code>tracking.py</code>, <code>target_tracker.py</code>, <code>evaluator.py</code>, <code>scripts/analyze_run.py</code></td></tr>
+</table>
+<pre>tins8ctl mission start --uav1 op1 --uav2 op2     # about 100 s; Ctrl+C cancels
+tins8ctl status                                  # read the visible IDs
+tins8ctl select 45                               # the ID shown on the pedestrian
+tins8ctl actor person_12 leave                   # walk out of view
+tins8ctl --wait uav uav02 goto wp_bus_stop       # inspection waypoint, uav01 keeps holding
+tins8ctl --wait uav uav02 obs op2
+python3 scripts/analyze_run.py log/runs/&lt;run&gt;   # tables and plots</pre>
+<h3>7.1 How it works</h3>
+<ul>
+  <li><b>Mission action</b> <code>/mission/run</code>: CHECK, RELEASE_1, FLY_1, INDEX_B, RELEASE_2, FLY_2, SELECT, DONE.
+    <ul>
+      <li>CHECK waits for fresh carousel and PX4 telemetry.</li>
+      <li>Cancel sends HOLD to every airborne aircraft and STOP to the carousel.</li>
+    </ul>
+  </li>
+  <li><b>Flight:</b> the agents climb vertically first (to clear the carousel), then follow a carrot trajectory at 30 Hz.</li>
+  <li><b>Detection:</b> YOLOX-s runs on the camera image only, at 3.5 frames per second on this CPU. Each box gets a track ID from an IoU tracker. The tracker compensates camera rotation between frames using the PX4 attitude, and never reuses an ID.</li>
+  <li><b>Inset:</b> the tracker shows the selected ID at 3&times; zoom. If the ID is unseen for 0.5 s, it shows <code>TRACK LOST</code>, clears the inset and keeps the selection; it never switches to another person.</li>
+  <li><b>Ground truth</b> (Gazebo poses) is used only by the evaluator and the offline analysis, to check that the tracked box is the intended walker. Detection never sees it.</li>
+</ul>
+<h3>7.2 Results (measured, run <code>mission1</code>)</h3>
+<table>
+<tr><th>check</th><th>result</th></tr>
+<tr><td>mission</td><td>COMPLETED in 101 s; uav01 HOLD at op1 (error 0.03 m), uav02 HOLD at op2 (error 0.19 m)</td></tr>
+<tr><td>hold at op1, uav01</td><td>estimate mean 0.02 m (max 0.18); ground truth mean 0.06 m (max 0.26); telemetry age max 0.33 s</td></tr>
+<tr><td>selection to first centred inset</td><td>0.25 s (two walkers in view; they pass close to each other)</td></tr>
+<tr><td>tracked box is the intended walker</td><td>845 of 845 TRACKING samples match person_12 by ground-truth projection; 0 match the other walker</td></tr>
+<tr><td>inset centring error</td><td>median 0.4 px, 95th percentile 9.5 px (inset pixels)</td></tr>
+<tr><td>track loss when the walker leaves view</td><td>TRACK LOST, selected ID stays 45 (no switch); 708 LOST samples</td></tr>
+<tr><td>uav01 commanded hold during the whole test</td><td>drift 0.000 m</td></tr>
+<tr><td>per-aircraft isolation</td><td>4 of 4 commands: the other aircraft's phase, target and last command unchanged for 5 s</td></tr>
+<tr><td>inspection waypoint</td><td>uav02 reached wp_bus_stop (error 0.16 m) and held, then returned to op2</td></tr>
+<tr><td>cancel (run <code>ops1</code>)</td><td>cancel during INDEX_B: mission CANCELED, uav01 HOLD at op1, carousel STOPPED at its measured position; then resumed by hand</td></tr>
+<tr><td>landing cases (run <code>ops1</code>)</td><td>ground pad: <code>land pad_west</code> COMPLETED, 0.09 m from the pad centre; on the ground below: COMPLETED; on the UGV and re-stowage: REJECTED with the reason (not implemented)</td></tr>
+</table>
+<figure class="two">
+  <div><img src="../results/mission1/frames/02_tracking_uav01_camera_annotated.png" alt="tracking"><figcaption>Figure 5a. uav01 camera at op1: YOLOX boxes with track IDs; the selected ID 45 is highlighted. The two walkers overlap here.</figcaption></div>
+  <div><img src="../results/mission1/frames/02_tracking_uav01_camera_inset.png" alt="inset"><figcaption>Figure 5b. The 3&times; inset centred on ID 45, driven only by the detections.</figcaption></div>
+</figure>
+<figure class="two">
+  <div><img src="../results/mission1/frames/04_track_lost_uav01_camera_annotated.png" alt="lost"><figcaption>Figure 6a. After <code>actor person_12 leave</code>: TRACK LOST (ID 45). The other people keep their own IDs, and nothing is re-selected.</figcaption></div>
+  <div><img src="../results/mission1/top_view.png" alt="top view"><figcaption>Figure 6b. Top view of the run (ground truth): the aircraft paths, the walker loops and person_12 leaving east.</figcaption></div>
+</figure>
+
+<!-- ===================================================================== -->
+<h2 id="s8">8. Stage 6: the high-speed visual pursuit mode</h2>
+<table class="stage">
+<tr><td>Purpose</td><td>Close fast on the selected person using only YOLOX boxes, and end in a hover at the standoff.</td></tr>
+<tr><td>Working directory</td><td>repository root. Terminal: a separate tab (the Controls tab, or any terminal after <code>source scripts/env.sh</code>).</td></tr>
+<tr><td>Files</td><td><code>pursuit_node.py</code> (ROS wrapper, failsafes, logs), <code>ibvs.py</code> (control law, unit tested), <code>geo.py</code> (frames); entry point in <code>setup.py</code>; started by <code>launch/uav.launch.py</code></td></tr>
+</table>
+<pre>tins8ctl select 8                    # optional; it shows the same ID in the inset
+tins8ctl pursuit uav01 start 8
+tins8ctl pursuit uav01 stop          # or: ros2 service call /uav01/pursuit/command \
+                                     #   tins8_interfaces/srv/PursuitCommand "{engage: false}"</pre>
+
+<h3>8.1 Control law</h3>
+<ul>
+  <li><b>Setpoints:</b> velocity <code>OffboardControlMode</code> and <code>TrajectorySetpoint</code> at 30 Hz (measured mean 29.9 Hz in simulation time). On engage, the node takes setpoint authority from the agent through <code>/uav01/control_owner</code>.</li>
+  <li><b>Frames:</b> optical, camera, body FRD (camera tilted 20&deg; down, fixed, no gimbal), NED by the PX4 attitude quaternion, then a yaw-aligned level frame.
+    <ul>
+      <li>Removing roll and pitch there is the pitch compensation: bearing and elevation stay referenced to the horizon while the aircraft pitches forward.</li>
+      <li>The box comes from an image 0.1 to 0.5 s old, so the ray uses the attitude at the <i>image time</i>, and the bearing is expressed against the <i>current</i> heading.</li>
+    </ul>
+  </li>
+  <li><b>Yaw and lateral:</b> yaw rate = 2.0 &times; bearing (at most 1.2 rad/s); lateral velocity = 0.6 &times; bearing &times; range (at most 2 m/s).</li>
+  <li><b>Range:</b> range = f<sub>y</sub> &times; 1.75 m / box height. f<sub>y</sub> comes from camera_info (269 px).</li>
+  <li><b>Closing:</b> along the line of sight, forward = v cos(elevation) and down = v sin(elevation), up to 6 m/s.
+    <ul>
+      <li>Flying the line of sight keeps the elevation constant, so the aircraft descends from 8 m at the rate the geometry needs. A feedback on the elevation error keeps the box on the optical axis.</li>
+      <li>The speed is limited by the braking distance (1.5 m/s&sup2;, after propagating the range by the image age and allowing a 0.5 s response lag), by the bearing error, and by the vertical capacity.</li>
+    </ul>
+  </li>
+  <li><b>Altitude floor:</b> 1.2 m, anticipated: the aircraft never descends faster than it can stop above the floor.</li>
+  <li><b>Terminal:</b> hover when the box fills 65&nbsp;% of the frame height (estimated 1.5 m). Leave terminal below 55&nbsp;%. Back away if the person comes closer.
+    <ul>
+      <li>A box clipped by the frame edge under-reads the height, so a clipped box taller than 35&nbsp;% of the frame is treated as "too close".</li>
+    </ul>
+  </li>
+  <li><b>Loss:</b> if the selected ID is absent for more than 0.5 s, the node commands zero velocity (hover). After 2 s it starts a slow search yaw of 0.3 rad/s; after 15 s it hands back to the agent, which holds position. It never switches ID.</li>
+</ul>
+
+<h3>8.2 Results in the Gazebo build (measured, run <code>pursuit7</code>)</h3>
+<table>
+<tr><th>metric</th><th>value</th><th>source</th></tr>
+<tr><td>initial separation (uav01 at op1, 8 m up)</td><td>15.1 m</td><td>ground truth</td></tr>
+<tr><td>time to close to 5 m / 3 m / 2 m</td><td>3.3 s / 9.4 s / 14.3 s</td><td>ground truth</td></tr>
+<tr><td>time to terminal standoff (box &ge; 65&nbsp;% of frame)</td><td>24.9 s; estimated range then 1.42 m</td><td>pursuit log</td></tr>
+<tr><td>peak closing speed / peak ground speed</td><td>4.9 m/s / 4.1 m/s</td><td>pursuit log (estimated)</td></tr>
+<tr><td>minimum separation / mean after first reaching 3 m</td><td>1.47 m / 2.33 m</td><td>ground truth</td></tr>
+<tr><td>minimum altitude</td><td>1.45 m (floor 1.2 m)</td><td>ground truth</td></tr>
+<tr><td>target in camera field of view</td><td>99.3&nbsp;% of samples; 0 losses in 77 s; maximum pitch 23&deg;</td><td>pursuit log</td></tr>
+<tr><td>horizontal centring error</td><td>mean 80 px, 95th percentile 203 px (640 px frame)</td><td>pursuit log</td></tr>
+</table>
+<p>The walker keeps walking its loop, so the aircraft trails at 2 to 3 m and reaches the 65&nbsp;% standoff when the walker turns towards it. The centring error has a steady bias while the person crosses the frame, because the yaw lags a moving target. Both are reported as they are.</p>
+<figure><img src="../results/pursuit7/uav01-track8-20261120-145307.png" alt="pursuit plot" style="max-width:78%"><figcaption>Figure 7. Pursuit of track 8: separation to the walker (ground truth), ground speed, altitude, and the horizontal box error over the 77 s engagement.</figcaption></figure>
+<figure class="two">
+  <div><img src="../results/pursuit7/frames/01_before_engage_uav01_camera_annotated.png" alt="before"><figcaption>Figure 8a. At engage: the selected person is 15 m away.</figcaption></div>
+  <div><img src="../results/pursuit7/frames/03_terminal_uav01_camera_annotated.png" alt="terminal"><figcaption>Figure 8b. Close standoff on ID 8 at about 1.5 m altitude, with another walker passing.</figcaption></div>
+</figure>
+
+<h3>8.3 How it was tuned (evidence kept in <code>docs/results/pursuit_tuning</code>)</h3>
+<table>
+<tr><th>attempt</th><th>what happened (measured)</th><th>change</th></tr>
+<tr><td>0 (mission1)</td><td>Lost after 1.3 s. YOLOX ran at 2.2 Hz while the aircraft yawed at 1.5 rad/s, so the boxes jumped about 150 px and got new IDs.</td><td>uav02 detector off by default (3.5 Hz); rotation-compensated tracker; bearing from the image-time attitude</td></tr>
+<tr><td>1</td><td>Yaw now locked within &plusmn;6&deg;, 6.2 m/s, but it overran: PX4 limited descent to 1 m/s.</td><td>MPC_Z_VEL_MAX_DN 2.5; forward taper on the elevation error; closing speed per detection</td></tr>
+<tr><td>2</td><td>Still overran at 1.3 m altitude.</td><td>descent-time and braking limits</td></tr>
+<tr><td>3</td><td>Went below the floor (0.87 m).</td><td>line-of-sight closing; anticipated floor</td></tr>
+<tr><td>4</td><td>Overran at 4.9 m/s (latency).</td><td>range propagated by the image age; braking against the measured speed</td></tr>
+<tr><td>5</td><td>Stopped at 2.3 m, but the nose-up braking pitched the walker out of the frame.</td><td>gentler braking; back away inside the standoff</td></tr>
+<tr><td>6</td><td>Ground truth showed a pass within 0.28 m: the walker came towards the aircraft and the clipped box read too far.</td><td>clipped-box rule; range rate includes the walker's motion</td></tr>
+<tr><td>7 (pursuit7)</td><td>No loss in 77 s, minimum separation 1.47 m.</td><td>kept</td></tr>
+</table>
+
+<!-- ===================================================================== -->
+<h2 id="s9">9. Stage 7: launch files, terminals, RViz, GUI and shutdown</h2>
+<table class="stage">
+<tr><td>Purpose</td><td>One entry point for the full simulation, a command for each component, named tabs, a GUI on the same interfaces, and clean shutdown and relaunch.</td></tr>
+<tr><td>Files</td><td><code>launch/sim_all.launch.py</code>, <code>gazebo.launch.py</code>, <code>nodes.launch.py</code>, <code>uav.launch.py</code>, <code>rviz.launch.py</code>; <code>scripts/start_*.sh</code>, <code>run_tabs.sh</code>, <code>sim_all.sh</code>, <code>stop_all.sh</code>; <code>gui.py</code>, <code>cli.py</code></td></tr>
+</table>
+<pre>scripts/sim_all.sh                      # everything in one terminal (gz_gui:=, rviz:=, gui:= true|false)
+scripts/run_tabs.sh                     # gnome-terminal tabs; scripts/run_tabs.sh tmux for tmux windows
+scripts/stop_all.sh                     # clean shutdown of this project only</pre>
+<table>
+<tr><th>order</th><th>tab and command</th><th>ready when</th></tr>
+<tr><td>1</td><td>Gazebo: <code>scripts/start_gazebo.sh fieldlab</code></td><td>GUI shows the UGV; <code>gz_relay</code> logs <code>uav01 latch: attached</code> and <code>uav02 latch: attached</code></td></tr>
+<tr><td>2</td><td>DDS agent: <code>scripts/start_agent.sh</code></td><td>prints a session line per PX4 instance</td></tr>
+<tr><td>3, 4</td><td>PX4 uav01 / uav02: <code>scripts/start_px4.sh uav01</code> and <code>uav02</code></td><td><code>Ready for takeoff!</code> and <code>[tins8] re-applied 45 parameter overrides</code></td></tr>
+<tr><td>5</td><td>ROS nodes: <code>scripts/start_nodes.sh</code></td><td><code>tins8ctl status</code> shows 6 stowed, 2 active and fresh telemetry (age below 0.1 s)</td></tr>
+<tr><td>6</td><td>RViz: <code>scripts/start_rviz.sh</code></td><td>the URDF and fleet labels are visible</td></tr>
+<tr><td>7</td><td>GUI: <code>scripts/start_gui.sh</code></td><td>the camera image updates and the fleet table fills</td></tr>
+<tr><td>8, 9</td><td>Teleop UGV: <code>scripts/start_teleop.sh</code>; Controls: <code>scripts/controls.sh</code></td><td>prompt ready</td></tr>
+</table>
+<p>The GUI calls the same services and the same action as <code>tins8ctl</code>, and shows the shared command log with REQUESTED, ACCEPTED, REJECTED, COMPLETED, CANCELED and FAILED.
+It was exercised through its own buttons with <code>scripts/gui_click.py</code>, which runs the same Window class offscreen and presses a button: start mission, Select ID, Hold, and Land with target <i>ugv</i> (REJECTED).
+The visible GUI and <code>tins8ctl watch</code> showed the same states.</p>
+<figure><img src="../figures/gui_operator_tracking.png" alt="GUI" style="max-width:100%"><figcaption>Figure 9. Operator GUI during the run:
+<ul>
+  <li>left: the uav01 camera with boxes, the inset (TRACK LOST for ID 55 after the walker left), and the selection and actor controls;</li>
+  <li>right: the eight fleet positions (2 airborne, 6 stowed), the measured carousel state at B_UPPER, and both aircraft holding with fresh telemetry. uav02's last command (<code>LAND ugv</code>) was REJECTED and uav01's HOLD COMPLETED;</li>
+  <li>bottom: the shared command log.</li>
+</ul></figcaption></figure>
+<p><b>Shutdown and relaunch (measured).</b></p>
+<ul>
+  <li><code>stop_all.sh</code> stops components in reverse order using PID files (Ctrl+C first, then SIGTERM, then SIGKILL, with child processes first). It also stops this workspace's Gazebo server and GUI and the PX4 processes whose working directory is under this workspace's log folder. Other simulations on the machine are left alone.</li>
+  <li>It took 31 s and left 0 processes. The relaunch with <code>sim_all.sh</code> was ready again with both latches attached and fresh telemetry. The one-command start completed the full mission (run <code>simall1</code>).</li>
+</ul>
+<p><b>Troubleshooting.</b></p>
+<ul>
+  <li>The GUI is larger than the screen: it opens inside a scroll area, sized to the available screen.</li>
+  <li>The tmux launcher was not tested here because tmux is not installed on the test machine; the gnome-terminal launcher was.</li>
+</ul>
+
+<!-- ===================================================================== -->
+<h2 id="s10">10. Export: release archive and clean-clone test</h2>
+<pre>scripts/make_release.sh 1.0.0
+# release/tins8-course-1.0.0.tar.gz, plus .sha256; MANIFEST.sha256 inside the archive</pre>
+<ul>
+  <li><b>Contents:</b> the archive holds every file tracked in Git, so it contains the source, interfaces, world, models, meshes, configs, launch files, scripts, GUI, RViz configuration, dependency setup script, README and this guide (HTML and PDF), plus the recorded results.</li>
+  <li><b>External dependencies:</b> PX4, the agent and px4_msgs are installed by <code>scripts/setup_deps.sh</code> at pinned commits.</li>
+  <li><b>No LFS:</b> Git LFS is not used, and the largest file (the YOLOX model, 36 MB) is an ordinary file.</li>
+  <li><b>Clean-clone test:</b> the archive is extracted, or the repository cloned, into an empty directory, built with <code>scripts/build.sh</code>, the unit tests run, the launch files parsed, and the asset checksums compared with <code>MANIFEST.sha256</code>. Section 11 gives the environments actually used.</li>
+</ul>
+
+<!-- ===================================================================== -->
+<h2 id="s11">11. Results table</h2>
+<table>
+<tr><th>requirement</th><th>status</th><th>evidence</th></tr>
+<tr><td>8 fleet positions, 2 PX4 aircraft, 6 stowed, each active aircraft shown once</td><td>done</td><td>fleet state and GUI (Figure 9); Section 6.2</td></tr>
+<tr><td>Fieldlab world native in Gazebo, no browser, no absolute paths</td><td>done</td><td>world_check.md: 51 objects within 0.001 m; Figures 2 and 3</td></tr>
+<tr><td>Guarded slide exchange gated on measured joints</td><td>done</td><td>12 waypoints, 57 s; interlocks, STOP and resume</td></tr>
+<tr><td>UGV teleoperation</td><td>done</td><td>3.7 m forward, turn, stable roll and pitch</td></tr>
+<tr><td>uav01 to op1 and hold; select by ID; inset; track lost without switching; hold logged</td><td>done</td><td>mission1: 0.25 s to centred, 845/845 correct, drift 0.000 m</td></tr>
+<tr><td>Inspection waypoint demonstration</td><td>done</td><td>wp_bus_stop, error 0.16 m, hold</td></tr>
+<tr><td>uav02 to op2; telemetry freshness; command isolation</td><td>done</td><td>telemetry age at most 0.33 s; isolation 4/4</td></tr>
+<tr><td>Mission action with progress and cancel</td><td>done</td><td>mission1, ops1, simall1</td></tr>
+<tr><td>Landing cases distinguished</td><td>ground pad done; UGV and re-stowage not implemented (rejected with the reason)</td><td>ops1</td></tr>
+<tr><td>High-speed IBVS pursuit (YOLOX boxes), at least 20 Hz, floor, standoff, loss failsafe</td><td>done in simulation</td><td>pursuit7, Section 8.2</td></tr>
+<tr><td>Terminal tool and GUI on the same interfaces with all states</td><td>done</td><td>Section 9, Figure 9</td></tr>
+<tr><td>One-command start, per-component commands, tabs, shutdown, relaunch</td><td>done (tmux mode untested)</td><td>Section 9</td></tr>
+<tr><td>Release archive, manifest, credits, checksum; clean-clone test</td><td>see the handoff note</td><td>Section 10</td></tr>
+</table>
+
+<!-- ===================================================================== -->
+<h2 id="s12">12. Limits, simplifications and unverified items</h2>
+<ul>
+  <li><b>Simulation grade only:</b> UGV inertia is combined from the CAD; QAV250 dynamics are estimated, not identified from hardware; the tracks are six hidden wheels (turning slips); the stowed aircraft are massless visuals.</li>
+  <li><b>Scripted pedestrians:</b> the walkers move on scripted loops (VelocityControl), and the 16 other people and all vehicles are static.</li>
+  <li><b>Fixed camera:</b> 20&deg; down, no gimbal. At close range, braking pitch moves the person towards the bottom of the frame.</li>
+  <li><b>Detector rate:</b> YOLOX runs on the CPU at about 3.5 frames per second, and uav02's detector is off by default.</li>
+  <li><b>Not implemented:</b> landing on the UGV and mechanical re-stowage (re-latching and the reverse exchange).</li>
+  <li><b>Original modes not re-run:</b> the original project's follow and close-approach modes are described from the recorded files; they were not re-run.</li>
+  <li><b>Fieldlab elements omitted:</b> moving traffic and zebra crossings are not reproduced.</li>
+  <li><b>RViz marker display:</b> it showed an error status in RViz during the GUI run, while the markers themselves were drawn. The cause was not found.</li>
+</ul>
+
+<!-- ===================================================================== -->
+<h2 id="s13">13. Appendix: command reference</h2>
+<table>
+<tr><th>operation</th><th>command</th></tr>
+<tr><td>status of fleet, carousel, both aircraft, tracker</td><td><code>tins8ctl status</code> (<code>tins8ctl watch</code> streams the command log)</td></tr>
+<tr><td>carousel</td><td><code>tins8ctl carousel index-b | index-a | stop | release uav01</code></td></tr>
+<tr><td>one aircraft</td><td><code>tins8ctl uav uav01 takeoff | obs op1 | goto wp_bus_stop | hold | land [here|pad_west|pad_east|ugv|restow]</code></td></tr>
+<tr><td>select or clear the tracked person</td><td><code>tins8ctl select 12</code>, <code>tins8ctl select clear</code></td></tr>
+<tr><td>pursuit</td><td><code>tins8ctl pursuit uav01 start 12</code>, <code>tins8ctl pursuit uav01 stop</code></td></tr>
+<tr><td>scripted walkers</td><td><code>tins8ctl actor person_12 walk | stop | leave | return</code></td></tr>
+<tr><td>mission</td><td><code>tins8ctl mission start [--uav1 op1] [--uav2 op2] [--track N]</code>, <code>tins8ctl mission cancel</code></td></tr>
+<tr><td>UGV teleoperation</td><td><code>tins8ctl teleop</code></td></tr>
+<tr><td>wait for the end state of any request</td><td>add <code>--wait</code>, e.g. <code>tins8ctl --wait uav uav02 obs op2</code></td></tr>
+<tr><td>shutdown</td><td><code>tins8ctl shutdown</code> or <code>scripts/stop_all.sh</code></td></tr>
+<tr><td>analysis of a run</td><td><code>python3 scripts/analyze_run.py log/runs/&lt;run&gt;</code></td></tr>
+<tr><td>world check</td><td><code>python3 scripts/world_check.py</code></td></tr>
+</table>
+</body>
+</html>

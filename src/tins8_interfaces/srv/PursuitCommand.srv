@@ -1,0 +1,7 @@
+# engage=true starts IBVS pursuit of track_id; engage=false stops and hovers in place
+bool engage
+int32 track_id
+---
+bool accepted
+string request_id
+string message

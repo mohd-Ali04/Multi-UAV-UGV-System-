@@ -1,0 +1,25 @@
+t_sim,request_id,target,command,argument,state,detail
+8.720,mission-77046,mission,RUN,,ACCEPTED,uav01->op1 uav02->op2 track=-1
+8.732,mission-77046,mission,CHECK,,ACCEPTED,waiting for measured carousel state and PX4 telemetry
+8.732,mission-77046,mission,RELEASE_1,,ACCEPTED,releasing uav01
+8.732,car-77046-001,carousel,RELEASE,uav01,REQUESTED,
+8.744,car-77046-001,carousel,RELEASE,uav01,ACCEPTED,detach sent; waiting for measured latch state
+8.792,car-77046-001,carousel,RELEASE,uav01,COMPLETED,latch state measured detached
+8.864,mission-77046,mission,FLY_1,,ACCEPTED,uav01 to op1
+8.864,uav01-77046-001,uav01,GOTO_OBSERVATION,op1,REQUESTED,
+8.888,uav01-77046-001,uav01,GOTO_OBSERVATION,op1,ACCEPTED,"flying to op1 (-12.0, -19.0, 8.0)"
+24.272,uav01-77046-001,uav01,GOTO_OBSERVATION,op1,COMPLETED,"arrived at op1, error 0.18 m; holding"
+24.416,mission-77046,mission,INDEX_B,,ACCEPTED,guarded exchange to B_UPPER
+24.416,car-77062-002,carousel,INDEX_TO_B_UPPER,,REQUESTED,
+24.416,car-77062-002,carousel,INDEX_TO_B_UPPER,,ACCEPTED,guarded route through waypoints 1..12
+73.304,car-77062-002,carousel,INDEX,,COMPLETED,measured station B_UPPER
+73.316,mission-77046,mission,RELEASE_2,,ACCEPTED,releasing uav02
+73.316,car-77111-003,carousel,RELEASE,uav02,REQUESTED,
+73.316,car-77111-003,carousel,RELEASE,uav02,ACCEPTED,detach sent; waiting for measured latch state
+73.364,car-77111-003,carousel,RELEASE,uav02,COMPLETED,latch state measured detached
+73.436,mission-77046,mission,FLY_2,,ACCEPTED,uav02 to op2
+73.436,uav02-77111-001,uav02,GOTO_OBSERVATION,op2,REQUESTED,
+73.460,uav02-77111-001,uav02,GOTO_OBSERVATION,op2,ACCEPTED,"flying to op2 (16.0, -18.0, 10.0)"
+98.144,uav02-77111-001,uav02,GOTO_OBSERVATION,op2,COMPLETED,"arrived at op2, error 0.22 m; holding"
+98.276,mission-77046,mission,DONE,,ACCEPTED,both aircraft holding at their observation points
+98.276,mission-77046,mission,RUN,,COMPLETED,uav01 HOLD at op1 (err 0.01 m); uav02 HOLD at op2 (err 0.21 m)

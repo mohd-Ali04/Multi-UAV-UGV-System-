@@ -1,0 +1,12 @@
+# Two-aircraft observation mission.
+string uav1_point       # observation point for UAV01, e.g. op1
+string uav2_point       # observation point for UAV02, e.g. op2
+int32 track_id          # >=0 selects this YOLOX track once UAV01 holds; -1 skips selection
+---
+bool success
+string outcome          # COMPLETED | CANCELED | FAILED
+string summary
+---
+string phase
+float32 progress        # 0..1
+string detail

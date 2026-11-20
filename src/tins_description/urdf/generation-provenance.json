@@ -1,0 +1,20 @@
+{
+  "label": "SIMULATION_GRADE_NOT_PHYSICALLY_QUALIFIED",
+  "generator": "generate_urdf_from_register.py",
+  "map_sha256": "094d5da87a12af0c97f332b1dd1306d6e74d23533fda79b391425c7bf94481f4",
+  "map_hash_policy": "sha256-text-crlf-to-lf-v1",
+  "outputs": [
+    {
+      "file": "urdf/tins_ugv_carousel.urdf.xacro",
+      "sha256": "c7ab917b6fda1c747ce4621c5c513be7afb2bf5cbb37de4ebf69c8c801e83b41"
+    },
+    {
+      "file": "urdf/tins_ugv_carousel.urdf",
+      "sha256": "67f4321b83de93bcaa953b0c1d81093f16bc587cc127d054645a79dee82bdbfd"
+    },
+    {
+      "file": "urdf/tins_ugv_carousel_static_visual.urdf",
+      "sha256": "565ec111a2d339eee1d25e5e440a8cb5ba964f253e2705319acc67208b2193db"
+    }
+  ]
+}

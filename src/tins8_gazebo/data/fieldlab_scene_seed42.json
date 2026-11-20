@@ -1,0 +1,778 @@
+{
+ "mission_defaults": {
+  "seed": 42,
+  "terrain": "proving_ground",
+  "population": 18,
+  "traffic": 10,
+  "start": [
+   -28,
+   -22
+  ],
+  "stops": [
+   {
+    "id": "alpha",
+    "x": -12,
+    "y": -22,
+    "drones": [
+     "uav01",
+     "uav02",
+     "uav03"
+    ]
+   },
+   {
+    "id": "bravo",
+    "x": 16,
+    "y": -22,
+    "drones": [
+     "uav04",
+     "uav05"
+    ]
+   },
+   {
+    "id": "charlie",
+    "x": 30,
+    "y": 3,
+    "drones": [
+     "uav06",
+     "uav07",
+     "uav08"
+    ]
+   }
+  ]
+ },
+ "scene": {
+  "name": "fieldlab",
+  "size": 240,
+  "route_limit": 108,
+  "objects": [
+   {
+    "id": "building_0",
+    "kind": "building",
+    "x": -96,
+    "y": -96,
+    "z": 0,
+    "sx": 14,
+    "sy": 16,
+    "sz": 6.0,
+    "yaw": 0,
+    "variant": 0
+   },
+   {
+    "id": "building_1",
+    "kind": "building",
+    "x": -48,
+    "y": -96,
+    "z": 0,
+    "sx": 16,
+    "sy": 18,
+    "sz": 8.3,
+    "yaw": 0,
+    "variant": 1
+   },
+   {
+    "id": "building_2",
+    "kind": "building",
+    "x": 4,
+    "y": -96,
+    "z": 0,
+    "sx": 18,
+    "sy": 14,
+    "sz": 10.6,
+    "yaw": 0,
+    "variant": 2
+   },
+   {
+    "id": "building_3",
+    "kind": "building",
+    "x": 56,
+    "y": -96,
+    "z": 0,
+    "sx": 14,
+    "sy": 16,
+    "sz": 12.899999999999999,
+    "yaw": 0,
+    "variant": 3
+   },
+   {
+    "id": "building_4",
+    "kind": "building",
+    "x": 101,
+    "y": -96,
+    "z": 0,
+    "sx": 16,
+    "sy": 18,
+    "sz": 15.2,
+    "yaw": 0,
+    "variant": 0
+   },
+   {
+    "id": "building_5",
+    "kind": "building",
+    "x": -96,
+    "y": -46,
+    "z": 0,
+    "sx": 18,
+    "sy": 14,
+    "sz": 6.0,
+    "yaw": 0,
+    "variant": 1
+   },
+   {
+    "id": "building_6",
+    "kind": "building",
+    "x": -48,
+    "y": -46,
+    "z": 0,
+    "sx": 14,
+    "sy": 16,
+    "sz": 8.3,
+    "yaw": 0,
+    "variant": 2
+   },
+   {
+    "id": "building_7",
+    "kind": "building",
+    "x": 4,
+    "y": -46,
+    "z": 0,
+    "sx": 16,
+    "sy": 18,
+    "sz": 10.6,
+    "yaw": 0,
+    "variant": 3
+   },
+   {
+    "id": "building_8",
+    "kind": "building",
+    "x": 56,
+    "y": -46,
+    "z": 0,
+    "sx": 18,
+    "sy": 14,
+    "sz": 12.899999999999999,
+    "yaw": 0,
+    "variant": 0
+   },
+   {
+    "id": "building_9",
+    "kind": "building",
+    "x": 101,
+    "y": -46,
+    "z": 0,
+    "sx": 14,
+    "sy": 16,
+    "sz": 15.2,
+    "yaw": 0,
+    "variant": 1
+   },
+   {
+    "id": "building_10",
+    "kind": "building",
+    "x": -96,
+    "y": 6,
+    "z": 0,
+    "sx": 16,
+    "sy": 18,
+    "sz": 6.0,
+    "yaw": 0,
+    "variant": 2
+   },
+   {
+    "id": "building_11",
+    "kind": "building",
+    "x": -48,
+    "y": 6,
+    "z": 0,
+    "sx": 18,
+    "sy": 14,
+    "sz": 8.3,
+    "yaw": 0,
+    "variant": 3
+   },
+   {
+    "id": "building_12",
+    "kind": "building",
+    "x": 4,
+    "y": 6,
+    "z": 0,
+    "sx": 14,
+    "sy": 16,
+    "sz": 10.6,
+    "yaw": 0,
+    "variant": 0
+   },
+   {
+    "id": "building_13",
+    "kind": "building",
+    "x": 56,
+    "y": 6,
+    "z": 0,
+    "sx": 16,
+    "sy": 18,
+    "sz": 12.899999999999999,
+    "yaw": 0,
+    "variant": 1
+   },
+   {
+    "id": "building_14",
+    "kind": "building",
+    "x": 101,
+    "y": 6,
+    "z": 0,
+    "sx": 18,
+    "sy": 14,
+    "sz": 15.2,
+    "yaw": 0,
+    "variant": 2
+   },
+   {
+    "id": "building_15",
+    "kind": "building",
+    "x": -96,
+    "y": 60,
+    "z": 0,
+    "sx": 14,
+    "sy": 16,
+    "sz": 6.0,
+    "yaw": 0,
+    "variant": 3
+   },
+   {
+    "id": "building_16",
+    "kind": "building",
+    "x": -48,
+    "y": 60,
+    "z": 0,
+    "sx": 16,
+    "sy": 18,
+    "sz": 8.3,
+    "yaw": 0,
+    "variant": 0
+   },
+   {
+    "id": "building_17",
+    "kind": "building",
+    "x": 4,
+    "y": 60,
+    "z": 0,
+    "sx": 18,
+    "sy": 14,
+    "sz": 10.6,
+    "yaw": 0,
+    "variant": 1
+   },
+   {
+    "id": "building_18",
+    "kind": "building",
+    "x": 56,
+    "y": 60,
+    "z": 0,
+    "sx": 14,
+    "sy": 16,
+    "sz": 12.899999999999999,
+    "yaw": 0,
+    "variant": 2
+   },
+   {
+    "id": "building_19",
+    "kind": "building",
+    "x": 101,
+    "y": 60,
+    "z": 0,
+    "sx": 16,
+    "sy": 18,
+    "sz": 15.2,
+    "yaw": 0,
+    "variant": 3
+   },
+   {
+    "id": "building_20",
+    "kind": "building",
+    "x": -96,
+    "y": 103,
+    "z": 0,
+    "sx": 18,
+    "sy": 14,
+    "sz": 6.0,
+    "yaw": 0,
+    "variant": 0
+   },
+   {
+    "id": "building_21",
+    "kind": "building",
+    "x": -48,
+    "y": 103,
+    "z": 0,
+    "sx": 14,
+    "sy": 16,
+    "sz": 8.3,
+    "yaw": 0,
+    "variant": 1
+   },
+   {
+    "id": "building_22",
+    "kind": "building",
+    "x": 4,
+    "y": 103,
+    "z": 0,
+    "sx": 16,
+    "sy": 18,
+    "sz": 10.6,
+    "yaw": 0,
+    "variant": 2
+   },
+   {
+    "id": "building_23",
+    "kind": "building",
+    "x": 56,
+    "y": 103,
+    "z": 0,
+    "sx": 18,
+    "sy": 14,
+    "sz": 12.899999999999999,
+    "yaw": 0,
+    "variant": 3
+   },
+   {
+    "id": "building_24",
+    "kind": "building",
+    "x": 101,
+    "y": 103,
+    "z": 0,
+    "sx": 14,
+    "sy": 16,
+    "sz": 15.2,
+    "yaw": 0,
+    "variant": 0
+   },
+   {
+    "id": "person_0",
+    "kind": "person",
+    "x": -6.782370436133866,
+    "y": -15.73901816012766,
+    "z": 0,
+    "yaw": -1.4135324813693264,
+    "variant": 0
+   },
+   {
+    "id": "person_1",
+    "kind": "person",
+    "x": 13.919496239461415,
+    "y": -34.243315532838714,
+    "z": 0,
+    "yaw": 1.1102356231618007,
+    "variant": 1
+   },
+   {
+    "id": "person_2",
+    "kind": "person",
+    "x": 23.360199191282867,
+    "y": 8.34146741404139,
+    "z": 0,
+    "yaw": -0.49057967536482705,
+    "variant": 2
+   },
+   {
+    "id": "person_3",
+    "kind": "person",
+    "x": -15.759639486190537,
+    "y": -33.28975682331375,
+    "z": 0,
+    "yaw": 0.2823756506090276,
+    "variant": 3
+   },
+   {
+    "id": "person_4",
+    "kind": "person",
+    "x": 13.067416075178587,
+    "y": -14.514991458083859,
+    "z": 0,
+    "yaw": 1.921519029768552,
+    "variant": 0
+   },
+   {
+    "id": "person_5",
+    "kind": "person",
+    "x": 19.257623348021532,
+    "y": -4.4711233607837455,
+    "z": 0,
+    "yaw": 0.6517298762564989,
+    "variant": 1
+   },
+   {
+    "id": "person_6",
+    "kind": "person",
+    "x": -3.825388424834653,
+    "y": -29.819372424060518,
+    "z": 0,
+    "yaw": 2.0697105465508416,
+    "variant": 2
+   },
+   {
+    "id": "person_7",
+    "kind": "person",
+    "x": 18.076983324690485,
+    "y": -30.220424161717908,
+    "z": 0,
+    "yaw": -1.6789243767608555,
+    "variant": 3
+   },
+   {
+    "id": "person_8",
+    "kind": "person",
+    "x": 22.214462384322946,
+    "y": -2.731715763921197,
+    "z": 0,
+    "yaw": 0.8525305066149067,
+    "variant": 0
+   },
+   {
+    "id": "person_9",
+    "kind": "person",
+    "x": -14.41668232145851,
+    "y": -31.292765742374222,
+    "z": 0,
+    "yaw": 2.7435816898277023,
+    "variant": 1
+   },
+   {
+    "id": "person_10",
+    "kind": "person",
+    "x": 10.116147681700951,
+    "y": -32.88645885719026,
+    "z": 0,
+    "yaw": -2.1149045056283406,
+    "variant": 2
+   },
+   {
+    "id": "person_11",
+    "kind": "person",
+    "x": 40.127034647394666,
+    "y": -6.575335165098071,
+    "z": 0,
+    "yaw": 0.8796444341239065,
+    "variant": 3
+   },
+   {
+    "id": "person_12",
+    "kind": "person",
+    "x": -8.159739505210599,
+    "y": -30.80546363264785,
+    "z": 0,
+    "yaw": -1.815948350701218,
+    "variant": 0
+   },
+   {
+    "id": "person_13",
+    "kind": "person",
+    "x": 20.716845364082836,
+    "y": -32.96079723662134,
+    "z": 0,
+    "yaw": -0.6557641057938999,
+    "variant": 1
+   },
+   {
+    "id": "person_14",
+    "kind": "person",
+    "x": 20.759942355563368,
+    "y": 8.500066671441576,
+    "z": 0,
+    "yaw": -1.4773014832859475,
+    "variant": 2
+   },
+   {
+    "id": "person_15",
+    "kind": "person",
+    "x": -12.240874250566572,
+    "y": -33.36565664750673,
+    "z": 0,
+    "yaw": -1.4907384393337555,
+    "variant": 3
+   },
+   {
+    "id": "person_16",
+    "kind": "person",
+    "x": 6.918650864310896,
+    "y": -29.47908451270441,
+    "z": 0,
+    "yaw": 1.835188770695729,
+    "variant": 0
+   },
+   {
+    "id": "person_17",
+    "kind": "person",
+    "x": 37.39859087409386,
+    "y": -0.9376135626194135,
+    "z": 0,
+    "yaw": -0.7438079596755642,
+    "variant": 1
+   },
+   {
+    "id": "vehicle_0",
+    "kind": "car",
+    "x": -61.5,
+    "y": -13,
+    "z": 0,
+    "yaw": 1.5707963267948966,
+    "variant": 0
+   },
+   {
+    "id": "vehicle_1",
+    "kind": "truck",
+    "x": -52,
+    "y": 44.5,
+    "z": 0,
+    "yaw": 0,
+    "variant": 1
+   },
+   {
+    "id": "vehicle_2",
+    "kind": "bus",
+    "x": -52,
+    "y": -11.5,
+    "z": 0,
+    "yaw": 0,
+    "variant": 0
+   },
+   {
+    "id": "vehicle_3",
+    "kind": "car",
+    "x": 90.5,
+    "y": 39,
+    "z": 0,
+    "yaw": 1.5707963267948966,
+    "variant": 1
+   },
+   {
+    "id": "vehicle_4",
+    "kind": "truck",
+    "x": -104,
+    "y": 23.5,
+    "z": 0,
+    "yaw": 0,
+    "variant": 0
+   },
+   {
+    "id": "vehicle_5",
+    "kind": "bus",
+    "x": 19.5,
+    "y": -39,
+    "z": 0,
+    "yaw": 1.5707963267948966,
+    "variant": 1
+   },
+   {
+    "id": "vehicle_6",
+    "kind": "car",
+    "x": 69.5,
+    "y": -13,
+    "z": 0,
+    "yaw": 1.5707963267948966,
+    "variant": 0
+   },
+   {
+    "id": "vehicle_7",
+    "kind": "truck",
+    "x": -32.5,
+    "y": -52,
+    "z": 0,
+    "yaw": 1.5707963267948966,
+    "variant": 1
+   },
+   {
+    "id": "vehicle_8",
+    "kind": "bus",
+    "x": 40.5,
+    "y": 65,
+    "z": 0,
+    "yaw": 1.5707963267948966,
+    "variant": 0
+   },
+   {
+    "id": "vehicle_9",
+    "kind": "car",
+    "x": -91,
+    "y": -80.5,
+    "z": 0,
+    "yaw": 0,
+    "variant": 1
+   }
+  ],
+  "roads": [
+   {
+    "id": "road_h_0",
+    "x": 0,
+    "y": -70,
+    "sx": 230,
+    "sy": 10
+   },
+   {
+    "id": "road_h_1",
+    "x": 0,
+    "y": -22,
+    "sx": 230,
+    "sy": 10
+   },
+   {
+    "id": "road_h_2",
+    "x": 0,
+    "y": 34,
+    "sx": 230,
+    "sy": 10
+   },
+   {
+    "id": "road_h_3",
+    "x": 0,
+    "y": 86,
+    "sx": 230,
+    "sy": 10
+   },
+   {
+    "id": "road_v_0",
+    "x": -72,
+    "y": 0,
+    "sx": 10,
+    "sy": 230
+   },
+   {
+    "id": "road_v_1",
+    "x": -22,
+    "y": 0,
+    "sx": 10,
+    "sy": 230
+   },
+   {
+    "id": "road_v_2",
+    "x": 30,
+    "y": 0,
+    "sx": 10,
+    "sy": 230
+   },
+   {
+    "id": "road_v_3",
+    "x": 80,
+    "y": 0,
+    "sx": 10,
+    "sy": 230
+   }
+  ],
+  "route_clearance": {
+   "travel_m": 2.0269916039170544,
+   "stop_m": 2.526991603917055
+  },
+  "slots": [
+   {
+    "id": "uav01",
+    "bay": 1,
+    "level": "upper",
+    "tray_link": "tray_a",
+    "tag_id": 1,
+    "x": 0.1675,
+    "y": 0.1675,
+    "z": 0.7615000000000001,
+    "side": 1,
+    "dock_frame": "uav01_dock"
+   },
+   {
+    "id": "uav02",
+    "bay": 1,
+    "level": "lower",
+    "tray_link": "tray_b",
+    "tag_id": 2,
+    "x": 0.1675,
+    "y": 0.1675,
+    "z": 0.6065,
+    "side": 1,
+    "dock_frame": "uav02_dock"
+   },
+   {
+    "id": "uav03",
+    "bay": 2,
+    "level": "upper",
+    "tray_link": "tray_a",
+    "tag_id": 3,
+    "x": 0.1675,
+    "y": -0.1675,
+    "z": 0.7615000000000001,
+    "side": -1,
+    "dock_frame": "uav03_dock"
+   },
+   {
+    "id": "uav04",
+    "bay": 2,
+    "level": "lower",
+    "tray_link": "tray_b",
+    "tag_id": 4,
+    "x": 0.1675,
+    "y": -0.1675,
+    "z": 0.6065,
+    "side": -1,
+    "dock_frame": "uav04_dock"
+   },
+   {
+    "id": "uav05",
+    "bay": 3,
+    "level": "upper",
+    "tray_link": "tray_a",
+    "tag_id": 5,
+    "x": -0.1675,
+    "y": 0.1675,
+    "z": 0.7615000000000001,
+    "side": 1,
+    "dock_frame": "uav05_dock"
+   },
+   {
+    "id": "uav06",
+    "bay": 3,
+    "level": "lower",
+    "tray_link": "tray_b",
+    "tag_id": 6,
+    "x": -0.1675,
+    "y": 0.1675,
+    "z": 0.6065,
+    "side": 1,
+    "dock_frame": "uav06_dock"
+   },
+   {
+    "id": "uav07",
+    "bay": 4,
+    "level": "upper",
+    "tray_link": "tray_a",
+    "tag_id": 7,
+    "x": -0.1675,
+    "y": -0.1675,
+    "z": 0.7615000000000001,
+    "side": -1,
+    "dock_frame": "uav07_dock"
+   },
+   {
+    "id": "uav08",
+    "bay": 4,
+    "level": "lower",
+    "tray_link": "tray_b",
+    "tag_id": 8,
+    "x": -0.1675,
+    "y": -0.1675,
+    "z": 0.6065,
+    "side": -1,
+    "dock_frame": "uav08_dock"
+   }
+  ],
+  "ground_color": "#a6aa8e",
+  "rack": {
+   "radius": 0.405,
+   "center_z": 0.681,
+   "half_height": 0.0775,
+   "upper_z": 0.7585000000000001,
+   "lower_z": 0.6035,
+   "pad_z": 0.003,
+   "base_z": 0.01,
+   "vehicle_model": "tins_ugv_carousel",
+   "scope": "SIMULATION_GRADE_NOT_PHYSICALLY_QUALIFIED",
+   "chassis_size": 1.1,
+   "deck_size": 0.69,
+   "wheel_x": 0.35,
+   "wheel_y": 0.325
+  }
+ }
+}

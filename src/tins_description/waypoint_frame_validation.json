@@ -1,0 +1,208 @@
+{
+  "label": "SIMULATION_GRADE_NOT_PHYSICALLY_QUALIFIED",
+  "status": "PASS_URDF_WAYPOINT_FRAME_AND_CONTACT_DATUM_CHECK",
+  "checked_utc": "2026-10-20T15:43:54.436593+00:00",
+  "poses": [
+    {
+      "waypoint": "initial_A_upper",
+      "frames_checked": 32,
+      "max_matrix_error": 0.0
+    },
+    {
+      "waypoint": "forward_horizontal_0_1",
+      "frames_checked": 32,
+      "max_matrix_error": 0.0
+    },
+    {
+      "waypoint": "forward_horizontal_0_2",
+      "frames_checked": 32,
+      "max_matrix_error": 0.0
+    },
+    {
+      "waypoint": "forward_horizontal_0_3",
+      "frames_checked": 32,
+      "max_matrix_error": 0.0
+    },
+    {
+      "waypoint": "forward_horizontal_0_4",
+      "frames_checked": 32,
+      "max_matrix_error": 0.0
+    },
+    {
+      "waypoint": "forward_vertical_1_1",
+      "frames_checked": 32,
+      "max_matrix_error": 0.0
+    },
+    {
+      "waypoint": "forward_vertical_1_2",
+      "frames_checked": 32,
+      "max_matrix_error": 0.0
+    },
+    {
+      "waypoint": "forward_vertical_1_3",
+      "frames_checked": 32,
+      "max_matrix_error": 0.0
+    },
+    {
+      "waypoint": "forward_vertical_1_4",
+      "frames_checked": 32,
+      "max_matrix_error": 0.0
+    },
+    {
+      "waypoint": "forward_horizontal_2_1",
+      "frames_checked": 32,
+      "max_matrix_error": 0.0
+    },
+    {
+      "waypoint": "forward_horizontal_2_2",
+      "frames_checked": 32,
+      "max_matrix_error": 0.0
+    },
+    {
+      "waypoint": "forward_horizontal_2_3",
+      "frames_checked": 32,
+      "max_matrix_error": 0.0
+    },
+    {
+      "waypoint": "forward_horizontal_2_4",
+      "frames_checked": 32,
+      "max_matrix_error": 0.0
+    },
+    {
+      "waypoint": "reverse_horizontal_0_1",
+      "frames_checked": 32,
+      "max_matrix_error": 0.0
+    },
+    {
+      "waypoint": "reverse_horizontal_0_2",
+      "frames_checked": 32,
+      "max_matrix_error": 0.0
+    },
+    {
+      "waypoint": "reverse_horizontal_0_3",
+      "frames_checked": 32,
+      "max_matrix_error": 0.0
+    },
+    {
+      "waypoint": "reverse_horizontal_0_4",
+      "frames_checked": 32,
+      "max_matrix_error": 0.0
+    },
+    {
+      "waypoint": "reverse_vertical_1_1",
+      "frames_checked": 32,
+      "max_matrix_error": 0.0
+    },
+    {
+      "waypoint": "reverse_vertical_1_2",
+      "frames_checked": 32,
+      "max_matrix_error": 0.0
+    },
+    {
+      "waypoint": "reverse_vertical_1_3",
+      "frames_checked": 32,
+      "max_matrix_error": 0.0
+    },
+    {
+      "waypoint": "reverse_vertical_1_4",
+      "frames_checked": 32,
+      "max_matrix_error": 0.0
+    },
+    {
+      "waypoint": "reverse_horizontal_2_1",
+      "frames_checked": 32,
+      "max_matrix_error": 0.0
+    },
+    {
+      "waypoint": "reverse_horizontal_2_2",
+      "frames_checked": 32,
+      "max_matrix_error": 0.0
+    },
+    {
+      "waypoint": "reverse_horizontal_2_3",
+      "frames_checked": 32,
+      "max_matrix_error": 0.0
+    },
+    {
+      "waypoint": "reverse_horizontal_2_4",
+      "frames_checked": 32,
+      "max_matrix_error": 0.0
+    },
+    {
+      "waypoint": "park_regenerated",
+      "frames_checked": 32,
+      "max_matrix_error": 0.0
+    }
+  ],
+  "frame_matrices_checked": 832,
+  "max_matrix_error": 0.0,
+  "hidden_contacts": [
+    {
+      "link": "left_contact_wheel_1",
+      "centre_m": [
+        -0.35,
+        0.325,
+        0.13
+      ],
+      "radius_m": 0.13,
+      "bottom_m": 0.0,
+      "envelope_bottom_error_m": 2.220446049250313e-16
+    },
+    {
+      "link": "left_contact_wheel_2",
+      "centre_m": [
+        0.0,
+        0.325,
+        0.13
+      ],
+      "radius_m": 0.13,
+      "bottom_m": 0.0,
+      "envelope_bottom_error_m": 2.220446049250313e-16
+    },
+    {
+      "link": "left_contact_wheel_3",
+      "centre_m": [
+        0.35,
+        0.325,
+        0.13
+      ],
+      "radius_m": 0.13,
+      "bottom_m": 0.0,
+      "envelope_bottom_error_m": 2.220446049250313e-16
+    },
+    {
+      "link": "right_contact_wheel_1",
+      "centre_m": [
+        -0.35,
+        -0.325,
+        0.13
+      ],
+      "radius_m": 0.13,
+      "bottom_m": 0.0,
+      "envelope_bottom_error_m": 2.220446049250313e-16
+    },
+    {
+      "link": "right_contact_wheel_2",
+      "centre_m": [
+        0.0,
+        -0.325,
+        0.13
+      ],
+      "radius_m": 0.13,
+      "bottom_m": 0.0,
+      "envelope_bottom_error_m": 2.220446049250313e-16
+    },
+    {
+      "link": "right_contact_wheel_3",
+      "centre_m": [
+        0.35,
+        -0.325,
+        0.13
+      ],
+      "radius_m": 0.13,
+      "bottom_m": 0.0,
+      "envelope_bottom_error_m": 2.220446049250313e-16
+    }
+  ],
+  "limitation": "Offline forward kinematics against measured CAD waypoint/frame data. No Gazebo contact, guarded-controller, physical lock or flight acceptance."
+}

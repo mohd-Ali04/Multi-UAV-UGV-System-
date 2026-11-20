@@ -1,0 +1,2097 @@
+<?xml version="1.0" ?>
+<robot name="tins_ugv_carousel">
+  <link name="base_link">
+    <inertial>
+      <origin rpy="0 0 0" xyz="0.0144014716976 0.00269093255396 0.297254561143"/>
+      <mass value="249.85049974247943"/>
+      <inertia ixx="12.5854569086576" ixy="0.0205912939608955" ixz="-0.216413625165359" iyy="24.7626704950965" iyz="0.050825537038837" izz="31.3955525974564"/>
+    </inertial>
+    <visual name="base_link_visual_0">
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://tins_description/meshes/visual/base_link.stl" scale="1 1 1"/>
+      </geometry>
+      <material name="base_link_material_0">
+        <color rgba="0.24 0.3 0.22 1"/>
+      </material>
+    </visual>
+    <collision name="base_link_collision_0">
+      <origin rpy="0 0 0" xyz="0.02525 0.000500000000001 0.286750000001"/>
+      <geometry>
+        <box size="1.2455 0.795 0.403500000002"/>
+      </geometry>
+    </collision>
+  </link>
+  <link name="carousel_mount">
+    <inertial>
+      <origin rpy="0 0 0" xyz="2.26343411819e-17 1.32033656894e-16 -0.0364941810645"/>
+      <mass value="29.43022769791848"/>
+      <inertia ixx="5.01574190990361" ixy="-0.613537415924224" ixz="-2.77555756156289e-17" iyy="5.37613192625791" iyz="-1.40906001973603e-16" izz="10.2050716244831"/>
+    </inertial>
+    <visual name="carousel_mount_visual_0">
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://tins_description/meshes/visual/carousel_mount.stl" scale="1 1 1"/>
+      </geometry>
+      <material name="carousel_mount_material_0">
+        <color rgba="0.45 0.47 0.49 1"/>
+      </material>
+    </visual>
+    <collision name="carousel_mount_collision_0">
+      <origin rpy="0 0 0" xyz="0 0.487999992371 0"/>
+      <geometry>
+        <box size="1.24 0.01 0.15"/>
+      </geometry>
+    </collision>
+    <collision name="carousel_mount_collision_1">
+      <origin rpy="0 0 0" xyz="0.2025 0.474249992371 -0.04"/>
+      <geometry>
+        <box size="0.6925 0.0175 0.02"/>
+      </geometry>
+    </collision>
+    <collision name="carousel_mount_collision_2">
+      <origin rpy="0 0 0" xyz="0.2025 0.474249992371 0.04"/>
+      <geometry>
+        <box size="0.6925 0.0175 0.02"/>
+      </geometry>
+    </collision>
+    <collision name="carousel_mount_collision_3">
+      <origin rpy="0 0 0" xyz="0 -0.487999992371 0"/>
+      <geometry>
+        <box size="1.24 0.01 0.15"/>
+      </geometry>
+    </collision>
+    <collision name="carousel_mount_collision_4">
+      <origin rpy="0 0 0" xyz="-0.2025 -0.474249992371 -0.04"/>
+      <geometry>
+        <box size="0.6925 0.0175 0.02"/>
+      </geometry>
+    </collision>
+    <collision name="carousel_mount_collision_5">
+      <origin rpy="0 0 0" xyz="-0.2025 -0.474249992371 0.04"/>
+      <geometry>
+        <box size="0.6925 0.0175 0.02"/>
+      </geometry>
+    </collision>
+    <collision name="carousel_mount_collision_6">
+      <origin rpy="0 0 0" xyz="-0.585 0 -0.0775"/>
+      <geometry>
+        <box size="0.04 0.965999984741 0.025"/>
+      </geometry>
+    </collision>
+    <collision name="carousel_mount_collision_7">
+      <origin rpy="0 0 0" xyz="0.585 0 -0.0775"/>
+      <geometry>
+        <box size="0.04 0.965999984741 0.025"/>
+      </geometry>
+    </collision>
+    <collision name="carousel_mount_collision_8">
+      <origin rpy="0 0 0" xyz="-0.156500000954 0.456000003815 0"/>
+      <geometry>
+        <box size="0.0269999980927 0.0520000076294 0.0519999980927"/>
+      </geometry>
+    </collision>
+    <collision name="carousel_mount_collision_9">
+      <origin rpy="0 0 0" xyz="0.556000003815 0.456000003815 0"/>
+      <geometry>
+        <box size="0.0120000076294 0.0429999923706 0.0430000019073"/>
+      </geometry>
+    </collision>
+    <collision name="carousel_mount_collision_10">
+      <origin rpy="0 0 0" xyz="0.156500000954 -0.456000003815 0"/>
+      <geometry>
+        <box size="0.0269999980927 0.0520000076294 0.0519999980927"/>
+      </geometry>
+    </collision>
+    <collision name="carousel_mount_collision_11">
+      <origin rpy="0 0 0" xyz="-0.556000003815 -0.456000003815 0"/>
+      <geometry>
+        <box size="0.0120000076294 0.0429999923706 0.0430000019073"/>
+      </geometry>
+    </collision>
+    <collision name="carousel_mount_collision_12">
+      <origin rpy="0 0 0" xyz="-0.17125 0.459499988556 0.075"/>
+      <geometry>
+        <box size="0.005 0.0470000076294 0.05"/>
+      </geometry>
+    </collision>
+    <collision name="carousel_mount_collision_13">
+      <origin rpy="0 0 0" xyz="0.57625 0.459499988556 0.075"/>
+      <geometry>
+        <box size="0.005 0.0470000076294 0.05"/>
+      </geometry>
+    </collision>
+    <collision name="carousel_mount_collision_14">
+      <origin rpy="0 0 0" xyz="0.17125 -0.459499988556 0.075"/>
+      <geometry>
+        <box size="0.005 0.0470000076294 0.05"/>
+      </geometry>
+    </collision>
+    <collision name="carousel_mount_collision_15">
+      <origin rpy="0 0 0" xyz="-0.57625 -0.459499988556 0.075"/>
+      <geometry>
+        <box size="0.005 0.0470000076294 0.05"/>
+      </geometry>
+    </collision>
+    <collision name="carousel_mount_collision_16">
+      <origin rpy="0 0 0" xyz="0 0.3275 -0.1025"/>
+      <geometry>
+        <box size="1.21 0.02 0.025"/>
+      </geometry>
+    </collision>
+    <collision name="carousel_mount_collision_17">
+      <origin rpy="0 0 0" xyz="0 -0.3275 -0.1025"/>
+      <geometry>
+        <box size="1.21 0.02 0.025"/>
+      </geometry>
+    </collision>
+    <collision name="carousel_mount_collision_18">
+      <origin rpy="0 0 0" xyz="0.585 0 -0.1025"/>
+      <geometry>
+        <box size="0.04 0.635 0.025"/>
+      </geometry>
+    </collision>
+    <collision name="carousel_mount_collision_19">
+      <origin rpy="0 0 0" xyz="-0.585 0 -0.1025"/>
+      <geometry>
+        <box size="0.04 0.635 0.025"/>
+      </geometry>
+    </collision>
+  </link>
+  <link name="tray_a_x_carriage">
+    <inertial>
+      <origin rpy="0 0 0" xyz="-0.0478321695322 0.439681784509 0.0797458018431"/>
+      <mass value="12.218535201474683"/>
+      <inertia ixx="0.184171287038451" ixy="0.0118273292637187" ixz="0.0205798947427787" iyy="0.296082646891166" iyz="0.00304229287695276" izz="0.141526576239842"/>
+    </inertial>
+    <visual name="tray_a_x_carriage_visual_0">
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://tins_description/meshes/visual/tray_a_x_carriage.stl" scale="1 1 1"/>
+      </geometry>
+      <material name="tray_a_x_carriage_material_0">
+        <color rgba="0.45 0.47 0.49 1"/>
+      </material>
+    </visual>
+    <collision name="tray_a_x_carriage_collision_0">
+      <origin rpy="0 0 0" xyz="-0.08 0.465699996948 -0.040000000596"/>
+      <geometry>
+        <box size="0.0775 0.0254000091553 0.0630000007153"/>
+      </geometry>
+    </collision>
+    <collision name="tray_a_x_carriage_collision_1">
+      <origin rpy="0 0 0" xyz="-0.08 0.441000003815 -0.040000000596"/>
+      <geometry>
+        <box size="0.0775 0.0239999771118 0.0630000007153"/>
+      </geometry>
+    </collision>
+    <collision name="tray_a_x_carriage_collision_2">
+      <origin rpy="0 0 0" xyz="0.08 0.465699996948 -0.040000000596"/>
+      <geometry>
+        <box size="0.0775 0.0254000091553 0.0630000007153"/>
+      </geometry>
+    </collision>
+    <collision name="tray_a_x_carriage_collision_3">
+      <origin rpy="0 0 0" xyz="0.08 0.441000003815 -0.040000000596"/>
+      <geometry>
+        <box size="0.0775 0.0239999771118 0.0630000007153"/>
+      </geometry>
+    </collision>
+    <collision name="tray_a_x_carriage_collision_4">
+      <origin rpy="0 0 0" xyz="-0.08 0.465699996948 0.040000000596"/>
+      <geometry>
+        <box size="0.0775 0.0254000091553 0.0630000007153"/>
+      </geometry>
+    </collision>
+    <collision name="tray_a_x_carriage_collision_5">
+      <origin rpy="0 0 0" xyz="-0.08 0.441000003815 0.040000000596"/>
+      <geometry>
+        <box size="0.0775 0.0239999771118 0.0630000007153"/>
+      </geometry>
+    </collision>
+    <collision name="tray_a_x_carriage_collision_6">
+      <origin rpy="0 0 0" xyz="0.08 0.465699996948 0.040000000596"/>
+      <geometry>
+        <box size="0.0775 0.0254000091553 0.0630000007153"/>
+      </geometry>
+    </collision>
+    <collision name="tray_a_x_carriage_collision_7">
+      <origin rpy="0 0 0" xyz="0.08 0.441000003815 0.040000000596"/>
+      <geometry>
+        <box size="0.0775 0.0239999771118 0.0630000007153"/>
+      </geometry>
+    </collision>
+    <collision name="tray_a_x_carriage_collision_8">
+      <origin rpy="0 0 0" xyz="0 0.424000015259 0.0835000038147"/>
+      <geometry>
+        <box size="0.2575 0.01 0.377000007629"/>
+      </geometry>
+    </collision>
+    <collision name="tray_a_x_carriage_collision_9">
+      <origin rpy="0 0 0" xyz="-0.07 0.410250015259 0.0750000047684"/>
+      <geometry>
+        <box size="0.02 0.0175 0.31220000267"/>
+      </geometry>
+    </collision>
+    <collision name="tray_a_x_carriage_collision_10">
+      <origin rpy="0 0 0" xyz="0.07 0.410250015259 0.0750000047684"/>
+      <geometry>
+        <box size="0.02 0.0175 0.31220000267"/>
+      </geometry>
+    </collision>
+    <collision name="tray_a_x_carriage_collision_11">
+      <origin rpy="0 0 0" xyz="0 0.391999988556 0.213500003815"/>
+      <geometry>
+        <box size="0.0519999980927 0.0520000076294 0.0270000076294"/>
+      </geometry>
+    </collision>
+    <collision name="tray_a_x_carriage_collision_12">
+      <origin rpy="0 0 0" xyz="0 0.391999988556 -0.0709999990463"/>
+      <geometry>
+        <box size="0.0430000019073 0.0429999923706 0.0119999980927"/>
+      </geometry>
+    </collision>
+    <collision name="tray_a_x_carriage_collision_13">
+      <origin rpy="0 0 0" xyz="-0.08 0.383000011444 -0.0985999965668"/>
+      <geometry>
+        <box size="0.05 0.0720000076294 0.005"/>
+      </geometry>
+    </collision>
+    <collision name="tray_a_x_carriage_collision_14">
+      <origin rpy="0 0 0" xyz="-0.08 0.383000011444 0.253600006104"/>
+      <geometry>
+        <box size="0.05 0.0720000076294 0.005"/>
+      </geometry>
+    </collision>
+    <collision name="tray_a_x_carriage_collision_15">
+      <origin rpy="0 0 0" xyz="0.08 0.383000011444 -0.0985999965668"/>
+      <geometry>
+        <box size="0.05 0.0720000076294 0.005"/>
+      </geometry>
+    </collision>
+    <collision name="tray_a_x_carriage_collision_16">
+      <origin rpy="0 0 0" xyz="0.08 0.383000011444 0.253600006104"/>
+      <geometry>
+        <box size="0.05 0.0720000076294 0.005"/>
+      </geometry>
+    </collision>
+    <collision name="tray_a_x_carriage_collision_17">
+      <origin rpy="0 0 0" xyz="-0.13125 0.453500003815 0.075"/>
+      <geometry>
+        <box size="0.005 0.0570000076294 0.05"/>
+      </geometry>
+    </collision>
+    <collision name="tray_a_x_carriage_collision_18">
+      <origin rpy="0 0 0" xyz="0.13125 0.453500003815 0.075"/>
+      <geometry>
+        <box size="0.005 0.0570000076294 0.05"/>
+      </geometry>
+    </collision>
+    <collision name="tray_a_x_carriage_collision_19">
+      <origin rpy="0 0 0" xyz="-0.19 0.385 0.0885000038147"/>
+      <geometry>
+        <box size="0.0120000076294 0.0119999694824 0.367000007629"/>
+      </geometry>
+    </collision>
+    <collision name="tray_a_x_carriage_collision_20">
+      <origin rpy="0 0 0" xyz="-0.19 0.509000015259 0.0675"/>
+      <geometry>
+        <box size="0.04 0.02 0.345"/>
+      </geometry>
+    </collision>
+    <collision name="tray_a_x_carriage_collision_21">
+      <origin rpy="0 0 0" xyz="-0.149375 0.469000015259 -0.095"/>
+      <geometry>
+        <box size="0.04125 0.1 0.02"/>
+      </geometry>
+    </collision>
+    <collision name="tray_a_x_carriage_collision_22">
+      <origin rpy="0 0 0" xyz="-0.149375 0.469000015259 0.25"/>
+      <geometry>
+        <box size="0.04125 0.1 0.02"/>
+      </geometry>
+    </collision>
+    <collision name="tray_a_x_carriage_collision_23">
+      <origin rpy="0 0 0" xyz="-0.19 0.444500007629 0.25"/>
+      <geometry>
+        <box size="0.04 0.149000015259 0.02"/>
+      </geometry>
+    </collision>
+    <collision name="tray_a_x_carriage_collision_24">
+      <origin rpy="0 0 0" xyz="-0.208000001907 0.469500007629 0.215"/>
+      <geometry>
+        <box size="0.0039999961853 0.0590000152588 0.05"/>
+      </geometry>
+    </collision>
+    <collision name="tray_a_x_carriage_collision_25">
+      <origin rpy="0 0 0" xyz="-0.171999998093 0.469500007629 0.215"/>
+      <geometry>
+        <box size="0.0039999961853 0.0590000152588 0.05"/>
+      </geometry>
+    </collision>
+    <collision name="tray_a_x_carriage_collision_26">
+      <origin rpy="0 0 0" xyz="-0.19 0.434500007629 -0.0869999980927"/>
+      <geometry>
+        <box size="0.04 0.129000015259 0.01"/>
+      </geometry>
+    </collision>
+    <collision name="tray_a_x_carriage_collision_27">
+      <origin rpy="0 0 0" xyz="-0.19 0.385 -0.0860000038147"/>
+      <geometry>
+        <box size="0.02 0.02 0.01"/>
+      </geometry>
+    </collision>
+    <collision name="tray_a_x_carriage_collision_28">
+      <origin rpy="0 0 0" xyz="-0.041 0.437499999866 0.095"/>
+      <geometry>
+        <box size="0.0519999980927 0.0209999997914 0.04"/>
+      </geometry>
+    </collision>
+    <collision name="tray_a_x_carriage_collision_29">
+      <origin rpy="0 0 0" xyz="0.041 0.437499999866 0.095"/>
+      <geometry>
+        <box size="0.0519999980927 0.0209999997914 0.04"/>
+      </geometry>
+    </collision>
+    <collision name="tray_a_x_carriage_collision_30">
+      <origin rpy="0 0 0" xyz="-0.041 0.437499999866 0.25"/>
+      <geometry>
+        <box size="0.0519999980927 0.0209999997914 0.04"/>
+      </geometry>
+    </collision>
+    <collision name="tray_a_x_carriage_collision_31">
+      <origin rpy="0 0 0" xyz="0.041 0.437499999866 0.25"/>
+      <geometry>
+        <box size="0.0519999980927 0.0209999997914 0.04"/>
+      </geometry>
+    </collision>
+  </link>
+  <link name="tray_b_x_carriage">
+    <inertial>
+      <origin rpy="0 0 0" xyz="0.0478321695324 -0.439681784509 0.0797458018431"/>
+      <mass value="12.218535201474683"/>
+      <inertia ixx="0.184171287038494" ixy="0.0118273292635843" ixz="-0.0205798947430483" iyy="0.296082646890624" iyz="-0.00304229287695282" izz="0.141526576239257"/>
+    </inertial>
+    <visual name="tray_b_x_carriage_visual_0">
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://tins_description/meshes/visual/tray_b_x_carriage.stl" scale="1 1 1"/>
+      </geometry>
+      <material name="tray_b_x_carriage_material_0">
+        <color rgba="0.45 0.47 0.49 1"/>
+      </material>
+    </visual>
+    <collision name="tray_b_x_carriage_collision_0">
+      <origin rpy="0 0 0" xyz="-0.08 -0.465699996948 -0.040000000596"/>
+      <geometry>
+        <box size="0.0775 0.0254000091553 0.0630000007153"/>
+      </geometry>
+    </collision>
+    <collision name="tray_b_x_carriage_collision_1">
+      <origin rpy="0 0 0" xyz="-0.08 -0.441000003815 -0.040000000596"/>
+      <geometry>
+        <box size="0.0775 0.0239999771118 0.0630000007153"/>
+      </geometry>
+    </collision>
+    <collision name="tray_b_x_carriage_collision_2">
+      <origin rpy="0 0 0" xyz="0.08 -0.465699996948 -0.040000000596"/>
+      <geometry>
+        <box size="0.0775 0.0254000091553 0.0630000007153"/>
+      </geometry>
+    </collision>
+    <collision name="tray_b_x_carriage_collision_3">
+      <origin rpy="0 0 0" xyz="0.08 -0.441000003815 -0.040000000596"/>
+      <geometry>
+        <box size="0.0775 0.0239999771118 0.0630000007153"/>
+      </geometry>
+    </collision>
+    <collision name="tray_b_x_carriage_collision_4">
+      <origin rpy="0 0 0" xyz="-0.08 -0.465699996948 0.040000000596"/>
+      <geometry>
+        <box size="0.0775 0.0254000091553 0.0630000007153"/>
+      </geometry>
+    </collision>
+    <collision name="tray_b_x_carriage_collision_5">
+      <origin rpy="0 0 0" xyz="-0.08 -0.441000003815 0.040000000596"/>
+      <geometry>
+        <box size="0.0775 0.0239999771118 0.0630000007153"/>
+      </geometry>
+    </collision>
+    <collision name="tray_b_x_carriage_collision_6">
+      <origin rpy="0 0 0" xyz="0.08 -0.465699996948 0.040000000596"/>
+      <geometry>
+        <box size="0.0775 0.0254000091553 0.0630000007153"/>
+      </geometry>
+    </collision>
+    <collision name="tray_b_x_carriage_collision_7">
+      <origin rpy="0 0 0" xyz="0.08 -0.441000003815 0.040000000596"/>
+      <geometry>
+        <box size="0.0775 0.0239999771118 0.0630000007153"/>
+      </geometry>
+    </collision>
+    <collision name="tray_b_x_carriage_collision_8">
+      <origin rpy="0 0 0" xyz="0 -0.424000015259 0.0835000038147"/>
+      <geometry>
+        <box size="0.2575 0.01 0.377000007629"/>
+      </geometry>
+    </collision>
+    <collision name="tray_b_x_carriage_collision_9">
+      <origin rpy="0 0 0" xyz="-0.07 -0.410250015259 0.0750000047684"/>
+      <geometry>
+        <box size="0.02 0.0175 0.31220000267"/>
+      </geometry>
+    </collision>
+    <collision name="tray_b_x_carriage_collision_10">
+      <origin rpy="0 0 0" xyz="0.07 -0.410250015259 0.0750000047684"/>
+      <geometry>
+        <box size="0.02 0.0175 0.31220000267"/>
+      </geometry>
+    </collision>
+    <collision name="tray_b_x_carriage_collision_11">
+      <origin rpy="0 0 0" xyz="0 -0.391999988556 0.213500003815"/>
+      <geometry>
+        <box size="0.0519999980927 0.0520000076294 0.0270000076294"/>
+      </geometry>
+    </collision>
+    <collision name="tray_b_x_carriage_collision_12">
+      <origin rpy="0 0 0" xyz="0 -0.391999988556 -0.0709999990463"/>
+      <geometry>
+        <box size="0.0430000019073 0.0429999923706 0.0119999980927"/>
+      </geometry>
+    </collision>
+    <collision name="tray_b_x_carriage_collision_13">
+      <origin rpy="0 0 0" xyz="-0.08 -0.383000011444 -0.0985999965668"/>
+      <geometry>
+        <box size="0.05 0.0720000076294 0.005"/>
+      </geometry>
+    </collision>
+    <collision name="tray_b_x_carriage_collision_14">
+      <origin rpy="0 0 0" xyz="-0.08 -0.383000011444 0.253600006104"/>
+      <geometry>
+        <box size="0.05 0.0720000076294 0.005"/>
+      </geometry>
+    </collision>
+    <collision name="tray_b_x_carriage_collision_15">
+      <origin rpy="0 0 0" xyz="0.08 -0.383000011444 -0.0985999965668"/>
+      <geometry>
+        <box size="0.05 0.0720000076294 0.005"/>
+      </geometry>
+    </collision>
+    <collision name="tray_b_x_carriage_collision_16">
+      <origin rpy="0 0 0" xyz="0.08 -0.383000011444 0.253600006104"/>
+      <geometry>
+        <box size="0.05 0.0720000076294 0.005"/>
+      </geometry>
+    </collision>
+    <collision name="tray_b_x_carriage_collision_17">
+      <origin rpy="0 0 0" xyz="0.13125 -0.453500003815 0.075"/>
+      <geometry>
+        <box size="0.005 0.0570000076294 0.05"/>
+      </geometry>
+    </collision>
+    <collision name="tray_b_x_carriage_collision_18">
+      <origin rpy="0 0 0" xyz="-0.13125 -0.453500003815 0.075"/>
+      <geometry>
+        <box size="0.005 0.0570000076294 0.05"/>
+      </geometry>
+    </collision>
+    <collision name="tray_b_x_carriage_collision_19">
+      <origin rpy="0 0 0" xyz="0.19 -0.385 0.0885000038147"/>
+      <geometry>
+        <box size="0.0120000076294 0.0119999694824 0.367000007629"/>
+      </geometry>
+    </collision>
+    <collision name="tray_b_x_carriage_collision_20">
+      <origin rpy="0 0 0" xyz="0.19 -0.509000015259 0.0675"/>
+      <geometry>
+        <box size="0.04 0.02 0.345"/>
+      </geometry>
+    </collision>
+    <collision name="tray_b_x_carriage_collision_21">
+      <origin rpy="0 0 0" xyz="0.149375 -0.469000015259 -0.095"/>
+      <geometry>
+        <box size="0.04125 0.1 0.02"/>
+      </geometry>
+    </collision>
+    <collision name="tray_b_x_carriage_collision_22">
+      <origin rpy="0 0 0" xyz="0.149375 -0.469000015259 0.25"/>
+      <geometry>
+        <box size="0.04125 0.1 0.02"/>
+      </geometry>
+    </collision>
+    <collision name="tray_b_x_carriage_collision_23">
+      <origin rpy="0 0 0" xyz="0.19 -0.444500007629 0.25"/>
+      <geometry>
+        <box size="0.04 0.149000015259 0.02"/>
+      </geometry>
+    </collision>
+    <collision name="tray_b_x_carriage_collision_24">
+      <origin rpy="0 0 0" xyz="0.208000001907 -0.469500007629 0.215"/>
+      <geometry>
+        <box size="0.0039999961853 0.0590000152588 0.05"/>
+      </geometry>
+    </collision>
+    <collision name="tray_b_x_carriage_collision_25">
+      <origin rpy="0 0 0" xyz="0.171999998093 -0.469500007629 0.215"/>
+      <geometry>
+        <box size="0.0039999961853 0.0590000152588 0.05"/>
+      </geometry>
+    </collision>
+    <collision name="tray_b_x_carriage_collision_26">
+      <origin rpy="0 0 0" xyz="0.19 -0.434500007629 -0.0869999980927"/>
+      <geometry>
+        <box size="0.04 0.129000015259 0.01"/>
+      </geometry>
+    </collision>
+    <collision name="tray_b_x_carriage_collision_27">
+      <origin rpy="0 0 0" xyz="0.19 -0.385 -0.0860000038147"/>
+      <geometry>
+        <box size="0.02 0.02 0.01"/>
+      </geometry>
+    </collision>
+    <collision name="tray_b_x_carriage_collision_28">
+      <origin rpy="0 0 0" xyz="-0.041 -0.437499999866 0.095"/>
+      <geometry>
+        <box size="0.0519999980927 0.0209999997914 0.04"/>
+      </geometry>
+    </collision>
+    <collision name="tray_b_x_carriage_collision_29">
+      <origin rpy="0 0 0" xyz="0.041 -0.437499999866 0.095"/>
+      <geometry>
+        <box size="0.0519999980927 0.0209999997914 0.04"/>
+      </geometry>
+    </collision>
+    <collision name="tray_b_x_carriage_collision_30">
+      <origin rpy="0 0 0" xyz="-0.041 -0.437499999866 0.25"/>
+      <geometry>
+        <box size="0.0519999980927 0.0209999997914 0.04"/>
+      </geometry>
+    </collision>
+    <collision name="tray_b_x_carriage_collision_31">
+      <origin rpy="0 0 0" xyz="0.041 -0.437499999866 0.25"/>
+      <geometry>
+        <box size="0.0519999980927 0.0209999997914 0.04"/>
+      </geometry>
+    </collision>
+  </link>
+  <link name="tray_a">
+    <inertial>
+      <origin rpy="0 0 0" xyz="-0.0592778789876 0.21510387328 0.00288604831969"/>
+      <mass value="14.108203575719708"/>
+      <inertia ixx="0.77022927556168" ixy="0.141700790086608" ixz="0.00277005227653201" iyy="0.298839981582335" iyz="-0.0158147283148279" izz="1.04541586371776"/>
+    </inertial>
+    <visual name="tray_a_visual_0">
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://tins_description/meshes/visual/tray_a.stl" scale="1 1 1"/>
+      </geometry>
+      <material name="tray_a_material_0">
+        <color rgba="0.53 0.58 0.64 1"/>
+      </material>
+    </visual>
+    <collision name="tray_a_collision_0">
+      <origin rpy="0 0 0" xyz="-0.0699999976158 0.401700000763 0"/>
+      <geometry>
+        <box size="0.062999997139 0.0253999710083 0.0922000026703"/>
+      </geometry>
+    </collision>
+    <collision name="tray_a_collision_1">
+      <origin rpy="0 0 0" xyz="-0.0699999976158 0.377000007629 0"/>
+      <geometry>
+        <box size="0.072999997139 0.0240000152588 0.0922000026703"/>
+      </geometry>
+    </collision>
+    <collision name="tray_a_collision_2">
+      <origin rpy="0 0 0" xyz="0.0699999976158 0.401700000763 0"/>
+      <geometry>
+        <box size="0.062999997139 0.0253999710083 0.0922000026703"/>
+      </geometry>
+    </collision>
+    <collision name="tray_a_collision_3">
+      <origin rpy="0 0 0" xyz="0.0699999976158 0.377000007629 0"/>
+      <geometry>
+        <box size="0.062999997139 0.0240000152588 0.0922000026703"/>
+      </geometry>
+    </collision>
+    <collision name="tray_a_collision_4">
+      <origin rpy="0 0 0" xyz="0 0.36 0.0269499993324"/>
+      <geometry>
+        <box size="0.222999992371 0.01 0.166100001335"/>
+      </geometry>
+    </collision>
+    <collision name="tray_a_collision_5">
+      <origin rpy="0 0 0" xyz="-0.07 0.005 -0.0125"/>
+      <geometry>
+        <box size="0.025 0.7 0.025"/>
+      </geometry>
+    </collision>
+    <collision name="tray_a_collision_6">
+      <origin rpy="0 0 0" xyz="0.07 0.005 -0.0125"/>
+      <geometry>
+        <box size="0.025 0.7 0.025"/>
+      </geometry>
+    </collision>
+    <collision name="tray_a_collision_7">
+      <origin rpy="0 0 0" xyz="-0.08 0.372000007629 -0.0586000013351"/>
+      <geometry>
+        <box size="0.05 0.05 0.005"/>
+      </geometry>
+    </collision>
+    <collision name="tray_a_collision_8">
+      <origin rpy="0 0 0" xyz="-0.08 0.372000007629 0.0586000013351"/>
+      <geometry>
+        <box size="0.05 0.05 0.005"/>
+      </geometry>
+    </collision>
+    <collision name="tray_a_collision_9">
+      <origin rpy="0 0 0" xyz="0.08 0.372000007629 -0.0586000013351"/>
+      <geometry>
+        <box size="0.05 0.05 0.005"/>
+      </geometry>
+    </collision>
+    <collision name="tray_a_collision_10">
+      <origin rpy="0 0 0" xyz="0.08 0.372000007629 0.0586000013351"/>
+      <geometry>
+        <box size="0.05 0.05 0.005"/>
+      </geometry>
+    </collision>
+    <collision name="tray_a_collision_11">
+      <origin rpy="0 0 0" xyz="-0.041 0.390500000939 0.095"/>
+      <geometry>
+        <box size="0.0240000009537 0.0550000019372 0.03"/>
+      </geometry>
+    </collision>
+    <collision name="tray_a_collision_12">
+      <origin rpy="0 0 0" xyz="0.041 0.390500000939 0.095"/>
+      <geometry>
+        <box size="0.0240000009537 0.0550000019372 0.03"/>
+      </geometry>
+    </collision>
+    <collision name="tray_a_collision_13">
+      <origin rpy="0 0 0" xyz="-0.28 0 0.0015000000596"/>
+      <geometry>
+        <box size="0.13 0.69 0.00300000011921"/>
+      </geometry>
+    </collision>
+    <collision name="tray_a_collision_14">
+      <origin rpy="0 0 0" xyz="-0.19 -0.00299999237061 0.0015000000596"/>
+      <geometry>
+        <box size="0.05 0.684000015259 0.00300000011921"/>
+      </geometry>
+    </collision>
+    <collision name="tray_a_collision_15">
+      <origin rpy="0 0 0" xyz="0.09 0 0.0015000000596"/>
+      <geometry>
+        <box size="0.51 0.69 0.00300000011921"/>
+      </geometry>
+    </collision>
+  </link>
+  <link name="tray_b">
+    <inertial>
+      <origin rpy="0 0 0" xyz="0.0592778789826 -0.21510387328 0.00288604831969"/>
+      <mass value="14.10820357571971"/>
+      <inertia ixx="0.770229275561682" ixy="0.141700790074415" ixz="-0.00277005227601037" iyy="0.298839981563301" iyz="0.015814728314828" izz="1.04541586369872"/>
+    </inertial>
+    <visual name="tray_b_visual_0">
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://tins_description/meshes/visual/tray_b.stl" scale="1 1 1"/>
+      </geometry>
+      <material name="tray_b_material_0">
+        <color rgba="0.53 0.58 0.64 1"/>
+      </material>
+    </visual>
+    <collision name="tray_b_collision_0">
+      <origin rpy="0 0 0" xyz="-0.0699999976158 -0.401700000763 0"/>
+      <geometry>
+        <box size="0.062999997139 0.0253999710083 0.0922000026703"/>
+      </geometry>
+    </collision>
+    <collision name="tray_b_collision_1">
+      <origin rpy="0 0 0" xyz="-0.0699999976158 -0.377000007629 0"/>
+      <geometry>
+        <box size="0.062999997139 0.0240000152588 0.0922000026703"/>
+      </geometry>
+    </collision>
+    <collision name="tray_b_collision_2">
+      <origin rpy="0 0 0" xyz="0.0699999976158 -0.401700000763 0"/>
+      <geometry>
+        <box size="0.062999997139 0.0253999710083 0.0922000026703"/>
+      </geometry>
+    </collision>
+    <collision name="tray_b_collision_3">
+      <origin rpy="0 0 0" xyz="0.0699999976158 -0.377000007629 0"/>
+      <geometry>
+        <box size="0.072999997139 0.0240000152588 0.0922000026703"/>
+      </geometry>
+    </collision>
+    <collision name="tray_b_collision_4">
+      <origin rpy="0 0 0" xyz="0 -0.36 0.0269499993324"/>
+      <geometry>
+        <box size="0.222999992371 0.01 0.166100001335"/>
+      </geometry>
+    </collision>
+    <collision name="tray_b_collision_5">
+      <origin rpy="0 0 0" xyz="-0.07 -0.005 -0.0125"/>
+      <geometry>
+        <box size="0.025 0.7 0.025"/>
+      </geometry>
+    </collision>
+    <collision name="tray_b_collision_6">
+      <origin rpy="0 0 0" xyz="0.07 -0.005 -0.0125"/>
+      <geometry>
+        <box size="0.025 0.7 0.025"/>
+      </geometry>
+    </collision>
+    <collision name="tray_b_collision_7">
+      <origin rpy="0 0 0" xyz="-0.08 -0.372000007629 -0.0586000013351"/>
+      <geometry>
+        <box size="0.05 0.05 0.005"/>
+      </geometry>
+    </collision>
+    <collision name="tray_b_collision_8">
+      <origin rpy="0 0 0" xyz="-0.08 -0.372000007629 0.0586000013351"/>
+      <geometry>
+        <box size="0.05 0.05 0.005"/>
+      </geometry>
+    </collision>
+    <collision name="tray_b_collision_9">
+      <origin rpy="0 0 0" xyz="0.08 -0.372000007629 -0.0586000013351"/>
+      <geometry>
+        <box size="0.05 0.05 0.005"/>
+      </geometry>
+    </collision>
+    <collision name="tray_b_collision_10">
+      <origin rpy="0 0 0" xyz="0.08 -0.372000007629 0.0586000013351"/>
+      <geometry>
+        <box size="0.05 0.05 0.005"/>
+      </geometry>
+    </collision>
+    <collision name="tray_b_collision_11">
+      <origin rpy="0 0 0" xyz="-0.041 -0.390500000939 0.095"/>
+      <geometry>
+        <box size="0.0240000009537 0.0550000019372 0.03"/>
+      </geometry>
+    </collision>
+    <collision name="tray_b_collision_12">
+      <origin rpy="0 0 0" xyz="0.041 -0.390500000939 0.095"/>
+      <geometry>
+        <box size="0.0240000009537 0.0550000019372 0.03"/>
+      </geometry>
+    </collision>
+    <collision name="tray_b_collision_13">
+      <origin rpy="0 0 0" xyz="-0.09 0 0.0015000000596"/>
+      <geometry>
+        <box size="0.51 0.69 0.00300000011921"/>
+      </geometry>
+    </collision>
+    <collision name="tray_b_collision_14">
+      <origin rpy="0 0 0" xyz="0.19 0.00299999237061 0.0015000000596"/>
+      <geometry>
+        <box size="0.05 0.684000015259 0.00300000011921"/>
+      </geometry>
+    </collision>
+    <collision name="tray_b_collision_15">
+      <origin rpy="0 0 0" xyz="0.28 0 0.0015000000596"/>
+      <geometry>
+        <box size="0.13 0.69 0.00300000011921"/>
+      </geometry>
+    </collision>
+  </link>
+  <link name="left_drive_sprocket_link">
+    <inertial>
+      <origin rpy="0 0 0" xyz="9.85078066957e-05 -0.00710556226921 -6.89446342163e-06"/>
+      <mass value="7.258478059644817"/>
+      <inertia ixx="0.0315233919173392" ixy="4.21774482733157e-05" ixz="-6.43142816698359e-07" iyy="0.03632231521563" iyz="-2.96482682545189e-06" izz="0.0315143096756169"/>
+    </inertial>
+    <visual name="left_drive_sprocket_link_visual_0">
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://tins_description/meshes/visual/left_drive_sprocket_link.stl" scale="1 1 1"/>
+      </geometry>
+      <material name="left_drive_sprocket_link_material_0">
+        <color rgba="0.45 0.47 0.49 1"/>
+      </material>
+    </visual>
+  </link>
+  <link name="right_drive_sprocket_link">
+    <inertial>
+      <origin rpy="0 0 0" xyz="3.43204465757e-05 0.00710556226921 -2.4125485326e-06"/>
+      <mass value="7.258478059644817"/>
+      <inertia ixx="0.0315233950928894" ixy="-4.02413777154125e-05" ixz="-6.3840789430532e-07" iyy="0.0363223774034259" iyz="2.8241563117419e-06" izz="0.0315143686878626"/>
+    </inertial>
+    <visual name="right_drive_sprocket_link_visual_0">
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://tins_description/meshes/visual/right_drive_sprocket_link.stl" scale="1 1 1"/>
+      </geometry>
+      <material name="right_drive_sprocket_link_material_0">
+        <color rgba="0.45 0.47 0.49 1"/>
+      </material>
+    </visual>
+  </link>
+  <link name="left_track_proxy_link">
+    <inertial>
+      <origin rpy="0 0 0" xyz="-0.00475143593114 -1.24081302383e-12 -0.000546515351772"/>
+      <mass value="14.36781200285882"/>
+      <inertia ixx="0.429006109151638" ixy="1.12565447868987e-11" ixz="-0.100411747950379" iyy="2.73510863114354" iyz="4.55183436844361e-13" izz="2.36342199416892"/>
+    </inertial>
+    <visual name="left_track_proxy_link_visual_0">
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://tins_description/meshes/visual/left_track_proxy_link.stl" scale="1 1 1"/>
+      </geometry>
+      <material name="left_track_proxy_link_material_0">
+        <color rgba="0.12 0.13 0.14 1"/>
+      </material>
+    </visual>
+  </link>
+  <link name="right_track_proxy_link">
+    <inertial>
+      <origin rpy="0 0 0" xyz="-0.00475143593114 -1.24103506844e-12 -0.000546515351772"/>
+      <mass value="14.36781200285882"/>
+      <inertia ixx="0.429006109151638" ixy="1.12565447868987e-11" ixz="-0.100411747950379" iyy="2.73510863114354" iyz="4.55183436844361e-13" izz="2.36342199416892"/>
+    </inertial>
+    <visual name="right_track_proxy_link_visual_0">
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://tins_description/meshes/visual/right_track_proxy_link.stl" scale="1 1 1"/>
+      </geometry>
+      <material name="right_track_proxy_link_material_0">
+        <color rgba="0.12 0.13 0.14 1"/>
+      </material>
+    </visual>
+  </link>
+  <link name="x_screw_a">
+    <inertial>
+      <origin rpy="0 0 0" xyz="0.196102927126 -3.33066907388e-16 1.6481076503e-12"/>
+      <mass value="1.135711505332422"/>
+      <inertia ixx="3.54808463731388e-05" ixy="-9.09494701772928e-17" ixz="-4.31872997661173e-15" iyy="0.0494573886316038" iyz="-1.03077013641518e-18" izz="0.0494573886361861"/>
+    </inertial>
+    <visual name="x_screw_a_visual_0">
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://tins_description/meshes/visual/x_screw_a.stl" scale="1 1 1"/>
+      </geometry>
+      <material name="x_screw_a_material_0">
+        <color rgba="0.45 0.47 0.49 1"/>
+      </material>
+    </visual>
+  </link>
+  <link name="x_screw_b">
+    <inertial>
+      <origin rpy="0 0 0" xyz="-0.196102927126 2.22044604925e-16 1.64810666805e-12"/>
+      <mass value="1.135711505332422"/>
+      <inertia ixx="3.54808463730478e-05" ixy="-1.47792889038101e-16" ixz="4.32037664632475e-15" iyy="0.049457388631604" iyz="-2.34265939733407e-19" izz="0.0494573886361863"/>
+    </inertial>
+    <visual name="x_screw_b_visual_0">
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://tins_description/meshes/visual/x_screw_b.stl" scale="1 1 1"/>
+      </geometry>
+      <material name="x_screw_b_material_0">
+        <color rgba="0.45 0.47 0.49 1"/>
+      </material>
+    </visual>
+  </link>
+  <link name="z_screw_a">
+    <inertial>
+      <origin rpy="0 0 0" xyz="-1.61249126893e-12 -1.11022302463e-16 0.0768487000804"/>
+      <mass value="0.4600603259788138"/>
+      <inertia ixx="0.00345156061086567" ixy="-3.70363295526873e-19" ixz="-2.20270491369125e-15" iyy="0.0034515606090742" iyz="0" izz="1.3871292666488e-05"/>
+    </inertial>
+    <visual name="z_screw_a_visual_0">
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://tins_description/meshes/visual/z_screw_a.stl" scale="1 1 1"/>
+      </geometry>
+      <material name="z_screw_a_material_0">
+        <color rgba="0.45 0.47 0.49 1"/>
+      </material>
+    </visual>
+  </link>
+  <link name="z_screw_b">
+    <inertial>
+      <origin rpy="0 0 0" xyz="-1.61249126893e-12 1.11022302463e-16 0.0768487000804"/>
+      <mass value="0.4600603259788138"/>
+      <inertia ixx="0.00345156061086565" ixy="2.19763762705218e-19" ixz="-2.20270491369125e-15" iyy="0.0034515606090742" iyz="2.8421709430404e-18" izz="1.38712926664653e-05"/>
+    </inertial>
+    <visual name="z_screw_b_visual_0">
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://tins_description/meshes/visual/z_screw_b.stl" scale="1 1 1"/>
+      </geometry>
+      <material name="z_screw_b_material_0">
+        <color rgba="0.45 0.47 0.49 1"/>
+      </material>
+    </visual>
+  </link>
+  <link name="lock_a_lower_neg_x_housing"/>
+  <link name="lock_a_lower_neg_x_plunger">
+    <inertial>
+      <origin rpy="0 0 0" xyz="6.01596480086e-13 0.00504810126582 2.77555756156e-17"/>
+      <mass value="0.038"/>
+      <inertia ixx="1.16701741880692e-05" ixy="6.82865700414609e-17" ixz="0" iyy="6.48825907198366e-07" iyz="-3.20806702203293e-20" izz="1.16701742721339e-05"/>
+    </inertial>
+    <visual name="lock_a_lower_neg_x_plunger_visual_0">
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://tins_description/meshes/visual/lock_a_lower_neg_x_plunger.stl" scale="1 1 1"/>
+      </geometry>
+      <material name="lock_a_lower_neg_x_plunger_material_0">
+        <color rgba="0.45 0.47 0.49 1"/>
+      </material>
+    </visual>
+  </link>
+  <link name="lock_a_lower_pos_x_housing"/>
+  <link name="lock_a_lower_pos_x_plunger">
+    <inertial>
+      <origin rpy="0 0 0" xyz="6.0160341898e-13 0.00504810126582 2.77555756156e-17"/>
+      <mass value="0.038"/>
+      <inertia ixx="1.16701741880714e-05" ixy="6.85351952356688e-17" ixz="-1.60403351101646e-20" iyy="6.48825907198594e-07" iyz="-3.20806702203292e-20" izz="1.16701742721361e-05"/>
+    </inertial>
+    <visual name="lock_a_lower_pos_x_plunger_visual_0">
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://tins_description/meshes/visual/lock_a_lower_pos_x_plunger.stl" scale="1 1 1"/>
+      </geometry>
+      <material name="lock_a_lower_pos_x_plunger_material_0">
+        <color rgba="0.45 0.47 0.49 1"/>
+      </material>
+    </visual>
+  </link>
+  <link name="lock_a_upper_neg_x_housing"/>
+  <link name="lock_a_upper_neg_x_plunger">
+    <inertial>
+      <origin rpy="0 0 0" xyz="6.01596480086e-13 -0.00295189873418 0"/>
+      <mass value="0.038"/>
+      <inertia ixx="1.16701741880703e-05" ixy="6.82865700414609e-17" ixz="4.01008377754116e-21" iyy="6.48825907198932e-07" iyz="9.94500776830208e-19" izz="1.16701742721349e-05"/>
+    </inertial>
+    <visual name="lock_a_upper_neg_x_plunger_visual_0">
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://tins_description/meshes/visual/lock_a_upper_neg_x_plunger.stl" scale="1 1 1"/>
+      </geometry>
+      <material name="lock_a_upper_neg_x_plunger_material_0">
+        <color rgba="0.45 0.47 0.49 1"/>
+      </material>
+    </visual>
+  </link>
+  <link name="lock_a_upper_pos_x_housing"/>
+  <link name="lock_a_upper_pos_x_plunger">
+    <inertial>
+      <origin rpy="0 0 0" xyz="6.0160341898e-13 -0.00295189873418 0"/>
+      <mass value="0.038"/>
+      <inertia ixx="1.16701741880704e-05" ixy="6.85351952356688e-17" ixz="6.81714242181997e-20" iyy="6.48825907199187e-07" iyz="0" izz="1.16701742721371e-05"/>
+    </inertial>
+    <visual name="lock_a_upper_pos_x_plunger_visual_0">
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://tins_description/meshes/visual/lock_a_upper_pos_x_plunger.stl" scale="1 1 1"/>
+      </geometry>
+      <material name="lock_a_upper_pos_x_plunger_material_0">
+        <color rgba="0.45 0.47 0.49 1"/>
+      </material>
+    </visual>
+  </link>
+  <link name="lock_b_lower_neg_x_housing"/>
+  <link name="lock_b_lower_neg_x_plunger">
+    <inertial>
+      <origin rpy="0 0 0" xyz="6.01596480086e-13 0.00295189873418 2.77555756156e-17"/>
+      <mass value="0.038"/>
+      <inertia ixx="1.16701741880734e-05" ixy="-6.85592557383338e-17" ixz="0" iyy="6.48825907198366e-07" iyz="-2.4060502665247e-19" izz="1.16701742721381e-05"/>
+    </inertial>
+    <visual name="lock_b_lower_neg_x_plunger_visual_0">
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://tins_description/meshes/visual/lock_b_lower_neg_x_plunger.stl" scale="1 1 1"/>
+      </geometry>
+      <material name="lock_b_lower_neg_x_plunger_material_0">
+        <color rgba="0.45 0.47 0.49 1"/>
+      </material>
+    </visual>
+  </link>
+  <link name="lock_b_lower_pos_x_housing"/>
+  <link name="lock_b_lower_pos_x_plunger">
+    <inertial>
+      <origin rpy="0 0 0" xyz="6.0160341898e-13 0.00295189873418 2.77555756156e-17"/>
+      <mass value="0.038"/>
+      <inertia ixx="1.16701741880725e-05" ixy="-6.83988523872324e-17" ixz="-1.60403351101646e-20" iyy="6.48825907198594e-07" iyz="0" izz="1.16701742721381e-05"/>
+    </inertial>
+    <visual name="lock_b_lower_pos_x_plunger_visual_0">
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://tins_description/meshes/visual/lock_b_lower_pos_x_plunger.stl" scale="1 1 1"/>
+      </geometry>
+      <material name="lock_b_lower_pos_x_plunger_material_0">
+        <color rgba="0.45 0.47 0.49 1"/>
+      </material>
+    </visual>
+  </link>
+  <link name="lock_b_upper_neg_x_housing"/>
+  <link name="lock_b_upper_neg_x_plunger">
+    <inertial>
+      <origin rpy="0 0 0" xyz="6.01596480086e-13 -0.00504810126582 0"/>
+      <mass value="0.038"/>
+      <inertia ixx="1.16701741880734e-05" ixy="-6.85592557383338e-17" ixz="4.01008377754116e-21" iyy="6.48825907198162e-07" iyz="1.0907427874912e-18" izz="1.16701742721381e-05"/>
+    </inertial>
+    <visual name="lock_b_upper_neg_x_plunger_visual_0">
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://tins_description/meshes/visual/lock_b_upper_neg_x_plunger.stl" scale="1 1 1"/>
+      </geometry>
+      <material name="lock_b_upper_neg_x_plunger_material_0">
+        <color rgba="0.45 0.47 0.49 1"/>
+      </material>
+    </visual>
+  </link>
+  <link name="lock_b_upper_pos_x_housing"/>
+  <link name="lock_b_upper_pos_x_plunger">
+    <inertial>
+      <origin rpy="0 0 0" xyz="6.0160341898e-13 -0.00504810126582 0"/>
+      <mass value="0.038"/>
+      <inertia ixx="1.16701741880714e-05" ixy="-6.83988523872324e-17" ixz="6.81714242181997e-20" iyy="6.48825907199187e-07" iyz="5.45371393745597e-19" izz="1.16701742721392e-05"/>
+    </inertial>
+    <visual name="lock_b_upper_pos_x_plunger_visual_0">
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://tins_description/meshes/visual/lock_b_upper_pos_x_plunger.stl" scale="1 1 1"/>
+      </geometry>
+      <material name="lock_b_upper_pos_x_plunger_material_0">
+        <color rgba="0.45 0.47 0.49 1"/>
+      </material>
+    </visual>
+  </link>
+  <link name="motor_x_a_rotor_visual">
+    <visual name="motor_x_a_rotor_visual_visual_0">
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://tins_description/meshes/visual/motor_x_a_rotor_visual.stl" scale="1 1 1"/>
+      </geometry>
+      <material name="motor_x_a_rotor_visual_material_0">
+        <color rgba="0.45 0.47 0.49 1"/>
+      </material>
+    </visual>
+  </link>
+  <link name="motor_x_b_rotor_visual">
+    <visual name="motor_x_b_rotor_visual_visual_0">
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://tins_description/meshes/visual/motor_x_b_rotor_visual.stl" scale="1 1 1"/>
+      </geometry>
+      <material name="motor_x_b_rotor_visual_material_0">
+        <color rgba="0.45 0.47 0.49 1"/>
+      </material>
+    </visual>
+  </link>
+  <link name="motor_z_a_rotor_visual">
+    <visual name="motor_z_a_rotor_visual_visual_0">
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://tins_description/meshes/visual/motor_z_a_rotor_visual.stl" scale="1 1 1"/>
+      </geometry>
+      <material name="motor_z_a_rotor_visual_material_0">
+        <color rgba="0.45 0.47 0.49 1"/>
+      </material>
+    </visual>
+  </link>
+  <link name="motor_z_b_rotor_visual">
+    <visual name="motor_z_b_rotor_visual_visual_0">
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://tins_description/meshes/visual/motor_z_b_rotor_visual.stl" scale="1 1 1"/>
+      </geometry>
+      <material name="motor_z_b_rotor_visual_material_0">
+        <color rgba="0.45 0.47 0.49 1"/>
+      </material>
+    </visual>
+  </link>
+  <link name="motor_brake_reference_lump">
+    <inertial>
+      <origin rpy="0 0 0" xyz="-2.02511771425e-17 2.40721539618e-17 0.0293460439336"/>
+      <mass value="4.54"/>
+      <inertia ixx="0.730089599929252" ixy="0.112356273705448" ixz="-3.79470760369927e-18" iyy="0.506087927018897" iyz="4.55364912443912e-18" izz="1.13552014327444"/>
+    </inertial>
+  </link>
+  <link name="top_cover_reference"/>
+  <link name="cover_hole_01_geomref"/>
+  <link name="cover_hole_02_geomref"/>
+  <link name="cover_hole_03_geomref"/>
+  <link name="cover_hole_04_geomref"/>
+  <link name="cover_hole_05_geomref"/>
+  <link name="cover_hole_06_geomref"/>
+  <link name="cover_hole_07_geomref"/>
+  <link name="cover_hole_08_geomref"/>
+  <link name="front_lamp_left_geomref"/>
+  <link name="front_lamp_right_geomref"/>
+  <link name="uav01_dock"/>
+  <link name="uav01_pad"/>
+  <link name="uav01_latch"/>
+  <link name="uav01_tag_mount"/>
+  <link name="uav02_dock"/>
+  <link name="uav02_pad"/>
+  <link name="uav02_latch"/>
+  <link name="uav02_tag_mount"/>
+  <link name="uav03_dock"/>
+  <link name="uav03_pad"/>
+  <link name="uav03_latch"/>
+  <link name="uav03_tag_mount"/>
+  <link name="uav04_dock"/>
+  <link name="uav04_pad"/>
+  <link name="uav04_latch"/>
+  <link name="uav04_tag_mount"/>
+  <link name="uav05_dock"/>
+  <link name="uav05_pad"/>
+  <link name="uav05_latch"/>
+  <link name="uav05_tag_mount"/>
+  <link name="uav06_dock"/>
+  <link name="uav06_pad"/>
+  <link name="uav06_latch"/>
+  <link name="uav06_tag_mount"/>
+  <link name="uav07_dock"/>
+  <link name="uav07_pad"/>
+  <link name="uav07_latch"/>
+  <link name="uav07_tag_mount"/>
+  <link name="uav08_dock"/>
+  <link name="uav08_pad"/>
+  <link name="uav08_latch"/>
+  <link name="uav08_tag_mount"/>
+  <link name="left_contact_wheel_1">
+    <inertial>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <mass value="0.05"/>
+      <inertia ixx="0.00027125" ixy="0" ixz="0" iyy="0.0004225" iyz="0" izz="0.00027125"/>
+    </inertial>
+    <collision name="left_contact_wheel_1_collision_0">
+      <origin rpy="1.57079632679 0 0" xyz="0 0 0"/>
+      <geometry>
+        <cylinder length="0.12" radius="0.13"/>
+      </geometry>
+    </collision>
+  </link>
+  <link name="left_contact_wheel_2">
+    <inertial>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <mass value="0.05"/>
+      <inertia ixx="0.00027125" ixy="0" ixz="0" iyy="0.0004225" iyz="0" izz="0.00027125"/>
+    </inertial>
+    <collision name="left_contact_wheel_2_collision_0">
+      <origin rpy="1.57079632679 0 0" xyz="0 0 0"/>
+      <geometry>
+        <cylinder length="0.12" radius="0.13"/>
+      </geometry>
+    </collision>
+  </link>
+  <link name="left_contact_wheel_3">
+    <inertial>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <mass value="0.05"/>
+      <inertia ixx="0.00027125" ixy="0" ixz="0" iyy="0.0004225" iyz="0" izz="0.00027125"/>
+    </inertial>
+    <collision name="left_contact_wheel_3_collision_0">
+      <origin rpy="1.57079632679 0 0" xyz="0 0 0"/>
+      <geometry>
+        <cylinder length="0.12" radius="0.13"/>
+      </geometry>
+    </collision>
+  </link>
+  <link name="right_contact_wheel_1">
+    <inertial>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <mass value="0.05"/>
+      <inertia ixx="0.00027125" ixy="0" ixz="0" iyy="0.0004225" iyz="0" izz="0.00027125"/>
+    </inertial>
+    <collision name="right_contact_wheel_1_collision_0">
+      <origin rpy="1.57079632679 0 0" xyz="0 0 0"/>
+      <geometry>
+        <cylinder length="0.12" radius="0.13"/>
+      </geometry>
+    </collision>
+  </link>
+  <link name="right_contact_wheel_2">
+    <inertial>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <mass value="0.05"/>
+      <inertia ixx="0.00027125" ixy="0" ixz="0" iyy="0.0004225" iyz="0" izz="0.00027125"/>
+    </inertial>
+    <collision name="right_contact_wheel_2_collision_0">
+      <origin rpy="1.57079632679 0 0" xyz="0 0 0"/>
+      <geometry>
+        <cylinder length="0.12" radius="0.13"/>
+      </geometry>
+    </collision>
+  </link>
+  <link name="right_contact_wheel_3">
+    <inertial>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <mass value="0.05"/>
+      <inertia ixx="0.00027125" ixy="0" ixz="0" iyy="0.0004225" iyz="0" izz="0.00027125"/>
+    </inertial>
+    <collision name="right_contact_wheel_3_collision_0">
+      <origin rpy="1.57079632679 0 0" xyz="0 0 0"/>
+      <geometry>
+        <cylinder length="0.12" radius="0.13"/>
+      </geometry>
+    </collision>
+  </link>
+  <link name="right_upper_carrier_wheel_link">
+    <inertial>
+      <origin rpy="0 0 0" xyz="2.39852179791e-12 0.00192064481008 1.95038377345e-12"/>
+      <mass value="1.5969201325135256"/>
+      <inertia ixx="0.00156223493817333" ixy="1.92974927597721e-14" ixz="7.82610037834943e-11" iyy="0.00293233385832383" iyz="1.5690660670529e-14" izz="0.00156223490556577"/>
+    </inertial>
+    <visual name="right_upper_carrier_wheel_link_visual_0">
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://tins_description/meshes/visual/right_upper_carrier_wheel_link.stl" scale="1 1 1"/>
+      </geometry>
+      <material name="right_upper_carrier_wheel_link_material_0">
+        <color rgba="0.12 0.13 0.14 1"/>
+      </material>
+    </visual>
+  </link>
+  <link name="left_road_wheel_1">
+    <visual name="left_road_wheel_1_visual_0">
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://tins_description/meshes/visual/left_road_wheel_1.stl" scale="1 1 1"/>
+      </geometry>
+      <material name="left_road_wheel_1_material_0">
+        <color rgba="0.12 0.13 0.14 1"/>
+      </material>
+    </visual>
+  </link>
+  <link name="left_road_wheel_2">
+    <visual name="left_road_wheel_2_visual_0">
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://tins_description/meshes/visual/left_road_wheel_2.stl" scale="1 1 1"/>
+      </geometry>
+      <material name="left_road_wheel_2_material_0">
+        <color rgba="0.12 0.13 0.14 1"/>
+      </material>
+    </visual>
+  </link>
+  <link name="left_road_wheel_3">
+    <visual name="left_road_wheel_3_visual_0">
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://tins_description/meshes/visual/left_road_wheel_3.stl" scale="1 1 1"/>
+      </geometry>
+      <material name="left_road_wheel_3_material_0">
+        <color rgba="0.12 0.13 0.14 1"/>
+      </material>
+    </visual>
+  </link>
+  <link name="left_road_wheel_4">
+    <visual name="left_road_wheel_4_visual_0">
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://tins_description/meshes/visual/left_road_wheel_4.stl" scale="1 1 1"/>
+      </geometry>
+      <material name="left_road_wheel_4_material_0">
+        <color rgba="0.12 0.13 0.14 1"/>
+      </material>
+    </visual>
+  </link>
+  <link name="left_road_wheel_5">
+    <visual name="left_road_wheel_5_visual_0">
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://tins_description/meshes/visual/left_road_wheel_5.stl" scale="1 1 1"/>
+      </geometry>
+      <material name="left_road_wheel_5_material_0">
+        <color rgba="0.12 0.13 0.14 1"/>
+      </material>
+    </visual>
+  </link>
+  <link name="left_road_wheel_6">
+    <visual name="left_road_wheel_6_visual_0">
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://tins_description/meshes/visual/left_road_wheel_6.stl" scale="1 1 1"/>
+      </geometry>
+      <material name="left_road_wheel_6_material_0">
+        <color rgba="0.12 0.13 0.14 1"/>
+      </material>
+    </visual>
+  </link>
+  <link name="left_rear_idler_visual">
+    <visual name="left_rear_idler_visual_visual_0">
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://tins_description/meshes/visual/left_rear_idler_visual.stl" scale="1 1 1"/>
+      </geometry>
+      <material name="left_rear_idler_visual_material_0">
+        <color rgba="0.12 0.13 0.14 1"/>
+      </material>
+    </visual>
+  </link>
+  <link name="right_road_wheel_1">
+    <visual name="right_road_wheel_1_visual_0">
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://tins_description/meshes/visual/right_road_wheel_1.stl" scale="1 1 1"/>
+      </geometry>
+      <material name="right_road_wheel_1_material_0">
+        <color rgba="0.12 0.13 0.14 1"/>
+      </material>
+    </visual>
+  </link>
+  <link name="right_road_wheel_2">
+    <visual name="right_road_wheel_2_visual_0">
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://tins_description/meshes/visual/right_road_wheel_2.stl" scale="1 1 1"/>
+      </geometry>
+      <material name="right_road_wheel_2_material_0">
+        <color rgba="0.12 0.13 0.14 1"/>
+      </material>
+    </visual>
+  </link>
+  <link name="right_road_wheel_3">
+    <visual name="right_road_wheel_3_visual_0">
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://tins_description/meshes/visual/right_road_wheel_3.stl" scale="1 1 1"/>
+      </geometry>
+      <material name="right_road_wheel_3_material_0">
+        <color rgba="0.12 0.13 0.14 1"/>
+      </material>
+    </visual>
+  </link>
+  <link name="right_road_wheel_4">
+    <visual name="right_road_wheel_4_visual_0">
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://tins_description/meshes/visual/right_road_wheel_4.stl" scale="1 1 1"/>
+      </geometry>
+      <material name="right_road_wheel_4_material_0">
+        <color rgba="0.12 0.13 0.14 1"/>
+      </material>
+    </visual>
+  </link>
+  <link name="right_road_wheel_5">
+    <visual name="right_road_wheel_5_visual_0">
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://tins_description/meshes/visual/right_road_wheel_5.stl" scale="1 1 1"/>
+      </geometry>
+      <material name="right_road_wheel_5_material_0">
+        <color rgba="0.12 0.13 0.14 1"/>
+      </material>
+    </visual>
+  </link>
+  <link name="right_road_wheel_6">
+    <visual name="right_road_wheel_6_visual_0">
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://tins_description/meshes/visual/right_road_wheel_6.stl" scale="1 1 1"/>
+      </geometry>
+      <material name="right_road_wheel_6_material_0">
+        <color rgba="0.12 0.13 0.14 1"/>
+      </material>
+    </visual>
+  </link>
+  <link name="right_rear_idler_visual">
+    <visual name="right_rear_idler_visual_visual_0">
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://tins_description/meshes/visual/right_rear_idler_visual.stl" scale="1 1 1"/>
+      </geometry>
+      <material name="right_rear_idler_visual_material_0">
+        <color rgba="0.12 0.13 0.14 1"/>
+      </material>
+    </visual>
+  </link>
+  <link name="left_upper_carrier_visual">
+    <visual name="left_upper_carrier_visual_visual_0">
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://tins_description/meshes/visual/left_upper_carrier_visual.stl" scale="1 1 1"/>
+      </geometry>
+      <material name="left_upper_carrier_visual_material_0">
+        <color rgba="0.12 0.13 0.14 1"/>
+      </material>
+    </visual>
+  </link>
+  <joint name="carousel_mount_fixed_joint" type="fixed">
+    <parent link="base_link"/>
+    <child link="carousel_mount"/>
+    <origin rpy="0 0 0" xyz="0 0 0.6035"/>
+  </joint>
+  <joint name="tray_a_x_joint" type="prismatic">
+    <parent link="carousel_mount"/>
+    <child link="tray_a_x_carriage"/>
+    <origin rpy="0 0 0" xyz="0 0 0"/>
+    <axis xyz="1 0 0"/>
+    <limit effort="1000" lower="0" upper="0.405" velocity="0.02"/>
+  </joint>
+  <joint name="tray_b_x_joint" type="prismatic">
+    <parent link="carousel_mount"/>
+    <child link="tray_b_x_carriage"/>
+    <origin rpy="0 0 0" xyz="0 0 0"/>
+    <axis xyz="1 0 0"/>
+    <limit effort="1000" lower="-0.405" upper="0" velocity="0.02"/>
+  </joint>
+  <joint name="tray_a_z_joint" type="prismatic">
+    <parent link="tray_a_x_carriage"/>
+    <child link="tray_a"/>
+    <origin rpy="0 0 0" xyz="0 0 0.155"/>
+    <axis xyz="0 0 1"/>
+    <limit effort="1000" lower="-0.155" upper="0" velocity="0.02"/>
+  </joint>
+  <joint name="tray_b_z_joint" type="prismatic">
+    <parent link="tray_b_x_carriage"/>
+    <child link="tray_b"/>
+    <origin rpy="0 0 0" xyz="0 0 0"/>
+    <axis xyz="0 0 1"/>
+    <limit effort="1000" lower="0" upper="0.155" velocity="0.02"/>
+  </joint>
+  <joint name="left_drive_sprocket_joint" type="continuous">
+    <parent link="base_link"/>
+    <child link="left_drive_sprocket_link"/>
+    <origin rpy="0 0 0" xyz="0.497 0.31 0.265"/>
+    <axis xyz="0 1 0"/>
+    <limit effort="500" velocity="15"/>
+  </joint>
+  <joint name="right_drive_sprocket_joint" type="continuous">
+    <parent link="base_link"/>
+    <child link="right_drive_sprocket_link"/>
+    <origin rpy="0 0 0" xyz="0.497 -0.31 0.265"/>
+    <axis xyz="0 1 0"/>
+    <limit effort="500" velocity="15"/>
+  </joint>
+  <joint name="left_track_proxy_joint" type="fixed">
+    <parent link="base_link"/>
+    <child link="left_track_proxy_link"/>
+    <origin rpy="0 0 0" xyz="-0.0055 0.325 0.2025"/>
+  </joint>
+  <joint name="right_track_proxy_joint" type="fixed">
+    <parent link="base_link"/>
+    <child link="right_track_proxy_link"/>
+    <origin rpy="0 0 0" xyz="-0.0055 -0.325 0.2025"/>
+  </joint>
+  <joint name="x_screw_a_rotation" type="fixed">
+    <parent link="carousel_mount"/>
+    <child link="x_screw_a"/>
+    <origin rpy="0 0 0" xyz="0 0.456 0"/>
+  </joint>
+  <joint name="x_screw_b_rotation" type="fixed">
+    <parent link="carousel_mount"/>
+    <child link="x_screw_b"/>
+    <origin rpy="0 0 0" xyz="0 -0.456 0"/>
+  </joint>
+  <joint name="z_screw_a_rotation" type="fixed">
+    <parent link="tray_a_x_carriage"/>
+    <child link="z_screw_a"/>
+    <origin rpy="0 0 0" xyz="0 0.392 0"/>
+  </joint>
+  <joint name="z_screw_b_rotation" type="fixed">
+    <parent link="tray_b_x_carriage"/>
+    <child link="z_screw_b"/>
+    <origin rpy="0 0 0" xyz="0 -0.392 0"/>
+  </joint>
+  <joint name="lock_a_lower_neg_x_housing_fixed_joint" type="fixed">
+    <parent link="tray_a_x_carriage"/>
+    <child link="lock_a_lower_neg_x_housing"/>
+    <origin rpy="0 0 0" xyz="-0.041 0.429 0.095"/>
+  </joint>
+  <joint name="lock_a_lower_neg_x_pin_joint" type="fixed">
+    <parent link="lock_a_lower_neg_x_housing"/>
+    <child link="lock_a_lower_neg_x_plunger"/>
+    <origin rpy="0 0 0" xyz="0 0 0"/>
+  </joint>
+  <joint name="lock_a_lower_pos_x_housing_fixed_joint" type="fixed">
+    <parent link="tray_a_x_carriage"/>
+    <child link="lock_a_lower_pos_x_housing"/>
+    <origin rpy="0 0 0" xyz="0.041 0.429 0.095"/>
+  </joint>
+  <joint name="lock_a_lower_pos_x_pin_joint" type="fixed">
+    <parent link="lock_a_lower_pos_x_housing"/>
+    <child link="lock_a_lower_pos_x_plunger"/>
+    <origin rpy="0 0 0" xyz="0 0 0"/>
+  </joint>
+  <joint name="lock_a_upper_neg_x_housing_fixed_joint" type="fixed">
+    <parent link="tray_a_x_carriage"/>
+    <child link="lock_a_upper_neg_x_housing"/>
+    <origin rpy="0 0 0" xyz="-0.041 0.429 0.25"/>
+  </joint>
+  <joint name="lock_a_upper_neg_x_pin_joint" type="fixed">
+    <parent link="lock_a_upper_neg_x_housing"/>
+    <child link="lock_a_upper_neg_x_plunger"/>
+    <origin rpy="0 0 0" xyz="0 0 0"/>
+  </joint>
+  <joint name="lock_a_upper_pos_x_housing_fixed_joint" type="fixed">
+    <parent link="tray_a_x_carriage"/>
+    <child link="lock_a_upper_pos_x_housing"/>
+    <origin rpy="0 0 0" xyz="0.041 0.429 0.25"/>
+  </joint>
+  <joint name="lock_a_upper_pos_x_pin_joint" type="fixed">
+    <parent link="lock_a_upper_pos_x_housing"/>
+    <child link="lock_a_upper_pos_x_plunger"/>
+    <origin rpy="0 0 0" xyz="0 0 0"/>
+  </joint>
+  <joint name="lock_b_lower_neg_x_housing_fixed_joint" type="fixed">
+    <parent link="tray_b_x_carriage"/>
+    <child link="lock_b_lower_neg_x_housing"/>
+    <origin rpy="0 0 0" xyz="-0.041 -0.429 0.095"/>
+  </joint>
+  <joint name="lock_b_lower_neg_x_pin_joint" type="fixed">
+    <parent link="lock_b_lower_neg_x_housing"/>
+    <child link="lock_b_lower_neg_x_plunger"/>
+    <origin rpy="0 0 0" xyz="0 0 0"/>
+  </joint>
+  <joint name="lock_b_lower_pos_x_housing_fixed_joint" type="fixed">
+    <parent link="tray_b_x_carriage"/>
+    <child link="lock_b_lower_pos_x_housing"/>
+    <origin rpy="0 0 0" xyz="0.041 -0.429 0.095"/>
+  </joint>
+  <joint name="lock_b_lower_pos_x_pin_joint" type="fixed">
+    <parent link="lock_b_lower_pos_x_housing"/>
+    <child link="lock_b_lower_pos_x_plunger"/>
+    <origin rpy="0 0 0" xyz="0 0 0"/>
+  </joint>
+  <joint name="lock_b_upper_neg_x_housing_fixed_joint" type="fixed">
+    <parent link="tray_b_x_carriage"/>
+    <child link="lock_b_upper_neg_x_housing"/>
+    <origin rpy="0 0 0" xyz="-0.041 -0.429 0.25"/>
+  </joint>
+  <joint name="lock_b_upper_neg_x_pin_joint" type="fixed">
+    <parent link="lock_b_upper_neg_x_housing"/>
+    <child link="lock_b_upper_neg_x_plunger"/>
+    <origin rpy="0 0 0" xyz="0 0 0"/>
+  </joint>
+  <joint name="lock_b_upper_pos_x_housing_fixed_joint" type="fixed">
+    <parent link="tray_b_x_carriage"/>
+    <child link="lock_b_upper_pos_x_housing"/>
+    <origin rpy="0 0 0" xyz="0.041 -0.429 0.25"/>
+  </joint>
+  <joint name="lock_b_upper_pos_x_pin_joint" type="fixed">
+    <parent link="lock_b_upper_pos_x_housing"/>
+    <child link="lock_b_upper_pos_x_plunger"/>
+    <origin rpy="0 0 0" xyz="0 0 0"/>
+  </joint>
+  <joint name="motor_x_a_rotation" type="fixed">
+    <parent link="carousel_mount"/>
+    <child link="motor_x_a_rotor_visual"/>
+    <origin rpy="0 0 0" xyz="-0.4005 0.381 -0.0734846922835"/>
+  </joint>
+  <joint name="motor_x_b_rotation" type="fixed">
+    <parent link="carousel_mount"/>
+    <child link="motor_x_b_rotor_visual"/>
+    <origin rpy="0 0 0" xyz="0.4005 -0.381 -0.0734846922835"/>
+  </joint>
+  <joint name="motor_z_a_rotation" type="fixed">
+    <parent link="tray_a_x_carriage"/>
+    <child link="motor_z_a_rotor_visual"/>
+    <origin rpy="0 0 0" xyz="0.24 0.392 0.1085"/>
+  </joint>
+  <joint name="motor_z_b_rotation" type="fixed">
+    <parent link="tray_b_x_carriage"/>
+    <child link="motor_z_b_rotor_visual"/>
+    <origin rpy="0 0 0" xyz="-0.24 -0.392 0.1085"/>
+  </joint>
+  <joint name="motor_brake_reference_lump_fixed_joint" type="fixed">
+    <parent link="carousel_mount"/>
+    <child link="motor_brake_reference_lump"/>
+    <origin rpy="0 0 0" xyz="0 0 0"/>
+  </joint>
+  <joint name="top_cover_reference_fixed_joint" type="fixed">
+    <parent link="base_link"/>
+    <child link="top_cover_reference"/>
+    <origin rpy="0 0 0" xyz="0.01525 0 0.4885"/>
+  </joint>
+  <joint name="cover_hole_01_geomref_fixed_joint" type="fixed">
+    <parent link="base_link"/>
+    <child link="cover_hole_01_geomref"/>
+    <origin rpy="0 0 0" xyz="-0.493 -0.3375 0.4885"/>
+  </joint>
+  <joint name="cover_hole_02_geomref_fixed_joint" type="fixed">
+    <parent link="base_link"/>
+    <child link="cover_hole_02_geomref"/>
+    <origin rpy="0 0 0" xyz="-0.523 -0.3075 0.4885"/>
+  </joint>
+  <joint name="cover_hole_03_geomref_fixed_joint" type="fixed">
+    <parent link="base_link"/>
+    <child link="cover_hole_03_geomref"/>
+    <origin rpy="0 0 0" xyz="-0.523 0.3075 0.4885"/>
+  </joint>
+  <joint name="cover_hole_04_geomref_fixed_joint" type="fixed">
+    <parent link="base_link"/>
+    <child link="cover_hole_04_geomref"/>
+    <origin rpy="0 0 0" xyz="-0.493 0.3375 0.4885"/>
+  </joint>
+  <joint name="cover_hole_05_geomref_fixed_joint" type="fixed">
+    <parent link="base_link"/>
+    <child link="cover_hole_05_geomref"/>
+    <origin rpy="0 0 0" xyz="0.5235 0.3375 0.4885"/>
+  </joint>
+  <joint name="cover_hole_06_geomref_fixed_joint" type="fixed">
+    <parent link="base_link"/>
+    <child link="cover_hole_06_geomref"/>
+    <origin rpy="0 0 0" xyz="0.5535 0.3075 0.4885"/>
+  </joint>
+  <joint name="cover_hole_07_geomref_fixed_joint" type="fixed">
+    <parent link="base_link"/>
+    <child link="cover_hole_07_geomref"/>
+    <origin rpy="0 0 0" xyz="0.5535 -0.3075 0.4885"/>
+  </joint>
+  <joint name="cover_hole_08_geomref_fixed_joint" type="fixed">
+    <parent link="base_link"/>
+    <child link="cover_hole_08_geomref"/>
+    <origin rpy="0 0 0" xyz="0.5235 -0.3375 0.4885"/>
+  </joint>
+  <joint name="front_lamp_left_geomref_fixed_joint" type="fixed">
+    <parent link="base_link"/>
+    <child link="front_lamp_left_geomref"/>
+    <origin rpy="0 0 0" xyz="0.5365 0.14 0.431503923272"/>
+  </joint>
+  <joint name="front_lamp_right_geomref_fixed_joint" type="fixed">
+    <parent link="base_link"/>
+    <child link="front_lamp_right_geomref"/>
+    <origin rpy="0 0 0" xyz="0.5365 -0.14 0.431503923272"/>
+  </joint>
+  <joint name="uav01_dock_fixed_joint" type="fixed">
+    <parent link="tray_a"/>
+    <child link="uav01_dock"/>
+    <origin rpy="0 0 0" xyz="0.1675 0.1675 0.003"/>
+  </joint>
+  <joint name="uav01_pad_fixed_joint" type="fixed">
+    <parent link="uav01_dock"/>
+    <child link="uav01_pad"/>
+    <origin rpy="0 0 0" xyz="0 0 0"/>
+  </joint>
+  <joint name="uav01_latch_fixed_joint" type="fixed">
+    <parent link="uav01_dock"/>
+    <child link="uav01_latch"/>
+    <origin rpy="0 0 0" xyz="0 0 0"/>
+  </joint>
+  <joint name="uav01_tag_mount_fixed_joint" type="fixed">
+    <parent link="uav01_dock"/>
+    <child link="uav01_tag_mount"/>
+    <origin rpy="0 0 0" xyz="0 0 0"/>
+  </joint>
+  <joint name="uav02_dock_fixed_joint" type="fixed">
+    <parent link="tray_b"/>
+    <child link="uav02_dock"/>
+    <origin rpy="0 0 0" xyz="0.1675 0.1675 0.003"/>
+  </joint>
+  <joint name="uav02_pad_fixed_joint" type="fixed">
+    <parent link="uav02_dock"/>
+    <child link="uav02_pad"/>
+    <origin rpy="0 0 0" xyz="0 0 0"/>
+  </joint>
+  <joint name="uav02_latch_fixed_joint" type="fixed">
+    <parent link="uav02_dock"/>
+    <child link="uav02_latch"/>
+    <origin rpy="0 0 0" xyz="0 0 0"/>
+  </joint>
+  <joint name="uav02_tag_mount_fixed_joint" type="fixed">
+    <parent link="uav02_dock"/>
+    <child link="uav02_tag_mount"/>
+    <origin rpy="0 0 0" xyz="0 0 0"/>
+  </joint>
+  <joint name="uav03_dock_fixed_joint" type="fixed">
+    <parent link="tray_a"/>
+    <child link="uav03_dock"/>
+    <origin rpy="0 0 0" xyz="0.1675 -0.1675 0.003"/>
+  </joint>
+  <joint name="uav03_pad_fixed_joint" type="fixed">
+    <parent link="uav03_dock"/>
+    <child link="uav03_pad"/>
+    <origin rpy="0 0 0" xyz="0 0 0"/>
+  </joint>
+  <joint name="uav03_latch_fixed_joint" type="fixed">
+    <parent link="uav03_dock"/>
+    <child link="uav03_latch"/>
+    <origin rpy="0 0 0" xyz="0 0 0"/>
+  </joint>
+  <joint name="uav03_tag_mount_fixed_joint" type="fixed">
+    <parent link="uav03_dock"/>
+    <child link="uav03_tag_mount"/>
+    <origin rpy="0 0 0" xyz="0 0 0"/>
+  </joint>
+  <joint name="uav04_dock_fixed_joint" type="fixed">
+    <parent link="tray_b"/>
+    <child link="uav04_dock"/>
+    <origin rpy="0 0 0" xyz="0.1675 -0.1675 0.003"/>
+  </joint>
+  <joint name="uav04_pad_fixed_joint" type="fixed">
+    <parent link="uav04_dock"/>
+    <child link="uav04_pad"/>
+    <origin rpy="0 0 0" xyz="0 0 0"/>
+  </joint>
+  <joint name="uav04_latch_fixed_joint" type="fixed">
+    <parent link="uav04_dock"/>
+    <child link="uav04_latch"/>
+    <origin rpy="0 0 0" xyz="0 0 0"/>
+  </joint>
+  <joint name="uav04_tag_mount_fixed_joint" type="fixed">
+    <parent link="uav04_dock"/>
+    <child link="uav04_tag_mount"/>
+    <origin rpy="0 0 0" xyz="0 0 0"/>
+  </joint>
+  <joint name="uav05_dock_fixed_joint" type="fixed">
+    <parent link="tray_a"/>
+    <child link="uav05_dock"/>
+    <origin rpy="0 0 0" xyz="-0.1675 0.1675 0.003"/>
+  </joint>
+  <joint name="uav05_pad_fixed_joint" type="fixed">
+    <parent link="uav05_dock"/>
+    <child link="uav05_pad"/>
+    <origin rpy="0 0 0" xyz="0 0 0"/>
+  </joint>
+  <joint name="uav05_latch_fixed_joint" type="fixed">
+    <parent link="uav05_dock"/>
+    <child link="uav05_latch"/>
+    <origin rpy="0 0 0" xyz="0 0 0"/>
+  </joint>
+  <joint name="uav05_tag_mount_fixed_joint" type="fixed">
+    <parent link="uav05_dock"/>
+    <child link="uav05_tag_mount"/>
+    <origin rpy="0 0 0" xyz="0 0 0"/>
+  </joint>
+  <joint name="uav06_dock_fixed_joint" type="fixed">
+    <parent link="tray_b"/>
+    <child link="uav06_dock"/>
+    <origin rpy="0 0 0" xyz="-0.1675 0.1675 0.003"/>
+  </joint>
+  <joint name="uav06_pad_fixed_joint" type="fixed">
+    <parent link="uav06_dock"/>
+    <child link="uav06_pad"/>
+    <origin rpy="0 0 0" xyz="0 0 0"/>
+  </joint>
+  <joint name="uav06_latch_fixed_joint" type="fixed">
+    <parent link="uav06_dock"/>
+    <child link="uav06_latch"/>
+    <origin rpy="0 0 0" xyz="0 0 0"/>
+  </joint>
+  <joint name="uav06_tag_mount_fixed_joint" type="fixed">
+    <parent link="uav06_dock"/>
+    <child link="uav06_tag_mount"/>
+    <origin rpy="0 0 0" xyz="0 0 0"/>
+  </joint>
+  <joint name="uav07_dock_fixed_joint" type="fixed">
+    <parent link="tray_a"/>
+    <child link="uav07_dock"/>
+    <origin rpy="0 0 0" xyz="-0.1675 -0.1675 0.003"/>
+  </joint>
+  <joint name="uav07_pad_fixed_joint" type="fixed">
+    <parent link="uav07_dock"/>
+    <child link="uav07_pad"/>
+    <origin rpy="0 0 0" xyz="0 0 0"/>
+  </joint>
+  <joint name="uav07_latch_fixed_joint" type="fixed">
+    <parent link="uav07_dock"/>
+    <child link="uav07_latch"/>
+    <origin rpy="0 0 0" xyz="0 0 0"/>
+  </joint>
+  <joint name="uav07_tag_mount_fixed_joint" type="fixed">
+    <parent link="uav07_dock"/>
+    <child link="uav07_tag_mount"/>
+    <origin rpy="0 0 0" xyz="0 0 0"/>
+  </joint>
+  <joint name="uav08_dock_fixed_joint" type="fixed">
+    <parent link="tray_b"/>
+    <child link="uav08_dock"/>
+    <origin rpy="0 0 0" xyz="-0.1675 -0.1675 0.003"/>
+  </joint>
+  <joint name="uav08_pad_fixed_joint" type="fixed">
+    <parent link="uav08_dock"/>
+    <child link="uav08_pad"/>
+    <origin rpy="0 0 0" xyz="0 0 0"/>
+  </joint>
+  <joint name="uav08_latch_fixed_joint" type="fixed">
+    <parent link="uav08_dock"/>
+    <child link="uav08_latch"/>
+    <origin rpy="0 0 0" xyz="0 0 0"/>
+  </joint>
+  <joint name="uav08_tag_mount_fixed_joint" type="fixed">
+    <parent link="uav08_dock"/>
+    <child link="uav08_tag_mount"/>
+    <origin rpy="0 0 0" xyz="0 0 0"/>
+  </joint>
+  <joint name="left_contact_wheel_1_joint" type="continuous">
+    <parent link="base_link"/>
+    <child link="left_contact_wheel_1"/>
+    <origin rpy="0 0 0" xyz="-0.35 0.325 0.13"/>
+    <axis xyz="0 1 0"/>
+    <limit effort="500" velocity="15"/>
+  </joint>
+  <joint name="left_contact_wheel_2_joint" type="continuous">
+    <parent link="base_link"/>
+    <child link="left_contact_wheel_2"/>
+    <origin rpy="0 0 0" xyz="0 0.325 0.13"/>
+    <axis xyz="0 1 0"/>
+    <limit effort="500" velocity="15"/>
+  </joint>
+  <joint name="left_contact_wheel_3_joint" type="continuous">
+    <parent link="base_link"/>
+    <child link="left_contact_wheel_3"/>
+    <origin rpy="0 0 0" xyz="0.35 0.325 0.13"/>
+    <axis xyz="0 1 0"/>
+    <limit effort="500" velocity="15"/>
+  </joint>
+  <joint name="right_contact_wheel_1_joint" type="continuous">
+    <parent link="base_link"/>
+    <child link="right_contact_wheel_1"/>
+    <origin rpy="0 0 0" xyz="-0.35 -0.325 0.13"/>
+    <axis xyz="0 1 0"/>
+    <limit effort="500" velocity="15"/>
+  </joint>
+  <joint name="right_contact_wheel_2_joint" type="continuous">
+    <parent link="base_link"/>
+    <child link="right_contact_wheel_2"/>
+    <origin rpy="0 0 0" xyz="0 -0.325 0.13"/>
+    <axis xyz="0 1 0"/>
+    <limit effort="500" velocity="15"/>
+  </joint>
+  <joint name="right_contact_wheel_3_joint" type="continuous">
+    <parent link="base_link"/>
+    <child link="right_contact_wheel_3"/>
+    <origin rpy="0 0 0" xyz="0.35 -0.325 0.13"/>
+    <axis xyz="0 1 0"/>
+    <limit effort="500" velocity="15"/>
+  </joint>
+  <joint name="right_upper_carrier_wheel_link_joint" type="continuous">
+    <parent link="base_link"/>
+    <child link="right_upper_carrier_wheel_link"/>
+    <origin rpy="0 0 0" xyz="0.0845 -0.3245 0.3265"/>
+    <axis xyz="0 1 0"/>
+    <limit effort="1" velocity="50"/>
+  </joint>
+  <joint name="left_road_wheel_1_joint" type="continuous">
+    <parent link="base_link"/>
+    <child link="left_road_wheel_1"/>
+    <origin rpy="0 0 0" xyz="-0.553 0.325 0.095"/>
+    <axis xyz="0 1 0"/>
+    <limit effort="1" velocity="50"/>
+  </joint>
+  <joint name="left_road_wheel_2_joint" type="continuous">
+    <parent link="base_link"/>
+    <child link="left_road_wheel_2"/>
+    <origin rpy="0 0 0" xyz="-0.35823698 0.325 0.095"/>
+    <axis xyz="0 1 0"/>
+    <limit effort="1" velocity="50"/>
+  </joint>
+  <joint name="left_road_wheel_3_joint" type="continuous">
+    <parent link="base_link"/>
+    <child link="left_road_wheel_3"/>
+    <origin rpy="0 0 0" xyz="-0.16347396 0.325 0.095"/>
+    <axis xyz="0 1 0"/>
+    <limit effort="1" velocity="50"/>
+  </joint>
+  <joint name="left_road_wheel_4_joint" type="continuous">
+    <parent link="base_link"/>
+    <child link="left_road_wheel_4"/>
+    <origin rpy="0 0 0" xyz="0.03128906 0.325 0.095"/>
+    <axis xyz="0 1 0"/>
+    <limit effort="1" velocity="50"/>
+  </joint>
+  <joint name="left_road_wheel_5_joint" type="continuous">
+    <parent link="base_link"/>
+    <child link="left_road_wheel_5"/>
+    <origin rpy="0 0 0" xyz="0.22605208 0.325 0.095"/>
+    <axis xyz="0 1 0"/>
+    <limit effort="1" velocity="50"/>
+  </joint>
+  <joint name="left_road_wheel_6_joint" type="continuous">
+    <parent link="base_link"/>
+    <child link="left_road_wheel_6"/>
+    <origin rpy="0 0 0" xyz="0.4208151 0.325 0.095"/>
+    <axis xyz="0 1 0"/>
+    <limit effort="1" velocity="50"/>
+  </joint>
+  <joint name="left_rear_idler_visual_joint" type="continuous">
+    <parent link="base_link"/>
+    <child link="left_rear_idler_visual"/>
+    <origin rpy="0 0 0" xyz="-0.4591849 0.325 0.31"/>
+    <axis xyz="0 1 0"/>
+    <limit effort="1" velocity="50"/>
+  </joint>
+  <joint name="right_road_wheel_1_joint" type="continuous">
+    <parent link="base_link"/>
+    <child link="right_road_wheel_1"/>
+    <origin rpy="0 0 0" xyz="-0.553 -0.325 0.095"/>
+    <axis xyz="0 1 0"/>
+    <limit effort="1" velocity="50"/>
+  </joint>
+  <joint name="right_road_wheel_2_joint" type="continuous">
+    <parent link="base_link"/>
+    <child link="right_road_wheel_2"/>
+    <origin rpy="0 0 0" xyz="-0.35823698 -0.325 0.095"/>
+    <axis xyz="0 1 0"/>
+    <limit effort="1" velocity="50"/>
+  </joint>
+  <joint name="right_road_wheel_3_joint" type="continuous">
+    <parent link="base_link"/>
+    <child link="right_road_wheel_3"/>
+    <origin rpy="0 0 0" xyz="-0.16347396 -0.325 0.095"/>
+    <axis xyz="0 1 0"/>
+    <limit effort="1" velocity="50"/>
+  </joint>
+  <joint name="right_road_wheel_4_joint" type="continuous">
+    <parent link="base_link"/>
+    <child link="right_road_wheel_4"/>
+    <origin rpy="0 0 0" xyz="0.03128906 -0.325 0.095"/>
+    <axis xyz="0 1 0"/>
+    <limit effort="1" velocity="50"/>
+  </joint>
+  <joint name="right_road_wheel_5_joint" type="continuous">
+    <parent link="base_link"/>
+    <child link="right_road_wheel_5"/>
+    <origin rpy="0 0 0" xyz="0.22605208 -0.325 0.095"/>
+    <axis xyz="0 1 0"/>
+    <limit effort="1" velocity="50"/>
+  </joint>
+  <joint name="right_road_wheel_6_joint" type="continuous">
+    <parent link="base_link"/>
+    <child link="right_road_wheel_6"/>
+    <origin rpy="0 0 0" xyz="0.4208151 -0.325 0.095"/>
+    <axis xyz="0 1 0"/>
+    <limit effort="1" velocity="50"/>
+  </joint>
+  <joint name="right_rear_idler_visual_joint" type="continuous">
+    <parent link="base_link"/>
+    <child link="right_rear_idler_visual"/>
+    <origin rpy="0 0 0" xyz="-0.4591849 -0.325 0.31"/>
+    <axis xyz="0 1 0"/>
+    <limit effort="1" velocity="50"/>
+  </joint>
+  <joint name="left_upper_carrier_visual_joint" type="continuous">
+    <parent link="base_link"/>
+    <child link="left_upper_carrier_visual"/>
+    <origin rpy="0 0 0" xyz="0.0845 0.3245 0.3265"/>
+    <axis xyz="0 1 0"/>
+    <limit effort="1" velocity="50"/>
+  </joint>
+  <link name="uav01_static_aircraft">
+    <visual name="uav01_static_aircraft_visual_0">
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://tins_description/meshes/aircraft/qav250_visual.stl" scale="1 1 1"/>
+      </geometry>
+      <material name="uav01_static_aircraft_material_0">
+        <color rgba="0.18 0.19 0.2 1"/>
+      </material>
+    </visual>
+  </link>
+  <link name="uav02_static_aircraft">
+    <visual name="uav02_static_aircraft_visual_0">
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://tins_description/meshes/aircraft/qav250_visual.stl" scale="1 1 1"/>
+      </geometry>
+      <material name="uav02_static_aircraft_material_0">
+        <color rgba="0.18 0.19 0.2 1"/>
+      </material>
+    </visual>
+  </link>
+  <link name="uav03_static_aircraft">
+    <visual name="uav03_static_aircraft_visual_0">
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://tins_description/meshes/aircraft/qav250_visual.stl" scale="1 1 1"/>
+      </geometry>
+      <material name="uav03_static_aircraft_material_0">
+        <color rgba="0.18 0.19 0.2 1"/>
+      </material>
+    </visual>
+  </link>
+  <link name="uav04_static_aircraft">
+    <visual name="uav04_static_aircraft_visual_0">
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://tins_description/meshes/aircraft/qav250_visual.stl" scale="1 1 1"/>
+      </geometry>
+      <material name="uav04_static_aircraft_material_0">
+        <color rgba="0.18 0.19 0.2 1"/>
+      </material>
+    </visual>
+  </link>
+  <link name="uav05_static_aircraft">
+    <visual name="uav05_static_aircraft_visual_0">
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://tins_description/meshes/aircraft/qav250_visual.stl" scale="1 1 1"/>
+      </geometry>
+      <material name="uav05_static_aircraft_material_0">
+        <color rgba="0.18 0.19 0.2 1"/>
+      </material>
+    </visual>
+  </link>
+  <link name="uav06_static_aircraft">
+    <visual name="uav06_static_aircraft_visual_0">
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://tins_description/meshes/aircraft/qav250_visual.stl" scale="1 1 1"/>
+      </geometry>
+      <material name="uav06_static_aircraft_material_0">
+        <color rgba="0.18 0.19 0.2 1"/>
+      </material>
+    </visual>
+  </link>
+  <link name="uav07_static_aircraft">
+    <visual name="uav07_static_aircraft_visual_0">
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://tins_description/meshes/aircraft/qav250_visual.stl" scale="1 1 1"/>
+      </geometry>
+      <material name="uav07_static_aircraft_material_0">
+        <color rgba="0.18 0.19 0.2 1"/>
+      </material>
+    </visual>
+  </link>
+  <link name="uav08_static_aircraft">
+    <visual name="uav08_static_aircraft_visual_0">
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://tins_description/meshes/aircraft/qav250_visual.stl" scale="1 1 1"/>
+      </geometry>
+      <material name="uav08_static_aircraft_material_0">
+        <color rgba="0.18 0.19 0.2 1"/>
+      </material>
+    </visual>
+  </link>
+  <joint name="uav01_static_aircraft_fixed_joint" type="fixed">
+    <parent link="uav01_dock"/>
+    <child link="uav01_static_aircraft"/>
+    <origin rpy="0 0 0" xyz="0 0 0"/>
+  </joint>
+  <joint name="uav02_static_aircraft_fixed_joint" type="fixed">
+    <parent link="uav02_dock"/>
+    <child link="uav02_static_aircraft"/>
+    <origin rpy="0 0 0" xyz="0 0 0"/>
+  </joint>
+  <joint name="uav03_static_aircraft_fixed_joint" type="fixed">
+    <parent link="uav03_dock"/>
+    <child link="uav03_static_aircraft"/>
+    <origin rpy="0 0 0" xyz="0 0 0"/>
+  </joint>
+  <joint name="uav04_static_aircraft_fixed_joint" type="fixed">
+    <parent link="uav04_dock"/>
+    <child link="uav04_static_aircraft"/>
+    <origin rpy="0 0 0" xyz="0 0 0"/>
+  </joint>
+  <joint name="uav05_static_aircraft_fixed_joint" type="fixed">
+    <parent link="uav05_dock"/>
+    <child link="uav05_static_aircraft"/>
+    <origin rpy="0 0 0" xyz="0 0 0"/>
+  </joint>
+  <joint name="uav06_static_aircraft_fixed_joint" type="fixed">
+    <parent link="uav06_dock"/>
+    <child link="uav06_static_aircraft"/>
+    <origin rpy="0 0 0" xyz="0 0 0"/>
+  </joint>
+  <joint name="uav07_static_aircraft_fixed_joint" type="fixed">
+    <parent link="uav07_dock"/>
+    <child link="uav07_static_aircraft"/>
+    <origin rpy="0 0 0" xyz="0 0 0"/>
+  </joint>
+  <joint name="uav08_static_aircraft_fixed_joint" type="fixed">
+    <parent link="uav08_dock"/>
+    <child link="uav08_static_aircraft"/>
+    <origin rpy="0 0 0" xyz="0 0 0"/>
+  </joint>
+</robot>

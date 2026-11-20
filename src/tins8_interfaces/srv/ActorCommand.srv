@@ -1,0 +1,6 @@
+# Scenario control for the scripted pedestrians: WALK | STOP | LEAVE | RETURN
+string actor
+string command
+---
+bool accepted
+string message

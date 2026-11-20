@@ -1,0 +1,6 @@
+# track_id: YOLOX tracker ID shown in the camera view; -1 clears the selection
+int32 track_id
+---
+bool accepted
+string request_id
+string message

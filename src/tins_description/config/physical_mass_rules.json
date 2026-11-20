@@ -1,0 +1,1834 @@
+{
+  "schema_version": 1,
+  "label": "SIMULATION_GRADE_NOT_PHYSICALLY_QUALIFIED",
+  "component_rules": [
+    {
+      "part_id": "FIXED_SIDE_PLATE_A",
+      "component": "DRV_FIXED_SIDE_PLATE_A",
+      "physical_link": "carousel_mount",
+      "source_basis": "Native trial volume at 2700kg/m3; material/process unqualified; no measured mass",
+      "prior_trial_mass_kg": 5.022,
+      "method": "CURRENT_NATIVE_VOLUME_TIMES_ASSUMED_DENSITY",
+      "density_kg_m3": 2700.0,
+      "status": "MATERIAL_DENSITY_ESTIMATE_NOT_MEASURED; current cuts accounted once"
+    },
+    {
+      "part_id": "X_RAIL_A_0",
+      "component": "DRV_X_RAIL_A_0",
+      "physical_link": "carousel_mount",
+      "source_basis": "Catalog linear mass; holes/fasteners/end machining unresolved",
+      "prior_trial_mass_kg": 1.530425,
+      "method": "CATALOGUE_PART_MASS_ONCE",
+      "mass_kg": 1.530425,
+      "status": "CATALOGUE_MASS_WITH_HOMOGENEOUS_REFERENCE_SHAPE_CG_INERTIA_APPROXIMATION"
+    },
+    {
+      "part_id": "X_BLOCK_A_0_0",
+      "component": "DRV_X_BLOCK_A_0_0",
+      "physical_link": "tray_a_x_carriage",
+      "source_basis": "Catalog nominal mass",
+      "prior_trial_mass_kg": 0.4,
+      "method": "CATALOGUE_PART_MASS_ONCE",
+      "mass_kg": 0.4,
+      "status": "CATALOGUE_MASS_WITH_HOMOGENEOUS_REFERENCE_SHAPE_CG_INERTIA_APPROXIMATION"
+    },
+    {
+      "part_id": "X_SPACER_A_0_0",
+      "component": "DRV_X_SPACER_A_0_0",
+      "physical_link": "tray_a_x_carriage",
+      "source_basis": "Native trial volume at 2700kg/m3; material/process unqualified; no measured mass",
+      "prior_trial_mass_kg": 0.31638599999999983,
+      "method": "CURRENT_NATIVE_VOLUME_TIMES_ASSUMED_DENSITY",
+      "density_kg_m3": 2700.0,
+      "status": "MATERIAL_DENSITY_ESTIMATE_NOT_MEASURED; current cuts accounted once"
+    },
+    {
+      "part_id": "X_BLOCK_A_0_1",
+      "component": "DRV_X_BLOCK_A_0_1",
+      "physical_link": "tray_a_x_carriage",
+      "source_basis": "Catalog nominal mass",
+      "prior_trial_mass_kg": 0.4,
+      "method": "CATALOGUE_PART_MASS_ONCE",
+      "mass_kg": 0.4,
+      "status": "CATALOGUE_MASS_WITH_HOMOGENEOUS_REFERENCE_SHAPE_CG_INERTIA_APPROXIMATION"
+    },
+    {
+      "part_id": "X_SPACER_A_0_1",
+      "component": "DRV_X_SPACER_A_0_1",
+      "physical_link": "tray_a_x_carriage",
+      "source_basis": "Native trial volume at 2700kg/m3; material/process unqualified; no measured mass",
+      "prior_trial_mass_kg": 0.31638599999999983,
+      "method": "CURRENT_NATIVE_VOLUME_TIMES_ASSUMED_DENSITY",
+      "density_kg_m3": 2700.0,
+      "status": "MATERIAL_DENSITY_ESTIMATE_NOT_MEASURED; current cuts accounted once"
+    },
+    {
+      "part_id": "X_RAIL_A_1",
+      "component": "DRV_X_RAIL_A_1",
+      "physical_link": "carousel_mount",
+      "source_basis": "Catalog linear mass; holes/fasteners/end machining unresolved",
+      "prior_trial_mass_kg": 1.530425,
+      "method": "CATALOGUE_PART_MASS_ONCE",
+      "mass_kg": 1.530425,
+      "status": "CATALOGUE_MASS_WITH_HOMOGENEOUS_REFERENCE_SHAPE_CG_INERTIA_APPROXIMATION"
+    },
+    {
+      "part_id": "X_BLOCK_A_1_0",
+      "component": "DRV_X_BLOCK_A_1_0",
+      "physical_link": "tray_a_x_carriage",
+      "source_basis": "Catalog nominal mass",
+      "prior_trial_mass_kg": 0.4,
+      "method": "CATALOGUE_PART_MASS_ONCE",
+      "mass_kg": 0.4,
+      "status": "CATALOGUE_MASS_WITH_HOMOGENEOUS_REFERENCE_SHAPE_CG_INERTIA_APPROXIMATION"
+    },
+    {
+      "part_id": "X_SPACER_A_1_0",
+      "component": "DRV_X_SPACER_A_1_0",
+      "physical_link": "tray_a_x_carriage",
+      "source_basis": "Native trial volume at 2700kg/m3; material/process unqualified; no measured mass",
+      "prior_trial_mass_kg": 0.31638599999999983,
+      "method": "CURRENT_NATIVE_VOLUME_TIMES_ASSUMED_DENSITY",
+      "density_kg_m3": 2700.0,
+      "status": "MATERIAL_DENSITY_ESTIMATE_NOT_MEASURED; current cuts accounted once"
+    },
+    {
+      "part_id": "X_BLOCK_A_1_1",
+      "component": "DRV_X_BLOCK_A_1_1",
+      "physical_link": "tray_a_x_carriage",
+      "source_basis": "Catalog nominal mass",
+      "prior_trial_mass_kg": 0.4,
+      "method": "CATALOGUE_PART_MASS_ONCE",
+      "mass_kg": 0.4,
+      "status": "CATALOGUE_MASS_WITH_HOMOGENEOUS_REFERENCE_SHAPE_CG_INERTIA_APPROXIMATION"
+    },
+    {
+      "part_id": "X_SPACER_A_1_1",
+      "component": "DRV_X_SPACER_A_1_1",
+      "physical_link": "tray_a_x_carriage",
+      "source_basis": "Native trial volume at 2700kg/m3; material/process unqualified; no measured mass",
+      "prior_trial_mass_kg": 0.31638599999999983,
+      "method": "CURRENT_NATIVE_VOLUME_TIMES_ASSUMED_DENSITY",
+      "density_kg_m3": 2700.0,
+      "status": "MATERIAL_DENSITY_ESTIMATE_NOT_MEASURED; current cuts accounted once"
+    },
+    {
+      "part_id": "MOVING_MAST_PLATE_A",
+      "component": "DRV_MOVING_MAST_PLATE_A",
+      "physical_link": "tray_a_x_carriage",
+      "source_basis": "Native trial volume at 2700kg/m3; material/process unqualified; no measured mass",
+      "prior_trial_mass_kg": 2.5376625,
+      "method": "CURRENT_NATIVE_VOLUME_TIMES_ASSUMED_DENSITY",
+      "density_kg_m3": 2700.0,
+      "status": "MATERIAL_DENSITY_ESTIMATE_NOT_MEASURED; current cuts accounted once"
+    },
+    {
+      "part_id": "Z_RAIL_A_0",
+      "component": "DRV_Z_RAIL_A_0",
+      "physical_link": "tray_a_x_carriage",
+      "source_basis": "Catalog linear mass; holes/fasteners/end machining unresolved",
+      "prior_trial_mass_kg": 0.689962,
+      "method": "CATALOGUE_PART_MASS_ONCE",
+      "mass_kg": 0.689962,
+      "status": "CATALOGUE_MASS_WITH_HOMOGENEOUS_REFERENCE_SHAPE_CG_INERTIA_APPROXIMATION"
+    },
+    {
+      "part_id": "Z_BLOCK_A_0",
+      "component": "DRV_Z_BLOCK_A_0",
+      "physical_link": "tray_a",
+      "source_basis": "Catalog nominal mass",
+      "prior_trial_mass_kg": 0.52,
+      "method": "CATALOGUE_PART_MASS_ONCE",
+      "mass_kg": 0.52,
+      "status": "CATALOGUE_MASS_WITH_HOMOGENEOUS_REFERENCE_SHAPE_CG_INERTIA_APPROXIMATION"
+    },
+    {
+      "part_id": "Z_SPACER_A_0",
+      "component": "DRV_Z_SPACER_A_0",
+      "physical_link": "tray_a",
+      "source_basis": "Native trial volume at 2700kg/m3; material/process unqualified; no measured mass",
+      "prior_trial_mass_kg": 0.4272751441158232,
+      "method": "CURRENT_NATIVE_VOLUME_TIMES_ASSUMED_DENSITY",
+      "density_kg_m3": 2700.0,
+      "status": "MATERIAL_DENSITY_ESTIMATE_NOT_MEASURED; current cuts accounted once"
+    },
+    {
+      "part_id": "Z_RAIL_A_1",
+      "component": "DRV_Z_RAIL_A_1",
+      "physical_link": "tray_a_x_carriage",
+      "source_basis": "Catalog linear mass; holes/fasteners/end machining unresolved",
+      "prior_trial_mass_kg": 0.689962,
+      "method": "CATALOGUE_PART_MASS_ONCE",
+      "mass_kg": 0.689962,
+      "status": "CATALOGUE_MASS_WITH_HOMOGENEOUS_REFERENCE_SHAPE_CG_INERTIA_APPROXIMATION"
+    },
+    {
+      "part_id": "Z_BLOCK_A_1",
+      "component": "DRV_Z_BLOCK_A_1",
+      "physical_link": "tray_a",
+      "source_basis": "Catalog nominal mass",
+      "prior_trial_mass_kg": 0.52,
+      "method": "CATALOGUE_PART_MASS_ONCE",
+      "mass_kg": 0.52,
+      "status": "CATALOGUE_MASS_WITH_HOMOGENEOUS_REFERENCE_SHAPE_CG_INERTIA_APPROXIMATION"
+    },
+    {
+      "part_id": "Z_SPACER_A_1",
+      "component": "DRV_Z_SPACER_A_1",
+      "physical_link": "tray_a",
+      "source_basis": "Native trial volume at 2700kg/m3; material/process unqualified; no measured mass",
+      "prior_trial_mass_kg": 0.3763972799999998,
+      "method": "CURRENT_NATIVE_VOLUME_TIMES_ASSUMED_DENSITY",
+      "density_kg_m3": 2700.0,
+      "status": "MATERIAL_DENSITY_ESTIMATE_NOT_MEASURED; current cuts accounted once"
+    },
+    {
+      "part_id": "Z_OUTPUT_PLATE_A",
+      "component": "DRV_Z_OUTPUT_PLATE_A",
+      "physical_link": "tray_a",
+      "source_basis": "Native trial volume at 2700kg/m3; material/process unqualified; no measured mass",
+      "prior_trial_mass_kg": 0.6718613100482598,
+      "method": "CURRENT_NATIVE_VOLUME_TIMES_ASSUMED_DENSITY",
+      "density_kg_m3": 2700.0,
+      "status": "MATERIAL_DENSITY_ESTIMATE_NOT_MEASURED; current cuts accounted once"
+    },
+    {
+      "part_id": "TRAY_CANTILEVER_PACKAGE_A_0",
+      "component": "DRV_TRAY_CANTILEVER_PACKAGE_A_0",
+      "physical_link": "tray_a",
+      "source_basis": "Native trial volume at 2700kg/m3; material/process unqualified; no measured mass",
+      "prior_trial_mass_kg": 1.1812500000000001,
+      "method": "CURRENT_NATIVE_VOLUME_TIMES_ASSUMED_DENSITY",
+      "density_kg_m3": 2700.0,
+      "status": "MATERIAL_DENSITY_ESTIMATE_NOT_MEASURED; current cuts accounted once"
+    },
+    {
+      "part_id": "TRAY_CANTILEVER_PACKAGE_A_1",
+      "component": "DRV_TRAY_CANTILEVER_PACKAGE_A_1",
+      "physical_link": "tray_a",
+      "source_basis": "Native trial volume at 2700kg/m3; material/process unqualified; no measured mass",
+      "prior_trial_mass_kg": 1.18125,
+      "method": "CURRENT_NATIVE_VOLUME_TIMES_ASSUMED_DENSITY",
+      "density_kg_m3": 2700.0,
+      "status": "MATERIAL_DENSITY_ESTIMATE_NOT_MEASURED; current cuts accounted once"
+    },
+    {
+      "part_id": "FIXED_SIDE_PLATE_B",
+      "component": "DRV_FIXED_SIDE_PLATE_B",
+      "physical_link": "carousel_mount",
+      "source_basis": "Native trial volume at 2700kg/m3; material/process unqualified; no measured mass",
+      "prior_trial_mass_kg": 5.022,
+      "method": "CURRENT_NATIVE_VOLUME_TIMES_ASSUMED_DENSITY",
+      "density_kg_m3": 2700.0,
+      "status": "MATERIAL_DENSITY_ESTIMATE_NOT_MEASURED; current cuts accounted once"
+    },
+    {
+      "part_id": "X_RAIL_B_0",
+      "component": "DRV_X_RAIL_B_0",
+      "physical_link": "carousel_mount",
+      "source_basis": "Catalog linear mass; holes/fasteners/end machining unresolved",
+      "prior_trial_mass_kg": 1.530425,
+      "method": "CATALOGUE_PART_MASS_ONCE",
+      "mass_kg": 1.530425,
+      "status": "CATALOGUE_MASS_WITH_HOMOGENEOUS_REFERENCE_SHAPE_CG_INERTIA_APPROXIMATION"
+    },
+    {
+      "part_id": "X_BLOCK_B_0_0",
+      "component": "DRV_X_BLOCK_B_0_0",
+      "physical_link": "tray_b_x_carriage",
+      "source_basis": "Catalog nominal mass",
+      "prior_trial_mass_kg": 0.4,
+      "method": "CATALOGUE_PART_MASS_ONCE",
+      "mass_kg": 0.4,
+      "status": "CATALOGUE_MASS_WITH_HOMOGENEOUS_REFERENCE_SHAPE_CG_INERTIA_APPROXIMATION"
+    },
+    {
+      "part_id": "X_SPACER_B_0_0",
+      "component": "DRV_X_SPACER_B_0_0",
+      "physical_link": "tray_b_x_carriage",
+      "source_basis": "Native trial volume at 2700kg/m3; material/process unqualified; no measured mass",
+      "prior_trial_mass_kg": 0.31638599999999983,
+      "method": "CURRENT_NATIVE_VOLUME_TIMES_ASSUMED_DENSITY",
+      "density_kg_m3": 2700.0,
+      "status": "MATERIAL_DENSITY_ESTIMATE_NOT_MEASURED; current cuts accounted once"
+    },
+    {
+      "part_id": "X_BLOCK_B_0_1",
+      "component": "DRV_X_BLOCK_B_0_1",
+      "physical_link": "tray_b_x_carriage",
+      "source_basis": "Catalog nominal mass",
+      "prior_trial_mass_kg": 0.4,
+      "method": "CATALOGUE_PART_MASS_ONCE",
+      "mass_kg": 0.4,
+      "status": "CATALOGUE_MASS_WITH_HOMOGENEOUS_REFERENCE_SHAPE_CG_INERTIA_APPROXIMATION"
+    },
+    {
+      "part_id": "X_SPACER_B_0_1",
+      "component": "DRV_X_SPACER_B_0_1",
+      "physical_link": "tray_b_x_carriage",
+      "source_basis": "Native trial volume at 2700kg/m3; material/process unqualified; no measured mass",
+      "prior_trial_mass_kg": 0.31638599999999983,
+      "method": "CURRENT_NATIVE_VOLUME_TIMES_ASSUMED_DENSITY",
+      "density_kg_m3": 2700.0,
+      "status": "MATERIAL_DENSITY_ESTIMATE_NOT_MEASURED; current cuts accounted once"
+    },
+    {
+      "part_id": "X_RAIL_B_1",
+      "component": "DRV_X_RAIL_B_1",
+      "physical_link": "carousel_mount",
+      "source_basis": "Catalog linear mass; holes/fasteners/end machining unresolved",
+      "prior_trial_mass_kg": 1.530425,
+      "method": "CATALOGUE_PART_MASS_ONCE",
+      "mass_kg": 1.530425,
+      "status": "CATALOGUE_MASS_WITH_HOMOGENEOUS_REFERENCE_SHAPE_CG_INERTIA_APPROXIMATION"
+    },
+    {
+      "part_id": "X_BLOCK_B_1_0",
+      "component": "DRV_X_BLOCK_B_1_0",
+      "physical_link": "tray_b_x_carriage",
+      "source_basis": "Catalog nominal mass",
+      "prior_trial_mass_kg": 0.4,
+      "method": "CATALOGUE_PART_MASS_ONCE",
+      "mass_kg": 0.4,
+      "status": "CATALOGUE_MASS_WITH_HOMOGENEOUS_REFERENCE_SHAPE_CG_INERTIA_APPROXIMATION"
+    },
+    {
+      "part_id": "X_SPACER_B_1_0",
+      "component": "DRV_X_SPACER_B_1_0",
+      "physical_link": "tray_b_x_carriage",
+      "source_basis": "Native trial volume at 2700kg/m3; material/process unqualified; no measured mass",
+      "prior_trial_mass_kg": 0.31638599999999983,
+      "method": "CURRENT_NATIVE_VOLUME_TIMES_ASSUMED_DENSITY",
+      "density_kg_m3": 2700.0,
+      "status": "MATERIAL_DENSITY_ESTIMATE_NOT_MEASURED; current cuts accounted once"
+    },
+    {
+      "part_id": "X_BLOCK_B_1_1",
+      "component": "DRV_X_BLOCK_B_1_1",
+      "physical_link": "tray_b_x_carriage",
+      "source_basis": "Catalog nominal mass",
+      "prior_trial_mass_kg": 0.4,
+      "method": "CATALOGUE_PART_MASS_ONCE",
+      "mass_kg": 0.4,
+      "status": "CATALOGUE_MASS_WITH_HOMOGENEOUS_REFERENCE_SHAPE_CG_INERTIA_APPROXIMATION"
+    },
+    {
+      "part_id": "X_SPACER_B_1_1",
+      "component": "DRV_X_SPACER_B_1_1",
+      "physical_link": "tray_b_x_carriage",
+      "source_basis": "Native trial volume at 2700kg/m3; material/process unqualified; no measured mass",
+      "prior_trial_mass_kg": 0.31638599999999983,
+      "method": "CURRENT_NATIVE_VOLUME_TIMES_ASSUMED_DENSITY",
+      "density_kg_m3": 2700.0,
+      "status": "MATERIAL_DENSITY_ESTIMATE_NOT_MEASURED; current cuts accounted once"
+    },
+    {
+      "part_id": "MOVING_MAST_PLATE_B",
+      "component": "DRV_MOVING_MAST_PLATE_B",
+      "physical_link": "tray_b_x_carriage",
+      "source_basis": "Native trial volume at 2700kg/m3; material/process unqualified; no measured mass",
+      "prior_trial_mass_kg": 2.5376625,
+      "method": "CURRENT_NATIVE_VOLUME_TIMES_ASSUMED_DENSITY",
+      "density_kg_m3": 2700.0,
+      "status": "MATERIAL_DENSITY_ESTIMATE_NOT_MEASURED; current cuts accounted once"
+    },
+    {
+      "part_id": "Z_RAIL_B_0",
+      "component": "DRV_Z_RAIL_B_0",
+      "physical_link": "tray_b_x_carriage",
+      "source_basis": "Catalog linear mass; holes/fasteners/end machining unresolved",
+      "prior_trial_mass_kg": 0.689962,
+      "method": "CATALOGUE_PART_MASS_ONCE",
+      "mass_kg": 0.689962,
+      "status": "CATALOGUE_MASS_WITH_HOMOGENEOUS_REFERENCE_SHAPE_CG_INERTIA_APPROXIMATION"
+    },
+    {
+      "part_id": "Z_BLOCK_B_0",
+      "component": "DRV_Z_BLOCK_B_0",
+      "physical_link": "tray_b",
+      "source_basis": "Catalog nominal mass",
+      "prior_trial_mass_kg": 0.52,
+      "method": "CATALOGUE_PART_MASS_ONCE",
+      "mass_kg": 0.52,
+      "status": "CATALOGUE_MASS_WITH_HOMOGENEOUS_REFERENCE_SHAPE_CG_INERTIA_APPROXIMATION"
+    },
+    {
+      "part_id": "Z_SPACER_B_0",
+      "component": "DRV_Z_SPACER_B_0",
+      "physical_link": "tray_b",
+      "source_basis": "Native trial volume at 2700kg/m3; material/process unqualified; no measured mass",
+      "prior_trial_mass_kg": 0.3763972799999998,
+      "method": "CURRENT_NATIVE_VOLUME_TIMES_ASSUMED_DENSITY",
+      "density_kg_m3": 2700.0,
+      "status": "MATERIAL_DENSITY_ESTIMATE_NOT_MEASURED; current cuts accounted once"
+    },
+    {
+      "part_id": "Z_RAIL_B_1",
+      "component": "DRV_Z_RAIL_B_1",
+      "physical_link": "tray_b_x_carriage",
+      "source_basis": "Catalog linear mass; holes/fasteners/end machining unresolved",
+      "prior_trial_mass_kg": 0.689962,
+      "method": "CATALOGUE_PART_MASS_ONCE",
+      "mass_kg": 0.689962,
+      "status": "CATALOGUE_MASS_WITH_HOMOGENEOUS_REFERENCE_SHAPE_CG_INERTIA_APPROXIMATION"
+    },
+    {
+      "part_id": "Z_BLOCK_B_1",
+      "component": "DRV_Z_BLOCK_B_1",
+      "physical_link": "tray_b",
+      "source_basis": "Catalog nominal mass",
+      "prior_trial_mass_kg": 0.52,
+      "method": "CATALOGUE_PART_MASS_ONCE",
+      "mass_kg": 0.52,
+      "status": "CATALOGUE_MASS_WITH_HOMOGENEOUS_REFERENCE_SHAPE_CG_INERTIA_APPROXIMATION"
+    },
+    {
+      "part_id": "Z_SPACER_B_1",
+      "component": "DRV_Z_SPACER_B_1",
+      "physical_link": "tray_b",
+      "source_basis": "Native trial volume at 2700kg/m3; material/process unqualified; no measured mass",
+      "prior_trial_mass_kg": 0.42727514411582357,
+      "method": "CURRENT_NATIVE_VOLUME_TIMES_ASSUMED_DENSITY",
+      "density_kg_m3": 2700.0,
+      "status": "MATERIAL_DENSITY_ESTIMATE_NOT_MEASURED; current cuts accounted once"
+    },
+    {
+      "part_id": "Z_OUTPUT_PLATE_B",
+      "component": "DRV_Z_OUTPUT_PLATE_B",
+      "physical_link": "tray_b",
+      "source_basis": "Native trial volume at 2700kg/m3; material/process unqualified; no measured mass",
+      "prior_trial_mass_kg": 0.6718613100482598,
+      "method": "CURRENT_NATIVE_VOLUME_TIMES_ASSUMED_DENSITY",
+      "density_kg_m3": 2700.0,
+      "status": "MATERIAL_DENSITY_ESTIMATE_NOT_MEASURED; current cuts accounted once"
+    },
+    {
+      "part_id": "TRAY_CANTILEVER_PACKAGE_B_0",
+      "component": "DRV_TRAY_CANTILEVER_PACKAGE_B_0",
+      "physical_link": "tray_b",
+      "source_basis": "Native trial volume at 2700kg/m3; material/process unqualified; no measured mass",
+      "prior_trial_mass_kg": 1.1812500000000001,
+      "method": "CURRENT_NATIVE_VOLUME_TIMES_ASSUMED_DENSITY",
+      "density_kg_m3": 2700.0,
+      "status": "MATERIAL_DENSITY_ESTIMATE_NOT_MEASURED; current cuts accounted once"
+    },
+    {
+      "part_id": "TRAY_CANTILEVER_PACKAGE_B_1",
+      "component": "DRV_TRAY_CANTILEVER_PACKAGE_B_1",
+      "physical_link": "tray_b",
+      "source_basis": "Native trial volume at 2700kg/m3; material/process unqualified; no measured mass",
+      "prior_trial_mass_kg": 1.1812500000000001,
+      "method": "CURRENT_NATIVE_VOLUME_TIMES_ASSUMED_DENSITY",
+      "density_kg_m3": 2700.0,
+      "status": "MATERIAL_DENSITY_ESTIMATE_NOT_MEASURED; current cuts accounted once"
+    },
+    {
+      "part_id": "FIXED_CROSSMEMBER_PACKAGE_0",
+      "component": "DRV_FIXED_CROSSMEMBER_PACKAGE_0",
+      "physical_link": "carousel_mount",
+      "source_basis": "Native trial volume at 2700kg/m3; material/process unqualified; no measured mass",
+      "prior_trial_mass_kg": 2.6082,
+      "method": "CURRENT_NATIVE_VOLUME_TIMES_ASSUMED_DENSITY",
+      "density_kg_m3": 2700.0,
+      "status": "MATERIAL_DENSITY_ESTIMATE_NOT_MEASURED; current cuts accounted once"
+    },
+    {
+      "part_id": "FIXED_CROSSMEMBER_PACKAGE_1",
+      "component": "DRV_FIXED_CROSSMEMBER_PACKAGE_1",
+      "physical_link": "carousel_mount",
+      "source_basis": "Native trial volume at 2700kg/m3; material/process unqualified; no measured mass",
+      "prior_trial_mass_kg": 2.6082,
+      "method": "CURRENT_NATIVE_VOLUME_TIMES_ASSUMED_DENSITY",
+      "density_kg_m3": 2700.0,
+      "status": "MATERIAL_DENSITY_ESTIMATE_NOT_MEASURED; current cuts accounted once"
+    },
+    {
+      "part_id": "X_SCREW_A",
+      "component": "DRV_X_SCREW_A",
+      "physical_link": "x_screw_a",
+      "source_basis": "Native trial volume at 7850kg/m3; material/process unqualified; no measured mass",
+      "prior_trial_mass_kg": 1.1357115053324223,
+      "method": "CURRENT_NATIVE_VOLUME_TIMES_ASSUMED_DENSITY",
+      "density_kg_m3": 7850.0,
+      "status": "MATERIAL_DENSITY_ESTIMATE_NOT_MEASURED; current cuts accounted once"
+    },
+    {
+      "part_id": "X_FIXED_FK10_A",
+      "component": "DRV_X_FIXED_FK10_A",
+      "physical_link": "carousel_mount",
+      "source_basis": "Native trial volume at 7850kg/m3; material/process unqualified; no measured mass",
+      "prior_trial_mass_kg": 0.43347522646637865,
+      "method": "CURRENT_NATIVE_VOLUME_TIMES_ASSUMED_DENSITY",
+      "density_kg_m3": 7850.0,
+      "status": "MATERIAL_DENSITY_ESTIMATE_NOT_MEASURED; current cuts accounted once"
+    },
+    {
+      "part_id": "X_FLOAT_FF10_A",
+      "component": "DRV_X_FLOAT_FF10_A",
+      "physical_link": "carousel_mount",
+      "source_basis": "Native trial volume at 7850kg/m3; material/process unqualified; no measured mass",
+      "prior_trial_mass_kg": 0.13206234498079675,
+      "method": "CURRENT_NATIVE_VOLUME_TIMES_ASSUMED_DENSITY",
+      "density_kg_m3": 7850.0,
+      "status": "MATERIAL_DENSITY_ESTIMATE_NOT_MEASURED; current cuts accounted once"
+    },
+    {
+      "part_id": "X_NUT_R16_DEB_A",
+      "component": "DRV_X_NUT_R16_DEB_A",
+      "physical_link": "tray_a_x_carriage",
+      "source_basis": "Catalog nominal mass",
+      "prior_trial_mass_kg": 0.152,
+      "method": "CATALOGUE_PART_MASS_ONCE",
+      "mass_kg": 0.152,
+      "status": "CATALOGUE_MASS_WITH_HOMOGENEOUS_REFERENCE_SHAPE_CG_INERTIA_APPROXIMATION"
+    },
+    {
+      "part_id": "X_NUT_CARRIER_A",
+      "component": "DRV_X_NUT_CARRIER_A",
+      "physical_link": "tray_a_x_carriage",
+      "source_basis": "Native trial volume at 2700kg/m3; material/process unqualified; no measured mass",
+      "prior_trial_mass_kg": 0.07040333686659948,
+      "method": "CURRENT_NATIVE_VOLUME_TIMES_ASSUMED_DENSITY",
+      "density_kg_m3": 2700.0,
+      "status": "MATERIAL_DENSITY_ESTIMATE_NOT_MEASURED; current cuts accounted once"
+    },
+    {
+      "part_id": "Z_SCREW_A",
+      "component": "DRV_Z_SCREW_A",
+      "physical_link": "z_screw_a",
+      "source_basis": "Native trial volume at 7850kg/m3; material/process unqualified; no measured mass",
+      "prior_trial_mass_kg": 0.4600603259788138,
+      "method": "CURRENT_NATIVE_VOLUME_TIMES_ASSUMED_DENSITY",
+      "density_kg_m3": 7850.0,
+      "status": "MATERIAL_DENSITY_ESTIMATE_NOT_MEASURED; current cuts accounted once"
+    },
+    {
+      "part_id": "Z_FIXED_FK10_A",
+      "component": "DRV_Z_FIXED_FK10_A",
+      "physical_link": "tray_a_x_carriage",
+      "source_basis": "Native trial volume at 7850kg/m3; material/process unqualified; no measured mass",
+      "prior_trial_mass_kg": 0.43347522646637865,
+      "method": "CURRENT_NATIVE_VOLUME_TIMES_ASSUMED_DENSITY",
+      "density_kg_m3": 7850.0,
+      "status": "MATERIAL_DENSITY_ESTIMATE_NOT_MEASURED; current cuts accounted once"
+    },
+    {
+      "part_id": "Z_FLOAT_FF10_A",
+      "component": "DRV_Z_FLOAT_FF10_A",
+      "physical_link": "tray_a_x_carriage",
+      "source_basis": "Native trial volume at 7850kg/m3; material/process unqualified; no measured mass",
+      "prior_trial_mass_kg": 0.13206234498079641,
+      "method": "CURRENT_NATIVE_VOLUME_TIMES_ASSUMED_DENSITY",
+      "density_kg_m3": 7850.0,
+      "status": "MATERIAL_DENSITY_ESTIMATE_NOT_MEASURED; current cuts accounted once"
+    },
+    {
+      "part_id": "Z_NUT_R16_DEB_A",
+      "component": "DRV_Z_NUT_R16_DEB_A",
+      "physical_link": "tray_a",
+      "source_basis": "Catalog nominal mass",
+      "prior_trial_mass_kg": 0.152,
+      "method": "CATALOGUE_PART_MASS_ONCE",
+      "mass_kg": 0.152,
+      "status": "CATALOGUE_MASS_WITH_HOMOGENEOUS_REFERENCE_SHAPE_CG_INERTIA_APPROXIMATION"
+    },
+    {
+      "part_id": "Z_NUT_CARRIER_A",
+      "component": "DRV_Z_NUT_CARRIER_A",
+      "physical_link": "tray_a",
+      "source_basis": "Native trial volume at 2700kg/m3; material/process unqualified; no measured mass",
+      "prior_trial_mass_kg": 0.07898933686659879,
+      "method": "CURRENT_NATIVE_VOLUME_TIMES_ASSUMED_DENSITY",
+      "density_kg_m3": 2700.0,
+      "status": "MATERIAL_DENSITY_ESTIMATE_NOT_MEASURED; current cuts accounted once"
+    },
+    {
+      "part_id": "X_SCREW_B",
+      "component": "DRV_X_SCREW_B",
+      "physical_link": "x_screw_b",
+      "source_basis": "Native trial volume at 7850kg/m3; material/process unqualified; no measured mass",
+      "prior_trial_mass_kg": 1.1357115053324223,
+      "method": "CURRENT_NATIVE_VOLUME_TIMES_ASSUMED_DENSITY",
+      "density_kg_m3": 7850.0,
+      "status": "MATERIAL_DENSITY_ESTIMATE_NOT_MEASURED; current cuts accounted once"
+    },
+    {
+      "part_id": "X_FIXED_FK10_B",
+      "component": "DRV_X_FIXED_FK10_B",
+      "physical_link": "carousel_mount",
+      "source_basis": "Native trial volume at 7850kg/m3; material/process unqualified; no measured mass",
+      "prior_trial_mass_kg": 0.43347522646637865,
+      "method": "CURRENT_NATIVE_VOLUME_TIMES_ASSUMED_DENSITY",
+      "density_kg_m3": 7850.0,
+      "status": "MATERIAL_DENSITY_ESTIMATE_NOT_MEASURED; current cuts accounted once"
+    },
+    {
+      "part_id": "X_FLOAT_FF10_B",
+      "component": "DRV_X_FLOAT_FF10_B",
+      "physical_link": "carousel_mount",
+      "source_basis": "Native trial volume at 7850kg/m3; material/process unqualified; no measured mass",
+      "prior_trial_mass_kg": 0.13206234498079675,
+      "method": "CURRENT_NATIVE_VOLUME_TIMES_ASSUMED_DENSITY",
+      "density_kg_m3": 7850.0,
+      "status": "MATERIAL_DENSITY_ESTIMATE_NOT_MEASURED; current cuts accounted once"
+    },
+    {
+      "part_id": "X_NUT_R16_DEB_B",
+      "component": "DRV_X_NUT_R16_DEB_B",
+      "physical_link": "tray_b_x_carriage",
+      "source_basis": "Catalog nominal mass",
+      "prior_trial_mass_kg": 0.152,
+      "method": "CATALOGUE_PART_MASS_ONCE",
+      "mass_kg": 0.152,
+      "status": "CATALOGUE_MASS_WITH_HOMOGENEOUS_REFERENCE_SHAPE_CG_INERTIA_APPROXIMATION"
+    },
+    {
+      "part_id": "X_NUT_CARRIER_B",
+      "component": "DRV_X_NUT_CARRIER_B",
+      "physical_link": "tray_b_x_carriage",
+      "source_basis": "Native trial volume at 2700kg/m3; material/process unqualified; no measured mass",
+      "prior_trial_mass_kg": 0.07040333686659948,
+      "method": "CURRENT_NATIVE_VOLUME_TIMES_ASSUMED_DENSITY",
+      "density_kg_m3": 2700.0,
+      "status": "MATERIAL_DENSITY_ESTIMATE_NOT_MEASURED; current cuts accounted once"
+    },
+    {
+      "part_id": "Z_SCREW_B",
+      "component": "DRV_Z_SCREW_B",
+      "physical_link": "z_screw_b",
+      "source_basis": "Native trial volume at 7850kg/m3; material/process unqualified; no measured mass",
+      "prior_trial_mass_kg": 0.4600603259788138,
+      "method": "CURRENT_NATIVE_VOLUME_TIMES_ASSUMED_DENSITY",
+      "density_kg_m3": 7850.0,
+      "status": "MATERIAL_DENSITY_ESTIMATE_NOT_MEASURED; current cuts accounted once"
+    },
+    {
+      "part_id": "Z_FIXED_FK10_B",
+      "component": "DRV_Z_FIXED_FK10_B",
+      "physical_link": "tray_b_x_carriage",
+      "source_basis": "Native trial volume at 7850kg/m3; material/process unqualified; no measured mass",
+      "prior_trial_mass_kg": 0.43347522646637865,
+      "method": "CURRENT_NATIVE_VOLUME_TIMES_ASSUMED_DENSITY",
+      "density_kg_m3": 7850.0,
+      "status": "MATERIAL_DENSITY_ESTIMATE_NOT_MEASURED; current cuts accounted once"
+    },
+    {
+      "part_id": "Z_FLOAT_FF10_B",
+      "component": "DRV_Z_FLOAT_FF10_B",
+      "physical_link": "tray_b_x_carriage",
+      "source_basis": "Native trial volume at 7850kg/m3; material/process unqualified; no measured mass",
+      "prior_trial_mass_kg": 0.13206234498079641,
+      "method": "CURRENT_NATIVE_VOLUME_TIMES_ASSUMED_DENSITY",
+      "density_kg_m3": 7850.0,
+      "status": "MATERIAL_DENSITY_ESTIMATE_NOT_MEASURED; current cuts accounted once"
+    },
+    {
+      "part_id": "Z_NUT_R16_DEB_B",
+      "component": "DRV_Z_NUT_R16_DEB_B",
+      "physical_link": "tray_b",
+      "source_basis": "Catalog nominal mass",
+      "prior_trial_mass_kg": 0.152,
+      "method": "CATALOGUE_PART_MASS_ONCE",
+      "mass_kg": 0.152,
+      "status": "CATALOGUE_MASS_WITH_HOMOGENEOUS_REFERENCE_SHAPE_CG_INERTIA_APPROXIMATION"
+    },
+    {
+      "part_id": "Z_NUT_CARRIER_B",
+      "component": "DRV_Z_NUT_CARRIER_B",
+      "physical_link": "tray_b",
+      "source_basis": "Native trial volume at 2700kg/m3; material/process unqualified; no measured mass",
+      "prior_trial_mass_kg": 0.07898933686659879,
+      "method": "CURRENT_NATIVE_VOLUME_TIMES_ASSUMED_DENSITY",
+      "density_kg_m3": 2700.0,
+      "status": "MATERIAL_DENSITY_ESTIMATE_NOT_MEASURED; current cuts accounted once"
+    },
+    {
+      "part_id": "Z_LOWER_A_0_MOUNT",
+      "component": "END_Z_LOWER_A_0_MOUNT",
+      "physical_link": "tray_a_x_carriage",
+      "source_basis": "Native trial volume at 2700kg/m3; material/process unqualified; no measured mass",
+      "prior_trial_mass_kg": 0.0481381387560325,
+      "method": "CURRENT_NATIVE_VOLUME_TIMES_ASSUMED_DENSITY",
+      "density_kg_m3": 2700.0,
+      "status": "MATERIAL_DENSITY_ESTIMATE_NOT_MEASURED; current cuts accounted once"
+    },
+    {
+      "part_id": "Z_LOWER_A_0_BUFFER",
+      "component": "END_Z_LOWER_A_0_BUFFER",
+      "physical_link": "tray_a_x_carriage",
+      "source_basis": "Catalog nominal mass; surrogate envelope volume is not physical mass",
+      "prior_trial_mass_kg": 0.024,
+      "method": "CATALOGUE_PART_MASS_ONCE",
+      "mass_kg": 0.024,
+      "status": "CATALOGUE_MASS_WITH_HOMOGENEOUS_REFERENCE_SHAPE_CG_INERTIA_APPROXIMATION"
+    },
+    {
+      "part_id": "Z_LOWER_A_0_STRIKER",
+      "component": "END_Z_LOWER_A_0_STRIKER",
+      "physical_link": "tray_a",
+      "source_basis": "Native trial volume at 2700kg/m3; material/process unqualified; no measured mass",
+      "prior_trial_mass_kg": 0.03375,
+      "method": "CURRENT_NATIVE_VOLUME_TIMES_ASSUMED_DENSITY",
+      "density_kg_m3": 2700.0,
+      "status": "MATERIAL_DENSITY_ESTIMATE_NOT_MEASURED; current cuts accounted once"
+    },
+    {
+      "part_id": "Z_UPPER_A_0_MOUNT",
+      "component": "END_Z_UPPER_A_0_MOUNT",
+      "physical_link": "tray_a_x_carriage",
+      "source_basis": "Native trial volume at 2700kg/m3; material/process unqualified; no measured mass",
+      "prior_trial_mass_kg": 0.0481381387560325,
+      "method": "CURRENT_NATIVE_VOLUME_TIMES_ASSUMED_DENSITY",
+      "density_kg_m3": 2700.0,
+      "status": "MATERIAL_DENSITY_ESTIMATE_NOT_MEASURED; current cuts accounted once"
+    },
+    {
+      "part_id": "Z_UPPER_A_0_BUFFER",
+      "component": "END_Z_UPPER_A_0_BUFFER",
+      "physical_link": "tray_a_x_carriage",
+      "source_basis": "Catalog nominal mass; surrogate envelope volume is not physical mass",
+      "prior_trial_mass_kg": 0.024,
+      "method": "CATALOGUE_PART_MASS_ONCE",
+      "mass_kg": 0.024,
+      "status": "CATALOGUE_MASS_WITH_HOMOGENEOUS_REFERENCE_SHAPE_CG_INERTIA_APPROXIMATION"
+    },
+    {
+      "part_id": "Z_UPPER_A_0_STRIKER",
+      "component": "END_Z_UPPER_A_0_STRIKER",
+      "physical_link": "tray_a",
+      "source_basis": "Native trial volume at 2700kg/m3; material/process unqualified; no measured mass",
+      "prior_trial_mass_kg": 0.03375,
+      "method": "CURRENT_NATIVE_VOLUME_TIMES_ASSUMED_DENSITY",
+      "density_kg_m3": 2700.0,
+      "status": "MATERIAL_DENSITY_ESTIMATE_NOT_MEASURED; current cuts accounted once"
+    },
+    {
+      "part_id": "Z_LOWER_A_1_MOUNT",
+      "component": "END_Z_LOWER_A_1_MOUNT",
+      "physical_link": "tray_a_x_carriage",
+      "source_basis": "Native trial volume at 2700kg/m3; material/process unqualified; no measured mass",
+      "prior_trial_mass_kg": 0.0481381387560325,
+      "method": "CURRENT_NATIVE_VOLUME_TIMES_ASSUMED_DENSITY",
+      "density_kg_m3": 2700.0,
+      "status": "MATERIAL_DENSITY_ESTIMATE_NOT_MEASURED; current cuts accounted once"
+    },
+    {
+      "part_id": "Z_LOWER_A_1_BUFFER",
+      "component": "END_Z_LOWER_A_1_BUFFER",
+      "physical_link": "tray_a_x_carriage",
+      "source_basis": "Catalog nominal mass; surrogate envelope volume is not physical mass",
+      "prior_trial_mass_kg": 0.024,
+      "method": "CATALOGUE_PART_MASS_ONCE",
+      "mass_kg": 0.024,
+      "status": "CATALOGUE_MASS_WITH_HOMOGENEOUS_REFERENCE_SHAPE_CG_INERTIA_APPROXIMATION"
+    },
+    {
+      "part_id": "Z_LOWER_A_1_STRIKER",
+      "component": "END_Z_LOWER_A_1_STRIKER",
+      "physical_link": "tray_a",
+      "source_basis": "Native trial volume at 2700kg/m3; material/process unqualified; no measured mass",
+      "prior_trial_mass_kg": 0.03375,
+      "method": "CURRENT_NATIVE_VOLUME_TIMES_ASSUMED_DENSITY",
+      "density_kg_m3": 2700.0,
+      "status": "MATERIAL_DENSITY_ESTIMATE_NOT_MEASURED; current cuts accounted once"
+    },
+    {
+      "part_id": "Z_UPPER_A_1_MOUNT",
+      "component": "END_Z_UPPER_A_1_MOUNT",
+      "physical_link": "tray_a_x_carriage",
+      "source_basis": "Native trial volume at 2700kg/m3; material/process unqualified; no measured mass",
+      "prior_trial_mass_kg": 0.0481381387560325,
+      "method": "CURRENT_NATIVE_VOLUME_TIMES_ASSUMED_DENSITY",
+      "density_kg_m3": 2700.0,
+      "status": "MATERIAL_DENSITY_ESTIMATE_NOT_MEASURED; current cuts accounted once"
+    },
+    {
+      "part_id": "Z_UPPER_A_1_BUFFER",
+      "component": "END_Z_UPPER_A_1_BUFFER",
+      "physical_link": "tray_a_x_carriage",
+      "source_basis": "Catalog nominal mass; surrogate envelope volume is not physical mass",
+      "prior_trial_mass_kg": 0.024,
+      "method": "CATALOGUE_PART_MASS_ONCE",
+      "mass_kg": 0.024,
+      "status": "CATALOGUE_MASS_WITH_HOMOGENEOUS_REFERENCE_SHAPE_CG_INERTIA_APPROXIMATION"
+    },
+    {
+      "part_id": "Z_UPPER_A_1_STRIKER",
+      "component": "END_Z_UPPER_A_1_STRIKER",
+      "physical_link": "tray_a",
+      "source_basis": "Native trial volume at 2700kg/m3; material/process unqualified; no measured mass",
+      "prior_trial_mass_kg": 0.03375,
+      "method": "CURRENT_NATIVE_VOLUME_TIMES_ASSUMED_DENSITY",
+      "density_kg_m3": 2700.0,
+      "status": "MATERIAL_DENSITY_ESTIMATE_NOT_MEASURED; current cuts accounted once"
+    },
+    {
+      "part_id": "X_INNER_A_MOUNT",
+      "component": "END_X_INNER_A_MOUNT",
+      "physical_link": "carousel_mount",
+      "source_basis": "Native trial volume at 2700kg/m3; material/process unqualified; no measured mass",
+      "prior_trial_mass_kg": 0.03126313875603248,
+      "method": "CURRENT_NATIVE_VOLUME_TIMES_ASSUMED_DENSITY",
+      "density_kg_m3": 2700.0,
+      "status": "MATERIAL_DENSITY_ESTIMATE_NOT_MEASURED; current cuts accounted once"
+    },
+    {
+      "part_id": "X_INNER_A_BUFFER",
+      "component": "END_X_INNER_A_BUFFER",
+      "physical_link": "carousel_mount",
+      "source_basis": "Catalog nominal mass; surrogate envelope volume is not physical mass",
+      "prior_trial_mass_kg": 0.024,
+      "method": "CATALOGUE_PART_MASS_ONCE",
+      "mass_kg": 0.024,
+      "status": "CATALOGUE_MASS_WITH_HOMOGENEOUS_REFERENCE_SHAPE_CG_INERTIA_APPROXIMATION"
+    },
+    {
+      "part_id": "X_INNER_A_STRIKER",
+      "component": "END_X_INNER_A_STRIKER",
+      "physical_link": "tray_a_x_carriage",
+      "source_basis": "Native trial volume at 2700kg/m3; material/process unqualified; no measured mass",
+      "prior_trial_mass_kg": 0.03847500000000002,
+      "method": "CURRENT_NATIVE_VOLUME_TIMES_ASSUMED_DENSITY",
+      "density_kg_m3": 2700.0,
+      "status": "MATERIAL_DENSITY_ESTIMATE_NOT_MEASURED; current cuts accounted once"
+    },
+    {
+      "part_id": "X_OUTER_A_MOUNT",
+      "component": "END_X_OUTER_A_MOUNT",
+      "physical_link": "carousel_mount",
+      "source_basis": "Native trial volume at 2700kg/m3; material/process unqualified; no measured mass",
+      "prior_trial_mass_kg": 0.03126313875603254,
+      "method": "CURRENT_NATIVE_VOLUME_TIMES_ASSUMED_DENSITY",
+      "density_kg_m3": 2700.0,
+      "status": "MATERIAL_DENSITY_ESTIMATE_NOT_MEASURED; current cuts accounted once"
+    },
+    {
+      "part_id": "X_OUTER_A_BUFFER",
+      "component": "END_X_OUTER_A_BUFFER",
+      "physical_link": "carousel_mount",
+      "source_basis": "Catalog nominal mass; surrogate envelope volume is not physical mass",
+      "prior_trial_mass_kg": 0.024,
+      "method": "CATALOGUE_PART_MASS_ONCE",
+      "mass_kg": 0.024,
+      "status": "CATALOGUE_MASS_WITH_HOMOGENEOUS_REFERENCE_SHAPE_CG_INERTIA_APPROXIMATION"
+    },
+    {
+      "part_id": "X_OUTER_A_STRIKER",
+      "component": "END_X_OUTER_A_STRIKER",
+      "physical_link": "tray_a_x_carriage",
+      "source_basis": "Native trial volume at 2700kg/m3; material/process unqualified; no measured mass",
+      "prior_trial_mass_kg": 0.03847500000000016,
+      "method": "CURRENT_NATIVE_VOLUME_TIMES_ASSUMED_DENSITY",
+      "density_kg_m3": 2700.0,
+      "status": "MATERIAL_DENSITY_ESTIMATE_NOT_MEASURED; current cuts accounted once"
+    },
+    {
+      "part_id": "Z_LOWER_B_0_MOUNT",
+      "component": "END_Z_LOWER_B_0_MOUNT",
+      "physical_link": "tray_b_x_carriage",
+      "source_basis": "Native trial volume at 2700kg/m3; material/process unqualified; no measured mass",
+      "prior_trial_mass_kg": 0.0481381387560325,
+      "method": "CURRENT_NATIVE_VOLUME_TIMES_ASSUMED_DENSITY",
+      "density_kg_m3": 2700.0,
+      "status": "MATERIAL_DENSITY_ESTIMATE_NOT_MEASURED; current cuts accounted once"
+    },
+    {
+      "part_id": "Z_LOWER_B_0_BUFFER",
+      "component": "END_Z_LOWER_B_0_BUFFER",
+      "physical_link": "tray_b_x_carriage",
+      "source_basis": "Catalog nominal mass; surrogate envelope volume is not physical mass",
+      "prior_trial_mass_kg": 0.024,
+      "method": "CATALOGUE_PART_MASS_ONCE",
+      "mass_kg": 0.024,
+      "status": "CATALOGUE_MASS_WITH_HOMOGENEOUS_REFERENCE_SHAPE_CG_INERTIA_APPROXIMATION"
+    },
+    {
+      "part_id": "Z_LOWER_B_0_STRIKER",
+      "component": "END_Z_LOWER_B_0_STRIKER",
+      "physical_link": "tray_b",
+      "source_basis": "Native trial volume at 2700kg/m3; material/process unqualified; no measured mass",
+      "prior_trial_mass_kg": 0.03375,
+      "method": "CURRENT_NATIVE_VOLUME_TIMES_ASSUMED_DENSITY",
+      "density_kg_m3": 2700.0,
+      "status": "MATERIAL_DENSITY_ESTIMATE_NOT_MEASURED; current cuts accounted once"
+    },
+    {
+      "part_id": "Z_UPPER_B_0_MOUNT",
+      "component": "END_Z_UPPER_B_0_MOUNT",
+      "physical_link": "tray_b_x_carriage",
+      "source_basis": "Native trial volume at 2700kg/m3; material/process unqualified; no measured mass",
+      "prior_trial_mass_kg": 0.0481381387560325,
+      "method": "CURRENT_NATIVE_VOLUME_TIMES_ASSUMED_DENSITY",
+      "density_kg_m3": 2700.0,
+      "status": "MATERIAL_DENSITY_ESTIMATE_NOT_MEASURED; current cuts accounted once"
+    },
+    {
+      "part_id": "Z_UPPER_B_0_BUFFER",
+      "component": "END_Z_UPPER_B_0_BUFFER",
+      "physical_link": "tray_b_x_carriage",
+      "source_basis": "Catalog nominal mass; surrogate envelope volume is not physical mass",
+      "prior_trial_mass_kg": 0.024,
+      "method": "CATALOGUE_PART_MASS_ONCE",
+      "mass_kg": 0.024,
+      "status": "CATALOGUE_MASS_WITH_HOMOGENEOUS_REFERENCE_SHAPE_CG_INERTIA_APPROXIMATION"
+    },
+    {
+      "part_id": "Z_UPPER_B_0_STRIKER",
+      "component": "END_Z_UPPER_B_0_STRIKER",
+      "physical_link": "tray_b",
+      "source_basis": "Native trial volume at 2700kg/m3; material/process unqualified; no measured mass",
+      "prior_trial_mass_kg": 0.03375,
+      "method": "CURRENT_NATIVE_VOLUME_TIMES_ASSUMED_DENSITY",
+      "density_kg_m3": 2700.0,
+      "status": "MATERIAL_DENSITY_ESTIMATE_NOT_MEASURED; current cuts accounted once"
+    },
+    {
+      "part_id": "Z_LOWER_B_1_MOUNT",
+      "component": "END_Z_LOWER_B_1_MOUNT",
+      "physical_link": "tray_b_x_carriage",
+      "source_basis": "Native trial volume at 2700kg/m3; material/process unqualified; no measured mass",
+      "prior_trial_mass_kg": 0.0481381387560325,
+      "method": "CURRENT_NATIVE_VOLUME_TIMES_ASSUMED_DENSITY",
+      "density_kg_m3": 2700.0,
+      "status": "MATERIAL_DENSITY_ESTIMATE_NOT_MEASURED; current cuts accounted once"
+    },
+    {
+      "part_id": "Z_LOWER_B_1_BUFFER",
+      "component": "END_Z_LOWER_B_1_BUFFER",
+      "physical_link": "tray_b_x_carriage",
+      "source_basis": "Catalog nominal mass; surrogate envelope volume is not physical mass",
+      "prior_trial_mass_kg": 0.024,
+      "method": "CATALOGUE_PART_MASS_ONCE",
+      "mass_kg": 0.024,
+      "status": "CATALOGUE_MASS_WITH_HOMOGENEOUS_REFERENCE_SHAPE_CG_INERTIA_APPROXIMATION"
+    },
+    {
+      "part_id": "Z_LOWER_B_1_STRIKER",
+      "component": "END_Z_LOWER_B_1_STRIKER",
+      "physical_link": "tray_b",
+      "source_basis": "Native trial volume at 2700kg/m3; material/process unqualified; no measured mass",
+      "prior_trial_mass_kg": 0.03375,
+      "method": "CURRENT_NATIVE_VOLUME_TIMES_ASSUMED_DENSITY",
+      "density_kg_m3": 2700.0,
+      "status": "MATERIAL_DENSITY_ESTIMATE_NOT_MEASURED; current cuts accounted once"
+    },
+    {
+      "part_id": "Z_UPPER_B_1_MOUNT",
+      "component": "END_Z_UPPER_B_1_MOUNT",
+      "physical_link": "tray_b_x_carriage",
+      "source_basis": "Native trial volume at 2700kg/m3; material/process unqualified; no measured mass",
+      "prior_trial_mass_kg": 0.0481381387560325,
+      "method": "CURRENT_NATIVE_VOLUME_TIMES_ASSUMED_DENSITY",
+      "density_kg_m3": 2700.0,
+      "status": "MATERIAL_DENSITY_ESTIMATE_NOT_MEASURED; current cuts accounted once"
+    },
+    {
+      "part_id": "Z_UPPER_B_1_BUFFER",
+      "component": "END_Z_UPPER_B_1_BUFFER",
+      "physical_link": "tray_b_x_carriage",
+      "source_basis": "Catalog nominal mass; surrogate envelope volume is not physical mass",
+      "prior_trial_mass_kg": 0.024,
+      "method": "CATALOGUE_PART_MASS_ONCE",
+      "mass_kg": 0.024,
+      "status": "CATALOGUE_MASS_WITH_HOMOGENEOUS_REFERENCE_SHAPE_CG_INERTIA_APPROXIMATION"
+    },
+    {
+      "part_id": "Z_UPPER_B_1_STRIKER",
+      "component": "END_Z_UPPER_B_1_STRIKER",
+      "physical_link": "tray_b",
+      "source_basis": "Native trial volume at 2700kg/m3; material/process unqualified; no measured mass",
+      "prior_trial_mass_kg": 0.03375,
+      "method": "CURRENT_NATIVE_VOLUME_TIMES_ASSUMED_DENSITY",
+      "density_kg_m3": 2700.0,
+      "status": "MATERIAL_DENSITY_ESTIMATE_NOT_MEASURED; current cuts accounted once"
+    },
+    {
+      "part_id": "X_INNER_B_MOUNT",
+      "component": "END_X_INNER_B_MOUNT",
+      "physical_link": "carousel_mount",
+      "source_basis": "Native trial volume at 2700kg/m3; material/process unqualified; no measured mass",
+      "prior_trial_mass_kg": 0.03126313875603275,
+      "method": "CURRENT_NATIVE_VOLUME_TIMES_ASSUMED_DENSITY",
+      "density_kg_m3": 2700.0,
+      "status": "MATERIAL_DENSITY_ESTIMATE_NOT_MEASURED; current cuts accounted once"
+    },
+    {
+      "part_id": "X_INNER_B_BUFFER",
+      "component": "END_X_INNER_B_BUFFER",
+      "physical_link": "carousel_mount",
+      "source_basis": "Catalog nominal mass; surrogate envelope volume is not physical mass",
+      "prior_trial_mass_kg": 0.024,
+      "method": "CATALOGUE_PART_MASS_ONCE",
+      "mass_kg": 0.024,
+      "status": "CATALOGUE_MASS_WITH_HOMOGENEOUS_REFERENCE_SHAPE_CG_INERTIA_APPROXIMATION"
+    },
+    {
+      "part_id": "X_INNER_B_STRIKER",
+      "component": "END_X_INNER_B_STRIKER",
+      "physical_link": "tray_b_x_carriage",
+      "source_basis": "Native trial volume at 2700kg/m3; material/process unqualified; no measured mass",
+      "prior_trial_mass_kg": 0.03847499999999984,
+      "method": "CURRENT_NATIVE_VOLUME_TIMES_ASSUMED_DENSITY",
+      "density_kg_m3": 2700.0,
+      "status": "MATERIAL_DENSITY_ESTIMATE_NOT_MEASURED; current cuts accounted once"
+    },
+    {
+      "part_id": "X_OUTER_B_MOUNT",
+      "component": "END_X_OUTER_B_MOUNT",
+      "physical_link": "carousel_mount",
+      "source_basis": "Native trial volume at 2700kg/m3; material/process unqualified; no measured mass",
+      "prior_trial_mass_kg": 0.031263138756032954,
+      "method": "CURRENT_NATIVE_VOLUME_TIMES_ASSUMED_DENSITY",
+      "density_kg_m3": 2700.0,
+      "status": "MATERIAL_DENSITY_ESTIMATE_NOT_MEASURED; current cuts accounted once"
+    },
+    {
+      "part_id": "X_OUTER_B_BUFFER",
+      "component": "END_X_OUTER_B_BUFFER",
+      "physical_link": "carousel_mount",
+      "source_basis": "Catalog nominal mass; surrogate envelope volume is not physical mass",
+      "prior_trial_mass_kg": 0.024,
+      "method": "CATALOGUE_PART_MASS_ONCE",
+      "mass_kg": 0.024,
+      "status": "CATALOGUE_MASS_WITH_HOMOGENEOUS_REFERENCE_SHAPE_CG_INERTIA_APPROXIMATION"
+    },
+    {
+      "part_id": "X_OUTER_B_STRIKER",
+      "component": "END_X_OUTER_B_STRIKER",
+      "physical_link": "tray_b_x_carriage",
+      "source_basis": "Native trial volume at 2700kg/m3; material/process unqualified; no measured mass",
+      "prior_trial_mass_kg": 0.038474999999999884,
+      "method": "CURRENT_NATIVE_VOLUME_TIMES_ASSUMED_DENSITY",
+      "density_kg_m3": 2700.0,
+      "status": "MATERIAL_DENSITY_ESTIMATE_NOT_MEASURED; current cuts accounted once"
+    },
+    {
+      "part_id": "CLAMP_A",
+      "component": "ARC_CLAMP_A",
+      "physical_link": "tray_a",
+      "source_basis": "Catalog nominal mass; surrogate envelope volume is not physical mass",
+      "prior_trial_mass_kg": 4,
+      "method": "CATALOGUE_PART_MASS_ONCE",
+      "mass_kg": 4,
+      "status": "CATALOGUE_MASS_WITH_HOMOGENEOUS_REFERENCE_SHAPE_CG_INERTIA_APPROXIMATION"
+    },
+    {
+      "part_id": "ONE_PIECE_ROD_A",
+      "component": "ARC_ONE_PIECE_ROD_A",
+      "physical_link": "tray_a_x_carriage",
+      "source_basis": "Native trial volume at 7850kg/m3; material/process unqualified; no measured mass",
+      "prior_trial_mass_kg": 0.31714691997253086,
+      "method": "CURRENT_NATIVE_VOLUME_TIMES_ASSUMED_DENSITY",
+      "density_kg_m3": 7850.0,
+      "status": "MATERIAL_DENSITY_ESTIMATE_NOT_MEASURED; current cuts accounted once"
+    },
+    {
+      "part_id": "REACTION_POST_A",
+      "component": "ARC_REACTION_POST_A",
+      "physical_link": "tray_a_x_carriage",
+      "source_basis": "Native trial volume at 7850kg/m3; material/process unqualified; no measured mass",
+      "prior_trial_mass_kg": 0.8774730000000017,
+      "method": "CURRENT_NATIVE_VOLUME_TIMES_ASSUMED_DENSITY",
+      "density_kg_m3": 7850.0,
+      "status": "MATERIAL_DENSITY_ESTIMATE_NOT_MEASURED; current cuts accounted once"
+    },
+    {
+      "part_id": "POST_TIE_LOWER_A",
+      "component": "ARC_POST_TIE_LOWER_A",
+      "physical_link": "tray_a_x_carriage",
+      "source_basis": "Native trial volume at 7850kg/m3; material/process unqualified; no measured mass",
+      "prior_trial_mass_kg": 0.22148775000000046,
+      "method": "CURRENT_NATIVE_VOLUME_TIMES_ASSUMED_DENSITY",
+      "density_kg_m3": 7850.0,
+      "status": "MATERIAL_DENSITY_ESTIMATE_NOT_MEASURED; current cuts accounted once"
+    },
+    {
+      "part_id": "POST_TIE_UPPER_A",
+      "component": "ARC_POST_TIE_UPPER_A",
+      "physical_link": "tray_a_x_carriage",
+      "source_basis": "Native trial volume at 7850kg/m3; material/process unqualified; no measured mass",
+      "prior_trial_mass_kg": 0.22148774999999832,
+      "method": "CURRENT_NATIVE_VOLUME_TIMES_ASSUMED_DENSITY",
+      "density_kg_m3": 7850.0,
+      "status": "MATERIAL_DENSITY_ESTIMATE_NOT_MEASURED; current cuts accounted once"
+    },
+    {
+      "part_id": "ROD_TOP_ANCHOR_A",
+      "component": "ARC_ROD_TOP_ANCHOR_A",
+      "physical_link": "tray_a_x_carriage",
+      "source_basis": "Native trial volume at 7850kg/m3; material/process unqualified; no measured mass",
+      "prior_trial_mass_kg": 0.9221253468402126,
+      "method": "CURRENT_NATIVE_VOLUME_TIMES_ASSUMED_DENSITY",
+      "density_kg_m3": 7850.0,
+      "status": "MATERIAL_DENSITY_ESTIMATE_NOT_MEASURED; current cuts accounted once"
+    },
+    {
+      "part_id": "UPPER_GUSSET_A_0",
+      "component": "ARC_UPPER_GUSSET_A_0",
+      "physical_link": "tray_a_x_carriage",
+      "source_basis": "Native trial volume at 7850kg/m3; material/process unqualified; no measured mass",
+      "prior_trial_mass_kg": 0.09262999999999963,
+      "method": "CURRENT_NATIVE_VOLUME_TIMES_ASSUMED_DENSITY",
+      "density_kg_m3": 7850.0,
+      "status": "MATERIAL_DENSITY_ESTIMATE_NOT_MEASURED; current cuts accounted once"
+    },
+    {
+      "part_id": "UPPER_GUSSET_A_1",
+      "component": "ARC_UPPER_GUSSET_A_1",
+      "physical_link": "tray_a_x_carriage",
+      "source_basis": "Native trial volume at 7850kg/m3; material/process unqualified; no measured mass",
+      "prior_trial_mass_kg": 0.09262999999999963,
+      "method": "CURRENT_NATIVE_VOLUME_TIMES_ASSUMED_DENSITY",
+      "density_kg_m3": 7850.0,
+      "status": "MATERIAL_DENSITY_ESTIMATE_NOT_MEASURED; current cuts accounted once"
+    },
+    {
+      "part_id": "ROD_FLOAT_ANCHOR_A",
+      "component": "ARC_ROD_FLOAT_ANCHOR_A",
+      "physical_link": "tray_a_x_carriage",
+      "source_basis": "Native trial volume at 7850kg/m3; material/process unqualified; no measured mass",
+      "prior_trial_mass_kg": 0.39297586385796657,
+      "method": "CURRENT_NATIVE_VOLUME_TIMES_ASSUMED_DENSITY",
+      "density_kg_m3": 7850.0,
+      "status": "MATERIAL_DENSITY_ESTIMATE_NOT_MEASURED; current cuts accounted once"
+    },
+    {
+      "part_id": "FLOAT_BUSHING_A",
+      "component": "ARC_FLOAT_BUSHING_A",
+      "physical_link": "tray_a_x_carriage",
+      "source_basis": "Native trial volume at 1460kg/m3; material/process unqualified; no measured mass",
+      "prior_trial_mass_kg": 0.0008213790200944215,
+      "method": "CURRENT_NATIVE_VOLUME_TIMES_ASSUMED_DENSITY",
+      "density_kg_m3": 1460.0,
+      "status": "MATERIAL_DENSITY_ESTIMATE_NOT_MEASURED; current cuts accounted once"
+    },
+    {
+      "part_id": "ROD_TOP_WASHER_A",
+      "component": "ARC_ROD_TOP_WASHER_A",
+      "physical_link": "tray_a_x_carriage",
+      "source_basis": "Native trial volume at 7850kg/m3; material/process unqualified; no measured mass",
+      "prior_trial_mass_kg": 0.003572835150157459,
+      "method": "CURRENT_NATIVE_VOLUME_TIMES_ASSUMED_DENSITY",
+      "density_kg_m3": 7850.0,
+      "status": "MATERIAL_DENSITY_ESTIMATE_NOT_MEASURED; current cuts accounted once"
+    },
+    {
+      "part_id": "ROD_TOP_NUT_A",
+      "component": "ARC_ROD_TOP_NUT_A",
+      "physical_link": "tray_a_x_carriage",
+      "source_basis": "Native trial volume at 7850kg/m3; material/process unqualified; no measured mass",
+      "prior_trial_mass_kg": 0.014073673248758512,
+      "method": "CURRENT_NATIVE_VOLUME_TIMES_ASSUMED_DENSITY",
+      "density_kg_m3": 7850.0,
+      "status": "MATERIAL_DENSITY_ESTIMATE_NOT_MEASURED; current cuts accounted once"
+    },
+    {
+      "part_id": "CLAMP_BASE_PLATE_A",
+      "component": "ARC_CLAMP_BASE_PLATE_A",
+      "physical_link": "tray_a",
+      "source_basis": "Native trial volume at 2700kg/m3; material/process unqualified; no measured mass",
+      "prior_trial_mass_kg": 0.24563643403436208,
+      "method": "CURRENT_NATIVE_VOLUME_TIMES_ASSUMED_DENSITY",
+      "density_kg_m3": 2700.0,
+      "status": "MATERIAL_DENSITY_ESTIMATE_NOT_MEASURED; current cuts accounted once"
+    },
+    {
+      "part_id": "CLAMP_FRONT_FLANGE_A",
+      "component": "ARC_CLAMP_FRONT_FLANGE_A",
+      "physical_link": "tray_a",
+      "source_basis": "Native trial volume at 2700kg/m3; material/process unqualified; no measured mass",
+      "prior_trial_mass_kg": 0.22235368803860708,
+      "method": "CURRENT_NATIVE_VOLUME_TIMES_ASSUMED_DENSITY",
+      "density_kg_m3": 2700.0,
+      "status": "MATERIAL_DENSITY_ESTIMATE_NOT_MEASURED; current cuts accounted once"
+    },
+    {
+      "part_id": "CLAMP_BOLT_A_0",
+      "component": "ARC_CLAMP_BOLT_A_0",
+      "physical_link": "tray_a",
+      "source_basis": "Native trial volume at 7850kg/m3; material/process unqualified; no measured mass",
+      "prior_trial_mass_kg": 0.00813829576912403,
+      "method": "CURRENT_NATIVE_VOLUME_TIMES_ASSUMED_DENSITY",
+      "density_kg_m3": 7850.0,
+      "status": "MATERIAL_DENSITY_ESTIMATE_NOT_MEASURED; current cuts accounted once"
+    },
+    {
+      "part_id": "CLAMP_WASHER_A_0",
+      "component": "ARC_CLAMP_WASHER_A_0",
+      "physical_link": "tray_a",
+      "source_basis": "Native trial volume at 7850kg/m3; material/process unqualified; no measured mass",
+      "prior_trial_mass_kg": 0.0010164484800613519,
+      "method": "CURRENT_NATIVE_VOLUME_TIMES_ASSUMED_DENSITY",
+      "density_kg_m3": 7850.0,
+      "status": "MATERIAL_DENSITY_ESTIMATE_NOT_MEASURED; current cuts accounted once"
+    },
+    {
+      "part_id": "CLAMP_BOLT_A_1",
+      "component": "ARC_CLAMP_BOLT_A_1",
+      "physical_link": "tray_a",
+      "source_basis": "Native trial volume at 7850kg/m3; material/process unqualified; no measured mass",
+      "prior_trial_mass_kg": 0.00813829576912403,
+      "method": "CURRENT_NATIVE_VOLUME_TIMES_ASSUMED_DENSITY",
+      "density_kg_m3": 7850.0,
+      "status": "MATERIAL_DENSITY_ESTIMATE_NOT_MEASURED; current cuts accounted once"
+    },
+    {
+      "part_id": "CLAMP_WASHER_A_1",
+      "component": "ARC_CLAMP_WASHER_A_1",
+      "physical_link": "tray_a",
+      "source_basis": "Native trial volume at 7850kg/m3; material/process unqualified; no measured mass",
+      "prior_trial_mass_kg": 0.0010164484800613519,
+      "method": "CURRENT_NATIVE_VOLUME_TIMES_ASSUMED_DENSITY",
+      "density_kg_m3": 7850.0,
+      "status": "MATERIAL_DENSITY_ESTIMATE_NOT_MEASURED; current cuts accounted once"
+    },
+    {
+      "part_id": "CLAMP_BOLT_A_2",
+      "component": "ARC_CLAMP_BOLT_A_2",
+      "physical_link": "tray_a",
+      "source_basis": "Native trial volume at 7850kg/m3; material/process unqualified; no measured mass",
+      "prior_trial_mass_kg": 0.00813829576912403,
+      "method": "CURRENT_NATIVE_VOLUME_TIMES_ASSUMED_DENSITY",
+      "density_kg_m3": 7850.0,
+      "status": "MATERIAL_DENSITY_ESTIMATE_NOT_MEASURED; current cuts accounted once"
+    },
+    {
+      "part_id": "CLAMP_WASHER_A_2",
+      "component": "ARC_CLAMP_WASHER_A_2",
+      "physical_link": "tray_a",
+      "source_basis": "Native trial volume at 7850kg/m3; material/process unqualified; no measured mass",
+      "prior_trial_mass_kg": 0.001016448480061344,
+      "method": "CURRENT_NATIVE_VOLUME_TIMES_ASSUMED_DENSITY",
+      "density_kg_m3": 7850.0,
+      "status": "MATERIAL_DENSITY_ESTIMATE_NOT_MEASURED; current cuts accounted once"
+    },
+    {
+      "part_id": "GUIDE_BOLT_A_0",
+      "component": "ARC_GUIDE_BOLT_A_0",
+      "physical_link": "tray_a",
+      "source_basis": "Native trial volume at 7850kg/m3; material/process unqualified; no measured mass",
+      "prior_trial_mass_kg": 0.01479690139840859,
+      "method": "CURRENT_NATIVE_VOLUME_TIMES_ASSUMED_DENSITY",
+      "density_kg_m3": 7850.0,
+      "status": "MATERIAL_DENSITY_ESTIMATE_NOT_MEASURED; current cuts accounted once"
+    },
+    {
+      "part_id": "GUIDE_WASHER_A_0",
+      "component": "ARC_GUIDE_WASHER_A_0",
+      "physical_link": "tray_a",
+      "source_basis": "Native trial volume at 7850kg/m3; material/process unqualified; no measured mass",
+      "prior_trial_mass_kg": 0.0010164484800613658,
+      "method": "CURRENT_NATIVE_VOLUME_TIMES_ASSUMED_DENSITY",
+      "density_kg_m3": 7850.0,
+      "status": "MATERIAL_DENSITY_ESTIMATE_NOT_MEASURED; current cuts accounted once"
+    },
+    {
+      "part_id": "GUIDE_BOLT_A_1",
+      "component": "ARC_GUIDE_BOLT_A_1",
+      "physical_link": "tray_a",
+      "source_basis": "Native trial volume at 7850kg/m3; material/process unqualified; no measured mass",
+      "prior_trial_mass_kg": 0.01479690139840859,
+      "method": "CURRENT_NATIVE_VOLUME_TIMES_ASSUMED_DENSITY",
+      "density_kg_m3": 7850.0,
+      "status": "MATERIAL_DENSITY_ESTIMATE_NOT_MEASURED; current cuts accounted once"
+    },
+    {
+      "part_id": "GUIDE_WASHER_A_1",
+      "component": "ARC_GUIDE_WASHER_A_1",
+      "physical_link": "tray_a",
+      "source_basis": "Native trial volume at 7850kg/m3; material/process unqualified; no measured mass",
+      "prior_trial_mass_kg": 0.0010164484800613658,
+      "method": "CURRENT_NATIVE_VOLUME_TIMES_ASSUMED_DENSITY",
+      "density_kg_m3": 7850.0,
+      "status": "MATERIAL_DENSITY_ESTIMATE_NOT_MEASURED; current cuts accounted once"
+    },
+    {
+      "part_id": "GUIDE_BOLT_A_2",
+      "component": "ARC_GUIDE_BOLT_A_2",
+      "physical_link": "tray_a",
+      "source_basis": "Native trial volume at 7850kg/m3; material/process unqualified; no measured mass",
+      "prior_trial_mass_kg": 0.014796901398408528,
+      "method": "CURRENT_NATIVE_VOLUME_TIMES_ASSUMED_DENSITY",
+      "density_kg_m3": 7850.0,
+      "status": "MATERIAL_DENSITY_ESTIMATE_NOT_MEASURED; current cuts accounted once"
+    },
+    {
+      "part_id": "GUIDE_WASHER_A_2",
+      "component": "ARC_GUIDE_WASHER_A_2",
+      "physical_link": "tray_a",
+      "source_basis": "Native trial volume at 7850kg/m3; material/process unqualified; no measured mass",
+      "prior_trial_mass_kg": 0.0010164484800613686,
+      "method": "CURRENT_NATIVE_VOLUME_TIMES_ASSUMED_DENSITY",
+      "density_kg_m3": 7850.0,
+      "status": "MATERIAL_DENSITY_ESTIMATE_NOT_MEASURED; current cuts accounted once"
+    },
+    {
+      "part_id": "GUIDE_BOLT_A_3",
+      "component": "ARC_GUIDE_BOLT_A_3",
+      "physical_link": "tray_a",
+      "source_basis": "Native trial volume at 7850kg/m3; material/process unqualified; no measured mass",
+      "prior_trial_mass_kg": 0.014796901398408528,
+      "method": "CURRENT_NATIVE_VOLUME_TIMES_ASSUMED_DENSITY",
+      "density_kg_m3": 7850.0,
+      "status": "MATERIAL_DENSITY_ESTIMATE_NOT_MEASURED; current cuts accounted once"
+    },
+    {
+      "part_id": "GUIDE_WASHER_A_3",
+      "component": "ARC_GUIDE_WASHER_A_3",
+      "physical_link": "tray_a",
+      "source_basis": "Native trial volume at 7850kg/m3; material/process unqualified; no measured mass",
+      "prior_trial_mass_kg": 0.0010164484800613686,
+      "method": "CURRENT_NATIVE_VOLUME_TIMES_ASSUMED_DENSITY",
+      "density_kg_m3": 7850.0,
+      "status": "MATERIAL_DENSITY_ESTIMATE_NOT_MEASURED; current cuts accounted once"
+    },
+    {
+      "part_id": "CLAMP_B",
+      "component": "ARC_CLAMP_B",
+      "physical_link": "tray_b",
+      "source_basis": "Catalog nominal mass; surrogate envelope volume is not physical mass",
+      "prior_trial_mass_kg": 4,
+      "method": "CATALOGUE_PART_MASS_ONCE",
+      "mass_kg": 4,
+      "status": "CATALOGUE_MASS_WITH_HOMOGENEOUS_REFERENCE_SHAPE_CG_INERTIA_APPROXIMATION"
+    },
+    {
+      "part_id": "ONE_PIECE_ROD_B",
+      "component": "ARC_ONE_PIECE_ROD_B",
+      "physical_link": "tray_b_x_carriage",
+      "source_basis": "Native trial volume at 7850kg/m3; material/process unqualified; no measured mass",
+      "prior_trial_mass_kg": 0.31714691997253086,
+      "method": "CURRENT_NATIVE_VOLUME_TIMES_ASSUMED_DENSITY",
+      "density_kg_m3": 7850.0,
+      "status": "MATERIAL_DENSITY_ESTIMATE_NOT_MEASURED; current cuts accounted once"
+    },
+    {
+      "part_id": "REACTION_POST_B",
+      "component": "ARC_REACTION_POST_B",
+      "physical_link": "tray_b_x_carriage",
+      "source_basis": "Native trial volume at 7850kg/m3; material/process unqualified; no measured mass",
+      "prior_trial_mass_kg": 0.8774730000000017,
+      "method": "CURRENT_NATIVE_VOLUME_TIMES_ASSUMED_DENSITY",
+      "density_kg_m3": 7850.0,
+      "status": "MATERIAL_DENSITY_ESTIMATE_NOT_MEASURED; current cuts accounted once"
+    },
+    {
+      "part_id": "POST_TIE_LOWER_B",
+      "component": "ARC_POST_TIE_LOWER_B",
+      "physical_link": "tray_b_x_carriage",
+      "source_basis": "Native trial volume at 7850kg/m3; material/process unqualified; no measured mass",
+      "prior_trial_mass_kg": 0.22148775000000046,
+      "method": "CURRENT_NATIVE_VOLUME_TIMES_ASSUMED_DENSITY",
+      "density_kg_m3": 7850.0,
+      "status": "MATERIAL_DENSITY_ESTIMATE_NOT_MEASURED; current cuts accounted once"
+    },
+    {
+      "part_id": "POST_TIE_UPPER_B",
+      "component": "ARC_POST_TIE_UPPER_B",
+      "physical_link": "tray_b_x_carriage",
+      "source_basis": "Native trial volume at 7850kg/m3; material/process unqualified; no measured mass",
+      "prior_trial_mass_kg": 0.22148774999999832,
+      "method": "CURRENT_NATIVE_VOLUME_TIMES_ASSUMED_DENSITY",
+      "density_kg_m3": 7850.0,
+      "status": "MATERIAL_DENSITY_ESTIMATE_NOT_MEASURED; current cuts accounted once"
+    },
+    {
+      "part_id": "ROD_TOP_ANCHOR_B",
+      "component": "ARC_ROD_TOP_ANCHOR_B",
+      "physical_link": "tray_b_x_carriage",
+      "source_basis": "Native trial volume at 7850kg/m3; material/process unqualified; no measured mass",
+      "prior_trial_mass_kg": 0.9221253468402126,
+      "method": "CURRENT_NATIVE_VOLUME_TIMES_ASSUMED_DENSITY",
+      "density_kg_m3": 7850.0,
+      "status": "MATERIAL_DENSITY_ESTIMATE_NOT_MEASURED; current cuts accounted once"
+    },
+    {
+      "part_id": "UPPER_GUSSET_B_0",
+      "component": "ARC_UPPER_GUSSET_B_0",
+      "physical_link": "tray_b_x_carriage",
+      "source_basis": "Native trial volume at 7850kg/m3; material/process unqualified; no measured mass",
+      "prior_trial_mass_kg": 0.09262999999999963,
+      "method": "CURRENT_NATIVE_VOLUME_TIMES_ASSUMED_DENSITY",
+      "density_kg_m3": 7850.0,
+      "status": "MATERIAL_DENSITY_ESTIMATE_NOT_MEASURED; current cuts accounted once"
+    },
+    {
+      "part_id": "UPPER_GUSSET_B_1",
+      "component": "ARC_UPPER_GUSSET_B_1",
+      "physical_link": "tray_b_x_carriage",
+      "source_basis": "Native trial volume at 7850kg/m3; material/process unqualified; no measured mass",
+      "prior_trial_mass_kg": 0.09262999999999963,
+      "method": "CURRENT_NATIVE_VOLUME_TIMES_ASSUMED_DENSITY",
+      "density_kg_m3": 7850.0,
+      "status": "MATERIAL_DENSITY_ESTIMATE_NOT_MEASURED; current cuts accounted once"
+    },
+    {
+      "part_id": "ROD_FLOAT_ANCHOR_B",
+      "component": "ARC_ROD_FLOAT_ANCHOR_B",
+      "physical_link": "tray_b_x_carriage",
+      "source_basis": "Native trial volume at 7850kg/m3; material/process unqualified; no measured mass",
+      "prior_trial_mass_kg": 0.39297586385796657,
+      "method": "CURRENT_NATIVE_VOLUME_TIMES_ASSUMED_DENSITY",
+      "density_kg_m3": 7850.0,
+      "status": "MATERIAL_DENSITY_ESTIMATE_NOT_MEASURED; current cuts accounted once"
+    },
+    {
+      "part_id": "FLOAT_BUSHING_B",
+      "component": "ARC_FLOAT_BUSHING_B",
+      "physical_link": "tray_b_x_carriage",
+      "source_basis": "Native trial volume at 1460kg/m3; material/process unqualified; no measured mass",
+      "prior_trial_mass_kg": 0.0008213790200944215,
+      "method": "CURRENT_NATIVE_VOLUME_TIMES_ASSUMED_DENSITY",
+      "density_kg_m3": 1460.0,
+      "status": "MATERIAL_DENSITY_ESTIMATE_NOT_MEASURED; current cuts accounted once"
+    },
+    {
+      "part_id": "ROD_TOP_WASHER_B",
+      "component": "ARC_ROD_TOP_WASHER_B",
+      "physical_link": "tray_b_x_carriage",
+      "source_basis": "Native trial volume at 7850kg/m3; material/process unqualified; no measured mass",
+      "prior_trial_mass_kg": 0.003572835150157459,
+      "method": "CURRENT_NATIVE_VOLUME_TIMES_ASSUMED_DENSITY",
+      "density_kg_m3": 7850.0,
+      "status": "MATERIAL_DENSITY_ESTIMATE_NOT_MEASURED; current cuts accounted once"
+    },
+    {
+      "part_id": "ROD_TOP_NUT_B",
+      "component": "ARC_ROD_TOP_NUT_B",
+      "physical_link": "tray_b_x_carriage",
+      "source_basis": "Native trial volume at 7850kg/m3; material/process unqualified; no measured mass",
+      "prior_trial_mass_kg": 0.014073673248758512,
+      "method": "CURRENT_NATIVE_VOLUME_TIMES_ASSUMED_DENSITY",
+      "density_kg_m3": 7850.0,
+      "status": "MATERIAL_DENSITY_ESTIMATE_NOT_MEASURED; current cuts accounted once"
+    },
+    {
+      "part_id": "CLAMP_BASE_PLATE_B",
+      "component": "ARC_CLAMP_BASE_PLATE_B",
+      "physical_link": "tray_b",
+      "source_basis": "Native trial volume at 2700kg/m3; material/process unqualified; no measured mass",
+      "prior_trial_mass_kg": 0.24563643403436208,
+      "method": "CURRENT_NATIVE_VOLUME_TIMES_ASSUMED_DENSITY",
+      "density_kg_m3": 2700.0,
+      "status": "MATERIAL_DENSITY_ESTIMATE_NOT_MEASURED; current cuts accounted once"
+    },
+    {
+      "part_id": "CLAMP_FRONT_FLANGE_B",
+      "component": "ARC_CLAMP_FRONT_FLANGE_B",
+      "physical_link": "tray_b",
+      "source_basis": "Native trial volume at 2700kg/m3; material/process unqualified; no measured mass",
+      "prior_trial_mass_kg": 0.22235368803860708,
+      "method": "CURRENT_NATIVE_VOLUME_TIMES_ASSUMED_DENSITY",
+      "density_kg_m3": 2700.0,
+      "status": "MATERIAL_DENSITY_ESTIMATE_NOT_MEASURED; current cuts accounted once"
+    },
+    {
+      "part_id": "CLAMP_BOLT_B_0",
+      "component": "ARC_CLAMP_BOLT_B_0",
+      "physical_link": "tray_b",
+      "source_basis": "Native trial volume at 7850kg/m3; material/process unqualified; no measured mass",
+      "prior_trial_mass_kg": 0.00813829576912403,
+      "method": "CURRENT_NATIVE_VOLUME_TIMES_ASSUMED_DENSITY",
+      "density_kg_m3": 7850.0,
+      "status": "MATERIAL_DENSITY_ESTIMATE_NOT_MEASURED; current cuts accounted once"
+    },
+    {
+      "part_id": "CLAMP_WASHER_B_0",
+      "component": "ARC_CLAMP_WASHER_B_0",
+      "physical_link": "tray_b",
+      "source_basis": "Native trial volume at 7850kg/m3; material/process unqualified; no measured mass",
+      "prior_trial_mass_kg": 0.0010164484800613519,
+      "method": "CURRENT_NATIVE_VOLUME_TIMES_ASSUMED_DENSITY",
+      "density_kg_m3": 7850.0,
+      "status": "MATERIAL_DENSITY_ESTIMATE_NOT_MEASURED; current cuts accounted once"
+    },
+    {
+      "part_id": "CLAMP_BOLT_B_1",
+      "component": "ARC_CLAMP_BOLT_B_1",
+      "physical_link": "tray_b",
+      "source_basis": "Native trial volume at 7850kg/m3; material/process unqualified; no measured mass",
+      "prior_trial_mass_kg": 0.00813829576912403,
+      "method": "CURRENT_NATIVE_VOLUME_TIMES_ASSUMED_DENSITY",
+      "density_kg_m3": 7850.0,
+      "status": "MATERIAL_DENSITY_ESTIMATE_NOT_MEASURED; current cuts accounted once"
+    },
+    {
+      "part_id": "CLAMP_WASHER_B_1",
+      "component": "ARC_CLAMP_WASHER_B_1",
+      "physical_link": "tray_b",
+      "source_basis": "Native trial volume at 7850kg/m3; material/process unqualified; no measured mass",
+      "prior_trial_mass_kg": 0.0010164484800613519,
+      "method": "CURRENT_NATIVE_VOLUME_TIMES_ASSUMED_DENSITY",
+      "density_kg_m3": 7850.0,
+      "status": "MATERIAL_DENSITY_ESTIMATE_NOT_MEASURED; current cuts accounted once"
+    },
+    {
+      "part_id": "CLAMP_BOLT_B_2",
+      "component": "ARC_CLAMP_BOLT_B_2",
+      "physical_link": "tray_b",
+      "source_basis": "Native trial volume at 7850kg/m3; material/process unqualified; no measured mass",
+      "prior_trial_mass_kg": 0.00813829576912403,
+      "method": "CURRENT_NATIVE_VOLUME_TIMES_ASSUMED_DENSITY",
+      "density_kg_m3": 7850.0,
+      "status": "MATERIAL_DENSITY_ESTIMATE_NOT_MEASURED; current cuts accounted once"
+    },
+    {
+      "part_id": "CLAMP_WASHER_B_2",
+      "component": "ARC_CLAMP_WASHER_B_2",
+      "physical_link": "tray_b",
+      "source_basis": "Native trial volume at 7850kg/m3; material/process unqualified; no measured mass",
+      "prior_trial_mass_kg": 0.0010164484800613512,
+      "method": "CURRENT_NATIVE_VOLUME_TIMES_ASSUMED_DENSITY",
+      "density_kg_m3": 7850.0,
+      "status": "MATERIAL_DENSITY_ESTIMATE_NOT_MEASURED; current cuts accounted once"
+    },
+    {
+      "part_id": "GUIDE_BOLT_B_0",
+      "component": "ARC_GUIDE_BOLT_B_0",
+      "physical_link": "tray_b",
+      "source_basis": "Native trial volume at 7850kg/m3; material/process unqualified; no measured mass",
+      "prior_trial_mass_kg": 0.01479690139840859,
+      "method": "CURRENT_NATIVE_VOLUME_TIMES_ASSUMED_DENSITY",
+      "density_kg_m3": 7850.0,
+      "status": "MATERIAL_DENSITY_ESTIMATE_NOT_MEASURED; current cuts accounted once"
+    },
+    {
+      "part_id": "GUIDE_WASHER_B_0",
+      "component": "ARC_GUIDE_WASHER_B_0",
+      "physical_link": "tray_b",
+      "source_basis": "Native trial volume at 7850kg/m3; material/process unqualified; no measured mass",
+      "prior_trial_mass_kg": 0.0010164484800613658,
+      "method": "CURRENT_NATIVE_VOLUME_TIMES_ASSUMED_DENSITY",
+      "density_kg_m3": 7850.0,
+      "status": "MATERIAL_DENSITY_ESTIMATE_NOT_MEASURED; current cuts accounted once"
+    },
+    {
+      "part_id": "GUIDE_BOLT_B_1",
+      "component": "ARC_GUIDE_BOLT_B_1",
+      "physical_link": "tray_b",
+      "source_basis": "Native trial volume at 7850kg/m3; material/process unqualified; no measured mass",
+      "prior_trial_mass_kg": 0.01479690139840859,
+      "method": "CURRENT_NATIVE_VOLUME_TIMES_ASSUMED_DENSITY",
+      "density_kg_m3": 7850.0,
+      "status": "MATERIAL_DENSITY_ESTIMATE_NOT_MEASURED; current cuts accounted once"
+    },
+    {
+      "part_id": "GUIDE_WASHER_B_1",
+      "component": "ARC_GUIDE_WASHER_B_1",
+      "physical_link": "tray_b",
+      "source_basis": "Native trial volume at 7850kg/m3; material/process unqualified; no measured mass",
+      "prior_trial_mass_kg": 0.0010164484800613658,
+      "method": "CURRENT_NATIVE_VOLUME_TIMES_ASSUMED_DENSITY",
+      "density_kg_m3": 7850.0,
+      "status": "MATERIAL_DENSITY_ESTIMATE_NOT_MEASURED; current cuts accounted once"
+    },
+    {
+      "part_id": "GUIDE_BOLT_B_2",
+      "component": "ARC_GUIDE_BOLT_B_2",
+      "physical_link": "tray_b",
+      "source_basis": "Native trial volume at 7850kg/m3; material/process unqualified; no measured mass",
+      "prior_trial_mass_kg": 0.01479690139840853,
+      "method": "CURRENT_NATIVE_VOLUME_TIMES_ASSUMED_DENSITY",
+      "density_kg_m3": 7850.0,
+      "status": "MATERIAL_DENSITY_ESTIMATE_NOT_MEASURED; current cuts accounted once"
+    },
+    {
+      "part_id": "GUIDE_WASHER_B_2",
+      "component": "ARC_GUIDE_WASHER_B_2",
+      "physical_link": "tray_b",
+      "source_basis": "Native trial volume at 7850kg/m3; material/process unqualified; no measured mass",
+      "prior_trial_mass_kg": 0.0010164484800613664,
+      "method": "CURRENT_NATIVE_VOLUME_TIMES_ASSUMED_DENSITY",
+      "density_kg_m3": 7850.0,
+      "status": "MATERIAL_DENSITY_ESTIMATE_NOT_MEASURED; current cuts accounted once"
+    },
+    {
+      "part_id": "GUIDE_BOLT_B_3",
+      "component": "ARC_GUIDE_BOLT_B_3",
+      "physical_link": "tray_b",
+      "source_basis": "Native trial volume at 7850kg/m3; material/process unqualified; no measured mass",
+      "prior_trial_mass_kg": 0.01479690139840853,
+      "method": "CURRENT_NATIVE_VOLUME_TIMES_ASSUMED_DENSITY",
+      "density_kg_m3": 7850.0,
+      "status": "MATERIAL_DENSITY_ESTIMATE_NOT_MEASURED; current cuts accounted once"
+    },
+    {
+      "part_id": "GUIDE_WASHER_B_3",
+      "component": "ARC_GUIDE_WASHER_B_3",
+      "physical_link": "tray_b",
+      "source_basis": "Native trial volume at 7850kg/m3; material/process unqualified; no measured mass",
+      "prior_trial_mass_kg": 0.0010164484800613664,
+      "method": "CURRENT_NATIVE_VOLUME_TIMES_ASSUMED_DENSITY",
+      "density_kg_m3": 7850.0,
+      "status": "MATERIAL_DENSITY_ESTIMATE_NOT_MEASURED; current cuts accounted once"
+    },
+    {
+      "part_id": "TRAY_REFERENCE_A",
+      "component": "Tray_A_PROVISIONAL",
+      "physical_link": "tray_a",
+      "source_basis": "Native notched3mm reference slab volume at assumed2700kg/m3; structure/retention not selected",
+      "prior_trial_mass_kg": 3.8539800000000004,
+      "method": "CATALOGUE_PART_MASS_ONCE",
+      "mass_kg": 3.8539800000000004,
+      "status": "CATALOGUE_MASS_WITH_HOMOGENEOUS_REFERENCE_SHAPE_CG_INERTIA_APPROXIMATION"
+    },
+    {
+      "part_id": "TRAY_REFERENCE_B",
+      "component": "Tray_B_PROVISIONAL",
+      "physical_link": "tray_b",
+      "source_basis": "Native notched3mm reference slab volume at assumed2700kg/m3; structure/retention not selected",
+      "prior_trial_mass_kg": 3.853980000000001,
+      "method": "CATALOGUE_PART_MASS_ONCE",
+      "mass_kg": 3.853980000000001,
+      "status": "CATALOGUE_MASS_WITH_HOMOGENEOUS_REFERENCE_SHAPE_CG_INERTIA_APPROXIMATION"
+    },
+    {
+      "part_id": "A_LOWER_NEG_X",
+      "component": "SLK_A_LOWER_NEG_X_HousingEnvelope",
+      "physical_link": "tray_a_x_carriage",
+      "method": "CATALOGUE_PART_MASS_ONCE",
+      "mass_kg": 0.177,
+      "status": "CATALOGUE_TOTAL_MINUS_ASSUMED_PLUNGER_SPLIT; reference-shape CG/inertia"
+    },
+    {
+      "part_id": "A_LOWER_NEG_X_PLUNGER",
+      "component": "SLK_A_LOWER_NEG_X_ExposedPlunger",
+      "physical_link": "lock_a_lower_neg_x_plunger",
+      "method": "CATALOGUE_PART_MASS_ONCE",
+      "mass_kg": 0.038,
+      "status": "SINGLE_CATALOGUE_PLUNGER_MASS_DISTRIBUTED_ACROSS_ITS_TWO_NATIVE_BODIES_BY_VOLUME"
+    },
+    {
+      "part_id": "A_LOWER_POS_X",
+      "component": "SLK_A_LOWER_POS_X_HousingEnvelope",
+      "physical_link": "tray_a_x_carriage",
+      "method": "CATALOGUE_PART_MASS_ONCE",
+      "mass_kg": 0.177,
+      "status": "CATALOGUE_TOTAL_MINUS_ASSUMED_PLUNGER_SPLIT; reference-shape CG/inertia"
+    },
+    {
+      "part_id": "A_LOWER_POS_X_PLUNGER",
+      "component": "SLK_A_LOWER_POS_X_ExposedPlunger",
+      "physical_link": "lock_a_lower_pos_x_plunger",
+      "method": "CATALOGUE_PART_MASS_ONCE",
+      "mass_kg": 0.038,
+      "status": "SINGLE_CATALOGUE_PLUNGER_MASS_DISTRIBUTED_ACROSS_ITS_TWO_NATIVE_BODIES_BY_VOLUME"
+    },
+    {
+      "part_id": "A_UPPER_NEG_X",
+      "component": "SLK_A_UPPER_NEG_X_HousingEnvelope",
+      "physical_link": "tray_a_x_carriage",
+      "method": "CATALOGUE_PART_MASS_ONCE",
+      "mass_kg": 0.177,
+      "status": "CATALOGUE_TOTAL_MINUS_ASSUMED_PLUNGER_SPLIT; reference-shape CG/inertia"
+    },
+    {
+      "part_id": "A_UPPER_NEG_X_PLUNGER",
+      "component": "SLK_A_UPPER_NEG_X_ExposedPlunger",
+      "physical_link": "lock_a_upper_neg_x_plunger",
+      "method": "CATALOGUE_PART_MASS_ONCE",
+      "mass_kg": 0.038,
+      "status": "SINGLE_CATALOGUE_PLUNGER_MASS_DISTRIBUTED_ACROSS_ITS_TWO_NATIVE_BODIES_BY_VOLUME"
+    },
+    {
+      "part_id": "A_UPPER_POS_X",
+      "component": "SLK_A_UPPER_POS_X_HousingEnvelope",
+      "physical_link": "tray_a_x_carriage",
+      "method": "CATALOGUE_PART_MASS_ONCE",
+      "mass_kg": 0.177,
+      "status": "CATALOGUE_TOTAL_MINUS_ASSUMED_PLUNGER_SPLIT; reference-shape CG/inertia"
+    },
+    {
+      "part_id": "A_UPPER_POS_X_PLUNGER",
+      "component": "SLK_A_UPPER_POS_X_ExposedPlunger",
+      "physical_link": "lock_a_upper_pos_x_plunger",
+      "method": "CATALOGUE_PART_MASS_ONCE",
+      "mass_kg": 0.038,
+      "status": "SINGLE_CATALOGUE_PLUNGER_MASS_DISTRIBUTED_ACROSS_ITS_TWO_NATIVE_BODIES_BY_VOLUME"
+    },
+    {
+      "part_id": "B_LOWER_NEG_X",
+      "component": "SLK_B_LOWER_NEG_X_HousingEnvelope",
+      "physical_link": "tray_b_x_carriage",
+      "method": "CATALOGUE_PART_MASS_ONCE",
+      "mass_kg": 0.177,
+      "status": "CATALOGUE_TOTAL_MINUS_ASSUMED_PLUNGER_SPLIT; reference-shape CG/inertia"
+    },
+    {
+      "part_id": "B_LOWER_NEG_X_PLUNGER",
+      "component": "SLK_B_LOWER_NEG_X_ExposedPlunger",
+      "physical_link": "lock_b_lower_neg_x_plunger",
+      "method": "CATALOGUE_PART_MASS_ONCE",
+      "mass_kg": 0.038,
+      "status": "SINGLE_CATALOGUE_PLUNGER_MASS_DISTRIBUTED_ACROSS_ITS_TWO_NATIVE_BODIES_BY_VOLUME"
+    },
+    {
+      "part_id": "B_LOWER_POS_X",
+      "component": "SLK_B_LOWER_POS_X_HousingEnvelope",
+      "physical_link": "tray_b_x_carriage",
+      "method": "CATALOGUE_PART_MASS_ONCE",
+      "mass_kg": 0.177,
+      "status": "CATALOGUE_TOTAL_MINUS_ASSUMED_PLUNGER_SPLIT; reference-shape CG/inertia"
+    },
+    {
+      "part_id": "B_LOWER_POS_X_PLUNGER",
+      "component": "SLK_B_LOWER_POS_X_ExposedPlunger",
+      "physical_link": "lock_b_lower_pos_x_plunger",
+      "method": "CATALOGUE_PART_MASS_ONCE",
+      "mass_kg": 0.038,
+      "status": "SINGLE_CATALOGUE_PLUNGER_MASS_DISTRIBUTED_ACROSS_ITS_TWO_NATIVE_BODIES_BY_VOLUME"
+    },
+    {
+      "part_id": "B_UPPER_NEG_X",
+      "component": "SLK_B_UPPER_NEG_X_HousingEnvelope",
+      "physical_link": "tray_b_x_carriage",
+      "method": "CATALOGUE_PART_MASS_ONCE",
+      "mass_kg": 0.177,
+      "status": "CATALOGUE_TOTAL_MINUS_ASSUMED_PLUNGER_SPLIT; reference-shape CG/inertia"
+    },
+    {
+      "part_id": "B_UPPER_NEG_X_PLUNGER",
+      "component": "SLK_B_UPPER_NEG_X_ExposedPlunger",
+      "physical_link": "lock_b_upper_neg_x_plunger",
+      "method": "CATALOGUE_PART_MASS_ONCE",
+      "mass_kg": 0.038,
+      "status": "SINGLE_CATALOGUE_PLUNGER_MASS_DISTRIBUTED_ACROSS_ITS_TWO_NATIVE_BODIES_BY_VOLUME"
+    },
+    {
+      "part_id": "B_UPPER_POS_X",
+      "component": "SLK_B_UPPER_POS_X_HousingEnvelope",
+      "physical_link": "tray_b_x_carriage",
+      "method": "CATALOGUE_PART_MASS_ONCE",
+      "mass_kg": 0.177,
+      "status": "CATALOGUE_TOTAL_MINUS_ASSUMED_PLUNGER_SPLIT; reference-shape CG/inertia"
+    },
+    {
+      "part_id": "B_UPPER_POS_X_PLUNGER",
+      "component": "SLK_B_UPPER_POS_X_ExposedPlunger",
+      "physical_link": "lock_b_upper_pos_x_plunger",
+      "method": "CATALOGUE_PART_MASS_ONCE",
+      "mass_kg": 0.038,
+      "status": "SINGLE_CATALOGUE_PLUNGER_MASS_DISTRIBUTED_ACROSS_ITS_TWO_NATIVE_BODIES_BY_VOLUME"
+    },
+    {
+      "part_id": "SIM_MOUNT_LONG_RAIL_LEFT_PROVISIONAL_UNRATED",
+      "component": "SIM_MOUNT_LONG_RAIL_LEFT_PROVISIONAL_UNRATED",
+      "physical_link": "carousel_mount",
+      "method": "CURRENT_NATIVE_VOLUME_TIMES_ASSUMED_DENSITY",
+      "density_kg_m3": 2700,
+      "status": "ANALYTIC_SOLID_PROXY_WITH_ASSUMED_DENSITY_NOT_MEASURED"
+    },
+    {
+      "part_id": "SIM_MOUNT_LONG_RAIL_RIGHT_PROVISIONAL_UNRATED",
+      "component": "SIM_MOUNT_LONG_RAIL_RIGHT_PROVISIONAL_UNRATED",
+      "physical_link": "carousel_mount",
+      "method": "CURRENT_NATIVE_VOLUME_TIMES_ASSUMED_DENSITY",
+      "density_kg_m3": 2700,
+      "status": "ANALYTIC_SOLID_PROXY_WITH_ASSUMED_DENSITY_NOT_MEASURED"
+    },
+    {
+      "part_id": "SIM_MOUNT_FRONT_CROSSBAR_PROVISIONAL_UNRATED",
+      "component": "SIM_MOUNT_FRONT_CROSSBAR_PROVISIONAL_UNRATED",
+      "physical_link": "carousel_mount",
+      "method": "CURRENT_NATIVE_VOLUME_TIMES_ASSUMED_DENSITY",
+      "density_kg_m3": 2700,
+      "status": "ANALYTIC_SOLID_PROXY_WITH_ASSUMED_DENSITY_NOT_MEASURED"
+    },
+    {
+      "part_id": "SIM_MOUNT_REAR_CROSSBAR_PROVISIONAL_UNRATED",
+      "component": "SIM_MOUNT_REAR_CROSSBAR_PROVISIONAL_UNRATED",
+      "physical_link": "carousel_mount",
+      "method": "CURRENT_NATIVE_VOLUME_TIMES_ASSUMED_DENSITY",
+      "density_kg_m3": 2700,
+      "status": "ANALYTIC_SOLID_PROXY_WITH_ASSUMED_DENSITY_NOT_MEASURED"
+    }
+  ],
+  "station_package_density_rules": {
+    "SLP_GUIDE_SUPPORT_PILOTED_AL_REFERENCE": 2700,
+    "SLP_RECEIVER_U_CHANNEL_STEEL_REFERENCE": 7850,
+    "SLP_SCREW_M3X20_McMaster91502A109_REFERENCE": 7850,
+    "SLP_SCREW_M4X25_McMaster91502A130_REFERENCE": 7850,
+    "SLP_SCREW_M3X16_McMaster91502A107_REFERENCE": 7850
+  },
+  "expected_prior_carousel_without_aircraft_or_motor_lump_kg": 78.88324891492972,
+  "mount_estimate_kg": 6.696000000000001,
+  "motor_brake_lump": {
+    "mass_kg": 4.54,
+    "charges": 1,
+    "visual_native_component_prefix": "MOTOR_",
+    "policy": "Exclude all inserted motor-reference solids from part mass calculation. One replaceable parameterized 4.54 kg lump covers all four selected motor/brake references; reference geometry does not add mass again.",
+    "shape_CG_policy": "Estimate aggregate park CG/inertia from four reference placements; no measured motor/brake CG or inertia. Lump attached to carousel_mount in v1; moving Z-motor mass redistribution during X travel is approximated."
+  },
+  "aircraft": {
+    "vehicle_inertial_mass_kg": 0,
+    "reference_fleet_mass_kg": 4,
+    "unchanged_design_allocation_kg": 16,
+    "status": "Eight separate models at 0.5 kg catalogue reference each; supplied-build mass unmeasured."
+  },
+  "crawler": {
+    "published_dry_chassis_reference_kg": 210,
+    "published_battery_reference_kg": 85,
+    "reference_total_kg": 295,
+    "exact_user_configuration_verified": false,
+    "source": "https://www.robavatar.com/products/basic/crawler/tins-12E-robot-chassis.html",
+    "geometry_density_assumptions_kg_m3": {
+      "track_solid_proxy": 1200,
+      "other_retained_crawler_parts": 7850
+    },
+    "missing_internal_mass_policy": "Subtract material-estimated retained CAD parts and explicitly allocated contact proxies from published dry reference. Represent positive residual as one clearly identified internal-mass estimate. Add battery reference once. These are simulation assumptions, not a weighed crawler or verified mass distribution.",
+    "battery_CG_m_assumed": [
+      0,
+      0,
+      0.3
+    ],
+    "battery_box_size_m_assumed": [
+      0.45,
+      0.35,
+      0.2
+    ],
+    "missing_internal_CG_m_assumed": [
+      0,
+      0,
+      0.22
+    ],
+    "missing_internal_box_size_m_assumed": [
+      1.0,
+      0.65,
+      0.35
+    ]
+  },
+  "inertia_policy": "Native per-body homogeneous shape CG/central inertia normalized to assigned material/catalogue mass, then transformed and combined with the parallel-axis theorem. No native/default root mass accepted. No negative off-diagonal sign correction: API returns tensor entries already signed.",
+  "budget_policy": "Incomplete physical mass reconciliation only; weight/reserve optimization and budget closure remain deferred.",
+  "source_registers": [
+    {
+      "file": "Simulation/mechanical_design/tins12e/carousel/double_level_station_locks/link-joint-frame-register.json",
+      "sha256": "719638bf38518be47e8b1dba5c5d84cee3bb40de8367d2ee67925a1c6a6a2aec",
+      "hash_policy": "sha256-text-crlf-to-lf-v1"
+    },
+    {
+      "file": "Simulation/mechanical_design/tins12e/carousel/double_level_rod_arrest/evidence/partial-mass-trial.json",
+      "sha256": "ea3287d6d2c0bf9feaa0b029a8a7c55fb077200e7c4dd8efa1658ae66da2d820",
+      "hash_policy": "sha256-text-crlf-to-lf-v1"
+    },
+    {
+      "file": "Simulation/mechanical_design/tins12e/carousel/double_level_station_locks/evidence/mass-ledger.json",
+      "sha256": "9cfab062111fd09e00bc570ee5b924615ed197956468c76148361006e9bfa5ec",
+      "hash_policy": "sha256-text-crlf-to-lf-v1"
+    },
+    {
+      "file": "Simulation/mechanical_design/tins12e/carousel/double_level_motion_control/physical-mass-ledger.json",
+      "sha256": "869328aa59b74a8b526a6dffdc8324e3652ed7a042a9749f9d3276bcffeec048",
+      "hash_policy": "sha256-text-crlf-to-lf-v1"
+    },
+    {
+      "file": "Simulation/mechanical_design/tins12e/integration/sim_grade/evidence/simple-mount-construction.json",
+      "sha256": "b16794b4e424d7575b76900b3fa8c6fd56300ce45ea53009e18811068c3917c1",
+      "hash_policy": "sha256-text-crlf-to-lf-v1"
+    },
+    {
+      "file": "Simulation/mechanical_design/tins12e/integration/sim_grade/evidence/manufacturer-crawler-reference-2026-10-20.json",
+      "sha256": "afc46b5a228348f062e8d31f6147372b8020042ba1cc573eed3a0557e5924ab6",
+      "hash_policy": "sha256-text-crlf-to-lf-v1"
+    }
+  ]
+}

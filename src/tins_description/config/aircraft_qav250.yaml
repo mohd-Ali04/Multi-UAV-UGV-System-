@@ -1,0 +1,152 @@
+schema_version: 1
+label: SIMULATION_GRADE_NOT_PHYSICALLY_QUALIFIED
+model: Supplied 250 mm QAV250 CAD, antenna-reduced working reference
+datum: Lowest retained geometric solid, plan centre of measured rotor envelope; not a verified landing contact or
+  CG.
+frame: 'FLU: X forward toward camera, Y left, Z up. PX4/FRD conversion: [x,-y,-z].'
+vehicle_mass_policy: Aircraft are separate PX4/Gazebo models. No aircraft inertial or collision in vehicle URDF.
+  static_visual display only.
+simulation_reference_mass_kg: 0.5
+mass_status: CATALOGUE_ALL_UP_CONFIGURATION_REFERENCE_NOT_MEASURED_SUPPLIED_BUILD_NOT_MTOW
+mass_source: https://www.getfpv.com/qav250-carbon-fiber-mini-fpv-quadcopter-arf.html
+fleet_reference_mass_kg: 4.0
+unchanged_design_allocation_per_aircraft_kg: 2
+unchanged_design_allocation_fleet_kg: 16
+fleet_reference_minus_allocation_kg: -12.0
+motor_wheelbase_diagonals_m:
+- 0.2500104211639408
+- 0.24999999999999997
+motors:
+- name: front_left
+  source_path: Tray_B_PROVISIONAL:1+UAV02_DockDatum_GEOMETRIC:1+QAV250_250mm_NoTallAntennas_StowedReference:2+FXC1806-14
+    2300KV:2
+  position_flu_m:
+  - 0.08840577753724783
+  - 0.08837828449725312
+  - 0.016129000000000046
+  position_frd_m:
+  - 0.08840577753724783
+  - -0.08837828449725312
+  - -0.016129000000000046
+  axis_flu:
+  - 0
+  - 0
+  - 1
+  spin_direction_viewed_from_above: cw
+  spin_basis: SIMULATION_QUAD_X_ASSUMPTION_NOT_VERIFIED_FROM_HARDWARE_OR_PROP_HANDEDNESS
+- name: front_right
+  source_path: Tray_B_PROVISIONAL:1+UAV02_DockDatum_GEOMETRIC:1+QAV250_250mm_NoTallAntennas_StowedReference:2+FXC1806-14
+    2300KV:1
+  position_flu_m:
+  - 0.0883883476483184
+  - -0.08838834764831846
+  - 0.016129000000000046
+  position_frd_m:
+  - 0.0883883476483184
+  - 0.08838834764831846
+  - -0.016129000000000046
+  axis_flu:
+  - 0
+  - 0
+  - 1
+  spin_direction_viewed_from_above: ccw
+  spin_basis: SIMULATION_QUAD_X_ASSUMPTION_NOT_VERIFIED_FROM_HARDWARE_OR_PROP_HANDEDNESS
+- name: rear_left
+  source_path: Tray_B_PROVISIONAL:1+UAV02_DockDatum_GEOMETRIC:1+QAV250_250mm_NoTallAntennas_StowedReference:2+FXC1806-14
+    2300KV:3
+  position_flu_m:
+  - -0.0883883476483184
+  - 0.08838834764831845
+  - 0.016129000000000046
+  position_frd_m:
+  - -0.0883883476483184
+  - -0.08838834764831845
+  - -0.016129000000000046
+  axis_flu:
+  - 0
+  - 0
+  - 1
+  spin_direction_viewed_from_above: ccw
+  spin_basis: SIMULATION_QUAD_X_ASSUMPTION_NOT_VERIFIED_FROM_HARDWARE_OR_PROP_HANDEDNESS
+- name: rear_right
+  source_path: Tray_B_PROVISIONAL:1+UAV02_DockDatum_GEOMETRIC:1+QAV250_250mm_NoTallAntennas_StowedReference:2+FXC1806-14
+    2300KV:4
+  position_flu_m:
+  - -0.08840577753724783
+  - -0.08837828449725312
+  - 0.016129000000000046
+  position_frd_m:
+  - -0.08840577753724783
+  - 0.08837828449725312
+  - -0.016129000000000046
+  axis_flu:
+  - 0
+  - 0
+  - 1
+  spin_direction_viewed_from_above: cw
+  spin_basis: SIMULATION_QUAD_X_ASSUMPTION_NOT_VERIFIED_FROM_HARDWARE_OR_PROP_HANDEDNESS
+propeller:
+  cad_component: GEMFAN 5030 PROP
+  nominal_class_diameter_m: 0.127
+  cad_rotation_diameter_including_recorded_tessellation_tolerance_m: 0.12779029636512718
+  spin_assignment_verified: false
+  coaxiality_source_offsets_mm:
+  - 7.273443782444743e-14
+  - 0.020126302130664703
+  - 0.020126302130645472
+  - 5.3290705182007514e-14
+envelope:
+  propeller_full_sweep_plan_m:
+  - 0.304566991661764
+  - 0.30456699166176393
+  antenna_reduced_retained_solid_height_m: 0.060680600000000015
+  original_supplied_height_m: 0.1788685601476957
+  flight_deformation_and_approach_clearance_included: false
+  landing_gear_geometry_verified: false
+camera:
+  source_component: 600TVL Fatshark Camera
+  geometric_component_origin_in_aircraft_flu_m: &id001
+  - 0.08458469764831843
+  - 0.0
+  - 0.033591500000000045
+  optical_reference_origin_in_aircraft_flu_m: *id001
+  optical_rpy_in_aircraft_flu_rad:
+  - -1.5707963267948966
+  - 0
+  - -1.5707963267948966
+  optical_orientation_basis: Assume nose-facing +X, optical +Z forward/+X right/+Y down; exact lens principal point
+    and boresight calibration are unverified.
+  intrinsics: null
+  field_of_view_rad: null
+tray_fit_geometric_only:
+  tray_size_xy_m:
+  - 0.69
+  - 0.69
+  dock_pitch_xy_m:
+  - 0.335
+  - 0.335
+  adjacent_full_sweep_gap_xy_m:
+  - 0.030433008338236034
+  - 0.03043300833823609
+  minimum_outer_tray_margin_xy_m:
+  - 0.02521650416911797
+  - 0.025216504169118026
+  acceptance: Plan envelopes only; no landing/retention/dynamic flight clearance qualification.
+visual_approximation: Use one faithful antenna-reduced aircraft body for all eight. Three battery property volumes
+  are unavailable and one receiver volume differs by 3.73e-5 cm3; retain visible geometry, never treat unavailable
+  volume as zero physical mass.
+source_registers:
+- file: Simulation/mechanical_design/tins12e/aircraft/qav250_250mm/AIRCRAFT_DESIGN_BASIS.json
+  sha256: 2572caa85295699fe54c0a45a98861e107800bfef12a7d67f01ea73e2d3c3fb8
+  hash_policy: sha256-text-crlf-to-lf-v1
+- file: Simulation/mechanical_design/tins12e/carousel/double_level_motion_control/evidence/current-native-clearance-model.json
+  sha256: 430718cef7669e8c15d3296ac487dd34431e486dc0f272455a51d286839510b1
+  hash_policy: sha256-text-crlf-to-lf-v1
+- file: Simulation/mechanical_design/tins12e/integration/sim_grade/evidence/aircraft-catalogue-references-2026-10-20.json
+  sha256: 89e0a4e91478a737a9be76dcd0b819837c281323e6ebd1c650b7a7bf43cf91c7
+  hash_policy: sha256-text-crlf-to-lf-v1
+unresolved:
+- Measured supplied-build mass, CG and inertia
+- Physical rotor spin directions and motor mapping
+- Camera calibration and exact optical principal point
+- Landing contacts, retention interface and flight envelope

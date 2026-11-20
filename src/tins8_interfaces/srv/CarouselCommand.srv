@@ -1,0 +1,7 @@
+# command: RELEASE (argument uavNN) | INDEX_TO_B_UPPER | INDEX_TO_A_UPPER | STOP
+string command
+string argument
+---
+bool accepted
+string request_id
+string message

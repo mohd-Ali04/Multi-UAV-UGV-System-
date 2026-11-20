@@ -1,0 +1,3177 @@
+{
+  "label": "SIMULATION_GRADE_NOT_PHYSICALLY_QUALIFIED",
+  "status": "SIMULATION_REFERENCE_MASS_PROPERTIES_NOT_MEASURED_OR_QUALIFIED",
+  "input_map_sha256": "094d5da87a12af0c97f332b1dd1306d6e74d23533fda79b391425c7bf94481f4",
+  "input_map_hash_policy": "sha256-text-crlf-to-lf-v1",
+  "vehicle_park": {
+    "mass_kg": 385.11924891493,
+    "cg_m": [
+      0.027665364937316216,
+      0.00040817844642192745,
+      0.36940780216701186
+    ],
+    "inertia_at_cg_kg_m2": {
+      "ixx": 41.81923783948754,
+      "iyy": 50.49606965404336,
+      "izz": 64.89413762061437,
+      "ixy": 0.535124073633819,
+      "ixz": 0.6819016173430661,
+      "iyz": -0.3930459366900241
+    }
+  },
+  "crawler_reference_park": {
+    "mass_kg": 295.0000000000002,
+    "cg_m": [
+      0.03611682903622613,
+      0.0005328724634212611,
+      0.28637213658964705
+    ],
+    "inertia_at_cg_kg_m2": {
+      "ixx": 18.327263655029093,
+      "iyy": 33.854628071808264,
+      "izz": 44.047972008245324,
+      "ixy": 0.059975805863329776,
+      "ixz": -0.3324261188215405,
+      "iyz": 0.06418986580229549
+    }
+  },
+  "added_vehicle_mount_mechanism_and_lump_kg": 90.11924891492976,
+  "estimated_vehicle_CG_shift_from_crawler_reference_m": [
+    -0.008451464098909914,
+    -0.00012469401699933364,
+    0.0830356655773648
+  ],
+  "motor_brake_reference_lump_kg": 4.54,
+  "motor_brake_charges": 1,
+  "separate_aircraft_each_reference_kg": 0.5,
+  "separate_fleet_reference_kg": 4,
+  "unchanged_design_aircraft_allocation_kg": 16,
+  "aircraft_CG_inertia_basis": "Uniform swept-envelope box centre/tensor used for load-case comparison only, not flight-model acceptance. Vehicle URDF contains none of this aircraft mass.",
+  "assumptions": [
+    "SIMULATION_GRADE_NOT_PHYSICALLY_QUALIFIED; no physical mounting/strength/locking/braking/power-loss/flight acceptance.",
+    "Fusion reported the working copy modified after read-only extraction; cause unproven. Follow-up audit found all333 physical body bounds and1084 occurrence matrices unchanged and288 relationships valid. Original source archive hashes unchanged.",
+    "Published 210 kg dry crawler plus 85 kg battery is a parameterized reference, not a verified exact-configuration weight.",
+    "Retained crawler solids: assumed steel 7850 kg/m3 except reinforced-track surrogate 1200 kg/m3. Missing internal mass and battery CG/inertia use explicit uniform box estimates.",
+    "Catalogue component CG/inertia use homogeneous reference shapes, not manufacturer measured tensors.",
+    "One 4.54 kg fixed motor/brake lump uses aggregate park reference geometry; moving Z-motor mass redistribution during X travel is approximated.",
+    "Four slides active. Eight pins, four screws and four motor rotor visuals fixed at saved park; physical register joint types unchanged. No mimic or closed-loop claims.",
+    "Six hidden contact wheels carry physics; static CAD track solids carry visual geometry/inertials only. Contact proxy mass is deducted from crawler baseline once.",
+    "Fifteen missing running-gear visuals are REFERENCE_VISUAL_ONLY: zero physical mass, no inertial/collision/BOM entry. Ubuntu overlay must exclude these branches from dynamics and animate display geometry from measured track speed.",
+    "Simulation effort/velocity caps are provisional software inputs, not verified actuator ratings."
+  ],
+  "link_inertials": [
+    {
+      "link": "base_link",
+      "mass_kg": 249.85049974247943,
+      "cg_m": [
+        0.014401471697599257,
+        0.002690932553962926,
+        0.2972545611430063
+      ],
+      "inertia_at_cg_kg_m2": {
+        "ixx": 12.585456908657616,
+        "iyy": 24.762670495096526,
+        "izz": 31.395552597456422,
+        "ixy": 0.0205912939608955,
+        "ixz": -0.2164136251653594,
+        "iyz": 0.05082553703883697
+      }
+    },
+    {
+      "link": "carousel_mount",
+      "mass_kg": 29.43022769791848,
+      "cg_m": [
+        2.2634341181879736e-17,
+        1.3203365689429848e-16,
+        -0.036494181064471075
+      ],
+      "inertia_at_cg_kg_m2": {
+        "ixx": 5.015741909903609,
+        "iyy": 5.376131926257913,
+        "izz": 10.20507162448307,
+        "ixy": -0.6135374159242242,
+        "ixz": -2.7755575615628914e-17,
+        "iyz": -1.4090600197360287e-16
+      }
+    },
+    {
+      "link": "tray_a_x_carriage",
+      "mass_kg": 12.218535201474683,
+      "cg_m": [
+        -0.04783216953218362,
+        0.43968178450871714,
+        0.07974580184309697
+      ],
+      "inertia_at_cg_kg_m2": {
+        "ixx": 0.1841712870384512,
+        "iyy": 0.29608264689116637,
+        "izz": 0.14152657623984213,
+        "ixy": 0.01182732926371874,
+        "ixz": 0.020579894742778694,
+        "iyz": 0.0030422928769527646
+      }
+    },
+    {
+      "link": "tray_b_x_carriage",
+      "mass_kg": 12.218535201474683,
+      "cg_m": [
+        0.0478321695324321,
+        -0.4396817845087171,
+        0.07974580184309696
+      ],
+      "inertia_at_cg_kg_m2": {
+        "ixx": 0.18417128703849384,
+        "iyy": 0.29608264689062375,
+        "izz": 0.14152657623925688,
+        "ixy": 0.011827329263584341,
+        "ixz": -0.020579894743048287,
+        "iyz": -0.003042292876952824
+      }
+    },
+    {
+      "link": "tray_a",
+      "mass_kg": 14.108203575719708,
+      "cg_m": [
+        -0.059277878987647956,
+        0.21510387327980804,
+        0.0028860483196853854
+      ],
+      "inertia_at_cg_kg_m2": {
+        "ixx": 0.7702292755616797,
+        "iyy": 0.29883998158233516,
+        "izz": 1.0454158637177553,
+        "ixy": 0.14170079008660807,
+        "ixz": 0.0027700522765320085,
+        "iyz": -0.01581472831482792
+      }
+    },
+    {
+      "link": "tray_b",
+      "mass_kg": 14.10820357571971,
+      "cg_m": [
+        0.059277878982559616,
+        -0.21510387327980807,
+        0.0028860483196853862
+      ],
+      "inertia_at_cg_kg_m2": {
+        "ixx": 0.7702292755616822,
+        "iyy": 0.29883998156330094,
+        "izz": 1.0454158636987196,
+        "ixy": 0.14170079007441544,
+        "ixz": -0.002770052276010373,
+        "iyz": 0.015814728314827962
+      }
+    },
+    {
+      "link": "left_drive_sprocket_link",
+      "mass_kg": 7.258478059644817,
+      "cg_m": [
+        9.850780669568467e-05,
+        -0.007105562269209937,
+        -6.894463421633409e-06
+      ],
+      "inertia_at_cg_kg_m2": {
+        "ixx": 0.031523391917339195,
+        "iyy": 0.036322315215630036,
+        "izz": 0.03151430967561693,
+        "ixy": 4.217744827331567e-05,
+        "ixz": -6.431428166983587e-07,
+        "iyz": -2.9648268254518885e-06
+      }
+    },
+    {
+      "link": "right_drive_sprocket_link",
+      "mass_kg": 7.258478059644817,
+      "cg_m": [
+        3.4320446575665665e-05,
+        0.0071055622692098525,
+        -2.412548532602533e-06
+      ],
+      "inertia_at_cg_kg_m2": {
+        "ixx": 0.031523395092889366,
+        "iyy": 0.03632237740342591,
+        "izz": 0.031514368687862566,
+        "ixy": -4.024137771541254e-05,
+        "ixz": -6.3840789430532e-07,
+        "iyz": 2.824156311741903e-06
+      }
+    },
+    {
+      "link": "left_track_proxy_link",
+      "mass_kg": 14.36781200285882,
+      "cg_m": [
+        -0.004751435931137554,
+        -1.240813023832601e-12,
+        -0.0005465153517718868
+      ],
+      "inertia_at_cg_kg_m2": {
+        "ixx": 0.4290061091516377,
+        "iyy": 2.735108631143543,
+        "izz": 2.3634219941689203,
+        "ixy": 1.125654478689869e-11,
+        "ixz": -0.10041174795037924,
+        "iyz": 4.551834368443613e-13
+      }
+    },
+    {
+      "link": "right_track_proxy_link",
+      "mass_kg": 14.36781200285882,
+      "cg_m": [
+        -0.0047514359311376375,
+        -1.241035068437526e-12,
+        -0.0005465153517717203
+      ],
+      "inertia_at_cg_kg_m2": {
+        "ixx": 0.4290061091516377,
+        "iyy": 2.735108631143543,
+        "izz": 2.3634219941689203,
+        "ixy": 1.125654478689869e-11,
+        "ixz": -0.10041174795037924,
+        "iyz": 4.551834368443613e-13
+      }
+    },
+    {
+      "link": "x_screw_a",
+      "mass_kg": 1.135711505332422,
+      "cg_m": [
+        0.19610292712585767,
+        -3.3306690738754696e-16,
+        1.6481076503000781e-12
+      ],
+      "inertia_at_cg_kg_m2": {
+        "ixx": 3.548084637313877e-05,
+        "iyy": 0.04945738863160376,
+        "izz": 0.04945738863618607,
+        "ixy": -9.094947017729282e-17,
+        "ixz": -4.318729976611726e-15,
+        "iyz": -1.0307701364151762e-18
+      }
+    },
+    {
+      "link": "x_screw_b",
+      "mass_kg": 1.135711505332422,
+      "cg_m": [
+        -0.19610292712585767,
+        2.220446049250313e-16,
+        1.6481066680505457e-12
+      ],
+      "inertia_at_cg_kg_m2": {
+        "ixx": 3.5480846373047825e-05,
+        "iyy": 0.04945738863160403,
+        "izz": 0.049457388636186254,
+        "ixy": -1.477928890381008e-16,
+        "ixz": 4.320376646324748e-15,
+        "iyz": -2.342659397334067e-19
+      }
+    },
+    {
+      "link": "z_screw_a",
+      "mass_kg": 0.4600603259788138,
+      "cg_m": [
+        -1.6124912689310886e-12,
+        -1.1102230246251565e-16,
+        0.07684870008040738
+      ],
+      "inertia_at_cg_kg_m2": {
+        "ixx": 0.0034515606108656703,
+        "iyy": 0.0034515606090742023,
+        "izz": 1.387129266648799e-05,
+        "ixy": -3.7036329552687297e-19,
+        "ixz": -2.2027049136912474e-15,
+        "iyz": 0.0
+      }
+    },
+    {
+      "link": "z_screw_b",
+      "mass_kg": 0.4600603259788138,
+      "cg_m": [
+        -1.6124912689310886e-12,
+        1.1102230246251565e-16,
+        0.07684870008040738
+      ],
+      "inertia_at_cg_kg_m2": {
+        "ixx": 0.003451560610865647,
+        "iyy": 0.0034515606090742023,
+        "izz": 1.3871292666465252e-05,
+        "ixy": 2.1976376270521757e-19,
+        "ixz": -2.2027049136912474e-15,
+        "iyz": 2.842170943040401e-18
+      }
+    },
+    {
+      "link": "lock_a_lower_neg_x_plunger",
+      "mass_kg": 0.038,
+      "cg_m": [
+        6.015964800863535e-13,
+        0.005048101265822827,
+        2.7755575615628914e-17
+      ],
+      "inertia_at_cg_kg_m2": {
+        "ixx": 1.1670174188069213e-05,
+        "iyy": 6.488259071983661e-07,
+        "izz": 1.1670174272133916e-05,
+        "ixy": 6.828657004146094e-17,
+        "ixz": 0.0,
+        "iyz": -3.20806702203293e-20
+      }
+    },
+    {
+      "link": "lock_a_lower_pos_x_plunger",
+      "mass_kg": 0.038,
+      "cg_m": [
+        6.016034189802574e-13,
+        0.005048101265822792,
+        2.7755575615628914e-17
+      ],
+      "inertia_at_cg_kg_m2": {
+        "ixx": 1.167017418807145e-05,
+        "iyy": 6.488259071985936e-07,
+        "izz": 1.1670174272136088e-05,
+        "ixy": 6.853519523566882e-17,
+        "ixz": -1.6040335110164623e-20,
+        "iyz": -3.208067022032924e-20
+      }
+    },
+    {
+      "link": "lock_a_upper_neg_x_plunger",
+      "mass_kg": 0.038,
+      "cg_m": [
+        6.015964800863535e-13,
+        -0.0029518987341771255,
+        0.0
+      ],
+      "inertia_at_cg_kg_m2": {
+        "ixx": 1.1670174188070304e-05,
+        "iyy": 6.488259071989315e-07,
+        "izz": 1.1670174272134941e-05,
+        "ixy": 6.828657004146094e-17,
+        "ixz": 4.0100837775411626e-21,
+        "iyz": 9.945007768302079e-19
+      }
+    },
+    {
+      "link": "lock_a_upper_pos_x_plunger",
+      "mass_kg": 0.038,
+      "cg_m": [
+        6.016034189802574e-13,
+        -0.0029518987341771593,
+        0.0
+      ],
+      "inertia_at_cg_kg_m2": {
+        "ixx": 1.1670174188070358e-05,
+        "iyy": 6.488259071991871e-07,
+        "izz": 1.1670174272137115e-05,
+        "ixy": 6.853519523566882e-17,
+        "ixz": 6.817142421819965e-20,
+        "iyz": 0.0
+      }
+    },
+    {
+      "link": "lock_b_lower_neg_x_plunger",
+      "mass_kg": 0.038,
+      "cg_m": [
+        6.015964800863535e-13,
+        0.00295189873417723,
+        2.7755575615628914e-17
+      ],
+      "inertia_at_cg_kg_m2": {
+        "ixx": 1.1670174188073411e-05,
+        "iyy": 6.488259071983661e-07,
+        "izz": 1.1670174272138114e-05,
+        "ixy": -6.855925573833384e-17,
+        "ixz": 0.0,
+        "iyz": -2.4060502665246967e-19
+      }
+    },
+    {
+      "link": "lock_b_lower_pos_x_plunger",
+      "mass_kg": 0.038,
+      "cg_m": [
+        6.016034189802574e-13,
+        0.0029518987341771593,
+        2.7755575615628914e-17
+      ],
+      "inertia_at_cg_kg_m2": {
+        "ixx": 1.1670174188072476e-05,
+        "iyy": 6.488259071985936e-07,
+        "izz": 1.1670174272138141e-05,
+        "ixy": -6.839885238723242e-17,
+        "ixz": -1.6040335110164623e-20,
+        "iyz": 0.0
+      }
+    },
+    {
+      "link": "lock_b_upper_neg_x_plunger",
+      "mass_kg": 0.038,
+      "cg_m": [
+        6.015964800863535e-13,
+        -0.005048101265822722,
+        0.0
+      ],
+      "inertia_at_cg_kg_m2": {
+        "ixx": 1.1670174188073411e-05,
+        "iyy": 6.488259071981616e-07,
+        "izz": 1.1670174272138114e-05,
+        "ixy": -6.855925573833384e-17,
+        "ixz": 4.0100837775411626e-21,
+        "iyz": 1.0907427874911958e-18
+      }
+    },
+    {
+      "link": "lock_b_upper_pos_x_plunger",
+      "mass_kg": 0.038,
+      "cg_m": [
+        6.016034189802574e-13,
+        -0.005048101265822792,
+        0.0
+      ],
+      "inertia_at_cg_kg_m2": {
+        "ixx": 1.1670174188071385e-05,
+        "iyy": 6.488259071991871e-07,
+        "izz": 1.1670174272139168e-05,
+        "ixy": -6.839885238723242e-17,
+        "ixz": 6.817142421819965e-20,
+        "iyz": 5.453713937455972e-19
+      }
+    },
+    {
+      "link": "motor_brake_reference_lump",
+      "mass_kg": 4.54,
+      "cg_m": [
+        -2.0251177142460523e-17,
+        2.4072153961792697e-17,
+        0.029346043933560953
+      ],
+      "inertia_at_cg_kg_m2": {
+        "ixx": 0.7300895999292523,
+        "iyy": 0.5060879270188972,
+        "izz": 1.1355201432744404,
+        "ixy": 0.1123562737054478,
+        "ixz": -3.7947076036992655e-18,
+        "iyz": 4.553649124439119e-18
+      }
+    },
+    {
+      "link": "left_contact_wheel_1",
+      "mass_kg": 0.05,
+      "cg_m": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "inertia_at_cg_kg_m2": {
+        "ixx": 0.00027125000000000006,
+        "iyy": 0.0004225000000000001,
+        "izz": 0.00027125000000000006,
+        "ixy": 0.0,
+        "ixz": 0.0,
+        "iyz": 0.0
+      }
+    },
+    {
+      "link": "left_contact_wheel_2",
+      "mass_kg": 0.05,
+      "cg_m": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "inertia_at_cg_kg_m2": {
+        "ixx": 0.00027125000000000006,
+        "iyy": 0.0004225000000000001,
+        "izz": 0.00027125000000000006,
+        "ixy": 0.0,
+        "ixz": 0.0,
+        "iyz": 0.0
+      }
+    },
+    {
+      "link": "left_contact_wheel_3",
+      "mass_kg": 0.05,
+      "cg_m": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "inertia_at_cg_kg_m2": {
+        "ixx": 0.00027125000000000006,
+        "iyy": 0.0004225000000000001,
+        "izz": 0.00027125000000000006,
+        "ixy": 0.0,
+        "ixz": 0.0,
+        "iyz": 0.0
+      }
+    },
+    {
+      "link": "right_contact_wheel_1",
+      "mass_kg": 0.05,
+      "cg_m": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "inertia_at_cg_kg_m2": {
+        "ixx": 0.00027125000000000006,
+        "iyy": 0.0004225000000000001,
+        "izz": 0.00027125000000000006,
+        "ixy": 0.0,
+        "ixz": 0.0,
+        "iyz": 0.0
+      }
+    },
+    {
+      "link": "right_contact_wheel_2",
+      "mass_kg": 0.05,
+      "cg_m": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "inertia_at_cg_kg_m2": {
+        "ixx": 0.00027125000000000006,
+        "iyy": 0.0004225000000000001,
+        "izz": 0.00027125000000000006,
+        "ixy": 0.0,
+        "ixz": 0.0,
+        "iyz": 0.0
+      }
+    },
+    {
+      "link": "right_contact_wheel_3",
+      "mass_kg": 0.05,
+      "cg_m": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "inertia_at_cg_kg_m2": {
+        "ixx": 0.00027125000000000006,
+        "iyy": 0.0004225000000000001,
+        "izz": 0.00027125000000000006,
+        "ixy": 0.0,
+        "ixz": 0.0,
+        "iyz": 0.0
+      }
+    },
+    {
+      "link": "right_upper_carrier_wheel_link",
+      "mass_kg": 1.5969201325135256,
+      "cg_m": [
+        2.3985217979140654e-12,
+        0.0019206448100829614,
+        1.9503837734480793e-12
+      ],
+      "inertia_at_cg_kg_m2": {
+        "ixx": 0.0015622349381733318,
+        "iyy": 0.0029323338583238288,
+        "izz": 0.0015622349055657676,
+        "ixy": 1.9297492759772124e-14,
+        "ixz": 7.826100378349426e-11,
+        "iyz": 1.5690660670529026e-14
+      }
+    }
+  ],
+  "waypoint_load_cases": [
+    {
+      "waypoint": "initial_A_upper",
+      "waypoint_index": 0,
+      "case": "vehicle_no_aircraft",
+      "mass_kg": 385.11924891493,
+      "cg_m": [
+        0.027665364937316216,
+        0.00040817844642192745,
+        0.36940780216701186
+      ],
+      "inertia_at_cg_kg_m2": {
+        "ixx": 41.81923783948754,
+        "iyy": 50.49606965404336,
+        "izz": 64.89413762061437,
+        "ixy": 0.535124073633819,
+        "ixz": 0.6819016173430661,
+        "iyz": -0.3930459366900241
+      },
+      "aircraft_mass_kg": 0
+    },
+    {
+      "waypoint": "initial_A_upper",
+      "waypoint_index": 0,
+      "case": "eight_catalogue_reference_aircraft",
+      "mass_kg": 389.11924891493,
+      "cg_m": [
+        0.027380975357366503,
+        0.0004039825250167526,
+        0.37295357893127984
+      ],
+      "inertia_at_cg_kg_m2": {
+        "ixx": 42.45865772598516,
+        "iyy": 51.13851889965548,
+        "izz": 65.1834590005112,
+        "ixy": 0.5350793683378876,
+        "ixz": 0.7196799702355459,
+        "iyz": -0.3924885498842847
+      },
+      "aircraft_mass_kg": 4.0
+    },
+    {
+      "waypoint": "initial_A_upper",
+      "waypoint_index": 0,
+      "case": "only_tray_A_catalogue_reference_aircraft",
+      "mass_kg": 387.11924891493,
+      "cg_m": [
+        0.027522435516912244,
+        0.00040606964688500943,
+        0.37159024336060803
+      ],
+      "inertia_at_cg_kg_m2": {
+        "ixx": 42.24647909787097,
+        "iyy": 50.92483341737406,
+        "izz": 65.03880613936053,
+        "ixy": 0.5351016055038768,
+        "ixz": 0.705154359706779,
+        "iyz": -0.39270286265956844
+      },
+      "aircraft_mass_kg": 2.0
+    },
+    {
+      "waypoint": "initial_A_upper",
+      "waypoint_index": 0,
+      "case": "only_tray_B_catalogue_reference_aircraft",
+      "mass_kg": 387.11924891493,
+      "cg_m": [
+        0.027522435516912244,
+        0.00040606964688500943,
+        0.3707894565207161
+      ],
+      "inertia_at_cg_kg_m2": {
+        "ixx": 42.03372581883416,
+        "iyy": 50.71208013833727,
+        "izz": 65.03880613936053,
+        "ixy": 0.5351016055038768,
+        "ixz": 0.6966224046965366,
+        "iyz": -0.392828744250103
+      },
+      "aircraft_mass_kg": 2.0
+    },
+    {
+      "waypoint": "initial_A_upper",
+      "waypoint_index": 0,
+      "case": "eight_original_allocation_aircraft_LOAD_CASE_ONLY",
+      "mass_kg": 401.11924891493,
+      "cg_m": [
+        0.026561838142742124,
+        0.0003918968664169352,
+        0.38316660327231195
+      ],
+      "inertia_at_cg_kg_m2": {
+        "ixx": 44.3205524426061,
+        "iyy": 53.0091391848702,
+        "izz": 66.05106047359241,
+        "ixy": 0.5349506021165833,
+        "ixz": 0.8284942761848513,
+        "iyz": -0.39088308924960624
+      },
+      "aircraft_mass_kg": 16
+    },
+    {
+      "waypoint": "forward_horizontal_0_1",
+      "waypoint_index": 1,
+      "case": "vehicle_no_aircraft",
+      "mass_kg": 385.11924891493,
+      "cg_m": [
+        0.02766536493731623,
+        0.00040817844642192745,
+        0.36940780216701186
+      ],
+      "inertia_at_cg_kg_m2": {
+        "ixx": 41.81923783948755,
+        "iyy": 50.4729981296675,
+        "izz": 64.8710660962385,
+        "ixy": -1.2170492062132652,
+        "ixz": 0.46049099747661504,
+        "iyz": -0.3930459366900241
+      },
+      "aircraft_mass_kg": 0
+    },
+    {
+      "waypoint": "forward_horizontal_0_1",
+      "waypoint_index": 1,
+      "case": "eight_catalogue_reference_aircraft",
+      "mass_kg": 389.11924891493,
+      "cg_m": [
+        0.027380975357366517,
+        0.0004039825250167526,
+        0.37295357893127984
+      ],
+      "inertia_at_cg_kg_m2": {
+        "ixx": 42.45865772598516,
+        "iyy": 51.156453625279624,
+        "izz": 65.20139372613531,
+        "ixy": -1.217093911509196,
+        "ixz": 0.46688185036909513,
+        "iyz": -0.3924885498842847
+      },
+      "aircraft_mass_kg": 4.0
+    },
+    {
+      "waypoint": "forward_horizontal_0_1",
+      "waypoint_index": 1,
+      "case": "only_tray_A_catalogue_reference_aircraft",
+      "mass_kg": 387.11924891493,
+      "cg_m": [
+        0.02804553014619663,
+        0.00040606964688500943,
+        0.37159024336060803
+      ],
+      "inertia_at_cg_kg_m2": {
+        "ixx": 42.24647909787097,
+        "iyy": 50.91101250495143,
+        "izz": 65.02498522693787,
+        "ixy": -1.2169894452397128,
+        "ixz": 0.3986431033708514,
+        "iyz": -0.39270286265956844
+      },
+      "aircraft_mass_kg": 2.0
+    },
+    {
+      "waypoint": "forward_horizontal_0_1",
+      "waypoint_index": 1,
+      "case": "only_tray_B_catalogue_reference_aircraft",
+      "mass_kg": 387.11924891493,
+      "cg_m": [
+        0.02699934088762788,
+        0.00040606964688500943,
+        0.3707894565207161
+      ],
+      "inertia_at_cg_kg_m2": {
+        "ixx": 42.03372581883416,
+        "iyy": 50.72055239868335,
+        "izz": 65.04727839970656,
+        "ixy": -1.2171539034467007,
+        "ixz": 0.5290870806346405,
+        "iyz": -0.392828744250103
+      },
+      "aircraft_mass_kg": 2.0
+    },
+    {
+      "waypoint": "forward_horizontal_0_1",
+      "waypoint_index": 1,
+      "case": "eight_original_allocation_aircraft_LOAD_CASE_ONLY",
+      "mass_kg": 401.11924891493,
+      "cg_m": [
+        0.02656183814274214,
+        0.0003918968664169352,
+        0.38316660327231195
+      ],
+      "inertia_at_cg_kg_m2": {
+        "ixx": 44.3205524426061,
+        "iyy": 53.15009266049434,
+        "izz": 66.19201394921656,
+        "ixy": -1.2172226777304997,
+        "ixz": 0.4815336563184005,
+        "iyz": -0.39088308924960624
+      },
+      "aircraft_mass_kg": 16
+    },
+    {
+      "waypoint": "forward_horizontal_0_2",
+      "waypoint_index": 2,
+      "case": "vehicle_no_aircraft",
+      "mass_kg": 385.11924891493,
+      "cg_m": [
+        0.02766536493731622,
+        0.00040817844642192745,
+        0.36940780216701186
+      ],
+      "inertia_at_cg_kg_m2": {
+        "ixx": 41.81923783948754,
+        "iyy": 51.55458573601612,
+        "izz": 65.95265370258713,
+        "ixy": -2.9692224860603487,
+        "ixz": 0.23908037761016346,
+        "iyz": -0.3930459366900241
+      },
+      "aircraft_mass_kg": 0
+    },
+    {
+      "waypoint": "forward_horizontal_0_2",
+      "waypoint_index": 2,
+      "case": "eight_catalogue_reference_aircraft",
+      "mass_kg": 389.11924891493,
+      "cg_m": [
+        0.027380975357366506,
+        0.0004039825250167526,
+        0.37295357893127984
+      ],
+      "inertia_at_cg_kg_m2": {
+        "ixx": 42.45865772598516,
+        "iyy": 52.36105998162827,
+        "izz": 66.40600008248396,
+        "ixy": -2.969267191356281,
+        "ixz": 0.2140837305026429,
+        "iyz": -0.3924885498842847
+      },
+      "aircraft_mass_kg": 4.0
+    },
+    {
+      "waypoint": "forward_horizontal_0_2",
+      "waypoint_index": 2,
+      "case": "only_tray_A_catalogue_reference_aircraft",
+      "mass_kg": 387.11924891493,
+      "cg_m": [
+        0.028568624775480996,
+        0.00040606964688500943,
+        0.37159024336060803
+      ],
+      "inertia_at_cg_kg_m2": {
+        "ixx": 42.24647909787097,
+        "iyy": 52.04264511992839,
+        "izz": 66.15661784191481,
+        "ixy": -2.969080495983303,
+        "ixz": 0.09213184703492289,
+        "iyz": -0.39270286265956844
+      },
+      "aircraft_mass_kg": 2.0
+    },
+    {
+      "waypoint": "forward_horizontal_0_2",
+      "waypoint_index": 2,
+      "case": "only_tray_B_catalogue_reference_aircraft",
+      "mass_kg": 387.11924891493,
+      "cg_m": [
+        0.026476246258343498,
+        0.00040606964688500943,
+        0.3707894565207161
+      ],
+      "inertia_at_cg_kg_m2": {
+        "ixx": 42.03372581883416,
+        "iyy": 51.87447818642902,
+        "izz": 66.20120418745225,
+        "ixy": -2.9694094123972787,
+        "ixz": 0.36155175657274385,
+        "iyz": -0.392828744250103
+      },
+      "aircraft_mass_kg": 2.0
+    },
+    {
+      "waypoint": "forward_horizontal_0_2",
+      "waypoint_index": 2,
+      "case": "eight_original_allocation_aircraft_LOAD_CASE_ONLY",
+      "mass_kg": 401.11924891493,
+      "cg_m": [
+        0.02656183814274213,
+        0.0003918968664169352,
+        0.38316660327231195
+      ],
+      "inertia_at_cg_kg_m2": {
+        "ixx": 44.3205524426061,
+        "iyy": 54.72375526684297,
+        "izz": 67.7656765555652,
+        "ixy": -2.969395957577584,
+        "ixz": 0.1345730364519485,
+        "iyz": -0.39088308924960624
+      },
+      "aircraft_mass_kg": 16
+    },
+    {
+      "waypoint": "forward_horizontal_0_3",
+      "waypoint_index": 3,
+      "case": "vehicle_no_aircraft",
+      "mass_kg": 385.11924891493,
+      "cg_m": [
+        0.027665364937316226,
+        0.00040817844642192745,
+        0.36940780216701186
+      ],
+      "inertia_at_cg_kg_m2": {
+        "ixx": 41.81923783948755,
+        "iyy": 53.74083247308925,
+        "izz": 68.13890043966023,
+        "ixy": -4.721395765907434,
+        "ixz": 0.017669757743712752,
+        "iyz": -0.3930459366900241
+      },
+      "aircraft_mass_kg": 0
+    },
+    {
+      "waypoint": "forward_horizontal_0_3",
+      "waypoint_index": 3,
+      "case": "eight_catalogue_reference_aircraft",
+      "mass_kg": 389.11924891493,
+      "cg_m": [
+        0.027380975357366513,
+        0.0004039825250167526,
+        0.37295357893127984
+      ],
+      "inertia_at_cg_kg_m2": {
+        "ixx": 42.45865772598516,
+        "iyy": 54.75233796870139,
+        "izz": 68.79727806955708,
+        "ixy": -4.721440471203365,
+        "ixz": -0.038714389363807986,
+        "iyz": -0.3924885498842847
+      },
+      "aircraft_mass_kg": 4.0
+    },
+    {
+      "waypoint": "forward_horizontal_0_3",
+      "waypoint_index": 3,
+      "case": "only_tray_A_catalogue_reference_aircraft",
+      "mass_kg": 387.11924891493,
+      "cg_m": [
+        0.029091719404765373,
+        0.00040606964688500943,
+        0.37159024336060803
+      ],
+      "inertia_at_cg_kg_m2": {
+        "ixx": 42.24647909787097,
+        "iyy": 54.31973126230505,
+        "izz": 68.43370398429148,
+        "ixy": -4.721171546726893,
+        "ixz": -0.2143794093010047,
+        "iyz": -0.39270286265956844
+      },
+      "aircraft_mass_kg": 2.0
+    },
+    {
+      "waypoint": "forward_horizontal_0_3",
+      "waypoint_index": 3,
+      "case": "only_tray_B_catalogue_reference_aircraft",
+      "mass_kg": 387.11924891493,
+      "cg_m": [
+        0.02595315162905913,
+        0.00040606964688500943,
+        0.3707894565207161
+      ],
+      "inertia_at_cg_kg_m2": {
+        "ixx": 42.03372581883416,
+        "iyy": 54.17385750157437,
+        "izz": 68.5005835025976,
+        "ixy": -4.721664921347857,
+        "ixz": 0.19401643251084802,
+        "iyz": -0.392828744250103
+      },
+      "aircraft_mass_kg": 2.0
+    },
+    {
+      "waypoint": "forward_horizontal_0_3",
+      "waypoint_index": 3,
+      "case": "eight_original_allocation_aircraft_LOAD_CASE_ONLY",
+      "mass_kg": 401.11924891493,
+      "cg_m": [
+        0.026561838142742135,
+        0.0003918968664169352,
+        0.38316660327231195
+      ],
+      "inertia_at_cg_kg_m2": {
+        "ixx": 44.3205524426061,
+        "iyy": 57.73012700391609,
+        "izz": 70.77204829263833,
+        "ixy": -4.721569237424669,
+        "ixz": -0.21238758341450248,
+        "iyz": -0.39088308924960624
+      },
+      "aircraft_mass_kg": 16
+    },
+    {
+      "waypoint": "forward_horizontal_0_4",
+      "waypoint_index": 4,
+      "case": "vehicle_no_aircraft",
+      "mass_kg": 385.11924891493,
+      "cg_m": [
+        0.027665364937316212,
+        0.00040817844642192745,
+        0.36940780216701186
+      ],
+      "inertia_at_cg_kg_m2": {
+        "ixx": 41.81923783948754,
+        "iyy": 57.03173834088688,
+        "izz": 71.4298063074579,
+        "ixy": -6.473569045754515,
+        "ixz": -0.20374086212273873,
+        "iyz": -0.3930459366900241
+      },
+      "aircraft_mass_kg": 0
+    },
+    {
+      "waypoint": "forward_horizontal_0_4",
+      "waypoint_index": 4,
+      "case": "eight_catalogue_reference_aircraft",
+      "mass_kg": 389.11924891493,
+      "cg_m": [
+        0.0273809753573665,
+        0.0004039825250167526,
+        0.37295357893127984
+      ],
+      "inertia_at_cg_kg_m2": {
+        "ixx": 42.45865772598516,
+        "iyy": 58.330287586499,
+        "izz": 72.37522768735472,
+        "ixy": -6.473613751050446,
+        "ixz": -0.2915125092302586,
+        "iyz": -0.3924885498842847
+      },
+      "aircraft_mass_kg": 4.0
+    },
+    {
+      "waypoint": "forward_horizontal_0_4",
+      "waypoint_index": 4,
+      "case": "only_tray_A_catalogue_reference_aircraft",
+      "mass_kg": 387.11924891493,
+      "cg_m": [
+        0.029614814034049735,
+        0.00040606964688500943,
+        0.37159024336060803
+      ],
+      "inertia_at_cg_kg_m2": {
+        "ixx": 42.24647909787097,
+        "iyy": 57.7422709320813,
+        "izz": 71.85624365406777,
+        "ixy": -6.473262597470486,
+        "ixz": -0.5208906656369324,
+        "iyz": -0.39270286265956844
+      },
+      "aircraft_mass_kg": 2.0
+    },
+    {
+      "waypoint": "forward_horizontal_0_4",
+      "waypoint_index": 4,
+      "case": "only_tray_B_catalogue_reference_aircraft",
+      "mass_kg": 387.11924891493,
+      "cg_m": [
+        0.02543005699977474,
+        0.00040606964688500943,
+        0.3707894565207161
+      ],
+      "inertia_at_cg_kg_m2": {
+        "ixx": 42.03372581883416,
+        "iyy": 57.618690344119315,
+        "izz": 71.94541634514255,
+        "ixy": -6.473920430298436,
+        "ixz": 0.026481108448952267,
+        "iyz": -0.392828744250103
+      },
+      "aircraft_mass_kg": 2.0
+    },
+    {
+      "waypoint": "forward_horizontal_0_4",
+      "waypoint_index": 4,
+      "case": "eight_original_allocation_aircraft_LOAD_CASE_ONLY",
+      "mass_kg": 401.11924891493,
+      "cg_m": [
+        0.02656183814274212,
+        0.0003918968664169352,
+        0.38316660327231195
+      ],
+      "inertia_at_cg_kg_m2": {
+        "ixx": 44.3205524426061,
+        "iyy": 62.16920787171372,
+        "izz": 75.21112916043593,
+        "ixy": -6.473742517271753,
+        "ixz": -0.559348203280953,
+        "iyz": -0.39088308924960624
+      },
+      "aircraft_mass_kg": 16
+    },
+    {
+      "waypoint": "forward_vertical_1_1",
+      "waypoint_index": 5,
+      "case": "vehicle_no_aircraft",
+      "mass_kg": 385.11924891493,
+      "cg_m": [
+        0.027665364937316212,
+        0.00040817844642192745,
+        0.36940780216701186
+      ],
+      "inertia_at_cg_kg_m2": {
+        "ixx": 41.692131742897544,
+        "iyy": 56.90463224429688,
+        "izz": 71.4298063074579,
+        "ixy": -6.473569045754515,
+        "ixz": 0.17426678783011312,
+        "iyz": -0.15785442104282962
+      },
+      "aircraft_mass_kg": 0
+    },
+    {
+      "waypoint": "forward_vertical_1_1",
+      "waypoint_index": 5,
+      "case": "eight_catalogue_reference_aircraft",
+      "mass_kg": 389.11924891493,
+      "cg_m": [
+        0.0273809753573665,
+        0.0004039825250167526,
+        0.37295357893127984
+      ],
+      "inertia_at_cg_kg_m2": {
+        "ixx": 42.313532879395154,
+        "iyy": 58.185162739909,
+        "izz": 72.37522768735472,
+        "ixy": -6.473613751050446,
+        "ixz": 0.14927014072259262,
+        "iyz": -0.15729703423709004
+      },
+      "aircraft_mass_kg": 4.0
+    },
+    {
+      "waypoint": "forward_vertical_1_1",
+      "waypoint_index": 5,
+      "case": "only_tray_A_catalogue_reference_aircraft",
+      "mass_kg": 387.11924891493,
+      "cg_m": [
+        0.029614814034049735,
+        0.00040606964688500943,
+        0.3713900466506351
+      ],
+      "inertia_at_cg_kg_m2": {
+        "ixx": 42.05722185225685,
+        "iyy": 57.553013686467175,
+        "izz": 71.85624365406777,
+        "ixy": -6.473262597470486,
+        "ixz": -0.11379066377171973,
+        "iyz": -0.15754281741000783
+      },
+      "aircraft_mass_kg": 2.0
+    },
+    {
+      "waypoint": "forward_vertical_1_1",
+      "waypoint_index": 5,
+      "case": "only_tray_B_catalogue_reference_aircraft",
+      "mass_kg": 387.11924891493,
+      "cg_m": [
+        0.02543005699977474,
+        0.00040606964688500943,
+        0.37098965323068905
+      ],
+      "inertia_at_cg_kg_m2": {
+        "ixx": 41.95084521273845,
+        "iyy": 57.53580973802358,
+        "izz": 71.94541634514255,
+        "ixy": -6.473920430298436,
+        "ixz": 0.43784708781928566,
+        "iyz": -0.15760575820527536
+      },
+      "aircraft_mass_kg": 2.0
+    },
+    {
+      "waypoint": "forward_vertical_1_1",
+      "waypoint_index": 5,
+      "case": "eight_original_allocation_aircraft_LOAD_CASE_ONLY",
+      "mass_kg": 401.11924891493,
+      "cg_m": [
+        0.02656183814274212,
+        0.0003918968664169352,
+        0.38316660327231167
+      ],
+      "inertia_at_cg_kg_m2": {
+        "ixx": 44.1213713460161,
+        "iyy": 61.970026775123735,
+        "izz": 75.21112916043593,
+        "ixy": -6.473742517271753,
+        "ixz": 0.06975944667189815,
+        "iyz": -0.15569157360241176
+      },
+      "aircraft_mass_kg": 16
+    },
+    {
+      "waypoint": "forward_vertical_1_2",
+      "waypoint_index": 6,
+      "case": "vehicle_no_aircraft",
+      "mass_kg": 385.11924891493,
+      "cg_m": [
+        0.027665364937316212,
+        0.00040817844642192745,
+        0.36940780216701186
+      ],
+      "inertia_at_cg_kg_m2": {
+        "ixx": 41.6497630440342,
+        "iyy": 56.86226354543355,
+        "izz": 71.4298063074579,
+        "ixy": -6.473569045754515,
+        "ixz": 0.5522744377829645,
+        "iyz": 0.07733709460436491
+      },
+      "aircraft_mass_kg": 0
+    },
+    {
+      "waypoint": "forward_vertical_1_2",
+      "waypoint_index": 6,
+      "case": "eight_catalogue_reference_aircraft",
+      "mass_kg": 389.11924891493,
+      "cg_m": [
+        0.0273809753573665,
+        0.0004039825250167526,
+        0.37295357893127984
+      ],
+      "inertia_at_cg_kg_m2": {
+        "ixx": 42.26515793053181,
+        "iyy": 58.13678779104567,
+        "izz": 72.37522768735472,
+        "ixy": -6.473613751050446,
+        "ixz": 0.5900527906754445,
+        "iyz": 0.07789448141010445
+      },
+      "aircraft_mass_kg": 4.0
+    },
+    {
+      "waypoint": "forward_vertical_1_2",
+      "waypoint_index": 6,
+      "case": "only_tray_A_catalogue_reference_aircraft",
+      "mass_kg": 387.11924891493,
+      "cg_m": [
+        0.029614814034049735,
+        0.00040606964688500943,
+        0.37118984994066206
+      ],
+      "inertia_at_cg_kg_m2": {
+        "ixx": 41.95867722387933,
+        "iyy": 57.454469058089664,
+        "izz": 71.85624365406777,
+        "ixy": -6.473262597470486,
+        "ixz": 0.29330933809349313,
+        "iyz": 0.0776172278395532
+      },
+      "aircraft_mass_kg": 2.0
+    },
+    {
+      "waypoint": "forward_vertical_1_2",
+      "waypoint_index": 6,
+      "case": "only_tray_B_catalogue_reference_aircraft",
+      "mass_kg": 387.11924891493,
+      "cg_m": [
+        0.02543005699977474,
+        0.00040606964688500943,
+        0.37118984994066206
+      ],
+      "inertia_at_cg_kg_m2": {
+        "ixx": 41.958677223879334,
+        "iyy": 57.54364174916449,
+        "izz": 71.94541634514255,
+        "ixy": -6.473920430298436,
+        "ixz": 0.8492130671896202,
+        "iyz": 0.0776172278395532
+      },
+      "aircraft_mass_kg": 2.0
+    },
+    {
+      "waypoint": "forward_vertical_1_2",
+      "waypoint_index": 6,
+      "case": "eight_original_allocation_aircraft_LOAD_CASE_ONLY",
+      "mass_kg": 401.11924891493,
+      "cg_m": [
+        0.02656183814274212,
+        0.0003918968664169352,
+        0.38316660327231195
+      ],
+      "inertia_at_cg_kg_m2": {
+        "ixx": 44.05497764715276,
+        "iyy": 61.9036330762604,
+        "izz": 75.21112916043593,
+        "ixy": -6.473742517271753,
+        "ixz": 0.6988670966247498,
+        "iyz": 0.07949994204478256
+      },
+      "aircraft_mass_kg": 16
+    },
+    {
+      "waypoint": "forward_vertical_1_3",
+      "waypoint_index": 7,
+      "case": "vehicle_no_aircraft",
+      "mass_kg": 385.11924891493,
+      "cg_m": [
+        0.027665364937316212,
+        0.00040817844642192745,
+        0.36940780216701186
+      ],
+      "inertia_at_cg_kg_m2": {
+        "ixx": 41.692131742897544,
+        "iyy": 56.904632244296884,
+        "izz": 71.4298063074579,
+        "ixy": -6.473569045754515,
+        "ixz": 0.9302820877358156,
+        "iyz": 0.3125286102515591
+      },
+      "aircraft_mass_kg": 0
+    },
+    {
+      "waypoint": "forward_vertical_1_3",
+      "waypoint_index": 7,
+      "case": "eight_catalogue_reference_aircraft",
+      "mass_kg": 389.11924891493,
+      "cg_m": [
+        0.0273809753573665,
+        0.0004039825250167526,
+        0.37295357893127984
+      ],
+      "inertia_at_cg_kg_m2": {
+        "ixx": 42.313532879395154,
+        "iyy": 58.185162739909,
+        "izz": 72.37522768735472,
+        "ixy": -6.473613751050446,
+        "ixz": 1.0308354406282956,
+        "iyz": 0.31308599705729845
+      },
+      "aircraft_mass_kg": 4.0
+    },
+    {
+      "waypoint": "forward_vertical_1_3",
+      "waypoint_index": 7,
+      "case": "only_tray_A_catalogue_reference_aircraft",
+      "mass_kg": 387.11924891493,
+      "cg_m": [
+        0.029614814034049735,
+        0.00040606964688500943,
+        0.37098965323068905
+      ],
+      "inertia_at_cg_kg_m2": {
+        "ixx": 41.95084521273845,
+        "iyy": 57.44663704694879,
+        "izz": 71.85624365406777,
+        "ixy": -6.473262597470486,
+        "ixz": 0.7004093399587052,
+        "iyz": 0.31277727308911324
+      },
+      "aircraft_mass_kg": 2.0
+    },
+    {
+      "waypoint": "forward_vertical_1_3",
+      "waypoint_index": 7,
+      "case": "only_tray_B_catalogue_reference_aircraft",
+      "mass_kg": 387.11924891493,
+      "cg_m": [
+        0.02543005699977474,
+        0.00040606964688500943,
+        0.3713900466506351
+      ],
+      "inertia_at_cg_kg_m2": {
+        "ixx": 42.05722185225685,
+        "iyy": 57.64218637754197,
+        "izz": 71.94541634514255,
+        "ixy": -6.473920430298436,
+        "ixz": 1.2605790465599538,
+        "iyz": 0.3128402138843809
+      },
+      "aircraft_mass_kg": 2.0
+    },
+    {
+      "waypoint": "forward_vertical_1_3",
+      "waypoint_index": 7,
+      "case": "eight_original_allocation_aircraft_LOAD_CASE_ONLY",
+      "mass_kg": 401.11924891493,
+      "cg_m": [
+        0.02656183814274212,
+        0.0003918968664169352,
+        0.38316660327231167
+      ],
+      "inertia_at_cg_kg_m2": {
+        "ixx": 44.12137134601611,
+        "iyy": 61.97002677512372,
+        "izz": 75.21112916043593,
+        "ixy": -6.473742517271753,
+        "ixz": 1.3279747465776,
+        "iyz": 0.3146914576919769
+      },
+      "aircraft_mass_kg": 16
+    },
+    {
+      "waypoint": "forward_vertical_1_4",
+      "waypoint_index": 8,
+      "case": "vehicle_no_aircraft",
+      "mass_kg": 385.11924891493,
+      "cg_m": [
+        0.027665364937316212,
+        0.00040817844642192745,
+        0.36940780216701186
+      ],
+      "inertia_at_cg_kg_m2": {
+        "ixx": 41.81923783948754,
+        "iyy": 57.031738340886875,
+        "izz": 71.4298063074579,
+        "ixy": -6.473569045754515,
+        "ixz": 1.3082897376886673,
+        "iyz": 0.5477201258987541
+      },
+      "aircraft_mass_kg": 0
+    },
+    {
+      "waypoint": "forward_vertical_1_4",
+      "waypoint_index": 8,
+      "case": "eight_catalogue_reference_aircraft",
+      "mass_kg": 389.11924891493,
+      "cg_m": [
+        0.0273809753573665,
+        0.0004039825250167526,
+        0.37295357893127984
+      ],
+      "inertia_at_cg_kg_m2": {
+        "ixx": 42.45865772598516,
+        "iyy": 58.33028758649902,
+        "izz": 72.37522768735472,
+        "ixy": -6.473613751050446,
+        "ixz": 1.4716180905811478,
+        "iyz": 0.5482775127044932
+      },
+      "aircraft_mass_kg": 4.0
+    },
+    {
+      "waypoint": "forward_vertical_1_4",
+      "waypoint_index": 8,
+      "case": "only_tray_A_catalogue_reference_aircraft",
+      "mass_kg": 387.11924891493,
+      "cg_m": [
+        0.029614814034049735,
+        0.00040606964688500943,
+        0.3707894565207161
+      ],
+      "inertia_at_cg_kg_m2": {
+        "ixx": 42.03372581883416,
+        "iyy": 57.5295176530445,
+        "izz": 71.85624365406777,
+        "ixy": -6.473262597470486,
+        "ixz": 1.1075093418239186,
+        "iyz": 0.547937318338675
+      },
+      "aircraft_mass_kg": 2.0
+    },
+    {
+      "waypoint": "forward_vertical_1_4",
+      "waypoint_index": 8,
+      "case": "only_tray_B_catalogue_reference_aircraft",
+      "mass_kg": 387.11924891493,
+      "cg_m": [
+        0.02543005699977474,
+        0.00040606964688500943,
+        0.37159024336060803
+      ],
+      "inertia_at_cg_kg_m2": {
+        "ixx": 42.24647909787097,
+        "iyy": 57.8314436231561,
+        "izz": 71.94541634514255,
+        "ixy": -6.473920430298436,
+        "ixz": 1.6719450259302875,
+        "iyz": 0.5480631999292095
+      },
+      "aircraft_mass_kg": 2.0
+    },
+    {
+      "waypoint": "forward_vertical_1_4",
+      "waypoint_index": 8,
+      "case": "eight_original_allocation_aircraft_LOAD_CASE_ONLY",
+      "mass_kg": 401.11924891493,
+      "cg_m": [
+        0.02656183814274212,
+        0.0003918968664169352,
+        0.38316660327231195
+      ],
+      "inertia_at_cg_kg_m2": {
+        "ixx": 44.3205524426061,
+        "iyy": 62.16920787171372,
+        "izz": 75.21112916043593,
+        "ixy": -6.473742517271753,
+        "ixz": 1.957082396530454,
+        "iyz": 0.5498829733391714
+      },
+      "aircraft_mass_kg": 16
+    },
+    {
+      "waypoint": "forward_horizontal_2_1",
+      "waypoint_index": 9,
+      "case": "vehicle_no_aircraft",
+      "mass_kg": 385.11924891493,
+      "cg_m": [
+        0.027665364937316226,
+        0.00040817844642192745,
+        0.36940780216701186
+      ],
+      "inertia_at_cg_kg_m2": {
+        "ixx": 41.81923783948755,
+        "iyy": 53.74083247308925,
+        "izz": 68.13890043966023,
+        "ixy": -4.721395765907434,
+        "ixz": 1.0868791178222168,
+        "iyz": 0.5477201258987541
+      },
+      "aircraft_mass_kg": 0
+    },
+    {
+      "waypoint": "forward_horizontal_2_1",
+      "waypoint_index": 9,
+      "case": "eight_catalogue_reference_aircraft",
+      "mass_kg": 389.11924891493,
+      "cg_m": [
+        0.027380975357366513,
+        0.0004039825250167526,
+        0.37295357893127984
+      ],
+      "inertia_at_cg_kg_m2": {
+        "ixx": 42.45865772598516,
+        "iyy": 54.75233796870138,
+        "izz": 68.79727806955708,
+        "ixy": -4.721440471203365,
+        "ixz": 1.2188199707146947,
+        "iyz": 0.5482775127044932
+      },
+      "aircraft_mass_kg": 4.0
+    },
+    {
+      "waypoint": "forward_horizontal_2_1",
+      "waypoint_index": 9,
+      "case": "only_tray_A_catalogue_reference_aircraft",
+      "mass_kg": 387.11924891493,
+      "cg_m": [
+        0.029091719404765373,
+        0.00040606964688500943,
+        0.3707894565207161
+      ],
+      "inertia_at_cg_kg_m2": {
+        "ixx": 42.033725818834164,
+        "iyy": 54.10697798326827,
+        "izz": 68.43370398429148,
+        "ixy": -4.721171546726893,
+        "ixz": 0.9399740177620219,
+        "iyz": 0.547937318338675
+      },
+      "aircraft_mass_kg": 2.0
+    },
+    {
+      "waypoint": "forward_horizontal_2_1",
+      "waypoint_index": 9,
+      "case": "only_tray_B_catalogue_reference_aircraft",
+      "mass_kg": 387.11924891493,
+      "cg_m": [
+        0.02595315162905913,
+        0.00040606964688500943,
+        0.37159024336060803
+      ],
+      "inertia_at_cg_kg_m2": {
+        "ixx": 42.24647909787097,
+        "iyy": 54.38661078061116,
+        "izz": 68.5005835025976,
+        "ixy": -4.721664921347857,
+        "ixz": 1.3654337695943601,
+        "iyz": 0.5480631999292095
+      },
+      "aircraft_mass_kg": 2.0
+    },
+    {
+      "waypoint": "forward_horizontal_2_1",
+      "waypoint_index": 9,
+      "case": "eight_original_allocation_aircraft_LOAD_CASE_ONLY",
+      "mass_kg": 401.11924891493,
+      "cg_m": [
+        0.026561838142742135,
+        0.0003918968664169352,
+        0.38316660327231195
+      ],
+      "inertia_at_cg_kg_m2": {
+        "ixx": 44.3205524426061,
+        "iyy": 57.73012700391612,
+        "izz": 70.77204829263833,
+        "ixy": -4.721569237424669,
+        "ixz": 1.6101217766640015,
+        "iyz": 0.5498829733391714
+      },
+      "aircraft_mass_kg": 16
+    },
+    {
+      "waypoint": "forward_horizontal_2_2",
+      "waypoint_index": 10,
+      "case": "vehicle_no_aircraft",
+      "mass_kg": 385.11924891493,
+      "cg_m": [
+        0.027665364937316212,
+        0.00040817844642192745,
+        0.36940780216701186
+      ],
+      "inertia_at_cg_kg_m2": {
+        "ixx": 41.81923783948755,
+        "iyy": 51.55458573601612,
+        "izz": 65.95265370258713,
+        "ixy": -2.9692224860603478,
+        "ixz": 0.8654684979557655,
+        "iyz": 0.5477201258987541
+      },
+      "aircraft_mass_kg": 0
+    },
+    {
+      "waypoint": "forward_horizontal_2_2",
+      "waypoint_index": 10,
+      "case": "eight_catalogue_reference_aircraft",
+      "mass_kg": 389.11924891493,
+      "cg_m": [
+        0.0273809753573665,
+        0.0004039825250167526,
+        0.37295357893127984
+      ],
+      "inertia_at_cg_kg_m2": {
+        "ixx": 42.45865772598516,
+        "iyy": 52.361059981628266,
+        "izz": 66.40600008248396,
+        "ixy": -2.96926719135628,
+        "ixz": 0.9660218508482452,
+        "iyz": 0.5482775127044932
+      },
+      "aircraft_mass_kg": 4.0
+    },
+    {
+      "waypoint": "forward_horizontal_2_2",
+      "waypoint_index": 10,
+      "case": "only_tray_A_catalogue_reference_aircraft",
+      "mass_kg": 387.11924891493,
+      "cg_m": [
+        0.028568624775480986,
+        0.00040606964688500943,
+        0.3707894565207161
+      ],
+      "inertia_at_cg_kg_m2": {
+        "ixx": 42.03372581883416,
+        "iyy": 51.829891840891634,
+        "izz": 66.15661784191481,
+        "ixy": -2.9690804959833015,
+        "ixz": 0.7724386937001256,
+        "iyz": 0.547937318338675
+      },
+      "aircraft_mass_kg": 2.0
+    },
+    {
+      "waypoint": "forward_horizontal_2_2",
+      "waypoint_index": 10,
+      "case": "only_tray_B_catalogue_reference_aircraft",
+      "mass_kg": 387.11924891493,
+      "cg_m": [
+        0.02647624625834349,
+        0.00040606964688500943,
+        0.37159024336060803
+      ],
+      "inertia_at_cg_kg_m2": {
+        "ixx": 42.24647909787097,
+        "iyy": 52.087231465465806,
+        "izz": 66.20120418745225,
+        "ixy": -2.9694094123972787,
+        "ixz": 1.0589225132584323,
+        "iyz": 0.5480631999292095
+      },
+      "aircraft_mass_kg": 2.0
+    },
+    {
+      "waypoint": "forward_horizontal_2_2",
+      "waypoint_index": 10,
+      "case": "eight_original_allocation_aircraft_LOAD_CASE_ONLY",
+      "mass_kg": 401.11924891493,
+      "cg_m": [
+        0.02656183814274212,
+        0.0003918968664169352,
+        0.38316660327231195
+      ],
+      "inertia_at_cg_kg_m2": {
+        "ixx": 44.3205524426061,
+        "iyy": 54.72375526684299,
+        "izz": 67.7656765555652,
+        "ixy": -2.969395957577583,
+        "ixz": 1.2631611567975511,
+        "iyz": 0.5498829733391714
+      },
+      "aircraft_mass_kg": 16
+    },
+    {
+      "waypoint": "forward_horizontal_2_3",
+      "waypoint_index": 11,
+      "case": "vehicle_no_aircraft",
+      "mass_kg": 385.11924891493,
+      "cg_m": [
+        0.02766536493731624,
+        0.00040817844642192745,
+        0.36940780216701186
+      ],
+      "inertia_at_cg_kg_m2": {
+        "ixx": 41.819237839487556,
+        "iyy": 50.4729981296675,
+        "izz": 64.8710660962385,
+        "ixy": -1.2170492062132656,
+        "ixz": 0.6440578780893137,
+        "iyz": 0.5477201258987541
+      },
+      "aircraft_mass_kg": 0
+    },
+    {
+      "waypoint": "forward_horizontal_2_3",
+      "waypoint_index": 11,
+      "case": "eight_catalogue_reference_aircraft",
+      "mass_kg": 389.11924891493,
+      "cg_m": [
+        0.027380975357366527,
+        0.0004039825250167526,
+        0.37295357893127984
+      ],
+      "inertia_at_cg_kg_m2": {
+        "ixx": 42.45865772598516,
+        "iyy": 51.156453625279624,
+        "izz": 65.20139372613531,
+        "ixy": -1.2170939115091965,
+        "ixz": 0.7132237309817931,
+        "iyz": 0.5482775127044932
+      },
+      "aircraft_mass_kg": 4.0
+    },
+    {
+      "waypoint": "forward_horizontal_2_3",
+      "waypoint_index": 11,
+      "case": "only_tray_A_catalogue_reference_aircraft",
+      "mass_kg": 387.11924891493,
+      "cg_m": [
+        0.02804553014619664,
+        0.00040606964688500943,
+        0.3707894565207161
+      ],
+      "inertia_at_cg_kg_m2": {
+        "ixx": 42.03372581883416,
+        "iyy": 50.698259225914626,
+        "izz": 65.02498522693787,
+        "ixy": -1.2169894452397136,
+        "ixz": 0.6049033696382287,
+        "iyz": 0.547937318338675
+      },
+      "aircraft_mass_kg": 2.0
+    },
+    {
+      "waypoint": "forward_horizontal_2_3",
+      "waypoint_index": 11,
+      "case": "only_tray_B_catalogue_reference_aircraft",
+      "mass_kg": 387.11924891493,
+      "cg_m": [
+        0.02699934088762789,
+        0.00040606964688500943,
+        0.37159024336060803
+      ],
+      "inertia_at_cg_kg_m2": {
+        "ixx": 42.24647909787097,
+        "iyy": 50.93330567772015,
+        "izz": 65.04727839970656,
+        "ixy": -1.2171539034467012,
+        "ixz": 0.7524112569225035,
+        "iyz": 0.5480631999292095
+      },
+      "aircraft_mass_kg": 2.0
+    },
+    {
+      "waypoint": "forward_horizontal_2_3",
+      "waypoint_index": 11,
+      "case": "eight_original_allocation_aircraft_LOAD_CASE_ONLY",
+      "mass_kg": 401.11924891493,
+      "cg_m": [
+        0.02656183814274215,
+        0.0003918968664169352,
+        0.38316660327231195
+      ],
+      "inertia_at_cg_kg_m2": {
+        "ixx": 44.3205524426061,
+        "iyy": 53.15009266049435,
+        "izz": 66.19201394921656,
+        "ixy": -1.2172226777304997,
+        "ixz": 0.9162005369310988,
+        "iyz": 0.5498829733391714
+      },
+      "aircraft_mass_kg": 16
+    },
+    {
+      "waypoint": "forward_horizontal_2_4",
+      "waypoint_index": 12,
+      "case": "vehicle_no_aircraft",
+      "mass_kg": 385.11924891493,
+      "cg_m": [
+        0.027665364937316216,
+        0.00040817844642192745,
+        0.36940780216701186
+      ],
+      "inertia_at_cg_kg_m2": {
+        "ixx": 41.81923783948754,
+        "iyy": 50.49606965404336,
+        "izz": 64.89413762061437,
+        "ixy": 0.535124073633819,
+        "ixz": 0.4226472582228623,
+        "iyz": 0.5477201258987541
+      },
+      "aircraft_mass_kg": 0
+    },
+    {
+      "waypoint": "forward_horizontal_2_4",
+      "waypoint_index": 12,
+      "case": "eight_catalogue_reference_aircraft",
+      "mass_kg": 389.11924891493,
+      "cg_m": [
+        0.027380975357366503,
+        0.0004039825250167526,
+        0.37295357893127984
+      ],
+      "inertia_at_cg_kg_m2": {
+        "ixx": 42.45865772598516,
+        "iyy": 51.13851889965547,
+        "izz": 65.1834590005112,
+        "ixy": 0.5350793683378876,
+        "ixz": 0.4604256111153422,
+        "iyz": 0.5482775127044932
+      },
+      "aircraft_mass_kg": 4.0
+    },
+    {
+      "waypoint": "forward_horizontal_2_4",
+      "waypoint_index": 12,
+      "case": "only_tray_A_catalogue_reference_aircraft",
+      "mass_kg": 387.11924891493,
+      "cg_m": [
+        0.027522435516912244,
+        0.00040606964688500943,
+        0.3707894565207161
+      ],
+      "inertia_at_cg_kg_m2": {
+        "ixx": 42.03372581883416,
+        "iyy": 50.71208013833727,
+        "izz": 65.03880613936053,
+        "ixy": 0.5351016055038768,
+        "ixz": 0.43736804557633274,
+        "iyz": 0.547937318338675
+      },
+      "aircraft_mass_kg": 2.0
+    },
+    {
+      "waypoint": "forward_horizontal_2_4",
+      "waypoint_index": 12,
+      "case": "only_tray_B_catalogue_reference_aircraft",
+      "mass_kg": 387.11924891493,
+      "cg_m": [
+        0.027522435516912244,
+        0.00040606964688500943,
+        0.37159024336060803
+      ],
+      "inertia_at_cg_kg_m2": {
+        "ixx": 42.24647909787097,
+        "iyy": 50.92483341737406,
+        "izz": 65.03880613936053,
+        "ixy": 0.5351016055038768,
+        "ixz": 0.44590000058657575,
+        "iyz": 0.5480631999292095
+      },
+      "aircraft_mass_kg": 2.0
+    },
+    {
+      "waypoint": "forward_horizontal_2_4",
+      "waypoint_index": 12,
+      "case": "eight_original_allocation_aircraft_LOAD_CASE_ONLY",
+      "mass_kg": 401.11924891493,
+      "cg_m": [
+        0.026561838142742124,
+        0.0003918968664169352,
+        0.38316660327231195
+      ],
+      "inertia_at_cg_kg_m2": {
+        "ixx": 44.3205524426061,
+        "iyy": 53.0091391848702,
+        "izz": 66.05106047359241,
+        "ixy": 0.5349506021165833,
+        "ixz": 0.5692399170646475,
+        "iyz": 0.5498829733391714
+      },
+      "aircraft_mass_kg": 16
+    },
+    {
+      "waypoint": "reverse_horizontal_0_1",
+      "waypoint_index": 13,
+      "case": "vehicle_no_aircraft",
+      "mass_kg": 385.11924891493,
+      "cg_m": [
+        0.02766536493731623,
+        0.00040817844642192745,
+        0.36940780216701186
+      ],
+      "inertia_at_cg_kg_m2": {
+        "ixx": 41.81923783948755,
+        "iyy": 50.4729981296675,
+        "izz": 64.8710660962385,
+        "ixy": -1.2170492062132652,
+        "ixz": 0.644057878089314,
+        "iyz": 0.5477201258987541
+      },
+      "aircraft_mass_kg": 0
+    },
+    {
+      "waypoint": "reverse_horizontal_0_1",
+      "waypoint_index": 13,
+      "case": "eight_catalogue_reference_aircraft",
+      "mass_kg": 389.11924891493,
+      "cg_m": [
+        0.027380975357366517,
+        0.0004039825250167526,
+        0.37295357893127984
+      ],
+      "inertia_at_cg_kg_m2": {
+        "ixx": 42.45865772598516,
+        "iyy": 51.156453625279624,
+        "izz": 65.20139372613531,
+        "ixy": -1.217093911509196,
+        "ixz": 0.7132237309817936,
+        "iyz": 0.5482775127044932
+      },
+      "aircraft_mass_kg": 4.0
+    },
+    {
+      "waypoint": "reverse_horizontal_0_1",
+      "waypoint_index": 13,
+      "case": "only_tray_A_catalogue_reference_aircraft",
+      "mass_kg": 387.11924891493,
+      "cg_m": [
+        0.02804553014619663,
+        0.00040606964688500943,
+        0.3707894565207161
+      ],
+      "inertia_at_cg_kg_m2": {
+        "ixx": 42.03372581883416,
+        "iyy": 50.698259225914626,
+        "izz": 65.02498522693787,
+        "ixy": -1.2169894452397128,
+        "ixz": 0.6049033696382291,
+        "iyz": 0.547937318338675
+      },
+      "aircraft_mass_kg": 2.0
+    },
+    {
+      "waypoint": "reverse_horizontal_0_1",
+      "waypoint_index": 13,
+      "case": "only_tray_B_catalogue_reference_aircraft",
+      "mass_kg": 387.11924891493,
+      "cg_m": [
+        0.02699934088762788,
+        0.00040606964688500943,
+        0.37159024336060803
+      ],
+      "inertia_at_cg_kg_m2": {
+        "ixx": 42.24647909787097,
+        "iyy": 50.93330567772015,
+        "izz": 65.04727839970656,
+        "ixy": -1.2171539034467007,
+        "ixz": 0.7524112569225038,
+        "iyz": 0.5480631999292095
+      },
+      "aircraft_mass_kg": 2.0
+    },
+    {
+      "waypoint": "reverse_horizontal_0_1",
+      "waypoint_index": 13,
+      "case": "eight_original_allocation_aircraft_LOAD_CASE_ONLY",
+      "mass_kg": 401.11924891493,
+      "cg_m": [
+        0.02656183814274214,
+        0.0003918968664169352,
+        0.38316660327231195
+      ],
+      "inertia_at_cg_kg_m2": {
+        "ixx": 44.3205524426061,
+        "iyy": 53.15009266049435,
+        "izz": 66.19201394921656,
+        "ixy": -1.2172226777304997,
+        "ixz": 0.9162005369310993,
+        "iyz": 0.5498829733391714
+      },
+      "aircraft_mass_kg": 16
+    },
+    {
+      "waypoint": "reverse_horizontal_0_2",
+      "waypoint_index": 14,
+      "case": "vehicle_no_aircraft",
+      "mass_kg": 385.11924891493,
+      "cg_m": [
+        0.02766536493731622,
+        0.00040817844642192745,
+        0.36940780216701186
+      ],
+      "inertia_at_cg_kg_m2": {
+        "ixx": 41.81923783948754,
+        "iyy": 51.55458573601612,
+        "izz": 65.95265370258713,
+        "ixy": -2.9692224860603487,
+        "ixz": 0.8654684979557645,
+        "iyz": 0.5477201258987541
+      },
+      "aircraft_mass_kg": 0
+    },
+    {
+      "waypoint": "reverse_horizontal_0_2",
+      "waypoint_index": 14,
+      "case": "eight_catalogue_reference_aircraft",
+      "mass_kg": 389.11924891493,
+      "cg_m": [
+        0.027380975357366506,
+        0.0004039825250167526,
+        0.37295357893127984
+      ],
+      "inertia_at_cg_kg_m2": {
+        "ixx": 42.45865772598516,
+        "iyy": 52.361059981628266,
+        "izz": 66.40600008248396,
+        "ixy": -2.969267191356281,
+        "ixz": 0.9660218508482444,
+        "iyz": 0.5482775127044932
+      },
+      "aircraft_mass_kg": 4.0
+    },
+    {
+      "waypoint": "reverse_horizontal_0_2",
+      "waypoint_index": 14,
+      "case": "only_tray_A_catalogue_reference_aircraft",
+      "mass_kg": 387.11924891493,
+      "cg_m": [
+        0.028568624775480996,
+        0.00040606964688500943,
+        0.3707894565207161
+      ],
+      "inertia_at_cg_kg_m2": {
+        "ixx": 42.03372581883416,
+        "iyy": 51.82989184089164,
+        "izz": 66.15661784191481,
+        "ixy": -2.969080495983303,
+        "ixz": 0.7724386937001252,
+        "iyz": 0.547937318338675
+      },
+      "aircraft_mass_kg": 2.0
+    },
+    {
+      "waypoint": "reverse_horizontal_0_2",
+      "waypoint_index": 14,
+      "case": "only_tray_B_catalogue_reference_aircraft",
+      "mass_kg": 387.11924891493,
+      "cg_m": [
+        0.026476246258343498,
+        0.00040606964688500943,
+        0.37159024336060803
+      ],
+      "inertia_at_cg_kg_m2": {
+        "ixx": 42.24647909787097,
+        "iyy": 52.087231465465806,
+        "izz": 66.20120418745225,
+        "ixy": -2.9694094123972787,
+        "ixz": 1.0589225132584312,
+        "iyz": 0.5480631999292095
+      },
+      "aircraft_mass_kg": 2.0
+    },
+    {
+      "waypoint": "reverse_horizontal_0_2",
+      "waypoint_index": 14,
+      "case": "eight_original_allocation_aircraft_LOAD_CASE_ONLY",
+      "mass_kg": 401.11924891493,
+      "cg_m": [
+        0.02656183814274213,
+        0.0003918968664169352,
+        0.38316660327231195
+      ],
+      "inertia_at_cg_kg_m2": {
+        "ixx": 44.3205524426061,
+        "iyy": 54.72375526684299,
+        "izz": 67.7656765555652,
+        "ixy": -2.969395957577584,
+        "ixz": 1.2631611567975503,
+        "iyz": 0.5498829733391714
+      },
+      "aircraft_mass_kg": 16
+    },
+    {
+      "waypoint": "reverse_horizontal_0_3",
+      "waypoint_index": 15,
+      "case": "vehicle_no_aircraft",
+      "mass_kg": 385.11924891493,
+      "cg_m": [
+        0.027665364937316226,
+        0.00040817844642192745,
+        0.36940780216701186
+      ],
+      "inertia_at_cg_kg_m2": {
+        "ixx": 41.81923783948755,
+        "iyy": 53.74083247308925,
+        "izz": 68.13890043966023,
+        "ixy": -4.721395765907434,
+        "ixz": 1.0868791178222168,
+        "iyz": 0.5477201258987541
+      },
+      "aircraft_mass_kg": 0
+    },
+    {
+      "waypoint": "reverse_horizontal_0_3",
+      "waypoint_index": 15,
+      "case": "eight_catalogue_reference_aircraft",
+      "mass_kg": 389.11924891493,
+      "cg_m": [
+        0.027380975357366513,
+        0.0004039825250167526,
+        0.37295357893127984
+      ],
+      "inertia_at_cg_kg_m2": {
+        "ixx": 42.45865772598516,
+        "iyy": 54.75233796870138,
+        "izz": 68.79727806955708,
+        "ixy": -4.721440471203365,
+        "ixz": 1.2188199707146947,
+        "iyz": 0.5482775127044932
+      },
+      "aircraft_mass_kg": 4.0
+    },
+    {
+      "waypoint": "reverse_horizontal_0_3",
+      "waypoint_index": 15,
+      "case": "only_tray_A_catalogue_reference_aircraft",
+      "mass_kg": 387.11924891493,
+      "cg_m": [
+        0.029091719404765373,
+        0.00040606964688500943,
+        0.3707894565207161
+      ],
+      "inertia_at_cg_kg_m2": {
+        "ixx": 42.033725818834164,
+        "iyy": 54.10697798326827,
+        "izz": 68.43370398429148,
+        "ixy": -4.721171546726893,
+        "ixz": 0.9399740177620219,
+        "iyz": 0.547937318338675
+      },
+      "aircraft_mass_kg": 2.0
+    },
+    {
+      "waypoint": "reverse_horizontal_0_3",
+      "waypoint_index": 15,
+      "case": "only_tray_B_catalogue_reference_aircraft",
+      "mass_kg": 387.11924891493,
+      "cg_m": [
+        0.02595315162905913,
+        0.00040606964688500943,
+        0.37159024336060803
+      ],
+      "inertia_at_cg_kg_m2": {
+        "ixx": 42.24647909787097,
+        "iyy": 54.38661078061116,
+        "izz": 68.5005835025976,
+        "ixy": -4.721664921347857,
+        "ixz": 1.3654337695943601,
+        "iyz": 0.5480631999292095
+      },
+      "aircraft_mass_kg": 2.0
+    },
+    {
+      "waypoint": "reverse_horizontal_0_3",
+      "waypoint_index": 15,
+      "case": "eight_original_allocation_aircraft_LOAD_CASE_ONLY",
+      "mass_kg": 401.11924891493,
+      "cg_m": [
+        0.026561838142742135,
+        0.0003918968664169352,
+        0.38316660327231195
+      ],
+      "inertia_at_cg_kg_m2": {
+        "ixx": 44.3205524426061,
+        "iyy": 57.73012700391612,
+        "izz": 70.77204829263833,
+        "ixy": -4.721569237424669,
+        "ixz": 1.6101217766640015,
+        "iyz": 0.5498829733391714
+      },
+      "aircraft_mass_kg": 16
+    },
+    {
+      "waypoint": "reverse_horizontal_0_4",
+      "waypoint_index": 16,
+      "case": "vehicle_no_aircraft",
+      "mass_kg": 385.11924891493,
+      "cg_m": [
+        0.027665364937316212,
+        0.00040817844642192745,
+        0.36940780216701186
+      ],
+      "inertia_at_cg_kg_m2": {
+        "ixx": 41.81923783948754,
+        "iyy": 57.031738340886875,
+        "izz": 71.4298063074579,
+        "ixy": -6.473569045754515,
+        "ixz": 1.3082897376886673,
+        "iyz": 0.5477201258987541
+      },
+      "aircraft_mass_kg": 0
+    },
+    {
+      "waypoint": "reverse_horizontal_0_4",
+      "waypoint_index": 16,
+      "case": "eight_catalogue_reference_aircraft",
+      "mass_kg": 389.11924891493,
+      "cg_m": [
+        0.0273809753573665,
+        0.0004039825250167526,
+        0.37295357893127984
+      ],
+      "inertia_at_cg_kg_m2": {
+        "ixx": 42.45865772598516,
+        "iyy": 58.33028758649902,
+        "izz": 72.37522768735472,
+        "ixy": -6.473613751050446,
+        "ixz": 1.4716180905811478,
+        "iyz": 0.5482775127044932
+      },
+      "aircraft_mass_kg": 4.0
+    },
+    {
+      "waypoint": "reverse_horizontal_0_4",
+      "waypoint_index": 16,
+      "case": "only_tray_A_catalogue_reference_aircraft",
+      "mass_kg": 387.11924891493,
+      "cg_m": [
+        0.029614814034049735,
+        0.00040606964688500943,
+        0.3707894565207161
+      ],
+      "inertia_at_cg_kg_m2": {
+        "ixx": 42.03372581883416,
+        "iyy": 57.5295176530445,
+        "izz": 71.85624365406777,
+        "ixy": -6.473262597470486,
+        "ixz": 1.1075093418239186,
+        "iyz": 0.547937318338675
+      },
+      "aircraft_mass_kg": 2.0
+    },
+    {
+      "waypoint": "reverse_horizontal_0_4",
+      "waypoint_index": 16,
+      "case": "only_tray_B_catalogue_reference_aircraft",
+      "mass_kg": 387.11924891493,
+      "cg_m": [
+        0.02543005699977474,
+        0.00040606964688500943,
+        0.37159024336060803
+      ],
+      "inertia_at_cg_kg_m2": {
+        "ixx": 42.24647909787097,
+        "iyy": 57.8314436231561,
+        "izz": 71.94541634514255,
+        "ixy": -6.473920430298436,
+        "ixz": 1.6719450259302875,
+        "iyz": 0.5480631999292095
+      },
+      "aircraft_mass_kg": 2.0
+    },
+    {
+      "waypoint": "reverse_horizontal_0_4",
+      "waypoint_index": 16,
+      "case": "eight_original_allocation_aircraft_LOAD_CASE_ONLY",
+      "mass_kg": 401.11924891493,
+      "cg_m": [
+        0.02656183814274212,
+        0.0003918968664169352,
+        0.38316660327231195
+      ],
+      "inertia_at_cg_kg_m2": {
+        "ixx": 44.3205524426061,
+        "iyy": 62.16920787171372,
+        "izz": 75.21112916043593,
+        "ixy": -6.473742517271753,
+        "ixz": 1.957082396530454,
+        "iyz": 0.5498829733391714
+      },
+      "aircraft_mass_kg": 16
+    },
+    {
+      "waypoint": "reverse_vertical_1_1",
+      "waypoint_index": 17,
+      "case": "vehicle_no_aircraft",
+      "mass_kg": 385.11924891493,
+      "cg_m": [
+        0.027665364937316212,
+        0.00040817844642192745,
+        0.36940780216701186
+      ],
+      "inertia_at_cg_kg_m2": {
+        "ixx": 41.692131742897544,
+        "iyy": 56.904632244296884,
+        "izz": 71.4298063074579,
+        "ixy": -6.473569045754515,
+        "ixz": 0.9302820877358158,
+        "iyz": 0.31252861025155954
+      },
+      "aircraft_mass_kg": 0
+    },
+    {
+      "waypoint": "reverse_vertical_1_1",
+      "waypoint_index": 17,
+      "case": "eight_catalogue_reference_aircraft",
+      "mass_kg": 389.11924891493,
+      "cg_m": [
+        0.0273809753573665,
+        0.0004039825250167526,
+        0.37295357893127984
+      ],
+      "inertia_at_cg_kg_m2": {
+        "ixx": 42.313532879395154,
+        "iyy": 58.185162739909,
+        "izz": 72.37522768735472,
+        "ixy": -6.473613751050446,
+        "ixz": 1.030835440628296,
+        "iyz": 0.3130859970572986
+      },
+      "aircraft_mass_kg": 4.0
+    },
+    {
+      "waypoint": "reverse_vertical_1_1",
+      "waypoint_index": 17,
+      "case": "only_tray_A_catalogue_reference_aircraft",
+      "mass_kg": 387.11924891493,
+      "cg_m": [
+        0.029614814034049735,
+        0.00040606964688500943,
+        0.37098965323068905
+      ],
+      "inertia_at_cg_kg_m2": {
+        "ixx": 41.95084521273845,
+        "iyy": 57.44663704694879,
+        "izz": 71.85624365406777,
+        "ixy": -6.473262597470486,
+        "ixz": 0.7004093399587058,
+        "iyz": 0.3127772730891137
+      },
+      "aircraft_mass_kg": 2.0
+    },
+    {
+      "waypoint": "reverse_vertical_1_1",
+      "waypoint_index": 17,
+      "case": "only_tray_B_catalogue_reference_aircraft",
+      "mass_kg": 387.11924891493,
+      "cg_m": [
+        0.02543005699977474,
+        0.00040606964688500943,
+        0.3713900466506351
+      ],
+      "inertia_at_cg_kg_m2": {
+        "ixx": 42.05722185225685,
+        "iyy": 57.64218637754197,
+        "izz": 71.94541634514255,
+        "ixy": -6.473920430298436,
+        "ixz": 1.2605790465599545,
+        "iyz": 0.3128402138843811
+      },
+      "aircraft_mass_kg": 2.0
+    },
+    {
+      "waypoint": "reverse_vertical_1_1",
+      "waypoint_index": 17,
+      "case": "eight_original_allocation_aircraft_LOAD_CASE_ONLY",
+      "mass_kg": 401.11924891493,
+      "cg_m": [
+        0.02656183814274212,
+        0.0003918968664169352,
+        0.38316660327231167
+      ],
+      "inertia_at_cg_kg_m2": {
+        "ixx": 44.121371346016105,
+        "iyy": 61.97002677512372,
+        "izz": 75.21112916043593,
+        "ixy": -6.473742517271753,
+        "ixz": 1.3279747465776008,
+        "iyz": 0.31469145769197726
+      },
+      "aircraft_mass_kg": 16
+    },
+    {
+      "waypoint": "reverse_vertical_1_2",
+      "waypoint_index": 18,
+      "case": "vehicle_no_aircraft",
+      "mass_kg": 385.11924891493,
+      "cg_m": [
+        0.027665364937316212,
+        0.00040817844642192745,
+        0.36940780216701186
+      ],
+      "inertia_at_cg_kg_m2": {
+        "ixx": 41.6497630440342,
+        "iyy": 56.86226354543355,
+        "izz": 71.4298063074579,
+        "ixy": -6.473569045754515,
+        "ixz": 0.5522744377829645,
+        "iyz": 0.07733709460436491
+      },
+      "aircraft_mass_kg": 0
+    },
+    {
+      "waypoint": "reverse_vertical_1_2",
+      "waypoint_index": 18,
+      "case": "eight_catalogue_reference_aircraft",
+      "mass_kg": 389.11924891493,
+      "cg_m": [
+        0.0273809753573665,
+        0.0004039825250167526,
+        0.37295357893127984
+      ],
+      "inertia_at_cg_kg_m2": {
+        "ixx": 42.26515793053181,
+        "iyy": 58.13678779104567,
+        "izz": 72.37522768735472,
+        "ixy": -6.473613751050446,
+        "ixz": 0.5900527906754445,
+        "iyz": 0.07789448141010445
+      },
+      "aircraft_mass_kg": 4.0
+    },
+    {
+      "waypoint": "reverse_vertical_1_2",
+      "waypoint_index": 18,
+      "case": "only_tray_A_catalogue_reference_aircraft",
+      "mass_kg": 387.11924891493,
+      "cg_m": [
+        0.029614814034049735,
+        0.00040606964688500943,
+        0.37118984994066206
+      ],
+      "inertia_at_cg_kg_m2": {
+        "ixx": 41.95867722387933,
+        "iyy": 57.454469058089664,
+        "izz": 71.85624365406777,
+        "ixy": -6.473262597470486,
+        "ixz": 0.29330933809349313,
+        "iyz": 0.0776172278395532
+      },
+      "aircraft_mass_kg": 2.0
+    },
+    {
+      "waypoint": "reverse_vertical_1_2",
+      "waypoint_index": 18,
+      "case": "only_tray_B_catalogue_reference_aircraft",
+      "mass_kg": 387.11924891493,
+      "cg_m": [
+        0.02543005699977474,
+        0.00040606964688500943,
+        0.37118984994066206
+      ],
+      "inertia_at_cg_kg_m2": {
+        "ixx": 41.958677223879334,
+        "iyy": 57.54364174916449,
+        "izz": 71.94541634514255,
+        "ixy": -6.473920430298436,
+        "ixz": 0.8492130671896202,
+        "iyz": 0.0776172278395532
+      },
+      "aircraft_mass_kg": 2.0
+    },
+    {
+      "waypoint": "reverse_vertical_1_2",
+      "waypoint_index": 18,
+      "case": "eight_original_allocation_aircraft_LOAD_CASE_ONLY",
+      "mass_kg": 401.11924891493,
+      "cg_m": [
+        0.02656183814274212,
+        0.0003918968664169352,
+        0.38316660327231195
+      ],
+      "inertia_at_cg_kg_m2": {
+        "ixx": 44.05497764715276,
+        "iyy": 61.9036330762604,
+        "izz": 75.21112916043593,
+        "ixy": -6.473742517271753,
+        "ixz": 0.6988670966247498,
+        "iyz": 0.07949994204478256
+      },
+      "aircraft_mass_kg": 16
+    },
+    {
+      "waypoint": "reverse_vertical_1_3",
+      "waypoint_index": 19,
+      "case": "vehicle_no_aircraft",
+      "mass_kg": 385.11924891493,
+      "cg_m": [
+        0.027665364937316212,
+        0.00040817844642192745,
+        0.36940780216701186
+      ],
+      "inertia_at_cg_kg_m2": {
+        "ixx": 41.692131742897544,
+        "iyy": 56.90463224429688,
+        "izz": 71.4298063074579,
+        "ixy": -6.473569045754515,
+        "ixz": 0.17426678783011312,
+        "iyz": -0.15785442104282962
+      },
+      "aircraft_mass_kg": 0
+    },
+    {
+      "waypoint": "reverse_vertical_1_3",
+      "waypoint_index": 19,
+      "case": "eight_catalogue_reference_aircraft",
+      "mass_kg": 389.11924891493,
+      "cg_m": [
+        0.0273809753573665,
+        0.0004039825250167526,
+        0.37295357893127984
+      ],
+      "inertia_at_cg_kg_m2": {
+        "ixx": 42.313532879395154,
+        "iyy": 58.185162739909,
+        "izz": 72.37522768735472,
+        "ixy": -6.473613751050446,
+        "ixz": 0.14927014072259262,
+        "iyz": -0.15729703423709004
+      },
+      "aircraft_mass_kg": 4.0
+    },
+    {
+      "waypoint": "reverse_vertical_1_3",
+      "waypoint_index": 19,
+      "case": "only_tray_A_catalogue_reference_aircraft",
+      "mass_kg": 387.11924891493,
+      "cg_m": [
+        0.029614814034049735,
+        0.00040606964688500943,
+        0.3713900466506351
+      ],
+      "inertia_at_cg_kg_m2": {
+        "ixx": 42.05722185225685,
+        "iyy": 57.553013686467175,
+        "izz": 71.85624365406777,
+        "ixy": -6.473262597470486,
+        "ixz": -0.11379066377171973,
+        "iyz": -0.15754281741000783
+      },
+      "aircraft_mass_kg": 2.0
+    },
+    {
+      "waypoint": "reverse_vertical_1_3",
+      "waypoint_index": 19,
+      "case": "only_tray_B_catalogue_reference_aircraft",
+      "mass_kg": 387.11924891493,
+      "cg_m": [
+        0.02543005699977474,
+        0.00040606964688500943,
+        0.37098965323068905
+      ],
+      "inertia_at_cg_kg_m2": {
+        "ixx": 41.95084521273845,
+        "iyy": 57.53580973802358,
+        "izz": 71.94541634514255,
+        "ixy": -6.473920430298436,
+        "ixz": 0.43784708781928566,
+        "iyz": -0.15760575820527536
+      },
+      "aircraft_mass_kg": 2.0
+    },
+    {
+      "waypoint": "reverse_vertical_1_3",
+      "waypoint_index": 19,
+      "case": "eight_original_allocation_aircraft_LOAD_CASE_ONLY",
+      "mass_kg": 401.11924891493,
+      "cg_m": [
+        0.02656183814274212,
+        0.0003918968664169352,
+        0.38316660327231167
+      ],
+      "inertia_at_cg_kg_m2": {
+        "ixx": 44.1213713460161,
+        "iyy": 61.970026775123735,
+        "izz": 75.21112916043593,
+        "ixy": -6.473742517271753,
+        "ixz": 0.06975944667189815,
+        "iyz": -0.15569157360241176
+      },
+      "aircraft_mass_kg": 16
+    },
+    {
+      "waypoint": "reverse_vertical_1_4",
+      "waypoint_index": 20,
+      "case": "vehicle_no_aircraft",
+      "mass_kg": 385.11924891493,
+      "cg_m": [
+        0.027665364937316212,
+        0.00040817844642192745,
+        0.36940780216701186
+      ],
+      "inertia_at_cg_kg_m2": {
+        "ixx": 41.81923783948754,
+        "iyy": 57.03173834088688,
+        "izz": 71.4298063074579,
+        "ixy": -6.473569045754515,
+        "ixz": -0.20374086212273873,
+        "iyz": -0.3930459366900241
+      },
+      "aircraft_mass_kg": 0
+    },
+    {
+      "waypoint": "reverse_vertical_1_4",
+      "waypoint_index": 20,
+      "case": "eight_catalogue_reference_aircraft",
+      "mass_kg": 389.11924891493,
+      "cg_m": [
+        0.0273809753573665,
+        0.0004039825250167526,
+        0.37295357893127984
+      ],
+      "inertia_at_cg_kg_m2": {
+        "ixx": 42.45865772598516,
+        "iyy": 58.330287586499,
+        "izz": 72.37522768735472,
+        "ixy": -6.473613751050446,
+        "ixz": -0.2915125092302586,
+        "iyz": -0.3924885498842847
+      },
+      "aircraft_mass_kg": 4.0
+    },
+    {
+      "waypoint": "reverse_vertical_1_4",
+      "waypoint_index": 20,
+      "case": "only_tray_A_catalogue_reference_aircraft",
+      "mass_kg": 387.11924891493,
+      "cg_m": [
+        0.029614814034049735,
+        0.00040606964688500943,
+        0.37159024336060803
+      ],
+      "inertia_at_cg_kg_m2": {
+        "ixx": 42.24647909787097,
+        "iyy": 57.7422709320813,
+        "izz": 71.85624365406777,
+        "ixy": -6.473262597470486,
+        "ixz": -0.5208906656369324,
+        "iyz": -0.39270286265956844
+      },
+      "aircraft_mass_kg": 2.0
+    },
+    {
+      "waypoint": "reverse_vertical_1_4",
+      "waypoint_index": 20,
+      "case": "only_tray_B_catalogue_reference_aircraft",
+      "mass_kg": 387.11924891493,
+      "cg_m": [
+        0.02543005699977474,
+        0.00040606964688500943,
+        0.3707894565207161
+      ],
+      "inertia_at_cg_kg_m2": {
+        "ixx": 42.03372581883416,
+        "iyy": 57.618690344119315,
+        "izz": 71.94541634514255,
+        "ixy": -6.473920430298436,
+        "ixz": 0.026481108448952267,
+        "iyz": -0.392828744250103
+      },
+      "aircraft_mass_kg": 2.0
+    },
+    {
+      "waypoint": "reverse_vertical_1_4",
+      "waypoint_index": 20,
+      "case": "eight_original_allocation_aircraft_LOAD_CASE_ONLY",
+      "mass_kg": 401.11924891493,
+      "cg_m": [
+        0.02656183814274212,
+        0.0003918968664169352,
+        0.38316660327231195
+      ],
+      "inertia_at_cg_kg_m2": {
+        "ixx": 44.3205524426061,
+        "iyy": 62.16920787171372,
+        "izz": 75.21112916043593,
+        "ixy": -6.473742517271753,
+        "ixz": -0.559348203280953,
+        "iyz": -0.39088308924960624
+      },
+      "aircraft_mass_kg": 16
+    },
+    {
+      "waypoint": "reverse_horizontal_2_1",
+      "waypoint_index": 21,
+      "case": "vehicle_no_aircraft",
+      "mass_kg": 385.11924891493,
+      "cg_m": [
+        0.027665364937316226,
+        0.00040817844642192745,
+        0.36940780216701186
+      ],
+      "inertia_at_cg_kg_m2": {
+        "ixx": 41.81923783948755,
+        "iyy": 53.74083247308925,
+        "izz": 68.13890043966023,
+        "ixy": -4.721395765907434,
+        "ixz": 0.017669757743712752,
+        "iyz": -0.3930459366900241
+      },
+      "aircraft_mass_kg": 0
+    },
+    {
+      "waypoint": "reverse_horizontal_2_1",
+      "waypoint_index": 21,
+      "case": "eight_catalogue_reference_aircraft",
+      "mass_kg": 389.11924891493,
+      "cg_m": [
+        0.027380975357366513,
+        0.0004039825250167526,
+        0.37295357893127984
+      ],
+      "inertia_at_cg_kg_m2": {
+        "ixx": 42.45865772598516,
+        "iyy": 54.75233796870139,
+        "izz": 68.79727806955708,
+        "ixy": -4.721440471203365,
+        "ixz": -0.038714389363807986,
+        "iyz": -0.3924885498842847
+      },
+      "aircraft_mass_kg": 4.0
+    },
+    {
+      "waypoint": "reverse_horizontal_2_1",
+      "waypoint_index": 21,
+      "case": "only_tray_A_catalogue_reference_aircraft",
+      "mass_kg": 387.11924891493,
+      "cg_m": [
+        0.029091719404765373,
+        0.00040606964688500943,
+        0.37159024336060803
+      ],
+      "inertia_at_cg_kg_m2": {
+        "ixx": 42.24647909787097,
+        "iyy": 54.31973126230505,
+        "izz": 68.43370398429148,
+        "ixy": -4.721171546726893,
+        "ixz": -0.2143794093010047,
+        "iyz": -0.39270286265956844
+      },
+      "aircraft_mass_kg": 2.0
+    },
+    {
+      "waypoint": "reverse_horizontal_2_1",
+      "waypoint_index": 21,
+      "case": "only_tray_B_catalogue_reference_aircraft",
+      "mass_kg": 387.11924891493,
+      "cg_m": [
+        0.02595315162905913,
+        0.00040606964688500943,
+        0.3707894565207161
+      ],
+      "inertia_at_cg_kg_m2": {
+        "ixx": 42.03372581883416,
+        "iyy": 54.17385750157437,
+        "izz": 68.5005835025976,
+        "ixy": -4.721664921347857,
+        "ixz": 0.19401643251084802,
+        "iyz": -0.392828744250103
+      },
+      "aircraft_mass_kg": 2.0
+    },
+    {
+      "waypoint": "reverse_horizontal_2_1",
+      "waypoint_index": 21,
+      "case": "eight_original_allocation_aircraft_LOAD_CASE_ONLY",
+      "mass_kg": 401.11924891493,
+      "cg_m": [
+        0.026561838142742135,
+        0.0003918968664169352,
+        0.38316660327231195
+      ],
+      "inertia_at_cg_kg_m2": {
+        "ixx": 44.3205524426061,
+        "iyy": 57.73012700391609,
+        "izz": 70.77204829263833,
+        "ixy": -4.721569237424669,
+        "ixz": -0.21238758341450248,
+        "iyz": -0.39088308924960624
+      },
+      "aircraft_mass_kg": 16
+    },
+    {
+      "waypoint": "reverse_horizontal_2_2",
+      "waypoint_index": 22,
+      "case": "vehicle_no_aircraft",
+      "mass_kg": 385.11924891493,
+      "cg_m": [
+        0.027665364937316212,
+        0.00040817844642192745,
+        0.36940780216701186
+      ],
+      "inertia_at_cg_kg_m2": {
+        "ixx": 41.81923783948755,
+        "iyy": 51.55458573601612,
+        "izz": 65.95265370258713,
+        "ixy": -2.9692224860603478,
+        "ixz": 0.23908037761016449,
+        "iyz": -0.3930459366900241
+      },
+      "aircraft_mass_kg": 0
+    },
+    {
+      "waypoint": "reverse_horizontal_2_2",
+      "waypoint_index": 22,
+      "case": "eight_catalogue_reference_aircraft",
+      "mass_kg": 389.11924891493,
+      "cg_m": [
+        0.0273809753573665,
+        0.0004039825250167526,
+        0.37295357893127984
+      ],
+      "inertia_at_cg_kg_m2": {
+        "ixx": 42.45865772598516,
+        "iyy": 52.36105998162827,
+        "izz": 66.40600008248396,
+        "ixy": -2.96926719135628,
+        "ixz": 0.2140837305026439,
+        "iyz": -0.3924885498842847
+      },
+      "aircraft_mass_kg": 4.0
+    },
+    {
+      "waypoint": "reverse_horizontal_2_2",
+      "waypoint_index": 22,
+      "case": "only_tray_A_catalogue_reference_aircraft",
+      "mass_kg": 387.11924891493,
+      "cg_m": [
+        0.028568624775480986,
+        0.00040606964688500943,
+        0.37159024336060803
+      ],
+      "inertia_at_cg_kg_m2": {
+        "ixx": 42.24647909787097,
+        "iyy": 52.04264511992839,
+        "izz": 66.15661784191481,
+        "ixy": -2.9690804959833015,
+        "ixz": 0.09213184703492408,
+        "iyz": -0.39270286265956844
+      },
+      "aircraft_mass_kg": 2.0
+    },
+    {
+      "waypoint": "reverse_horizontal_2_2",
+      "waypoint_index": 22,
+      "case": "only_tray_B_catalogue_reference_aircraft",
+      "mass_kg": 387.11924891493,
+      "cg_m": [
+        0.02647624625834349,
+        0.00040606964688500943,
+        0.3707894565207161
+      ],
+      "inertia_at_cg_kg_m2": {
+        "ixx": 42.03372581883416,
+        "iyy": 51.87447818642902,
+        "izz": 66.20120418745225,
+        "ixy": -2.9694094123972787,
+        "ixz": 0.36155175657274496,
+        "iyz": -0.392828744250103
+      },
+      "aircraft_mass_kg": 2.0
+    },
+    {
+      "waypoint": "reverse_horizontal_2_2",
+      "waypoint_index": 22,
+      "case": "eight_original_allocation_aircraft_LOAD_CASE_ONLY",
+      "mass_kg": 401.11924891493,
+      "cg_m": [
+        0.02656183814274212,
+        0.0003918968664169352,
+        0.38316660327231195
+      ],
+      "inertia_at_cg_kg_m2": {
+        "ixx": 44.3205524426061,
+        "iyy": 54.72375526684297,
+        "izz": 67.7656765555652,
+        "ixy": -2.969395957577583,
+        "ixz": 0.13457303645194985,
+        "iyz": -0.39088308924960624
+      },
+      "aircraft_mass_kg": 16
+    },
+    {
+      "waypoint": "reverse_horizontal_2_3",
+      "waypoint_index": 23,
+      "case": "vehicle_no_aircraft",
+      "mass_kg": 385.11924891493,
+      "cg_m": [
+        0.02766536493731624,
+        0.00040817844642192745,
+        0.36940780216701186
+      ],
+      "inertia_at_cg_kg_m2": {
+        "ixx": 41.819237839487556,
+        "iyy": 50.4729981296675,
+        "izz": 64.8710660962385,
+        "ixy": -1.2170492062132656,
+        "ixz": 0.4604909974766144,
+        "iyz": -0.3930459366900241
+      },
+      "aircraft_mass_kg": 0
+    },
+    {
+      "waypoint": "reverse_horizontal_2_3",
+      "waypoint_index": 23,
+      "case": "eight_catalogue_reference_aircraft",
+      "mass_kg": 389.11924891493,
+      "cg_m": [
+        0.027380975357366527,
+        0.0004039825250167526,
+        0.37295357893127984
+      ],
+      "inertia_at_cg_kg_m2": {
+        "ixx": 42.45865772598516,
+        "iyy": 51.156453625279624,
+        "izz": 65.20139372613531,
+        "ixy": -1.2170939115091965,
+        "ixz": 0.46688185036909446,
+        "iyz": -0.3924885498842847
+      },
+      "aircraft_mass_kg": 4.0
+    },
+    {
+      "waypoint": "reverse_horizontal_2_3",
+      "waypoint_index": 23,
+      "case": "only_tray_A_catalogue_reference_aircraft",
+      "mass_kg": 387.11924891493,
+      "cg_m": [
+        0.02804553014619664,
+        0.00040606964688500943,
+        0.37159024336060803
+      ],
+      "inertia_at_cg_kg_m2": {
+        "ixx": 42.24647909787097,
+        "iyy": 50.91101250495143,
+        "izz": 65.02498522693787,
+        "ixy": -1.2169894452397136,
+        "ixz": 0.3986431033708512,
+        "iyz": -0.39270286265956844
+      },
+      "aircraft_mass_kg": 2.0
+    },
+    {
+      "waypoint": "reverse_horizontal_2_3",
+      "waypoint_index": 23,
+      "case": "only_tray_B_catalogue_reference_aircraft",
+      "mass_kg": 387.11924891493,
+      "cg_m": [
+        0.02699934088762789,
+        0.00040606964688500943,
+        0.3707894565207161
+      ],
+      "inertia_at_cg_kg_m2": {
+        "ixx": 42.03372581883416,
+        "iyy": 50.72055239868335,
+        "izz": 65.04727839970656,
+        "ixy": -1.2171539034467012,
+        "ixz": 0.5290870806346402,
+        "iyz": -0.392828744250103
+      },
+      "aircraft_mass_kg": 2.0
+    },
+    {
+      "waypoint": "reverse_horizontal_2_3",
+      "waypoint_index": 23,
+      "case": "eight_original_allocation_aircraft_LOAD_CASE_ONLY",
+      "mass_kg": 401.11924891493,
+      "cg_m": [
+        0.02656183814274215,
+        0.0003918968664169352,
+        0.38316660327231195
+      ],
+      "inertia_at_cg_kg_m2": {
+        "ixx": 44.3205524426061,
+        "iyy": 53.15009266049434,
+        "izz": 66.19201394921656,
+        "ixy": -1.2172226777304997,
+        "ixz": 0.48153365631839995,
+        "iyz": -0.39088308924960624
+      },
+      "aircraft_mass_kg": 16
+    },
+    {
+      "waypoint": "reverse_horizontal_2_4",
+      "waypoint_index": 24,
+      "case": "vehicle_no_aircraft",
+      "mass_kg": 385.11924891493,
+      "cg_m": [
+        0.027665364937316216,
+        0.00040817844642192745,
+        0.36940780216701186
+      ],
+      "inertia_at_cg_kg_m2": {
+        "ixx": 41.81923783948754,
+        "iyy": 50.49606965404336,
+        "izz": 64.89413762061437,
+        "ixy": 0.535124073633819,
+        "ixz": 0.6819016173430661,
+        "iyz": -0.3930459366900241
+      },
+      "aircraft_mass_kg": 0
+    },
+    {
+      "waypoint": "reverse_horizontal_2_4",
+      "waypoint_index": 24,
+      "case": "eight_catalogue_reference_aircraft",
+      "mass_kg": 389.11924891493,
+      "cg_m": [
+        0.027380975357366503,
+        0.0004039825250167526,
+        0.37295357893127984
+      ],
+      "inertia_at_cg_kg_m2": {
+        "ixx": 42.45865772598516,
+        "iyy": 51.13851889965548,
+        "izz": 65.1834590005112,
+        "ixy": 0.5350793683378876,
+        "ixz": 0.7196799702355459,
+        "iyz": -0.3924885498842847
+      },
+      "aircraft_mass_kg": 4.0
+    },
+    {
+      "waypoint": "reverse_horizontal_2_4",
+      "waypoint_index": 24,
+      "case": "only_tray_A_catalogue_reference_aircraft",
+      "mass_kg": 387.11924891493,
+      "cg_m": [
+        0.027522435516912244,
+        0.00040606964688500943,
+        0.37159024336060803
+      ],
+      "inertia_at_cg_kg_m2": {
+        "ixx": 42.24647909787097,
+        "iyy": 50.92483341737406,
+        "izz": 65.03880613936053,
+        "ixy": 0.5351016055038768,
+        "ixz": 0.705154359706779,
+        "iyz": -0.39270286265956844
+      },
+      "aircraft_mass_kg": 2.0
+    },
+    {
+      "waypoint": "reverse_horizontal_2_4",
+      "waypoint_index": 24,
+      "case": "only_tray_B_catalogue_reference_aircraft",
+      "mass_kg": 387.11924891493,
+      "cg_m": [
+        0.027522435516912244,
+        0.00040606964688500943,
+        0.3707894565207161
+      ],
+      "inertia_at_cg_kg_m2": {
+        "ixx": 42.03372581883416,
+        "iyy": 50.71208013833727,
+        "izz": 65.03880613936053,
+        "ixy": 0.5351016055038768,
+        "ixz": 0.6966224046965366,
+        "iyz": -0.392828744250103
+      },
+      "aircraft_mass_kg": 2.0
+    },
+    {
+      "waypoint": "reverse_horizontal_2_4",
+      "waypoint_index": 24,
+      "case": "eight_original_allocation_aircraft_LOAD_CASE_ONLY",
+      "mass_kg": 401.11924891493,
+      "cg_m": [
+        0.026561838142742124,
+        0.0003918968664169352,
+        0.38316660327231195
+      ],
+      "inertia_at_cg_kg_m2": {
+        "ixx": 44.3205524426061,
+        "iyy": 53.0091391848702,
+        "izz": 66.05106047359241,
+        "ixy": 0.5349506021165833,
+        "ixz": 0.8284942761848513,
+        "iyz": -0.39088308924960624
+      },
+      "aircraft_mass_kg": 16
+    },
+    {
+      "waypoint": "park_regenerated",
+      "waypoint_index": 25,
+      "case": "vehicle_no_aircraft",
+      "mass_kg": 385.11924891493,
+      "cg_m": [
+        0.027665364937316216,
+        0.00040817844642192745,
+        0.36940780216701186
+      ],
+      "inertia_at_cg_kg_m2": {
+        "ixx": 41.81923783948754,
+        "iyy": 50.49606965404336,
+        "izz": 64.89413762061437,
+        "ixy": 0.535124073633819,
+        "ixz": 0.6819016173430661,
+        "iyz": -0.3930459366900241
+      },
+      "aircraft_mass_kg": 0
+    },
+    {
+      "waypoint": "park_regenerated",
+      "waypoint_index": 25,
+      "case": "eight_catalogue_reference_aircraft",
+      "mass_kg": 389.11924891493,
+      "cg_m": [
+        0.027380975357366503,
+        0.0004039825250167526,
+        0.37295357893127984
+      ],
+      "inertia_at_cg_kg_m2": {
+        "ixx": 42.45865772598516,
+        "iyy": 51.13851889965548,
+        "izz": 65.1834590005112,
+        "ixy": 0.5350793683378876,
+        "ixz": 0.7196799702355459,
+        "iyz": -0.3924885498842847
+      },
+      "aircraft_mass_kg": 4.0
+    },
+    {
+      "waypoint": "park_regenerated",
+      "waypoint_index": 25,
+      "case": "only_tray_A_catalogue_reference_aircraft",
+      "mass_kg": 387.11924891493,
+      "cg_m": [
+        0.027522435516912244,
+        0.00040606964688500943,
+        0.37159024336060803
+      ],
+      "inertia_at_cg_kg_m2": {
+        "ixx": 42.24647909787097,
+        "iyy": 50.92483341737406,
+        "izz": 65.03880613936053,
+        "ixy": 0.5351016055038768,
+        "ixz": 0.705154359706779,
+        "iyz": -0.39270286265956844
+      },
+      "aircraft_mass_kg": 2.0
+    },
+    {
+      "waypoint": "park_regenerated",
+      "waypoint_index": 25,
+      "case": "only_tray_B_catalogue_reference_aircraft",
+      "mass_kg": 387.11924891493,
+      "cg_m": [
+        0.027522435516912244,
+        0.00040606964688500943,
+        0.3707894565207161
+      ],
+      "inertia_at_cg_kg_m2": {
+        "ixx": 42.03372581883416,
+        "iyy": 50.71208013833727,
+        "izz": 65.03880613936053,
+        "ixy": 0.5351016055038768,
+        "ixz": 0.6966224046965366,
+        "iyz": -0.392828744250103
+      },
+      "aircraft_mass_kg": 2.0
+    },
+    {
+      "waypoint": "park_regenerated",
+      "waypoint_index": 25,
+      "case": "eight_original_allocation_aircraft_LOAD_CASE_ONLY",
+      "mass_kg": 401.11924891493,
+      "cg_m": [
+        0.026561838142742124,
+        0.0003918968664169352,
+        0.38316660327231195
+      ],
+      "inertia_at_cg_kg_m2": {
+        "ixx": 44.3205524426061,
+        "iyy": 53.0091391848702,
+        "izz": 66.05106047359241,
+        "ixy": 0.5349506021165833,
+        "ixz": 0.8284942761848513,
+        "iyz": -0.39088308924960624
+      },
+      "aircraft_mass_kg": 16
+    }
+  ],
+  "limitations": "Exact crawler configuration, missing internal hardware distribution, battery placement and CG limits are unverified. Numbers are model-derived estimates, not a measured robot or structural/stability qualification. Physical mass budget closure remains deferred."
+}

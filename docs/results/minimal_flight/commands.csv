@@ -1,0 +1,10 @@
+t_sim,request_id,target,command,argument,state,detail
+32.968,uav01-71549-001,uav01,TAKEOFF_HOLD,,REQUESTED,
+32.988,uav01-71549-001,uav01,TAKEOFF_HOLD,,ACCEPTED,take off and hold at z=3.1 m
+41.700,uav01-71549-001,uav01,TAKEOFF_HOLD,,COMPLETED,"arrived at takeoff_hold, error 0.17 m; holding"
+44.484,uav01-71561-002,uav01,GOTO_WAYPOINT,wp_road_east,REQUESTED,
+44.484,uav01-71561-002,uav01,GOTO_WAYPOINT,wp_road_east,ACCEPTED,"flying to wp_road_east (0.0, -22.0, 6.0)"
+55.068,uav01-71561-002,uav01,GOTO_WAYPOINT,wp_road_east,COMPLETED,"arrived at wp_road_east, error 0.10 m; holding"
+92.320,uav01-71608-003,uav01,LAND,,REQUESTED,
+92.324,uav01-71608-003,uav01,LAND,,ACCEPTED,"PX4 AUTO_LAND at the current horizontal position (ground, not the UGV)"
+104.500,uav01-71608-003,uav01,LAND,,COMPLETED,disarmed on the ground after AUTO_LAND

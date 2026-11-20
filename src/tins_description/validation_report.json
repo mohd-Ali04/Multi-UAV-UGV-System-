@@ -1,0 +1,234 @@
+{
+  "label": "SIMULATION_GRADE_NOT_PHYSICALLY_QUALIFIED",
+  "status": "PASS_OFFLINE_DESCRIPTION_VALIDATION",
+  "checked_utc": "2026-10-20T15:35:54.910064+00:00",
+  "runtime_scope": "Offline generated-description validation; no Gazebo, physical, flight or manufacturing acceptance.",
+  "variants": [
+    {
+      "file": "urdf/tins_ugv_carousel.urdf",
+      "links": 100,
+      "joints": 99,
+      "inertials": 30,
+      "mass_kg": 385.1192489149302
+    },
+    {
+      "file": "urdf/tins_ugv_carousel_static_visual.urdf",
+      "links": 108,
+      "joints": 107,
+      "inertials": 30,
+      "mass_kg": 385.1192489149302
+    }
+  ],
+  "mesh_bounds": [
+    {
+      "file": "meshes/aircraft/qav250_visual.stl",
+      "max_bounds_error_m": 4.742506309884931e-08
+    },
+    {
+      "file": "meshes/visual/tray_b.stl",
+      "max_bounds_error_m": 6.437301691697428e-09
+    },
+    {
+      "file": "meshes/visual/tray_a.stl",
+      "max_bounds_error_m": 6.437301691697428e-09
+    },
+    {
+      "file": "meshes/visual/carousel_mount.stl",
+      "max_bounds_error_m": 4.768371586472142e-09
+    },
+    {
+      "file": "meshes/visual/x_screw_a.stl",
+      "max_bounds_error_m": 1.5281140908207647e-08
+    },
+    {
+      "file": "meshes/visual/x_screw_b.stl",
+      "max_bounds_error_m": 1.5281140908207647e-08
+    },
+    {
+      "file": "meshes/visual/motor_x_a_rotor_visual.stl",
+      "max_bounds_error_m": 5.984305884165764e-09
+    },
+    {
+      "file": "meshes/visual/motor_x_b_rotor_visual.stl",
+      "max_bounds_error_m": 5.984305884165764e-09
+    },
+    {
+      "file": "meshes/visual/tray_a_x_carriage.stl",
+      "max_bounds_error_m": 1.478195188475695e-08
+    },
+    {
+      "file": "meshes/visual/z_screw_a.stl",
+      "max_bounds_error_m": 1.5452504165125447e-08
+    },
+    {
+      "file": "meshes/visual/lock_a_lower_neg_x_plunger.stl",
+      "max_bounds_error_m": 3.77744435731131e-09
+    },
+    {
+      "file": "meshes/visual/lock_a_lower_pos_x_plunger.stl",
+      "max_bounds_error_m": 3.77744435731131e-09
+    },
+    {
+      "file": "meshes/visual/lock_a_upper_neg_x_plunger.stl",
+      "max_bounds_error_m": 3.77744435731131e-09
+    },
+    {
+      "file": "meshes/visual/lock_a_upper_pos_x_plunger.stl",
+      "max_bounds_error_m": 3.77744435731131e-09
+    },
+    {
+      "file": "meshes/visual/motor_z_a_rotor_visual.stl",
+      "max_bounds_error_m": 5.9843058286546125e-09
+    },
+    {
+      "file": "meshes/visual/tray_b_x_carriage.stl",
+      "max_bounds_error_m": 1.478195188475695e-08
+    },
+    {
+      "file": "meshes/visual/z_screw_b.stl",
+      "max_bounds_error_m": 1.5452504165125447e-08
+    },
+    {
+      "file": "meshes/visual/lock_b_lower_neg_x_plunger.stl",
+      "max_bounds_error_m": 3.77744435731131e-09
+    },
+    {
+      "file": "meshes/visual/lock_b_lower_pos_x_plunger.stl",
+      "max_bounds_error_m": 3.77744435731131e-09
+    },
+    {
+      "file": "meshes/visual/lock_b_upper_neg_x_plunger.stl",
+      "max_bounds_error_m": 3.77744435731131e-09
+    },
+    {
+      "file": "meshes/visual/lock_b_upper_pos_x_plunger.stl",
+      "max_bounds_error_m": 3.77744435731131e-09
+    },
+    {
+      "file": "meshes/visual/motor_z_b_rotor_visual.stl",
+      "max_bounds_error_m": 5.9843058286546125e-09
+    },
+    {
+      "file": "meshes/visual/base_link.stl",
+      "max_bounds_error_m": 2.6226043559063328e-08
+    },
+    {
+      "file": "meshes/visual/right_drive_sprocket_link.stl",
+      "max_bounds_error_m": 3.6489911199644176e-05
+    },
+    {
+      "file": "meshes/visual/right_track_proxy_link.stl",
+      "max_bounds_error_m": 4.3392181425794263e-07
+    },
+    {
+      "file": "meshes/visual/right_upper_carrier_wheel_link.stl",
+      "max_bounds_error_m": 1.120567322127064e-07
+    },
+    {
+      "file": "meshes/visual/left_track_proxy_link.stl",
+      "max_bounds_error_m": 4.3392181425794263e-07
+    },
+    {
+      "file": "meshes/visual/left_drive_sprocket_link.stl",
+      "max_bounds_error_m": 3.729442111655157e-05
+    }
+  ],
+  "glb_nodes": 108,
+  "motor_lump_parameter_delta_kg": 1.0,
+  "source_registers": [
+    {
+      "file": "Simulation/mechanical_design/tins12e/carousel/double_level_station_locks/link-joint-frame-register.json",
+      "sha256": "719638bf38518be47e8b1dba5c5d84cee3bb40de8367d2ee67925a1c6a6a2aec",
+      "hash_policy": "sha256-text-crlf-to-lf-v1"
+    },
+    {
+      "file": "Simulation/mechanical_design/tins12e/carousel/double_level_motion_control/motion-frame-register.json",
+      "sha256": "bd2481b3cbd5090cf239afabadcbf8e09d0eee7857e7590e4d979159bb096f8f",
+      "hash_policy": "sha256-text-crlf-to-lf-v1"
+    },
+    {
+      "file": "Simulation/mechanical_design/tins12e/carousel/double_level_motion_control/physical-mass-ledger.json",
+      "sha256": "869328aa59b74a8b526a6dffdc8324e3652ed7a042a9749f9d3276bcffeec048",
+      "hash_policy": "sha256-text-crlf-to-lf-v1"
+    },
+    {
+      "file": "src/tins_description/config/physical_mass_rules.json",
+      "sha256": "b3d55933bbf60b7a6b6b9b08a3037802827308c9b2161bad40caee815d733fbe",
+      "hash_policy": "sha256-text-crlf-to-lf-v1"
+    },
+    {
+      "file": "Simulation/mechanical_design/tins12e/registers/link-joint-frame-register.json",
+      "sha256": "1cc7f697e931c56b8292d1ab22b38a8a8708d95024f34efa9f17895cdabb851a",
+      "hash_policy": "sha256-text-crlf-to-lf-v1"
+    },
+    {
+      "file": "Simulation/mechanical_design/tins12e/registers/crawler-part-inventory.json",
+      "sha256": "05181fc22a6aa7a53d49e67ee6dbb81460db7387959074cd1c1901bf9fe69b02",
+      "hash_policy": "sha256-text-crlf-to-lf-v1"
+    },
+    {
+      "file": "Simulation/mechanical_design/tins12e/carousel/double_level_motion_control/evidence/motor-units-construction.json",
+      "sha256": "253eb36216d9596bb76bb1bc646dbbe9366fd2f519f453167f498ce48f315fc8",
+      "hash_policy": "sha256-text-crlf-to-lf-v1"
+    },
+    {
+      "file": "src/tins_description/config/station_frames.yaml",
+      "sha256": "925b5ea1be6e595eb3db353e4c9365ae0a84f4278609d1d0427c17813b7ca657",
+      "hash_policy": "sha256-text-crlf-to-lf-v1"
+    },
+    {
+      "file": "src/tins_description/config/guarded_exchange_waypoints.yaml",
+      "sha256": "9b36602cddd1fcc87a4a84dd8474ba816857fb5a5ad8c58899b38ebf5c6fa508",
+      "hash_policy": "sha256-text-crlf-to-lf-v1"
+    },
+    {
+      "file": "Simulation/mechanical_design/tins12e/integration/sim_grade/cad_extract_utf8/manifest.json",
+      "sha256": "10b3414b8c5ba953b33bba678713009ca9afc5c9e1752522c7b216f50a300037",
+      "hash_policy": "sha256-text-crlf-to-lf-v1"
+    },
+    {
+      "file": "Simulation/mechanical_design/tins12e/integration/sim_grade/evidence/post-extraction-geometry-audit.json",
+      "sha256": "3cd78079a423f167c25d2359d919cf989c545c665cb9f1c833ccc5badb0c1786",
+      "hash_policy": "sha256-text-crlf-to-lf-v1"
+    },
+    {
+      "file": "src/tins_description/config/running_gear_visual_proxies.json",
+      "sha256": "72cd60f13e05e48729e164868fb03daf1a520c5282844f461c9545e82ec40a82",
+      "hash_policy": "sha256-text-crlf-to-lf-v1"
+    },
+    {
+      "file": "src/tins_description/config/track_path.yaml",
+      "sha256": "d46d2a148a8f9d98231a6c75ffdec208b1606e3b53f07b13c969395e3587678d",
+      "hash_policy": "sha256-text-crlf-to-lf-v1"
+    }
+  ],
+  "reconciliation": {
+    "all_physical_instances_assigned_once": true,
+    "native_physical_instances": 1524,
+    "vehicle_mass_kg": 385.11924891493,
+    "expected_vehicle_mass_kg": 385.11924891492976,
+    "difference_kg": 2.2737367544323206e-13,
+    "crawler_reference_total_kg": 295,
+    "crawler_material_estimate_kg": 158.109957004112,
+    "crawler_missing_internal_estimate_kg": 51.590042995888,
+    "hidden_contact_proxy_mass_kg": 0.30000000000000004,
+    "reference_visual_mass_kg": 0,
+    "motor_brake_reference_kg": 4.54,
+    "motor_brake_reference_charges": 1,
+    "aircraft_in_vehicle_inertials_kg": 0,
+    "separate_aircraft_fleet_reference_kg": 4,
+    "unchanged_aircraft_design_allocation_kg": 16
+  },
+  "assumptions": [
+    "SIMULATION_GRADE_NOT_PHYSICALLY_QUALIFIED; no physical mounting/strength/locking/braking/power-loss/flight acceptance.",
+    "Fusion reported the working copy modified after read-only extraction; cause unproven. Follow-up audit found all333 physical body bounds and1084 occurrence matrices unchanged and288 relationships valid. Original source archive hashes unchanged.",
+    "Published 210 kg dry crawler plus 85 kg battery is a parameterized reference, not a verified exact-configuration weight.",
+    "Retained crawler solids: assumed steel 7850 kg/m3 except reinforced-track surrogate 1200 kg/m3. Missing internal mass and battery CG/inertia use explicit uniform box estimates.",
+    "Catalogue component CG/inertia use homogeneous reference shapes, not manufacturer measured tensors.",
+    "One 4.54 kg fixed motor/brake lump uses aggregate park reference geometry; moving Z-motor mass redistribution during X travel is approximated.",
+    "Four slides active. Eight pins, four screws and four motor rotor visuals fixed at saved park; physical register joint types unchanged. No mimic or closed-loop claims.",
+    "Six hidden contact wheels carry physics; static CAD track solids carry visual geometry/inertials only. Contact proxy mass is deducted from crawler baseline once.",
+    "Fifteen missing running-gear visuals are REFERENCE_VISUAL_ONLY: zero physical mass, no inertial/collision/BOM entry. Ubuntu overlay must exclude these branches from dynamics and animate display geometry from measured track speed.",
+    "Simulation effort/velocity caps are provisional software inputs, not verified actuator ratings."
+  ]
+}

@@ -1,0 +1,171 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 760" font-family="DejaVu Sans, Arial, sans-serif" font-size="13">
+  <defs>
+    <marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#444"/>
+    </marker>
+    <style>
+      .box{fill:#ffffff;stroke:#555;stroke-width:1.3;rx:6}
+      .sim{fill:#eef3e6;stroke:#7a8f5a}
+      .px4{fill:#e8eef7;stroke:#5a7aa8}
+      .node{fill:#fff7e6;stroke:#b8862b}
+      .ops{fill:#f3e9f5;stroke:#8a5a99}
+      .t{font-weight:bold}
+      .s{font-size:11px;fill:#333}
+      .l{stroke:#444;stroke-width:1.2;fill:none;marker-end:url(#a)}
+      .d{stroke:#444;stroke-width:1.2;fill:none;stroke-dasharray:5 3;marker-end:url(#a)}
+      .lab{font-size:10.5px;fill:#222}
+    </style>
+  </defs>
+  <text x="20" y="28" font-size="18" class="t">TinS-12E 8-UAV course build: runtime architecture</text>
+  <text x="20" y="48" class="s">Gazebo Harmonic 8.15 + PX4 v1.17 SITL (x2) + ROS 2 Jazzy. Solid arrows: topics. Dashed arrows: services / action. All ROS traffic on domain 51, localhost only.</text>
+
+  <!-- Gazebo -->
+  <rect x="20" y="70" width="330" height="300" class="box sim"/>
+  <text x="35" y="92" class="t">Gazebo Sim server (world fieldlab)</text>
+  <text x="35" y="112" class="s">seed-42 Fieldlab layout: 25 buildings, 8 roads,</text>
+  <text x="35" y="127" class="s">16 static people, 2 scripted walkers, 10 vehicles</text>
+  <rect x="35" y="140" width="300" height="88" class="box"/>
+  <text x="45" y="158" class="t">tins_ugv (from the submitted URDF)</text>
+  <text x="45" y="175" class="s">DiffDrive (6 hidden track wheels)</text>
+  <text x="45" y="190" class="s">4 slide joints + JointPositionController</text>
+  <text x="45" y="205" class="s">JointStatePublisher, 2 DetachableJoint latches</text>
+  <text x="45" y="220" class="s">6 stowed aircraft visuals (uav03..uav08)</text>
+  <rect x="35" y="238" width="145" height="62" class="box"/>
+  <text x="45" y="256" class="t">uav01 model</text>
+  <text x="45" y="272" class="s">QAV250, IMU, baro,</text>
+  <text x="45" y="287" class="s">mag, GPS, camera</text>
+  <rect x="190" y="238" width="145" height="62" class="box"/>
+  <text x="200" y="256" class="t">uav02 model</text>
+  <text x="200" y="272" class="s">QAV250, same sensors</text>
+  <text x="200" y="287" class="s">(camera unused)</text>
+  <rect x="35" y="310" width="300" height="48" class="box"/>
+  <text x="45" y="328" class="t">ros_gz_bridge + gz_relay</text>
+  <text x="45" y="345" class="s">cmd_vel, odom, joints, latches, cameras, /clock, poses</text>
+
+  <!-- PX4 -->
+  <rect x="20" y="400" width="330" height="150" class="box px4"/>
+  <text x="35" y="422" class="t">PX4 SITL (attached to existing models)</text>
+  <rect x="35" y="435" width="145" height="50" class="box"/>
+  <text x="45" y="455" class="t">px4 -i 0</text>
+  <text x="45" y="472" class="s">uav01, MAV_SYS_ID 1</text>
+  <rect x="190" y="435" width="145" height="50" class="box"/>
+  <text x="200" y="455" class="t">px4 -i 1</text>
+  <text x="200" y="472" class="s">uav02, MAV_SYS_ID 2</text>
+  <rect x="35" y="495" width="300" height="42" class="box"/>
+  <text x="45" y="513" class="t">Micro XRCE-DDS Agent (UDP 8888)</text>
+  <text x="45" y="529" class="s">/uav01/fmu/..., /uav02/fmu/...</text>
+
+  <!-- arrows gazebo<->px4 -->
+  <path d="M110,300 L110,435" class="l"/>
+  <path d="M265,300 L265,435" class="l"/>
+  <text x="115" y="390" class="lab">gz transport: sensors / motors</text>
+
+  <!-- ROS nodes -->
+  <rect x="400" y="70" width="520" height="560" class="box node"/>
+  <text x="415" y="92" class="t">ROS 2 nodes (tins8_mission)</text>
+
+  <rect x="415" y="105" width="240" height="70" class="box"/>
+  <text x="425" y="123" class="t">carousel_supervisor</text>
+  <text x="425" y="139" class="s">guarded exchange, gated on measured</text>
+  <text x="425" y="153" class="s">joints (1.5 mm, fresh &lt; 0.5 s); latches</text>
+  <text x="425" y="167" class="s">srv /carousel/command</text>
+
+  <rect x="665" y="105" width="240" height="70" class="box"/>
+  <text x="675" y="123" class="t">fleet_manager</text>
+  <text x="675" y="139" class="s">8 fleet positions, /fleet/state,</text>
+  <text x="675" y="153" class="s">/joint_states, TF, RViz markers</text>
+
+  <rect x="415" y="190" width="240" height="80" class="box"/>
+  <text x="425" y="208" class="t">uav_agent x2 (uav01, uav02)</text>
+  <text x="425" y="224" class="s">offboard position setpoints 30 Hz</text>
+  <text x="425" y="238" class="s">take-off, observation point, waypoint,</text>
+  <text x="425" y="252" class="s">hold, land; srv /uavXX/command</text>
+  <text x="425" y="266" class="s">topic /uavXX/status</text>
+
+  <rect x="665" y="190" width="240" height="80" class="box"/>
+  <text x="675" y="208" class="t">mission_server</text>
+  <text x="675" y="224" class="s">action /mission/run</text>
+  <text x="675" y="238" class="s">CHECK, RELEASE_1, FLY_1, INDEX_B,</text>
+  <text x="675" y="252" class="s">RELEASE_2, FLY_2, SELECT, DONE</text>
+  <text x="675" y="266" class="s">cancel: HOLD + carousel STOP</text>
+
+  <rect x="415" y="285" width="240" height="66" class="box"/>
+  <text x="425" y="303" class="t">yolox_detector (uav01)</text>
+  <text x="425" y="319" class="s">YOLOX-s ONNX, IoU tracker with</text>
+  <text x="425" y="333" class="s">rotation compensation; never reuses IDs</text>
+  <text x="425" y="346" class="s">Detection2DArray /uav01/detections</text>
+
+  <rect x="665" y="285" width="240" height="66" class="box"/>
+  <text x="675" y="303" class="t">target_tracker (uav01)</text>
+  <text x="675" y="319" class="s">srv /uav01/tracker/select; inset 3x,</text>
+  <text x="675" y="333" class="s">TRACK LOST after 0.5 s, no switching</text>
+  <text x="675" y="346" class="s">/uav01/track/status, annotated, inset</text>
+
+  <rect x="415" y="366" width="240" height="80" class="box"/>
+  <text x="425" y="384" class="t">pursuit_node (uav01)</text>
+  <text x="425" y="400" class="s">IBVS, velocity setpoints 30 Hz,</text>
+  <text x="425" y="414" class="s">line-of-sight closing, 1.2 m floor,</text>
+  <text x="425" y="428" class="s">65 % standoff, loss: hover + search</text>
+  <text x="425" y="442" class="s">srv /uav01/pursuit/command</text>
+
+  <rect x="665" y="366" width="240" height="80" class="box"/>
+  <text x="675" y="384" class="t">pedestrian_driver</text>
+  <text x="675" y="400" class="s">scripted walkers (VelocityControl)</text>
+  <text x="675" y="414" class="s">srv /scenario/actor</text>
+  <text x="675" y="428" class="s">WALK, STOP, LEAVE, RETURN</text>
+
+  <rect x="415" y="461" width="490" height="50" class="box"/>
+  <text x="425" y="479" class="t">evaluator</text>
+  <text x="425" y="497" class="s">telemetry.csv, commands.csv, fleet.csv per run; ground truth used only here and in analysis</text>
+
+  <rect x="415" y="526" width="490" height="90" class="box"/>
+  <text x="425" y="544" class="t">Shared command log  /tins8/command_log  (tins8_interfaces/CommandStatus)</text>
+  <text x="425" y="562" class="s">every node reports REQUESTED, ACCEPTED, REJECTED, COMPLETED, CANCELED, FAILED;</text>
+  <text x="425" y="578" class="s">the terminal tool and the GUI read the same log, so they always agree.</text>
+  <text x="425" y="596" class="s">Control ownership per aircraft: /uavXX/control_owner (agent or pursuit).</text>
+
+  <!-- operator -->
+  <rect x="960" y="70" width="220" height="380" class="box ops"/>
+  <text x="975" y="92" class="t">Operator</text>
+  <rect x="975" y="105" width="190" height="70" class="box"/>
+  <text x="985" y="123" class="t">tins8ctl (terminal)</text>
+  <text x="985" y="139" class="s">status, carousel, uav,</text>
+  <text x="985" y="153" class="s">select, pursuit, actor,</text>
+  <text x="985" y="167" class="s">mission, teleop, shutdown</text>
+  <rect x="975" y="190" width="190" height="70" class="box"/>
+  <text x="985" y="208" class="t">tins8_gui (PyQt5)</text>
+  <text x="985" y="224" class="s">same services and action,</text>
+  <text x="985" y="238" class="s">camera + inset, fleet,</text>
+  <text x="985" y="252" class="s">command states</text>
+  <rect x="975" y="275" width="190" height="52" class="box"/>
+  <text x="985" y="293" class="t">RViz 2</text>
+  <text x="985" y="309" class="s">URDF on measured joints</text>
+  <rect x="975" y="342" width="190" height="52" class="box"/>
+  <text x="985" y="360" class="t">teleop_twist_keyboard</text>
+  <text x="985" y="376" class="s">/ugv/cmd_vel</text>
+  <rect x="975" y="409" width="190" height="30" class="box"/>
+  <text x="985" y="429" class="s">Gazebo GUI (3D view)</text>
+
+  <!-- links -->
+  <path d="M350,330 L415,140" class="l"/>
+  <text x="352" y="250" class="lab">joints, latch</text>
+  <path d="M350,300 L415,318" class="l"/>
+  <text x="355" y="296" class="lab">camera</text>
+  <path d="M335,510 C380,510 380,230 415,230" class="l"/>
+  <text x="358" y="470" class="lab">fmu/out</text>
+  <path d="M415,250 C390,250 390,525 335,525" class="l"/>
+  <text x="358" y="560" class="lab">fmu/in</text>
+  <path d="M415,420 C380,420 380,530 335,530" class="l"/>
+  <path d="M655,318 L665,318" class="l"/>
+  <path d="M535,351 L535,366" class="l"/>
+  <path d="M975,140 L905,140" class="d"/>
+  <path d="M975,225 L905,230" class="d"/>
+  <path d="M665,230 L655,230" class="d"/>
+  <path d="M665,215 L655,150" class="d"/>
+  <path d="M665,300 L905,300" class="d" opacity="0"/>
+  <path d="M975,368 C940,368 360,620 340,355" class="l"/>
+  <text x="560" y="660" class="lab">/ugv/cmd_vel (teleop) to the UGV DiffDrive</text>
+
+  <text x="20" y="720" class="s">Simulation grade: dynamics of the UGV and the QAV250 are estimated, pedestrians are scripted, the camera is fixed at 20 deg down.</text>
+  <text x="20" y="738" class="s">Labels: 8-UAV configuration SIMULATION_GRADE (not physically qualified).</text>
+</svg>

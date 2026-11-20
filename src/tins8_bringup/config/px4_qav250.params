@@ -1,0 +1,52 @@
+# PX4 parameter overrides for the QAV250 SITL airframe (applied as PX4_PARAM_<NAME> env vars).
+# Base airframe: 4001 (gz_x500).  Dynamics values come from the original project's
+# qav250.parameters() generator (estimated, SIMULATION_GRADE_NOT_PHYSICALLY_QUALIFIED).
+MPC_THR_HOVER 0.4582
+MC_ROLLRATE_P 0.06
+MC_PITCHRATE_P 0.06
+MC_YAWRATE_P 0.06
+MC_ROLLRATE_I 0.08
+MC_PITCHRATE_I 0.08
+MC_YAWRATE_I 0.03
+MC_ROLLRATE_D 0.001
+MC_PITCHRATE_D 0.001
+CA_ROTOR0_PX 0.088388
+CA_ROTOR0_PY 0.088388
+CA_ROTOR0_PZ 0.008871
+CA_ROTOR0_KM 0.01
+CA_ROTOR1_PX -0.088388
+CA_ROTOR1_PY -0.088388
+CA_ROTOR1_PZ 0.008871
+CA_ROTOR1_KM 0.01
+CA_ROTOR2_PX 0.088406
+CA_ROTOR2_PY -0.088378
+CA_ROTOR2_PZ 0.008871
+CA_ROTOR2_KM -0.01
+CA_ROTOR3_PX -0.088406
+CA_ROTOR3_PY 0.088378
+CA_ROTOR3_PZ 0.008871
+CA_ROTOR3_KM -0.01
+SIM_GZ_EC_MIN1 150
+SIM_GZ_EC_MIN2 150
+SIM_GZ_EC_MIN3 150
+SIM_GZ_EC_MIN4 150
+SIM_GZ_EC_MAX1 2200
+SIM_GZ_EC_MAX2 2200
+SIM_GZ_EC_MAX3 2200
+SIM_GZ_EC_MAX4 2200
+# Course build: faster envelope for the pursuit mode (original used 2 m/s, 25 deg)
+MPC_XY_VEL_MAX 8.0
+MPC_XY_CRUISE 3.0
+MPC_ACC_HOR 4.0
+MPC_ACC_HOR_MAX 5.0
+MPC_TILTMAX_AIR 35.0
+MPC_Z_VEL_MAX_UP 3.0
+# pursuit descends from the observation height while closing (PX4 default 1.0 m/s was the bottleneck)
+MPC_Z_VEL_MAX_DN 2.5
+# No RC / GCS in simulation; offboard is the only control path
+COM_RC_IN_MODE 4
+COM_RCL_EXCEPT 4
+NAV_DLL_ACT 0
+# Disable on-board flight logs (disk space); evaluation logs are written by ROS nodes
+SDLOG_MODE -1
+UXRCE_DDS_SYNCT 0

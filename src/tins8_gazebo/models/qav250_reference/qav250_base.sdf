@@ -1,0 +1,337 @@
+<?xml version='1.0' encoding='utf-8'?>
+<sdf version="1.9">
+  <model name="qav250_base">
+    <self_collide>false</self_collide>
+    <static>false</static>
+    <link name="base_link">
+      <inertial>
+        <pose>0.0 -1.762930361765048e-18 0.0001442439024390239 0 0 0</pose>
+        <mass>0.492</mass>
+        <inertia>
+          <ixx>0.0016744209855557636</ixx>
+          <iyy>0.0019123875773594048</iyy>
+          <izz>0.003486625056573705</izz>
+          <ixy>-6.249200522497316e-08</ixy>
+          <ixz>0.0</ixz>
+          <iyz>-6.776263578034403e-21</iyz>
+        </inertia>
+      </inertial>
+      <visual name="supplied_qav250_visual">
+        <pose>0 0 -0.025 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://tins_description/meshes/aircraft/qav250_visual.stl</uri>
+            <scale>1 1 1</scale>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>.23 .27 .25 1</ambient>
+          <diffuse>.23 .27 .25 1</diffuse>
+        </material>
+      </visual>
+      <collision name="body_proxy">
+        <pose>0 0 -0.005000000000000001 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>.12 .07 .04</size>
+          </box>
+        </geometry>
+      </collision>
+      <sensor name="air_pressure_sensor" type="air_pressure">
+        <gz_frame_id>base_link</gz_frame_id>
+        <always_on>1</always_on>
+        <update_rate>50</update_rate>
+        <air_pressure>
+          <pressure>
+            <noise type="gaussian">
+              <mean>0</mean>
+              <stddev>3</stddev>
+            </noise>
+          </pressure>
+        </air_pressure>
+      </sensor>
+      <sensor name="magnetometer_sensor" type="magnetometer">
+        <gz_frame_id>base_link</gz_frame_id>
+        <always_on>1</always_on>
+        <update_rate>100</update_rate>
+        <magnetometer>
+          <x>
+            <noise type="gaussian">
+              <stddev>0.0001</stddev>
+            </noise>
+          </x>
+          <y>
+            <noise type="gaussian">
+              <stddev>0.0001</stddev>
+            </noise>
+          </y>
+          <z>
+            <noise type="gaussian">
+              <stddev>0.0001</stddev>
+            </noise>
+          </z>
+        </magnetometer>
+      </sensor>
+      <sensor name="imu_sensor" type="imu">
+        <gz_frame_id>base_link</gz_frame_id>
+        <always_on>1</always_on>
+        <update_rate>250</update_rate>
+        <imu>
+          <angular_velocity>
+            <x>
+              <noise type="gaussian">
+                <mean>0.0</mean>
+                <stddev>0.0008726646</stddev>
+              </noise>
+            </x>
+            <y>
+              <noise type="gaussian">
+                <mean>0.0</mean>
+                <stddev>0.0008726646</stddev>
+              </noise>
+            </y>
+            <z>
+              <noise type="gaussian">
+                <mean>0.0</mean>
+                <stddev>0.0008726646</stddev>
+              </noise>
+            </z>
+          </angular_velocity>
+          <linear_acceleration>
+            <x>
+              <noise type="gaussian">
+                <mean>0.0</mean>
+                <stddev>0.00637</stddev>
+              </noise>
+            </x>
+            <y>
+              <noise type="gaussian">
+                <mean>0.0</mean>
+                <stddev>0.00637</stddev>
+              </noise>
+            </y>
+            <z>
+              <noise type="gaussian">
+                <mean>0.0</mean>
+                <stddev>0.00686</stddev>
+              </noise>
+            </z>
+          </linear_acceleration>
+        </imu>
+      </sensor>
+      <sensor name="navsat_sensor" type="navsat">
+        <gz_frame_id>base_link</gz_frame_id>
+        <always_on>1</always_on>
+        <update_rate>30</update_rate>
+      </sensor>
+      <sensor name="fpv_camera" type="camera">
+        <pose>0.08458469764831843 0.0 0.008591500000000044 0 0 0</pose>
+        <always_on>false</always_on>
+        <update_rate>10</update_rate>
+        <topic>fpv_camera</topic>
+        <camera>
+          <horizontal_fov>1.22</horizontal_fov>
+          <image>
+            <width>640</width>
+            <height>480</height>
+            <format>R8G8B8</format>
+          </image>
+          <clip>
+            <near>0.03</near>
+            <far>100</far>
+          </clip>
+        </camera>
+      </sensor>
+      <sensor name="down_camera" type="camera">
+        <pose>0 0 -0.03 0 1.5707963267948966 0</pose>
+        <always_on>false</always_on>
+        <update_rate>10</update_rate>
+        <topic>down_camera</topic>
+        <camera>
+          <horizontal_fov>1.22</horizontal_fov>
+          <image>
+            <width>640</width>
+            <height>480</height>
+            <format>R8G8B8</format>
+          </image>
+          <clip>
+            <near>0.03</near>
+            <far>100</far>
+          </clip>
+        </camera>
+      </sensor>
+    </link>
+    <link name="rotor_0">
+      <pose>0.0883883476483184 -0.08838834764831846 -0.008870999999999955 0 0 0</pose>
+      <inertial>
+        <pose>0 0 0 0 0 0</pose>
+        <mass>0.002</mass>
+        <inertia>
+          <ixx>2.0419616473025466e-06</ixx>
+          <iyy>2.0419616473025466e-06</iyy>
+          <izz>4.0825899612717595e-06</izz>
+          <ixy>0.0</ixy>
+          <ixz>0.0</ixz>
+          <iyz>0.0</iyz>
+        </inertia>
+      </inertial>
+      <collision name="propeller_swept_disc">
+        <geometry>
+          <cylinder>
+            <radius>0.06389514818256359</radius>
+            <length>0.002</length>
+          </cylinder>
+        </geometry>
+      </collision>
+      <sensor name="prop_contact" type="contact">
+        <always_on>true</always_on>
+        <update_rate>100</update_rate>
+        <topic>/qav250/prop_contacts</topic>
+        <contact>
+          <collision>propeller_swept_disc</collision>
+          <topic>/qav250/prop_contacts</topic>
+        </contact>
+      </sensor>
+    </link>
+    <joint name="rotor_0_joint" type="revolute">
+      <parent>base_link</parent>
+      <child>rotor_0</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-1e+16</lower>
+          <upper>1e+16</upper>
+        </limit>
+      </axis>
+    </joint>
+    <link name="rotor_1">
+      <pose>-0.0883883476483184 0.08838834764831845 -0.008870999999999955 0 0 0</pose>
+      <inertial>
+        <pose>0 0 0 0 0 0</pose>
+        <mass>0.002</mass>
+        <inertia>
+          <ixx>2.0419616473025466e-06</ixx>
+          <iyy>2.0419616473025466e-06</iyy>
+          <izz>4.0825899612717595e-06</izz>
+          <ixy>0.0</ixy>
+          <ixz>0.0</ixz>
+          <iyz>0.0</iyz>
+        </inertia>
+      </inertial>
+      <collision name="propeller_swept_disc">
+        <geometry>
+          <cylinder>
+            <radius>0.06389514818256359</radius>
+            <length>0.002</length>
+          </cylinder>
+        </geometry>
+      </collision>
+      <sensor name="prop_contact" type="contact">
+        <always_on>true</always_on>
+        <update_rate>100</update_rate>
+        <topic>/qav250/prop_contacts</topic>
+        <contact>
+          <collision>propeller_swept_disc</collision>
+          <topic>/qav250/prop_contacts</topic>
+        </contact>
+      </sensor>
+    </link>
+    <joint name="rotor_1_joint" type="revolute">
+      <parent>base_link</parent>
+      <child>rotor_1</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-1e+16</lower>
+          <upper>1e+16</upper>
+        </limit>
+      </axis>
+    </joint>
+    <link name="rotor_2">
+      <pose>0.08840577753724783 0.08837828449725312 -0.008870999999999955 0 0 0</pose>
+      <inertial>
+        <pose>0 0 0 0 0 0</pose>
+        <mass>0.002</mass>
+        <inertia>
+          <ixx>2.0419616473025466e-06</ixx>
+          <iyy>2.0419616473025466e-06</iyy>
+          <izz>4.0825899612717595e-06</izz>
+          <ixy>0.0</ixy>
+          <ixz>0.0</ixz>
+          <iyz>0.0</iyz>
+        </inertia>
+      </inertial>
+      <collision name="propeller_swept_disc">
+        <geometry>
+          <cylinder>
+            <radius>0.06389514818256359</radius>
+            <length>0.002</length>
+          </cylinder>
+        </geometry>
+      </collision>
+      <sensor name="prop_contact" type="contact">
+        <always_on>true</always_on>
+        <update_rate>100</update_rate>
+        <topic>/qav250/prop_contacts</topic>
+        <contact>
+          <collision>propeller_swept_disc</collision>
+          <topic>/qav250/prop_contacts</topic>
+        </contact>
+      </sensor>
+    </link>
+    <joint name="rotor_2_joint" type="revolute">
+      <parent>base_link</parent>
+      <child>rotor_2</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-1e+16</lower>
+          <upper>1e+16</upper>
+        </limit>
+      </axis>
+    </joint>
+    <link name="rotor_3">
+      <pose>-0.08840577753724783 -0.08837828449725312 -0.008870999999999955 0 0 0</pose>
+      <inertial>
+        <pose>0 0 0 0 0 0</pose>
+        <mass>0.002</mass>
+        <inertia>
+          <ixx>2.0419616473025466e-06</ixx>
+          <iyy>2.0419616473025466e-06</iyy>
+          <izz>4.0825899612717595e-06</izz>
+          <ixy>0.0</ixy>
+          <ixz>0.0</ixz>
+          <iyz>0.0</iyz>
+        </inertia>
+      </inertial>
+      <collision name="propeller_swept_disc">
+        <geometry>
+          <cylinder>
+            <radius>0.06389514818256359</radius>
+            <length>0.002</length>
+          </cylinder>
+        </geometry>
+      </collision>
+      <sensor name="prop_contact" type="contact">
+        <always_on>true</always_on>
+        <update_rate>100</update_rate>
+        <topic>/qav250/prop_contacts</topic>
+        <contact>
+          <collision>propeller_swept_disc</collision>
+          <topic>/qav250/prop_contacts</topic>
+        </contact>
+      </sensor>
+    </link>
+    <joint name="rotor_3_joint" type="revolute">
+      <parent>base_link</parent>
+      <child>rotor_3</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-1e+16</lower>
+          <upper>1e+16</upper>
+        </limit>
+      </axis>
+    </joint>
+  </model>
+</sdf>

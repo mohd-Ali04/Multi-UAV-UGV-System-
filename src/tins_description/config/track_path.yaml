@@ -1,0 +1,163 @@
+schema_version: 1
+label: SIMULATION_GRADE_NOT_PHYSICALLY_QUALIFIED
+frame: base_link, X forward/Y left/Z up
+track_width_m: 0.15000000000000022
+track_outer_envelope_bottom_z_m: -2.220446049250313e-16
+shoe_pitch_m: 0.06
+pitch_basis: Measured 60 mm longitudinal grouser repetition on the supplied continuous rubber-track CAD straight
+  run; NOT verified OEM neutral-axis/chain pitch.
+pitch_matching_fraction: 1.0
+pitch_comparisons: 50
+path_basis: Outer track-envelope loop from four measured cylindrical-face centres/radii and common external tangents.
+  This is an envelope path for visual animation, not a neutral fibre or pitch-circle model.
+circles:
+- centre_xz_m:
+  - -0.553
+  - 0.095
+  radius_m: 0.0950000000000002
+- centre_xz_m:
+  - -0.4591849
+  - 0.31
+  radius_m: 0.09499999999999999
+- centre_xz_m:
+  - 0.4208151
+  - 0.095
+  radius_m: 0.09499999999999999
+- centre_xz_m:
+  - 0.497
+  - 0.265
+  radius_m: 0.14
+segments:
+- type: arc
+  centre_xz_m:
+  - 0.497
+  - 0.265
+  radius_m: 0.14
+  start_angle_rad: 6.283185307179586
+  end_angle_rad: 5.617902510432765
+  start_xz_m:
+  - 0.637
+  - 0.26499999999999996
+  end_xz_m:
+  - 0.6071439151888575
+  - 0.17858056962193175
+  length_m: 0.09313959154455494
+- type: straight
+  start_xz_m:
+  - 0.6071439151888575
+  - 0.17858056962193175
+  end_xz_m:
+  - 0.4955556138781532
+  - 0.03635824367202513
+  length_m: 0.1807737231679704
+- type: arc
+  centre_xz_m:
+  - 0.4208151
+  - 0.095
+  radius_m: 0.09499999999999999
+  start_angle_rad: 5.617902510432765
+  end_angle_rad: 4.71238898038469
+  start_xz_m:
+  - 0.4955556138781532
+  - 0.03635824367202513
+  end_xz_m:
+  - 0.4208151
+  - 1.3877787807814457e-17
+  length_m: 0.08602378535456717
+- type: straight
+  start_xz_m:
+  - 0.4208151
+  - 1.3877787807814457e-17
+  end_xz_m:
+  - -0.553
+  - -1.942890293094024e-16
+  length_m: 0.9738151
+- type: arc
+  centre_xz_m:
+  - -0.553
+  - 0.095
+  radius_m: 0.0950000000000002
+  start_angle_rad: 4.71238898038469
+  end_angle_rad: 2.7301484514682164
+  start_xz_m:
+  - -0.553
+  - -1.942890293094024e-16
+  end_xz_m:
+  - -0.6400716984443657
+  - 0.1329936748685025
+  length_m: 0.18831285024706534
+- type: straight
+  start_xz_m:
+  - -0.6400716984443657
+  - 0.13299367486850253
+  end_xz_m:
+  - -0.5462565984443655
+  - 0.3479936748685024
+  length_m: 0.23457679550204877
+- type: arc
+  centre_xz_m:
+  - -0.4591849
+  - 0.31
+  radius_m: 0.09499999999999999
+  start_angle_rad: 2.730148451468216
+  end_angle_rad: 1.5707963267948968
+  start_xz_m:
+  - -0.5462565984443655
+  - 0.3479936748685024
+  end_xz_m:
+  - -0.4591849
+  - 0.40499999999999997
+  length_m: 0.1101384518439653
+- type: straight
+  start_xz_m:
+  - -0.4591849
+  - 0.40499999999999997
+  end_xz_m:
+  - 0.49700000000000005
+  - 0.405
+  length_m: 0.9561849
+- type: arc
+  centre_xz_m:
+  - 0.497
+  - 0.265
+  radius_m: 0.14
+  start_angle_rad: 1.5707963267948963
+  end_angle_rad: 0.0
+  start_xz_m:
+  - 0.49700000000000005
+  - 0.405
+  end_xz_m:
+  - 0.637
+  - 0.265
+  length_m: 0.2199114857512855
+closed_loop_length_m: 3.0428766834114573
+max_sampled_outer_hull_support_error_vs_native_mesh_m: 4.596928615208107e-06
+direction: 'Clockwise in X-Z profile: forward +X vehicle motion gives tread motion -X on the bottom run.'
+shoe_frame: X tangent to tread motion, Y left, Z outward. Cropped geometry extends inward at negative local Z; open
+  crop boundaries are visual only.
+shoe_mesh: meshes/visual/track_shoe_visual.stl
+shoe_mesh_triangles: 3158
+shoe_type: REFERENCE_VISUAL_ONLY period cell of a continuous rubber belt; zero additional physical mass, no individual
+  shoe physics bodies or BOM entry
+sides:
+  left:
+    centre_y_m: 0.32500000000000007
+    track_link: left_track_proxy_link
+  right:
+    centre_y_m: -0.32500000000000007
+    track_link: right_track_proxy_link
+animation_policy: URDF uses original complete track solids as static faithful visuals. Web animation may replace
+  those visuals with instanced period cells along this loop, driven by measured track speed. Do not render both
+  sets simultaneously or give cells physical mass. Loop length/pitch need not be an integer; do not infer manufacturing
+  pitch/count.
+hidden_contact_wheels:
+- left_contact_wheel_1
+- left_contact_wheel_2
+- left_contact_wheel_3
+- right_contact_wheel_1
+- right_contact_wheel_2
+- right_contact_wheel_3
+contact_patch_policy: 'All six hidden physics cylinders have radius0.13 m and centreZ0.13 m: bottomZ0 coincides
+  with measured track-envelope bottom. Positions/radius are simulation proxies, not OEM road-wheel geometry.'
+source_native_manifest_sha256: 10b3414b8c5ba953b33bba678713009ca9afc5c9e1752522c7b216f50a300037
+source_hash_policy: sha256-text-crlf-to-lf-v1

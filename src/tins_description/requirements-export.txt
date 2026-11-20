@@ -1,0 +1,10 @@
+# Tested isolated Windows export environment; ROS runtime uses Ubuntu ROS packages.
+numpy==2.5.4
+trimesh==5.1.1
+fast-simplification==0.2.0
+yourdfpy==0.0.60
+xacro==2.1.1
+PyYAML==6.0.3
+ijson==3.6.0
+pymeshlab==2025.7.post1
+Pillow==13.0.0

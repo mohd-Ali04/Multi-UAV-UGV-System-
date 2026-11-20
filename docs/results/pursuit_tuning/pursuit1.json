@@ -1,0 +1,21 @@
+{
+  "uav": "uav01",
+  "track_id": 1,
+  "engaged_sim_time_s": 142.328,
+  "time_to_intercept_s": null,
+  "peak_closing_speed_est_mps": 56.87503982919516,
+  "peak_ground_speed_mps": 6.203204933194819,
+  "samples": 114,
+  "in_fov_samples": 114,
+  "min_alt_m": 4.0975341796875,
+  "max_pitch_deg": 22.834680189015774,
+  "terminal_range_est_m": null,
+  "lost_events": 1,
+  "outcome": "FAILED",
+  "csv": "uav01-track1-20261120-142632.csv",
+  "detail": "target not reacquired; position hold",
+  "mean_abs_err_u_px": 44.88813558795996,
+  "p95_abs_err_u_px": 87.06422662734985,
+  "fov_containment": 1.0,
+  "duration_s": 18.840000000000003
+}

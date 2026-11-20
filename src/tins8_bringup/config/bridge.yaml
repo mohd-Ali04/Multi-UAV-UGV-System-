@@ -1,0 +1,20 @@
+# ros_gz_bridge configuration (Gazebo <-> ROS 2).  Topic names are identical on both sides.
+# UGV: teleoperation, odometry, measured slide joints, slide commands, dock latch commands.
+# /clock, latch STATE and named ground-truth poses are relayed by tins8_mission/gz_relay (see that node).
+- {ros_topic_name: /ugv/cmd_vel, gz_topic_name: /ugv/cmd_vel, ros_type_name: geometry_msgs/msg/Twist, gz_type_name: gz.msgs.Twist, direction: ROS_TO_GZ}
+- {ros_topic_name: /ugv/odom, gz_topic_name: /ugv/odom, ros_type_name: nav_msgs/msg/Odometry, gz_type_name: gz.msgs.Odometry, direction: GZ_TO_ROS}
+- {ros_topic_name: /ugv/joint_states, gz_topic_name: /ugv/joint_states, ros_type_name: sensor_msgs/msg/JointState, gz_type_name: gz.msgs.Model, direction: GZ_TO_ROS}
+- {ros_topic_name: /ugv/carousel/tray_a_x_joint/cmd_pos, gz_topic_name: /ugv/carousel/tray_a_x_joint/cmd_pos, ros_type_name: std_msgs/msg/Float64, gz_type_name: gz.msgs.Double, direction: ROS_TO_GZ}
+- {ros_topic_name: /ugv/carousel/tray_a_z_joint/cmd_pos, gz_topic_name: /ugv/carousel/tray_a_z_joint/cmd_pos, ros_type_name: std_msgs/msg/Float64, gz_type_name: gz.msgs.Double, direction: ROS_TO_GZ}
+- {ros_topic_name: /ugv/carousel/tray_b_x_joint/cmd_pos, gz_topic_name: /ugv/carousel/tray_b_x_joint/cmd_pos, ros_type_name: std_msgs/msg/Float64, gz_type_name: gz.msgs.Double, direction: ROS_TO_GZ}
+- {ros_topic_name: /ugv/carousel/tray_b_z_joint/cmd_pos, gz_topic_name: /ugv/carousel/tray_b_z_joint/cmd_pos, ros_type_name: std_msgs/msg/Float64, gz_type_name: gz.msgs.Double, direction: ROS_TO_GZ}
+- {ros_topic_name: /ugv/latch/uav01/detach, gz_topic_name: /ugv/latch/uav01/detach, ros_type_name: std_msgs/msg/Empty, gz_type_name: gz.msgs.Empty, direction: ROS_TO_GZ}
+- {ros_topic_name: /ugv/latch/uav02/detach, gz_topic_name: /ugv/latch/uav02/detach, ros_type_name: std_msgs/msg/Empty, gz_type_name: gz.msgs.Empty, direction: ROS_TO_GZ}
+# Aircraft cameras (fixed, 20 deg down-tilt, 640x480)
+- {ros_topic_name: /uav01/camera/image, gz_topic_name: /uav01/camera/image, ros_type_name: sensor_msgs/msg/Image, gz_type_name: gz.msgs.Image, direction: GZ_TO_ROS}
+- {ros_topic_name: /uav01/camera/camera_info, gz_topic_name: /uav01/camera/camera_info, ros_type_name: sensor_msgs/msg/CameraInfo, gz_type_name: gz.msgs.CameraInfo, direction: GZ_TO_ROS}
+- {ros_topic_name: /uav02/camera/image, gz_topic_name: /uav02/camera/image, ros_type_name: sensor_msgs/msg/Image, gz_type_name: gz.msgs.Image, direction: GZ_TO_ROS}
+- {ros_topic_name: /uav02/camera/camera_info, gz_topic_name: /uav02/camera/camera_info, ros_type_name: sensor_msgs/msg/CameraInfo, gz_type_name: gz.msgs.CameraInfo, direction: GZ_TO_ROS}
+# Scripted pedestrians (VelocityControl)
+- {ros_topic_name: /model/person_12/cmd_vel, gz_topic_name: /model/person_12/cmd_vel, ros_type_name: geometry_msgs/msg/Twist, gz_type_name: gz.msgs.Twist, direction: ROS_TO_GZ}
+- {ros_topic_name: /model/person_9/cmd_vel, gz_topic_name: /model/person_9/cmd_vel, ros_type_name: geometry_msgs/msg/Twist, gz_type_name: gz.msgs.Twist, direction: ROS_TO_GZ}

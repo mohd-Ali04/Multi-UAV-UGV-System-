@@ -1,0 +1,12 @@
+# Tunable parameters documented in the build guide (defaults also live in each node).
+pursuit:
+  max_vel: 6.0           # m/s forward closing limit (PX4 MPC_XY_VEL_MAX is raised to 8 m/s)
+  max_accel: 4.0         # m/s^2 setpoint slew limit; bounds pitch so the target stays in view
+  standoff_frac: 0.65    # terminal hover when the box fills 65 % of the frame height (~1.5 m)
+  min_alt_m: 1.2         # hard altitude floor
+  lost_after_s: 0.5      # selected ID missing longer than this -> hover + search yaw
+tracker:
+  lost_after_s: 0.5
+  zoom: 3.0
+carousel:
+  tolerance_m: 0.0015    # measured joint error that counts as "waypoint reached"
